@@ -83,19 +83,22 @@ namespace Docentra_Mac.Services
 
         public async Task<LicenseStatus> CheckLicenseAsync()
         {
-            string hwid = GetHardwareId();
-            string savedKey = GetSavedLicenseKey();
-            bool isActivated = ValidateKey(savedKey, hwid);
-
-            var status = new LicenseStatus
+            return await Task.Run(() =>
             {
-                IsPremium = isActivated,
-                DeviceId = hwid,
-                StatusMessage = isActivated ? "Premium Active" : "Trial Mode"
-            };
+                string hwid = GetHardwareId();
+                string savedKey = GetSavedLicenseKey();
+                bool isActivated = ValidateKey(savedKey, hwid);
 
-            _currentStatus = status;
-            return status;
+                var status = new LicenseStatus
+                {
+                    IsPremium = isActivated,
+                    DeviceId = hwid,
+                    StatusMessage = isActivated ? "Premium Active" : "Trial Mode"
+                };
+
+                _currentStatus = status;
+                return status;
+            });
         }
 
         public bool ValidateKey(string key, string hwid)

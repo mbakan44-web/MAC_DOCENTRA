@@ -14,7 +14,7 @@
             <Grid RowDefinitions="*, Auto">
                 <ListBox Grid.Row="0" x:Name="FileList" Background="Transparent" BorderThickness="0" Margin="5">
                     <ListBox.ItemTemplate>
-                        <DataTemplate>
+                        <DataTemplate x:DataType="x:String">
                             <Grid ColumnDefinitions="*, Auto">
                                 <StackPanel Orientation="Horizontal" Spacing="10">
                                     <PathIcon Data="{StaticResource FileRegular}" Width="16" Opacity="0.7"/>
