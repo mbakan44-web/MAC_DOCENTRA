@@ -22,13 +22,7 @@ jobs:
       run: dotnet restore Docentra_Mac/Docentra_Mac.csproj
 
     - name: Build macOS App
-      run: |
-        dotnet publish Docentra_Mac/Docentra_Mac.csproj \
-          -c Release \
-          -r osx-x64 \
-          --self-contained true \
-          -p:PublishSingleFile=true \
-          -o ./publish/macos
+      run: dotnet publish Docentra_Mac/Docentra_Mac.csproj -c Release -r osx-x64 --self-contained true -p:PublishSingleFile=true -o ./publish/macos
           
     - name: Upload macOS Artifact
       uses: actions/upload-artifact@v4
@@ -47,16 +41,10 @@ jobs:
         dotnet-version: 8.0.x
 
     - name: Restore dependencies
-      run: dotnet restore PromtAiPdfPro/PromtAiPdfPro.csproj
+      run: dotnet restore Docentra_Mac/Docentra_Mac.csproj
 
     - name: Build Windows Exe
-      run: |
-        dotnet publish PromtAiPdfPro/PromtAiPdfPro.csproj \
-          -c Release \
-          -r win-x64 \
-          --self-contained true \
-          -p:PublishSingleFile=true \
-          -o ./publish/windows
+      run: dotnet publish Docentra_Mac/Docentra_Mac.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o ./publish/windows
           
     - name: Upload Windows Artifact
       uses: actions/upload-artifact@v4
