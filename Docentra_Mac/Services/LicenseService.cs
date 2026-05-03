@@ -10,7 +10,7 @@ namespace Docentra_Mac.Services
 {
     public class LicenseService
     {
-        private static LicenseStatus _currentStatus = null;
+        private static LicenseStatus? _currentStatus = null;
 
         public class LicenseStatus
         {

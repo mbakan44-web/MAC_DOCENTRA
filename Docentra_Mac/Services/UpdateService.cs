@@ -19,8 +19,8 @@ namespace Docentra_Mac.Services
         public class UpdateInfo
         {
             public bool HasUpdate { get; set; }
-            public string NewVersion { get; set; }
-            public string DownloadUrl { get; set; }
+            public string? NewVersion { get; set; }
+            public string? DownloadUrl { get; set; }
         }
 
         public async Task<UpdateInfo> CheckForUpdatesAsync()

@@ -53,7 +53,7 @@ namespace Docentra_Mac.Services
             });
         }
 
-        public async Task<bool> SplitPagesAsync(string sourcePath, string rangeInput = null)
+        public async Task<bool> SplitPagesAsync(string sourcePath, string? rangeInput = null)
         {
             return await Task.Run(() =>
             {
