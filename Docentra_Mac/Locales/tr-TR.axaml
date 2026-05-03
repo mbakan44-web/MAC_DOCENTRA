@@ -1,0 +1,23 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:String x:Key="AppTitle">DOCENTRA PDF &amp; BELGE EDİTÖRÜ</x:String>
+    <x:String x:Key="Nav_Dashboard">Panel</x:String>
+    <x:String x:Key="Nav_Merge">PDF Birleştir</x:String>
+    <x:String x:Key="Nav_Split">PDF Ayır</x:String>
+    <x:String x:Key="Nav_Settings">Ayarlar</x:String>
+    <x:String x:Key="Prem_Title">Premium</x:String>
+    <x:String x:Key="Prem_TrialBanner">DENEME MODU</x:String>
+    <x:String x:Key="Prem_DaysRemaining">7 gün kaldı</x:String>
+    
+    <x:String x:Key="Merge_Title">PDF Dosyalarını Birleştir</x:String>
+    <x:String x:Key="Merge_AddFiles">Dosya Ekle</x:String>
+    <x:String x:Key="Merge_Clear">Listeyi Temizle</x:String>
+    <x:String x:Key="Merge_Start">Birleştirmeyi Başlat</x:String>
+    <x:String x:Key="Merge_Success">Dosyalar başarıyla birleştirildi!</x:String>
+    
+    <x:String x:Key="Split_Title">PDF Dosyasını Ayır</x:String>
+    <x:String x:Key="Split_SelectFile">Dosya Seç</x:String>
+    <x:String x:Key="Split_RangeLabel">Sayfa Aralığı (Örn: 1, 3-5, 8):</x:String>
+    <x:String x:Key="Split_Start">Ayırmayı Başlat</x:String>
+    <x:String x:Key="Split_Success">Dosya başarıyla ayrıldı!</x:String>
+</ResourceDictionary>

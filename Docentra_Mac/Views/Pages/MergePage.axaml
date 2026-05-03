@@ -1,0 +1,51 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+             x:Class="Docentra_Mac.Views.Pages.MergePage">
+
+    <Grid RowDefinitions="Auto, *, Auto" Margin="20">
+        <!-- Header -->
+        <TextBlock Grid.Row="0" Text="{DynamicResource Merge_Title}" FontSize="20" FontWeight="SemiBold" Margin="0,0,0,20"/>
+
+        <!-- File List -->
+        <Border Grid.Row="1" Background="#1E1E1E" CornerRadius="10" BorderBrush="#333" BorderThickness="1">
+            <Grid RowDefinitions="*, Auto">
+                <ListBox Grid.Row="0" x:Name="FileList" Background="Transparent" BorderThickness="0" Margin="5">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid ColumnDefinitions="*, Auto">
+                                <StackPanel Orientation="Horizontal" Spacing="10">
+                                    <PathIcon Data="{StaticResource FileRegular}" Width="16" Opacity="0.7"/>
+                                    <TextBlock Text="{Binding}" VerticalAlignment="Center"/>
+                                </StackPanel>
+                                <Button Grid.Column="1" Background="Transparent" Click="RemoveFile_Click">
+                                    <PathIcon Data="{StaticResource DeleteRegular}" Width="14" Foreground="#E81123"/>
+                                </Button>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                
+                <!-- Empty State Message -->
+                <TextBlock Grid.Row="0" Text="Drag &amp; Drop or Add Files" 
+                           HorizontalAlignment="Center" VerticalAlignment="Center" 
+                           Opacity="0.3" IsVisible="{Binding !#FileList.Items.Count}"/>
+            </Grid>
+        </Border>
+
+        <!-- Actions -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Spacing="15" Margin="0,20,0,0">
+            <Button Content="{DynamicResource Merge_Clear}" Click="Clear_Click" Background="#333"/>
+            <Button Content="{DynamicResource Merge_AddFiles}" Click="AddFiles_Click" Background="#2A2A2A"/>
+            <Button Content="{DynamicResource Merge_Start}" Click="Merge_Click" 
+                    Background="{DynamicResource PremiumAccentBrush}" Foreground="Black" FontWeight="Bold" Padding="20,10"/>
+        </StackPanel>
+    </Grid>
+
+    <UserControl.Resources>
+        <StreamGeometry x:Key="FileRegular">M13 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V9L13 2ZM13 9V3.5L18.5 9H13Z</StreamGeometry>
+        <StreamGeometry x:Key="DeleteRegular">M15 4V3C15 2.44772 14.5523 2 14 2H10C9.44772 2 9 2.44772 9 3V4H4V6H5V19C5 20.6569 6.34315 22 8 22H16C17.6569 22 19 20.6569 19 19V6H20V4H15ZM11 4V4H13V4H11ZM17 19C17 19.5523 16.5523 20 16 20H8C7.44772 20 7 19.5523 7 19V6H17V19Z</StreamGeometry>
+    </UserControl.Resources>
+</UserControl>

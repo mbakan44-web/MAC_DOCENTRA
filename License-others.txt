@@ -1,0 +1,24 @@
+# DOCENTRA PDF & DOCUMENT EDITOR
+# ACUERDO DE LICENCIA DE USUARIO FINAL (EULA) - [SPANISH]
+
+Al instalar este software, usted acepta que el procesamiento de datos es local y que la licencia está vinculada a su dispositivo (HWID).
+
+# ACCORDO DI LICENZA PER L'UTENTE FINALE (EULA) - [ITALIAN]
+
+Installando questo software, accetti che l'elaborazione dei dati sia locale e che la licenza sia legata al tuo dispositivo (HWID).
+
+# ЛИЦЕНЗИОННОЕ СОГЛАШЕНИЕ С КОНЕЧНЫМ ПОЛЬЗОВАТЕЛЕМ (EULA) - [RUSSIAN]
+
+Устанавливая это программное обеспечение, вы соглашаетесь с тем, что обработка данных является локальной и лицензия привязана к вашему устройству (HWID).
+
+# 最終ユーザー使用許諾契約 (EULA) - [JAPANESE]
+
+このソフトウェアをインストールすることにより、データ処理がローカルであること、およびライセンスがデバイス (HWID) に紐付けられていることに同意したことになります。
+
+# اتفاقية ترخيص المستخدم النهائي (EULA) - [ARABIC]
+
+بتثبيت هذا البرنامج، فإنك توافق على أن معالجة البيانات محلية وأن الترخيص مرتبط بجهازك (HWID).
+
+---
+[ENGLISH VERSION BELOW]
+...

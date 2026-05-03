@@ -1,0 +1,24 @@
+# .gitignore for .NET
+[Bb]in/
+[Oo]bj/
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.doccache
+crash_log.txt
+TempBak/
+Obfuscated/
+dotnet_portable/
+dotnet_sdk/
+*.exe
+*.dll
+*.pdb
+*.msi
+*.nupkg
+*.zip
+*.rar
+image.png
+resim1.png
+resim2.png

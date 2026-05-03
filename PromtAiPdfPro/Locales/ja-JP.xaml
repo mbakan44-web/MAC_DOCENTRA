@@ -1,0 +1,403 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <!-- General -->
+    <system:String x:Key="AppTitle">DOCENTRA PDF &amp; ドキュメントエディター</system:String>
+    <system:String x:Key="Nav_Dashboard">コントロールセンター</system:String>
+    <system:String x:Key="Nav_Merge">PDF結合</system:String>
+    <system:String x:Key="Nav_Split">PDF分割</system:String>
+    <system:String x:Key="Nav_Convert">変換</system:String>
+    <system:String x:Key="Nav_OfficeConvert">Officeコンバーター</system:String>
+    <system:String x:Key="Nav_PasswordSecurity">パスワードとセキュリティ</system:String>
+    <system:String x:Key="Nav_Watermark">透かしとロゴ</system:String>
+    <system:String x:Key="Nav_Ocr">OCR - テキスト認識</system:String>
+    <system:String x:Key="Nav_Crop">PDFクロップ</system:String>
+    <system:String x:Key="Nav_AddPageNumbers">ページ番号の追加</system:String>
+    <system:String x:Key="Nav_DeletePages">ページの削除</system:String>
+    <system:String x:Key="Nav_Sign">PDF署名</system:String>
+    <system:String x:Key="Nav_Settings">設定</system:String>
+
+    <!-- Premium & License -->
+    <system:String x:Key="Prem_LockReason_Discount">7日間の試用期間が終了しました。一部のページはプレミアム会員専用です。</system:String>
+    <system:String x:Key="Prem_LockReason_Restricted">14日間の試用期間が終了しました。一部のページが閉じられ、5ページ制限が有効になりました。</system:String>
+    <system:String x:Key="Prem_Status_Full">全機能開放中（試用期間）</system:String>
+    <system:String x:Key="Prem_Status_Discount">アクセス制限中（40%割引のチャンス）</system:String>
+    <system:String x:Key="Prem_Status_Restricted">制限付き無料版</system:String>
+    <system:String x:Key="Prem_PurchaseRequired_Msg">この画面を使用するにはライセンスを購入してください。</system:String>
+    <system:String x:Key="Prem_PurchaseRequired_Title">プレミアム機能</system:String>
+    <system:String x:Key="Prem_LimitedMode">制限モード</system:String>
+    <system:String x:Key="Prem_RestrictedMode">厳格モード</system:String>
+    <system:String x:Key="Prem_SomePagesLocked">一部のページがロックされています</system:String>
+    <system:String x:Key="Prem_PageLimitActive">5ページ制限有効</system:String>
+    <system:String x:Key="Prem_GoToPremium">プレミアムへ</system:String>
+    <system:String x:Key="Prem_Close">閉じる</system:String>
+
+    <!-- Sign -->
+    <system:String x:Key="Sign_Title">PDF署名</system:String>
+    <system:String x:Key="Sign_SelectPdf">PDFを選択</system:String>
+    <system:String x:Key="Sign_Method">署名方法</system:String>
+    <system:String x:Key="Sign_Draw">手書き（描画）</system:String>
+    <system:String x:Key="Sign_Upload">画像をアップロード</system:String>
+    <system:String x:Key="Sign_Clear">クリア</system:String>
+    <system:String x:Key="Sign_Position">位置</system:String>
+    <system:String x:Key="Sign_Size">サイズ</system:String>
+    <system:String x:Key="Sign_Opacity">不透明度</system:String>
+    <system:String x:Key="Sign_ApplyTo">適用範囲</system:String>
+    <system:String x:Key="Sign_AllPages">全ページ</system:String>
+    <system:String x:Key="Sign_CurrentPage">現在のページのみ</system:String>
+    <system:String x:Key="Sign_CustomPages">カスタムページ</system:String>
+    <system:String x:Key="Sign_Process">署名して保存</system:String>
+    <system:String x:Key="Sign_NoFile">まずPDFファイルを選択してください。</system:String>
+    <system:String x:Key="Sign_NoSignature">署名を作成またはアップロードしてください。</system:String>
+    <system:String x:Key="Sign_Success">ファイルに署名しました。</system:String>
+    <system:String x:Key="Sign_SuccessWithOpen">ファイルに署名しました。開きますか？</system:String>
+
+    <!-- Dashboard -->
+    <system:String x:Key="Dash_Welcome">ようこそ！</system:String>
+    <system:String x:Key="Dash_Desc">PDFに関するあらゆるニーズにお応えするワンストップサービス。</system:String>
+    <system:String x:Key="Dash_MergeTitle">結合</system:String>
+    <system:String x:Key="Dash_MergeSub">複数のPDFファイルを1つにまとめます。</system:String>
+    <system:String x:Key="Dash_SplitTitle">分割</system:String>
+    <system:String x:Key="Dash_SplitSub">ページを個別のPDFファイルとして保存します。</system:String>
+    <system:String x:Key="Dash_WordTitle">Wordへ</system:String>
+    <system:String x:Key="Dash_WordSub">PDFファイルをWord形式でエクスポートします。</system:String>
+    <system:String x:Key="Dash_ImgTitle">画像からPDF</system:String>
+    <system:String x:Key="Dash_ImgSub">画像をPDF形式に変換します。</system:String>
+    <system:String x:Key="Dash_OfficeTitle">OfficeからPDF</system:String>
+    <system:String x:Key="Dash_OfficeSub">Word、Excel、PowerPointファイルをPDFに変換します。</system:String>
+    <system:String x:Key="Dash_ProtectTitle">暗号化</system:String>
+    <system:String x:Key="Dash_ProtectSub">暗号化でPDFファイルを保護します。</system:String>
+    <system:String x:Key="Dash_UnlockTitle">パスワード削除</system:String>
+    <system:String x:Key="Dash_UnlockSub">PDFから既存のパスワードを削除します。</system:String>
+    <system:String x:Key="Dash_TextWatermarkTitle">テキスト透かし</system:String>
+    <system:String x:Key="Dash_TextWatermarkSub">対話型のテキスト透かしを追加します。</system:String>
+    <system:String x:Key="Dash_LogoWatermarkTitle">ロゴ追加</system:String>
+    <system:String x:Key="Dash_LogoWatermarkSub">ファイルに透明なロゴを配置します。</system:String>
+    <system:String x:Key="Dash_DragDrop">ファイルをここにドラッグ</system:String>
+    <system:String x:Key="Dash_DragDropSub">PDFファイルをドロップして処理を開始します。</system:String>
+    <system:String x:Key="Dash_OcrSub">画像やスキャンしたPDFからテキストを抽出します。</system:String>
+    <system:String x:Key="Dash_PageNumTitle">ページ番号</system:String>
+    <system:String x:Key="Dash_PageNumSub">PDFページに自動ページ番号を追加します。</system:String>
+    <system:String x:Key="Dash_DeletePagesTitle">ページの削除</system:String>
+    <system:String x:Key="Dash_DeletePagesSub">PDFから不要なページを永久に削除します。</system:String>
+    <system:String x:Key="Dash_SignTitle">PDF署名</system:String>
+    <system:String x:Key="Dash_SignSub">PDFドキュメントに手書き署名や画像署名を追加します。</system:String>
+    <system:String x:Key="Dash_CropTitle">PDFクロップ</system:String>
+    <system:String x:Key="Dash_CropSub">PDFページを任意のサイズにクロップします。</system:String>
+
+    <!-- Merge Tool -->
+    <system:String x:Key="Merge_Title">PDF結合</system:String>
+    <system:String x:Key="Merge_Desc">PDFファイルを追加し、お好みの順序で結合します。</system:String>
+    <system:String x:Key="Merge_AddFile">ファイル追加</system:String>
+    <system:String x:Key="Merge_ClearList">リストをクリア</system:String>
+    <system:String x:Key="Merge_MergeBtn">結合して保存</system:String>
+    <system:String x:Key="Merge_EmptyStateDesc">PDFファイルをここにドラッグ or 「ファイル追加」ボタンをクリック</system:String>
+    <system:String x:Key="Merge_DefaultFileName">merged.pdf</system:String>
+    <system:String x:Key="Merge_SuccessWithOpen">ファイルを結合しました。開きますか？</system:String>
+    
+    <!-- Split Tool -->
+    <system:String x:Key="Split_Title">PDF分割</system:String>
+    <system:String x:Key="Split_Desc">分割したいPDFファイルを選択してください。</system:String>
+    <system:String x:Key="Split_Browse">ファイルを選択</system:String>
+    <system:String x:Key="Split_Options">分割オプション</system:String>
+    <system:String x:Key="Split_OptSeparate">すべてのページを個別のPDFに変換</system:String>
+    <system:String x:Key="Split_OptDesc">選択したPDFファイルの各ページを個別のPDFファイルとしてエクスポートします。</system:String>
+    <system:String x:Key="Split_SplitBtn">パーツに分割</system:String>
+    <system:String x:Key="Split_SuccessWithOpen">PDFを分割しました。フォルダを開きますか？</system:String>
+    <system:String x:Key="Split_OptRange">特定のページ/範囲を分割</system:String>
+    <system:String x:Key="Split_RangeHint">カンマ（1,3,5） or 範囲（5:8）を使用できます。</system:String>
+
+    <!-- Convert Tool -->
+    <system:String x:Key="Conv_Title">変換ツール</system:String>
+    <system:String x:Key="Conv_Desc">ここからPDF変換操作を管理します。</system:String>
+    <system:String x:Key="Conv_ImgToPdf">画像からPDF</system:String>
+    <system:String x:Key="Conv_ImgToPdfDesc">JPG or PNGファイルをPDFに変換します。</system:String>
+    <system:String x:Key="Conv_OfficeToPdf">OfficeからPDF</system:String>
+    <system:String x:Key="Conv_OfficeToPdfDesc">Word（.docx）、Excel（.xlsx）、PowerPoint（.pptx）ファイルをPDFに変換します。</system:String>
+    <system:String x:Key="Conv_PdfToWord">PDFからWord</system:String>
+    <system:String x:Key="Conv_PdfToWordDesc">PDFファイルを編集可能なWord（.docx）形式に変換します。</system:String>
+    <system:String x:Key="Conv_PdfToImg">PDFから画像</system:String>
+    <system:String x:Key="Conv_PdfToImgDesc">PDFページを高解像度の画像（PNG）ファイルに分割します。</system:String>
+    <system:String x:Key="Conv_Converting">変換中...</system:String>
+    <system:String x:Key="Conv_Success">変換が正常に完了しました！</system:String>
+    <system:String x:Key="Conv_SuccessWithOpen">変換が正常に完了しました。ファイル/フォルダを開きますか？</system:String>
+    <system:String x:Key="Conv_Error">変換中にエラーが発生しました。Officeがインストールされていることを確認してください。</system:String>
+    <system:String x:Key="Conv_NoOffice">Microsoft Officeが見つかりません。インストールされていることを確認してください。</system:String>
+    <system:String x:Key="Conv_NoWord">Microsoft Wordが見つかりません。インストールされていることを確認してください。</system:String>
+    <system:String x:Key="Conv_NoExcel">Microsoft Excelが見つかりません。インストールされていることを確認してください。</system:String>
+    <system:String x:Key="Conv_NoPowerPoint">Microsoft PowerPointが見つかりません。インストールされていることを確認してください。</system:String>
+    <system:String x:Key="Conv_OfficeError">Officeドキュメントの変換中にエラーが発生しました。詳細はログに記録されています。</system:String>
+    <system:String x:Key="Conv_OfficeBusy">Officeが使用中 or ロックされている可能性があります。開いているOfficeウィンドウをすべて閉じてから再試行してください。</system:String>
+    <system:String x:Key="Conv_CleanOffice">Officeプロセスをクリーンアップ</system:String>
+    <system:String x:Key="Conv_CleanConfirm">開いているWord、Excel、PowerPointウィンドウがすべて閉じられます。保存されていないデータは失われる可能性があります。続行しますか？</system:String>
+    <system:String x:Key="Conv_BtnClean">Officeをクリーンアップ</system:String>
+    <system:String x:Key="Conv_SelectImgTitle">PDFに変換する画像を選択してください</system:String>
+    <system:String x:Key="Conv_SelectPdfToImgTitle">画像に変換するPDFファイルを選択してください</system:String>
+    <system:String x:Key="Conv_SelectFolderTitle">画像を保存するフォルダを選択してください</system:String>
+    <system:String x:Key="Conv_SelectOfficeTitle">PDFに変換するOfficeファイルを選択してください</system:String>
+    <system:String x:Key="Conv_SelectPdfToWordTitle">Wordに変換するPDFファイルを選択してください</system:String>
+
+    <!-- Office Convert -->
+    <system:String x:Key="Sec_Title_OfficeConvert">Officeコンバーター</system:String>
+    <system:String x:Key="Sec_Desc_OfficeConvert">WordファイルをExcelに、or ExcelファイルをWordに変換します。</system:String>
+    <system:String x:Key="Office_RequirementTitle">Microsoft Officeの要件</system:String>
+    <system:String x:Key="Office_RequirementDesc">一部の変換および編集操作（Word、Excel、PowerPoint）を機能させるには、コンピューターにMicrosoft Officeがインストールされている必要があります。</system:String>
+    <system:String x:Key="Office_WordToExcel">WordからExcel</system:String>
+    <system:String x:Key="Office_ExcelToWord">ExcelからWord</system:String>
+    <system:String x:Key="Office_WordToExcelDesc">ドキュメントの段落をExcelに1行ずつ転送します。</system:String>
+    <system:String x:Key="Office_ExcelToWordDesc">ExcelセルをプレーンテキストとしてWordに転送します。</system:String>
+    <system:String x:Key="Office_PptToWord">PowerPointからWord</system:String>
+    <system:String x:Key="Office_PptToExcel">PowerPointからExcel</system:String>
+    <system:String x:Key="Office_PptToWordDesc">スライド内のすべてのプレゼンテーションテキストをWordに転送します。</system:String>
+    <system:String x:Key="Office_PptToExcelDesc">スライド内のすべてのテキストをExcelに1行ずつ転送します。</system:String>
+    <system:String x:Key="Office_SelectWordTitle">変換するWordファイルを選択してください</system:String>
+    <system:String x:Key="Office_SaveExcelTitle">Excelファイルを保存</system:String>
+    <system:String x:Key="Office_SelectExcelTitle">変換するExcelファイルを選択してください</system:String>
+    <system:String x:Key="Office_SaveWordTitle">Wordファイルを保存</system:String>
+    <system:String x:Key="Office_SelectPptTitle">変換するPowerPointファイルを選択してください</system:String>
+
+    <!-- Settings -->
+    <system:String x:Key="Sett_Title">設定</system:String>
+    <system:String x:Key="Sett_Language">言語設定 (Language)</system:String>
+    <system:String x:Key="Sett_LanguageDesc">アプリケーションの言語を選択してください。</system:String>
+    <system:String x:Key="Sett_LanguageAuto">システム言語（自動）</system:String>
+    <system:String x:Key="Sett_Theme">テーマ</system:String>
+    <system:String x:Key="Sett_ThemeDesc">配色（ライト or ダーク）をここで変更します。</system:String>
+    <system:String x:Key="Sett_AccentColor">アクセントカラー</system:String>
+    <system:String x:Key="Sett_AccentColorDesc">主要なアクセントカラー（ボタン、境界線）をここでカスタマイズします。</system:String>
+
+    <!-- Common -->
+    <system:String x:Key="Common_PathPlaceholder">ファイルが選択されていません...</system:String>
+    <system:String x:Key="Common_Save">保存</system:String>
+    <system:String x:Key="Common_Cancel">キャンセル</system:String>
+    <system:String x:Key="Common_Apply">適用</system:String>
+    <system:String x:Key="Common_Back">戻る</system:String>
+    <system:String x:Key="Common_PdfFilter">PDFファイル (*.pdf)|*.pdf</system:String>
+    <system:String x:Key="Common_ImageFilter">画像ファイル (*.jpg;*.jpeg;*.png)|*.jpg;*.jpeg;*.png</system:String>
+    <system:String x:Key="Common_OfficeFilter">Officeドキュメント (*.docx;*.doc;*.xlsx;*.xls;*.pptx;*.ppt)|*.docx;*.doc;*.xlsx;*.xls;*.pptx;*.ppt</system:String>
+    <system:String x:Key="Common_WordFilter">Wordドキュメント (*.docx)|*.docx</system:String>
+    <system:String x:Key="Common_ExcelFilter">Excelドキュメント (*.xlsx)|*.xlsx</system:String>
+    <system:String x:Key="Common_TxtFilter">テキストファイル (*.txt)|*.txt</system:String>
+    <system:String x:Key="Common_SavePdfTitle">PDFとして保存</system:String>
+    <system:String x:Key="Common_SaveWordTitle">Wordとして保存</system:String>
+    <system:String x:Key="Common_Copy">コピー</system:String>
+    <system:String x:Key="Common_Select">選択...</system:String>
+    <system:String x:Key="Common_Page">ページ</system:String>
+
+    <!-- Messages -->
+    <system:String x:Key="Msg_SelectAtLeastTwo">少なくとも2つのPDFファイルを選択してください！</system:String>
+    <system:String x:Key="Msg_MergeSuccess">ファイルを結合しました！</system:String>
+    <system:String x:Key="Msg_SettingsSaved">設定を保存し適用しました。</system:String>
+    <system:String x:Key="Msg_OcrSuccess">テキストを抽出しました。</system:String>
+    <system:String x:Key="Ocr_SuccessWithOpen">テキストを保存しました。ファイルを開きますか？</system:String>
+    <system:String x:Key="Msg_Copied">コピーしました</system:String>
+    <system:String x:Key="Msg_Warning">警告</system:String>
+    <system:String x:Key="Msg_Confirm">確認</system:String>
+    <system:String x:Key="Msg_SelectFile">ファイルを選択してください。</system:String>
+    <system:String x:Key="Msg_AskOpenFile">ファイルを作成しました。開きますか？</system:String>
+    <system:String x:Key="Msg_AskOpenFolder">PDFを分割しました。保存フォルダを開きますか？</system:String>
+    <system:String x:Key="Msg_AskOpenFolderPart">フォルダを開きますか？</system:String>
+    <system:String x:Key="Msg_SplitError">分割中にエラーが発生しました。</system:String>
+    <system:String x:Key="Msg_SelectPdfFirst">まずPDFファイルを選択してください。</system:String>
+    <system:String x:Key="Msg_SplitSuccess">PDF分割が完了しました！</system:String>
+    <system:String x:Key="Msg_SelectImageFirst">変換する画像を選択してください。</system:String>
+    <system:String x:Key="Msg_ConvertSuccess">画像をPDFに変換しました！</system:String>
+    <system:String x:Key="Msg_CleanSuccess">Officeプロセスのクリーンアップに成功しました。</system:String>
+    <system:String x:Key="Msg_FileEncryptedSuccess">ファイルを暗号化しました。開きますか？</system:String>
+    <system:String x:Key="Msg_EncryptionError">暗号化エラー！</system:String>
+    <system:String x:Key="Msg_ProcessSuccess">処理が正常に完了しました！</system:String>
+    <system:String x:Key="Msg_ProcessError">処理中にエラーが発生しました。</system:String>
+    <system:String x:Key="Msg_SystemCleanSuccess">クリーンアップ処理が完了しました！</system:String>
+    <system:String x:Key="Msg_Success">成功</system:String>
+    <system:String x:Key="Msg_Error">エラー</system:String>
+    <system:String x:Key="Update_AvailableTitle">アップデートがあります</system:String>
+    <system:String x:Key="Msg_UpdateAvailable">新しいバージョン（{0}）が利用可能です。最新の機能を使用するためにアップデートしてください。</system:String>
+    <system:String x:Key="Msg_UpdatePremiumFree">プレミアム会員の方は、すべてのアップデートを完全に無料でご利用いただけます。</system:String>
+    <system:String x:Key="Btn_DownloadNow">今すぐダウンロード</system:String>
+    <system:String x:Key="Prem_Licensed">ライセンス取得済み：プレミアム版</system:String>
+    <system:String x:Key="Prem_ThankYou">弊社の製品をお選びいただき、ご購入いただきありがとうございます！</system:String>
+    <system:String x:Key="Prem_ActivatedSuccess">プレミアムが正常に有効化されました！</system:String>
+
+    <!-- Watermark Prefix -->
+    <system:String x:Key="Watermark_TextPrefix">透かし入り_</system:String>
+    <system:String x:Key="Watermark_LogoPrefix">ロゴ入り_</system:String>
+    <system:String x:Key="Watermark_SuccessWithOpen">透かしを追加しました。ファイルを開きますか？</system:String>
+
+    <!-- Belge Koruma ve Filigran Detay -->
+    <system:String x:Key="Sec_Title_Password">パスワードの設定と削除</system:String>
+    <system:String x:Key="Sec_Desc_Password">PDFに安全なパスワードを設定、or 既存のパスワードを削除します。</system:String>
+    <system:String x:Key="Sec_Title_Watermark">透かしとロゴツール</system:String>
+    <system:String x:Key="Sec_Desc_Watermark">PDFに対話形式でテキスト or ロゴの透かしを追加します。</system:String>
+    <system:String x:Key="Sec_Password">1. PDF暗号化</system:String>
+    <system:String x:Key="Sec_PasswordDesc">まずPDFを選択し、閲覧パスワードを設定します。</system:String>
+    <system:String x:Key="Sec_BtnProtect">暗号化して保存</system:String>
+    <system:String x:Key="Sec_TextWatermark">1. テキスト透かし</system:String>
+    <system:String x:Key="Sec_TextWatermarkDesc">テキストのサイズと位置を対話形式で調整します。</system:String>
+    <system:String x:Key="Sec_BtnAddText">位置決めと追加</system:String>
+    <system:String x:Key="Sec_ImageWatermark">2. ロゴ追加</system:String>
+    <system:String x:Key="Sec_ImageWatermarkDesc">ドラッグでロゴの位置、サイズ、透明度を決定します。</system:String>
+    <system:String x:Key="Sec_LogoStep1">ステップ1：ロゴを入れるPDFファイルを選択してください</system:String>
+    <system:String x:Key="Sec_BtnSelectLogo">位置決めとロゴ追加</system:String>
+    <system:String x:Key="Sec_PassStep1">ステップ1：暗号化するPDFファイルを選択してください</system:String>
+    <system:String x:Key="Sec_TextStep1">ステップ1：透かしを入れるPDFファイルを選択してください</system:String>
+    <system:String x:Key="Sec_PassStep2">ステップ2：パスワード設定</system:String>
+    <system:String x:Key="Sec_TextStep2">ステップ2：透かしテキスト</system:String>
+    <system:String x:Key="Sec_Step3">ステップ3：ページ選択</system:String>
+    <system:String x:Key="Sec_SelectPdf">PDFファイルを選択</system:String>
+    <system:String x:Key="Sec_SelectPdfBtn">PDFを選択</system:String>
+    <system:String x:Key="Sec_SelectedFile">選択されたファイル：</system:String>
+    <system:String x:Key="Sec_LogoStep2">ステップ2：ロゴ選択</system:String>
+    <system:String x:Key="Sec_SelectLogoBtn">ロゴを選択</system:String>
+    <system:String x:Key="Sec_PassPlaceholder">パスワードを設定してください...</system:String>
+    <system:String x:Key="Sec_TextPlaceholder">透かしとして書き込むテキスト...</system:String>
+    <system:String x:Key="Sec_LogoPlaceholder">ロゴが選択されていません...</system:String>
+    <system:String x:Key="Sec_RangeAll">全ページ</system:String>
+    <system:String x:Key="Sec_RangeFirst">最初のページのみ</system:String>
+    <system:String x:Key="Sec_Rotation">回転角度</system:String>
+    <system:String x:Key="Sec_RangeHelp">処理するページを以下の形式で指定できます：
+• カンマで個別のページを指定（例：1,3,5）
+• ハイフン or コロンで範囲を指定（例：2-5 or 2:5）
+• 混合形式も可能です（例：1,3,5-8）</system:String>
+    <system:String x:Key="Sec_RangeHelpTitle">ページ範囲のヘルプ</system:String>
+    <system:String x:Key="Sec_SaveEncryptedFileName">Protected_</system:String>
+
+    <system:String x:Key="Sec_Help_Password">安全なパスワードを設定して、PDFドキュメントを不正アクセスから保護します。開封時に要求されます。</system:String>
+    <system:String x:Key="Sec_Unlock">2. PDFパスワード削除</system:String>
+    <system:String x:Key="Sec_UnlockDesc">パスワードを知っているPDFファイルの保護を永久に削除します。</system:String>
+    <system:String x:Key="Sec_UnlockStep1">ステップ1：パスワードを削除するPDFファイルを選択してください</system:String>
+    <system:String x:Key="Sec_UnlockStep2">ステップ2：現在のPDFパスワードを入力</system:String>
+    <system:String x:Key="Sec_UnlockPlaceholder">ここに現在のパスワードを入力...</system:String>
+    <system:String x:Key="Sec_UnlockBtn">パスワード削除</system:String>
+    <system:String x:Key="Msg_UnlockSuccess">PDFパスワードを削除し、新しいファイルを保存しました！</system:String>
+    <system:String x:Key="Unlock_SuccessWithOpen">PDFパスワードを削除しました。ファイルを開きますか？</system:String>
+    <system:String x:Key="Msg_UnlockError">パスワードが正しくないか、PDFを開けませんでした。確認して再試行してください。</system:String>
+    <system:String x:Key="Sec_Help_Unlock">PDFを選択して正しいパスワードを入力すると、アプリケーションはそのドキュメントの新しい「パスワードなし」コピーを作成します。</system:String>
+    <system:String x:Key="Sec_Help_TextWatermark">テキスト透かしでドキュメントの所有者を識別します。(ⓘ)ボタンから、対話型ウィンドウでテキストのドラッグとサイズ調整が可能です。</system:String>
+    <system:String x:Key="Sec_Help_ImageWatermark">ロゴ or 画像を透かしとして追加します。対話型ウィンドウで、ロゴの位置、サイズ、透明度を簡単に調整できます。</system:String>
+
+    <!-- Themes -->
+    <system:String x:Key="Theme_Light">ライト</system:String>
+    <system:String x:Key="Theme_Dark">ダーク</system:String>
+    <system:String x:Key="Theme_HighContrast">ハイコントラスト</system:String>
+    <system:String x:Key="Theme_PastelBlue">パステルブルーテーマ</system:String>
+    <system:String x:Key="Theme_Lavender">ラベンダーテーマ</system:String>
+    <system:String x:Key="Theme_Peach">ピーチテーマ</system:String>
+    <system:String x:Key="Theme_Mint">ミントテーマ</system:String>
+    <system:String x:Key="Theme_Apricot">アプリコットテーマ</system:String>
+
+    <!-- Dialogs -->
+    <system:String x:Key="Dialog_LogoTitle">ロゴの位置決め</system:String>
+    <system:String x:Key="Dialog_LogoDesc">ロゴを目的の場所にドラッグし、サイズを調整します。</system:String>
+    <system:String x:Key="Dialog_LogoScale">ロゴサイズ</system:String>
+    <system:String x:Key="Dialog_LogoOpacity">ロゴ不透明度</system:String>
+    <system:String x:Key="Dialog_TextTitle">テキストの位置決め</system:String>
+    <system:String x:Key="Dialog_TextDesc">テキストを目的の場所にドラッグし、サイズを調整します。</system:String>
+    <system:String x:Key="Dialog_TextScale">テキストサイズ</system:String>
+    <system:String x:Key="Dialog_TextOpacity">テキスト不透明度</system:String>
+    <system:String x:Key="Dialog_ExampleText">サンプルテキスト</system:String>
+
+    <!-- Page Numbering Details -->
+    <system:String x:Key="PageNum_Title">ページ番号の追加</system:String>
+    <system:String x:Key="PageNum_Desc">PDFドキュメントにプロフェッショナルなページ番号を追加します。</system:String>
+    <system:String x:Key="PageNum_Settings">ナンバリング設定</system:String>
+    <system:String x:Key="PageNum_StartPage">開始ページ</system:String>
+    <system:String x:Key="PageNum_EndPage">終了ページ</system:String>
+    <system:String x:Key="PageNum_Position">位置</system:String>
+    <system:String x:Key="PageNum_PosBottomCenter">下部中央</system:String>
+    <system:String x:Key="PageNum_PosBottomRight">下部右</system:String>
+    <system:String x:Key="PageNum_PosBottomLeft">下部左</system:String>
+    <system:String x:Key="PageNum_PosTopCenter">上部中央</system:String>
+    <system:String x:Key="PageNum_PosTopRight">上部右</system:String>
+    <system:String x:Key="PageNum_PosTopLeft">上部左</system:String>
+    <system:String x:Key="PageNum_Format">形式 (例: {n} ページ)</system:String>
+    <system:String x:Key="PageNum_Font">フォント</system:String>
+    <system:String x:Key="PageNum_Size">サイズ</system:String>
+    <system:String x:Key="PageNum_Color">カラー (Hex)</system:String>
+    <system:String x:Key="PageNum_Btn">番号を追加</system:String>
+    <system:String x:Key="PageNum_StepRange">1. ページ範囲</system:String>
+    <system:String x:Key="PageNum_StepPosition">2. 位置</system:String>
+    <system:String x:Key="PageNum_StepFont">3. フォントスタイル</system:String>
+    <system:String x:Key="PageNum_StepColor">4. カラー</system:String>
+    <system:String x:Key="PageNum_StartingValue">開始番号</system:String>
+    <system:String x:Key="PageNum_FormatType">数字形式</system:String>
+    <system:String x:Key="PageNum_PrefixLabel">番号の横のテキスト (例: ページ)</system:String>
+    <system:String x:Key="PageNum_PrefixPlaceholder">空欄でも可...</system:String>
+    <system:String x:Key="PageNum_MagicBtnTitle">魔法を開始</system:String>
+    <system:String x:Key="PageNum_MagicBtnSub">ドキュメントに番号を適用</system:String>
+    <system:String x:Key="PageNum_MoreColors">その他の色...</system:String>
+
+    <!-- Delete Pages Details -->
+    <system:String x:Key="DeletePages_Title">ページの削除</system:String>
+    <system:String x:Key="DeletePages_Desc">必要なページを永久に削除します。</system:String>
+    <system:String x:Key="DeletePages_Options">削除オプション</system:String>
+    <system:String x:Key="DeletePages_InputLabel">削除するページ</system:String>
+    <system:String x:Key="DeletePages_InputHint">例: 1, 3, 5-8 (カンマ or コロン使用可)</system:String>
+    <system:String x:Key="DeletePages_Btn">選択したページを削除</system:String>
+    <system:String x:Key="Delete_SuccessWithOpen">選択したページを削除しました。新しいファイルを開きますか？</system:String>
+
+    <!-- Preview Dialog -->
+    <system:String x:Key="Preview_WindowTitle">ナンバリングプレビュー</system:String>
+    <system:String x:Key="Preview_Title">プレビュー</system:String>
+    <system:String x:Key="Preview_Desc">ナンバリングはページ上でこのように表示されます：</system:String>
+    <system:String x:Key="Preview_Ask">このデザインでよろしいですか？</system:String>
+    <system:String x:Key="Preview_Yes">はい、作成します</system:String>
+    <system:String x:Key="Preview_No">いいえ、修正します</system:String>
+
+    <!-- OCR Tool Details -->
+    <system:String x:Key="Ocr_Title">OCR - テキスト認識</system:String>
+    <system:String x:Key="Ocr_Desc">画像 or スキャンしたPDFからテキストを抽出します。</system:String>
+    <system:String x:Key="Ocr_SelectFile">画像 or PDFを選択</system:String>
+    <system:String x:Key="Ocr_ScanLang">スキャン言語</system:String>
+    <system:String x:Key="Ocr_RunBtn">スキャンしてテキスト抽出</system:String>
+    <system:String x:Key="Ocr_ResultTitle">認識されたテキスト</system:String>
+    <system:String x:Key="Ocr_Placeholder">抽出されたテキストがここに表示されます...</system:String>
+    <system:String x:Key="Ocr_Scanning">テキストをスキャンしています。お待ちください...</system:String>
+
+    <!-- Crop Tool Details -->
+    <system:String x:Key="Crop_Title">PDFクロップ</system:String>
+    <system:String x:Key="Crop_Desc">PDFページを選択し、クロップしたい範囲をマークしてください。</system:String>
+    <system:String x:Key="Crop_Settings">クロップ設定</system:String>
+    <system:String x:Key="Crop_ApplyAll">全ページに適用</system:String>
+    <system:String x:Key="Crop_AreaInfo">プレビュー上でマウスをドラッグして範囲を選択してください。</system:String>
+    <system:String x:Key="Crop_Btn">クロップして保存</system:String>
+    <system:String x:Key="Crop_SuccessWithOpen">ファイルをクロップしました。開きますか？</system:String>
+
+    <!-- Buttons & Others -->
+    <system:String x:Key="Btn_Open">開く</system:String>
+    <system:String x:Key="Btn_Close">閉じる</system:String>
+
+    <!-- Settings About -->
+    <system:String x:Key="Sett_DefaultPath">デフォルトの出力フォルダ</system:String>
+    <system:String x:Key="Sett_DefaultPathDesc">ファイルが自動的に保存される場所を選択してください。空の場合、毎回確認されます。</system:String>
+    <system:String x:Key="Sett_CleanMode">クリーンアップモード</system:String>
+    <system:String x:Key="Sett_CleanModeDesc">アプリのログや一時ファイルをクリーンアップして空き容量を増やします。</system:String>
+    <system:String x:Key="Sett_BtnClean">ログと一時ファイルを削除</system:String>
+    <system:String x:Key="Sett_About">アプリについて</system:String>
+    <system:String x:Key="Sett_Version">バージョン: 1.0.0</system:String>
+    <system:String x:Key="Sett_Author">開発者: Docentra AI Team</system:String>
+    <system:String x:Key="Sett_Website">ウェブサイト: www.docentrapdf.com</system:String>
+
+    <!-- Premium Details -->
+    <system:String x:Key="Prem_Title">プレミアムアクティベーション</system:String>
+    <system:String x:Key="Prem_Subtitle">制限を解除し開発を支援するためにプレミアムにアップグレードしてください。</system:String>
+    <system:String x:Key="Prem_HwidLabel">デバイスID (HWID)</system:String>
+    <system:String x:Key="Prem_HwidDesc">このIDはお使いのコンピュータに固有のものであり、譲渡することはできません。</system:String>
+    <system:String x:Key="Prem_KeyLabel">ライセンスキーを入力</system:String>
+    <system:String x:Key="Prem_BtnActivate">プレミアムを有効化</system:String>
+    <system:String x:Key="Prem_Pricing_Title">プレミアムプラン</system:String>
+    <system:String x:Key="Prem_WhyGoPremium">なぜプレミアムにするのですか？</system:String>
+    <system:String x:Key="Prem_HowToActivate_Title">アクティベーション方法</system:String>
+    <system:String x:Key="Prem_HowToActivate_Sub">Etsyの購入およびセットアップガイドを表示します。</system:String>
+    <system:String x:Key="Prem_Feat1_Title">無制限の処理</system:String>
+    <system:String x:Key="Prem_Feat1_Desc">日ごとのファイル数やページ数の制限なく、すべてのPDFツールを自由に使用できます。</system:String>
+    <system:String x:Key="Prem_Feat2_Title">高度なOCR技術</system:String>
+    <system:String x:Key="Prem_Feat2_Desc">スキャンされたドキュメントや画像を、数秒で編集可能なテキスト形式に変換します。</system:String>
+    <system:String x:Key="Prem_Feat3_Title">ドキュメントのセキュリティと管理</system:String>
+    <system:String x:Key="Prem_Feat3_Desc">PDFの暗号化、ページの管理、およびすべてのプロフェッショナルツールへのフルアクセスが可能です。</system:String>
+    <system:String x:Key="Prem_Plan_Lifetime_Name">無期限プロフェッショナル</system:String>
+    <system:String x:Key="Prem_Plan_Lifetime_Desc">一回払いで、無制限の使用とすべての将来のアップデートが含まれています。</system:String>
+    <system:String x:Key="Prem_TrialBanner">Premium トライアル</system:String>
+    <system:String x:Key="Prem_DaysRemaining">残り {0} 日</system:String>
+    <system:String x:Key="Prem_RestartTitle">プレミアムが有効になりました</system:String>
+    <system:String x:Key="Prem_RestartMsg">プレミアムが正常に有効化されました！変更を適用するために、今すぐアプリケーションを再起動しますか？</system:String>
+</ResourceDictionary>

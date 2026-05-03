@@ -1,0 +1,61 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Docentra_Mac.Views.Pages.DashboardPage">
+    
+    <ScrollViewer>
+        <StackPanel Spacing="30" Margin="10">
+            <TextBlock Text="Quick Tools" FontSize="20" FontWeight="SemiBold" Opacity="0.8"/>
+            
+            <WrapPanel>
+                <!-- Merge Card -->
+                <Button Classes="ToolCard">
+                    <StackPanel Spacing="15">
+                        <PathIcon Data="{StaticResource MergeRegular}" Width="40" Height="40" Foreground="{DynamicResource PremiumAccentBrush}"/>
+                        <TextBlock Text="{DynamicResource Nav_Merge}" FontSize="16" FontWeight="Medium" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Combine multiple PDFs into one" FontSize="11" Opacity="0.5" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+
+                <!-- Split Card -->
+                <Button Classes="ToolCard">
+                    <StackPanel Spacing="15">
+                        <PathIcon Data="{StaticResource SplitRegular}" Width="40" Height="40" Foreground="{DynamicResource PremiumAccentBrush}"/>
+                        <TextBlock Text="{DynamicResource Nav_Split}" FontSize="16" FontWeight="Medium" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Extract pages or split by range" FontSize="11" Opacity="0.5" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </WrapPanel>
+        </StackPanel>
+    </ScrollViewer>
+
+    <UserControl.Styles>
+        <Style Selector="Button.ToolCard">
+            <Setter Property="Width" Value="220"/>
+            <Setter Property="Height" Value="180"/>
+            <Setter Property="Background" Value="#1E1E1E"/>
+            <Setter Property="BorderBrush" Value="#333"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="15"/>
+            <Setter Property="Margin" Value="0,0,20,20"/>
+            <Setter Property="Padding" Value="20"/>
+            <Setter Property="Transitions">
+                <Transitions>
+                    <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.2"/>
+                    <BrushTransition Property="Background" Duration="0:0:0.2"/>
+                </Transitions>
+            </Setter>
+        </Style>
+        <Style Selector="Button.ToolCard:pointerover">
+            <Setter Property="Background" Value="#252525"/>
+            <Setter Property="RenderTransform" Value="scale(1.02)"/>
+        </Style>
+    </UserControl.Styles>
+
+    <UserControl.Resources>
+        <StreamGeometry x:Key="MergeRegular">M4 4C2.89543 4 2 4.89543 2 6V18C2 19.1046 2.89543 20 4 20H8V18H4V6H8V4H4ZM16 4C17.1046 4 18 4.89543 18 6V18C18 19.1046 17.1046 20 16 20H12V18H16V6H12V4H16ZM10 7V17L14 12L10 7Z</StreamGeometry>
+        <StreamGeometry x:Key="SplitRegular">M3 5C3 3.89543 3.89543 3 5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5ZM5 5V19H11V5H5ZM13 19H19V5H13V19Z</StreamGeometry>
+    </UserControl.Resources>
+</UserControl>

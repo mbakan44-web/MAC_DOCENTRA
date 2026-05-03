@@ -1,0 +1,28 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+             x:Class="Docentra_Mac.Views.Pages.SplitPage">
+
+    <Grid RowDefinitions="Auto, Auto, Auto, Auto, *" Margin="20" MaxWidth="600" HorizontalAlignment="Left">
+        <TextBlock Grid.Row="0" Text="{DynamicResource Split_Title}" FontSize="20" FontWeight="SemiBold" Margin="0,0,0,30"/>
+
+        <!-- Select File -->
+        <StackPanel Grid.Row="1" Spacing="10" Margin="0,0,0,20">
+            <Button Content="{DynamicResource Split_SelectFile}" Click="SelectFile_Click" HorizontalAlignment="Stretch" Padding="0,15"/>
+            <TextBlock x:Name="SelectedFilePath" Text="No file selected" FontSize="12" Opacity="0.6"/>
+        </StackPanel>
+
+        <!-- Range Input -->
+        <StackPanel Grid.Row="2" Spacing="10" Margin="0,0,0,30">
+            <TextBlock Text="{DynamicResource Split_RangeLabel}" Opacity="0.8"/>
+            <TextBox x:Name="RangeInput" Watermark="e.g. 1, 3-5" Height="40" VerticalContentAlignment="Center"/>
+        </StackPanel>
+
+        <!-- Action -->
+        <Button Grid.Row="3" Content="{DynamicResource Split_Start}" Click="Split_Click" 
+                Background="{DynamicResource PremiumAccentBrush}" Foreground="Black" FontWeight="Bold" 
+                HorizontalAlignment="Stretch" Padding="0,15"/>
+    </Grid>
+</UserControl>

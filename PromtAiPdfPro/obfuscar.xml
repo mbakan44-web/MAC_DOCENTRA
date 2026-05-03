@@ -1,0 +1,24 @@
+<?xml version='1.0'?>
+<Obfuscator>
+  <AssemblySearchPath path="C:/Users/mustafa.bakan/Desktop/APP/All-in-One PDF Suite/dotnet_sdk/shared/Microsoft.WindowsDesktop.App/8.0.16" />
+  <AssemblySearchPath path="C:/Users/mustafa.bakan/Desktop/APP/All-in-One PDF Suite/dotnet_sdk/shared/Microsoft.NETCore.App/8.0.16" />
+  <Var name="InPath" value="./bin/Release/net8.0-windows10.0.17763.0/win-x64/publish" />
+  <Var name="OutPath" value="../Obfuscated" />
+  <Var name="KeepPublicApi" value="false" />
+  <Var name="HidePrivateApi" value="true" />
+  <Var name="RenameProperties" value="true" />
+  <Var name="RenameEvents" value="true" />
+  <Var name="RenameFields" value="true" />
+  <Var name="UseUnicodeNames" value="true" />
+  <Var name="HideStrings" value="true" />
+  <Var name="Optimize" value="true" />
+  <Var name="SuppressIldasm" value="true" />
+
+  <Module file="$(InPath)/PromtAiPdfPro.dll">
+    <!-- WPF Giriş noktalarını koru, aksi halde XAML hatası verir -->
+    <SkipType name="PromtAiPdfPro.App" />
+    <SkipType name="PromtAiPdfPro.MainView" />
+    <SkipNamespace name="PromtAiPdfPro.ViewModels" />
+    <SkipNamespace name="PromtAiPdfPro.Views" />
+  </Module>
+</Obfuscator>

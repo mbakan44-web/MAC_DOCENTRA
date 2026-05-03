@@ -1,0 +1,29 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Design.PreviewWith>
+        <Border Padding="20">
+            <!-- Add Controls for Previewer Here -->
+        </Border>
+    </Design.PreviewWith>
+
+    <x:String x:Key="AppTitle">DOCENTRA PDF &amp; DOCUMENT EDITOR</x:String>
+    <x:String x:Key="Nav_Dashboard">Dashboard</x:String>
+    <x:String x:Key="Nav_Merge">Merge PDF</x:String>
+    <x:String x:Key="Nav_Split">Split PDF</x:String>
+    <x:String x:Key="Nav_Settings">Settings</x:String>
+    <x:String x:Key="Prem_Title">Premium</x:String>
+    <x:String x:Key="Prem_TrialBanner">TRIAL MODE</x:String>
+    <x:String x:Key="Prem_DaysRemaining">7 days remaining</x:String>
+
+    <x:String x:Key="Merge_Title">Merge PDF Files</x:String>
+    <x:String x:Key="Merge_AddFiles">Add Files</x:String>
+    <x:String x:Key="Merge_Clear">Clear List</x:String>
+    <x:String x:Key="Merge_Start">Start Merging</x:String>
+    <x:String x:Key="Merge_Success">Files merged successfully!</x:String>
+
+    <x:String x:Key="Split_Title">Split PDF File</x:String>
+    <x:String x:Key="Split_SelectFile">Select File</x:String>
+    <x:String x:Key="Split_RangeLabel">Page Range (e.g. 1, 3-5, 8):</x:String>
+    <x:String x:Key="Split_Start">Start Splitting</x:String>
+    <x:String x:Key="Split_Success">File split successfully!</x:String>
+</ResourceDictionary>

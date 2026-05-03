@@ -1,0 +1,14 @@
+# DOCENTRA PDF & DOCUMENT EDITOR
+# CONTRAT DE LICENCE UTILISATEUR FINAL (EULA) - [FRENCH]
+
+Ce Contrat de Licence Utilisateur Final régit l'utilisation du logiciel Docentra. En installant ce logiciel, vous acceptez les conditions suivantes :
+
+1. TRAITEMENT LOCAL : Vos documents sont traités exclusivement sur votre appareil.
+2. LICENCE : Licence limitée, non transférable et liée à votre matériel (HWID).
+3. PROPRIÉTÉ : Tous les droits appartiennent à Docentra.
+
+Pour consulter l'intégralité des conditions en anglais ou en turc, veuillez vous référer aux sections ci-dessous ou visiter notre site web.
+
+---
+[ENGLISH VERSION BELOW]
+...

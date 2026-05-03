@@ -1,0 +1,65 @@
+name: Docentra Build Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch: # Manuel tetikleme için
+
+jobs:
+  build-macos:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+
+    - name: Restore dependencies
+      run: dotnet restore Docentra_Mac/Docentra_Mac.csproj
+
+    - name: Build macOS App
+      run: |
+        dotnet publish Docentra_Mac/Docentra_Mac.csproj \
+          -c Release \
+          -r osx-x64 \
+          --self-contained true \
+          -p:PublishSingleFile=true \
+          -o ./publish/macos
+          
+    - name: Upload macOS Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: Docentra-macOS-x64
+        path: ./publish/macos
+
+  build-windows:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+
+    - name: Restore dependencies
+      run: dotnet restore PromtAiPdfPro/PromtAiPdfPro.csproj
+
+    - name: Build Windows Exe
+      run: |
+        dotnet publish PromtAiPdfPro/PromtAiPdfPro.csproj \
+          -c Release \
+          -r win-x64 \
+          --self-contained true \
+          -p:PublishSingleFile=true \
+          -o ./publish/windows
+          
+    - name: Upload Windows Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: Docentra-Windows-x64
+        path: ./publish/windows

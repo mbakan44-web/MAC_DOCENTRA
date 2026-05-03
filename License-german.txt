@@ -1,0 +1,12 @@
+# DOCENTRA PDF & DOCUMENT EDITOR
+# ENDBENUTZER-LIZENZVEREINBARUNG (EULA) - [GERMAN]
+
+Diese Endbenutzer-Lizenzvereinbarung regelt die Nutzung der Docentra-Software. Durch die Installation akzeptieren Sie:
+
+1. LOKALE VERARBEITUNG: Ihre Daten bleiben auf Ihrem Gerät.
+2. LIZENZ: Nicht übertragbar, an HWID gebunden.
+3. RECHTE: Alle Rechte liegen bei Docentra.
+
+---
+[ENGLISH VERSION BELOW]
+...

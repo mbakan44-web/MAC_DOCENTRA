@@ -1,0 +1,92 @@
+<Page x:Class="PromtAiPdfPro.Views.ConvertPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      Title="{DynamicResource Nav_Convert}"
+      >
+
+    <Grid Margin="48,32">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Grid Grid.Row="0" Margin="0,0,0,32">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Click="BtnBack_Click" Margin="0,0,16,0" Padding="8" VerticalAlignment="Center" Background="Transparent" BorderThickness="0">
+                <ui:SymbolIcon Symbol="ArrowLeft24"/>
+            </Button>
+            <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                <TextBlock Text="{DynamicResource Conv_Title}" Style="{StaticResource PremiumHeaderTitle}"/>
+                <TextBlock Text="{DynamicResource Conv_Desc}" FontSize="16" Opacity="0.7" Margin="0,0,0,16"/>
+            </StackPanel>
+            
+            <ui:Button Grid.Column="2" Click="BtnCleanOffice_Click" Appearance="Danger" VerticalAlignment="Top" Padding="16,8" CornerRadius="8">
+                <StackPanel Orientation="Horizontal">
+                    <ui:SymbolIcon Symbol="Broom24" Margin="0,0,8,0"/>
+                    <TextBlock Text="{DynamicResource Conv_BtnClean}" FontWeight="SemiBold"/>
+                </StackPanel>
+            </ui:Button>
+        </Grid>
+
+        <!-- Grid of Conversion Tools -->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <WrapPanel HorizontalAlignment="Center">
+                <!-- 1. Image to PDF -->
+                <ui:CardAction Margin="0,0,24,24" Width="340" Height="260" Click="BtnImgBrowse_Click" Style="{StaticResource PremiumCardStyle}">
+                    <StackPanel VerticalAlignment="Center">
+                        <ui:SymbolIcon Symbol="Image24" FontSize="56" Foreground="#107C10" Margin="0,0,0,20" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{DynamicResource Dash_ImgTitle}" FontSize="20" FontWeight="Bold" Foreground="{DynamicResource TextFillColorPrimaryBrush}" HorizontalAlignment="Center" Margin="0,0,0,8"/>
+                        <TextBlock Text="{DynamicResource Dash_ImgSub}" FontSize="14" Opacity="0.7" HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap"/>
+                        <TextBlock x:Name="TxtImgSource" Text="" FontSize="12" Margin="0,12,0,0" Foreground="{DynamicResource PremiumAccentBrush}" TextAlignment="Center"/>
+                    </StackPanel>
+                </ui:CardAction>
+
+                <!-- 2. PDF to Image -->
+                <ui:CardAction Margin="0,0,24,24" Width="340" Height="260" Click="BtnPdfToImgBrowse_Click" Style="{StaticResource PremiumCardStyle}">
+                    <StackPanel VerticalAlignment="Center">
+                        <ui:SymbolIcon Symbol="PictureInPicture24" FontSize="56" Foreground="#D83B01" Margin="0,0,0,20" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{DynamicResource Conv_PdfToImg}" FontSize="20" FontWeight="Bold" Foreground="{DynamicResource TextFillColorPrimaryBrush}" HorizontalAlignment="Center" Margin="0,0,0,8"/>
+                        <TextBlock Text="{DynamicResource Conv_PdfToImgDesc}" FontSize="14" Opacity="0.7" HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap"/>
+                        <TextBlock x:Name="TxtPdfToImgSource" Text="" FontSize="12" Margin="0,12,0,0" Foreground="{DynamicResource PremiumAccentBrush}" TextAlignment="Center"/>
+                    </StackPanel>
+                </ui:CardAction>
+
+                <!-- 3. Office to PDF -->
+                <ui:CardAction Margin="0,0,24,24" Width="340" Height="260" Click="BtnOfficeBrowse_Click" Style="{StaticResource PremiumCardStyle}">
+                    <StackPanel VerticalAlignment="Center">
+                        <ui:SymbolIcon Symbol="ArrowSwap24" FontSize="56" Foreground="#FF8C00" Margin="0,0,0,20" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{DynamicResource Dash_OfficeTitle}" FontSize="20" FontWeight="Bold" Foreground="{DynamicResource TextFillColorPrimaryBrush}" HorizontalAlignment="Center" Margin="0,0,0,8"/>
+                        <TextBlock Text="{DynamicResource Dash_OfficeSub}" FontSize="14" Opacity="0.7" HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap"/>
+                        <TextBlock x:Name="TxtOfficeSource" Text="" FontSize="12" Margin="0,12,0,0" Foreground="{DynamicResource PremiumAccentBrush}" TextAlignment="Center"/>
+                    </StackPanel>
+                </ui:CardAction>
+
+                <!-- 4. PDF to Word -->
+                <ui:CardAction Margin="0,0,24,24" Width="340" Height="260" Click="BtnPdfBrowse_Click" Style="{StaticResource PremiumCardStyle}">
+                    <StackPanel VerticalAlignment="Center">
+                        <ui:SymbolIcon Symbol="Document24" FontSize="56" Foreground="#2B579A" Margin="0,0,0,20" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{DynamicResource Dash_WordTitle}" FontSize="20" FontWeight="Bold" Foreground="{DynamicResource TextFillColorPrimaryBrush}" HorizontalAlignment="Center" Margin="0,0,0,8"/>
+                        <TextBlock Text="{DynamicResource Dash_WordSub}" FontSize="14" Opacity="0.7" HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap"/>
+                        <TextBlock x:Name="TxtPdfSource" Text="" FontSize="12" Margin="0,12,0,0" Foreground="{DynamicResource PremiumAccentBrush}" TextAlignment="Center"/>
+                    </StackPanel>
+                </ui:CardAction>
+
+                <!-- Legacy placeholders for hidden triggers -->
+                <ui:Button Visibility="Collapsed" x:Name="BtnImgConvertAction"/>
+                <ui:Button Visibility="Collapsed" x:Name="BtnPdfToImgConvertAction"/>
+                <ui:Button Visibility="Collapsed" x:Name="BtnOfficeToPdf"/>
+                <ui:Button Visibility="Collapsed" x:Name="BtnPdfToWord"/>
+                <ui:Button Visibility="Collapsed" x:Name="BtnUniversalConvert"/>
+            </WrapPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
+
+
+

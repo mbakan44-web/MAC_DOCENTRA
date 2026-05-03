@@ -1,0 +1,401 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <!-- General -->
+    <system:String x:Key="AppTitle">DOCENTRA PDF &amp; محرر المستندات</system:String>
+    <system:String x:Key="Nav_Dashboard">مركز التحكم</system:String>
+    <system:String x:Key="Nav_Merge">دمج PDF</system:String>
+    <system:String x:Key="Nav_Split">تقسيم PDF</system:String>
+    <system:String x:Key="Nav_Convert">تحويل</system:String>
+    <system:String x:Key="Nav_OfficeConvert">محول أوفيس</system:String>
+    <system:String x:Key="Nav_PasswordSecurity">كلمات المرور والأمان</system:String>
+    <system:String x:Key="Nav_Watermark">العلامة المائية والشعار</system:String>
+    <system:String x:Key="Nav_Ocr">OCR - التعرف على النصوص</system:String>
+    <system:String x:Key="Nav_Crop">قص PDF</system:String>
+    <system:String x:Key="Nav_AddPageNumbers">إضافة أرقام الصفحات</system:String>
+    <system:String x:Key="Nav_DeletePages">حذف الصفحات</system:String>
+    <system:String x:Key="Nav_Sign">توقيع PDF</system:String>
+    <system:String x:Key="Nav_Settings">الإعدادات</system:String>
+
+    <!-- Premium & License -->
+    <system:String x:Key="Prem_LockReason_Discount">انتهت الفترة التجريبية لمدة 7 أيام. بعض الصفحات حصرية للمشتركين المميزين.</system:String>
+    <system:String x:Key="Prem_LockReason_Restricted">انتهت الفترة التجريبية لمدة 14 يومًا. بعض الصفحات مغلقة وتم تفعيل حد 5 صفحات.</system:String>
+    <system:String x:Key="Prem_Status_Full">جميع الميزات مفتوحة (فترة تجريبية)</system:String>
+    <system:String x:Key="Prem_Status_Discount">وصول محدود (فرصة خصم 40%)</system:String>
+    <system:String x:Key="Prem_Status_Restricted">نسخة مجانية محدودة</system:String>
+    <system:String x:Key="Prem_PurchaseRequired_Msg">يرجى شراء ترخيص لاستخدام هذه الشاشة.</system:String>
+    <system:String x:Key="Prem_PurchaseRequired_Title">ميزة بريميوم</system:String>
+    <system:String x:Key="Prem_LimitedMode">وضع محدود</system:String>
+    <system:String x:Key="Prem_RestrictedMode">وضع مقيد</system:String>
+    <system:String x:Key="Prem_SomePagesLocked">بعض الصفحات مقفلة</system:String>
+    <system:String x:Key="Prem_PageLimitActive">حد 5 صفحات مفعل</system:String>
+    <system:String x:Key="Prem_GoToPremium">الترقية إلى بريميوم</system:String>
+    <system:String x:Key="Prem_Close">إغلاق</system:String>
+
+    <!-- Sign -->
+    <system:String x:Key="Sign_Title">توقيع PDF</system:String>
+    <system:String x:Key="Sign_SelectPdf">اختر ملف PDF</system:String>
+    <system:String x:Key="Sign_Method">طريقة التوقيع</system:String>
+    <system:String x:Key="Sign_Draw">يدوي (رسم)</system:String>
+    <system:String x:Key="Sign_Upload">رفع صورة</system:String>
+    <system:String x:Key="Sign_Clear">مسح</system:String>
+    <system:String x:Key="Sign_Position">الموقع</system:String>
+    <system:String x:Key="Sign_Size">الحجم</system:String>
+    <system:String x:Key="Sign_Opacity">الشفافية</system:String>
+    <system:String x:Key="Sign_ApplyTo">تطبيق على</system:String>
+    <system:String x:Key="Sign_AllPages">جميع الصفحات</system:String>
+    <system:String x:Key="Sign_CurrentPage">هذه الصفحة فقط</system:String>
+    <system:String x:Key="Sign_CustomPages">صفحات مخصصة</system:String>
+    <system:String x:Key="Sign_Process">توقيع وحفظ</system:String>
+    <system:String x:Key="Sign_NoFile">يرجى اختيار ملف PDF أولاً.</system:String>
+    <system:String x:Key="Sign_NoSignature">يرجى إنشاء أو رفع توقيع.</system:String>
+    <system:String x:Key="Sign_Success">تم توقيع الملف بنجاح.</system:String>
+    <system:String x:Key="Sign_SuccessWithOpen">تم توقيع الملف بنجاح. هل تريد فتحه؟</system:String>
+
+    <!-- Dashboard -->
+    <system:String x:Key="Dash_Welcome">مرحباً بك!</system:String>
+    <system:String x:Key="Dash_Desc">متجرك الشامل لجميع احتياجات PDF الخاصة بك.</system:String>
+    <system:String x:Key="Dash_MergeTitle">دمج</system:String>
+    <system:String x:Key="Dash_MergeSub">اجمع عدة ملفات PDF في ملف واحد.</system:String>
+    <system:String x:Key="Dash_SplitTitle">تقسيم</system:String>
+    <system:String x:Key="Dash_SplitSub">احفظ الصفحات كملفات PDF منفصلة.</system:String>
+    <system:String x:Key="Dash_WordTitle">إلى وورد</system:String>
+    <system:String x:Key="Dash_WordSub">تصدير ملفات PDF إلى تنسيق وورد.</system:String>
+    <system:String x:Key="Dash_ImgTitle">صورة إلى PDF</system:String>
+    <system:String x:Key="Dash_ImgSub">حول صورك إلى تنسيق PDF.</system:String>
+    <system:String x:Key="Dash_OfficeTitle">أوفيس إلى PDF</system:String>
+    <system:String x:Key="Dash_OfficeSub">حول ملفات وورد وإكسل وباوربوينت إلى PDF.</system:String>
+    <system:String x:Key="Dash_ProtectTitle">تشفير</system:String>
+    <system:String x:Key="Dash_ProtectSub">احمِ ملفات PDF الخاصة بك بالتشفير.</system:String>
+    <system:String x:Key="Dash_UnlockTitle">إزالة كلمة المرور</system:String>
+    <system:String x:Key="Dash_UnlockSub">إزالة كلمات المرور الحالية من ملفات PDF.</system:String>
+    <system:String x:Key="Dash_TextWatermarkTitle">علامة مائية نصية</system:String>
+    <system:String x:Key="Dash_TextWatermarkSub">أضف علامة مائية نصية تفاعلية.</system:String>
+    <system:String x:Key="Dash_LogoWatermarkTitle">إضافة شعار</system:String>
+    <system:String x:Key="Dash_LogoWatermarkSub">ضع شعاراً شفافاً في ملفاتك.</system:String>
+    <system:String x:Key="Dash_DragDrop">اسحب الملفات هنا</system:String>
+    <system:String x:Key="Dash_DragDropSub">أفلت ملفات PDF لبدء العملية.</system:String>
+    <system:String x:Key="Dash_OcrSub">استخراج النص من الصور وملفات PDF الممسوحة ضوئياً.</system:String>
+    <system:String x:Key="Dash_PageNumTitle">أرقام الصفحات</system:String>
+    <system:String x:Key="Dash_PageNumSub">أضف ترقيماً تلقائياً لصفحات PDF.</system:String>
+    <system:String x:Key="Dash_DeletePagesTitle">حذف الصفحات</system:String>
+    <system:String x:Key="Dash_DeletePagesSub">قم بإزالة الصفحات غير المرغوب فيها من PDF بشكل دائم.</system:String>
+    <system:String x:Key="Dash_SignTitle">توقيع PDF</system:String>
+    <system:String x:Key="Dash_SignSub">أضف توقيعات يدوية أو صوراً إلى مستندات PDF.</system:String>
+    <system:String x:Key="Dash_CropTitle">قص PDF</system:String>
+    <system:String x:Key="Dash_CropSub">قص صفحات PDF إلى أي حجم تريده.</system:String>
+
+    <!-- Merge Tool -->
+    <system:String x:Key="Merge_Title">دمج PDF</system:String>
+    <system:String x:Key="Merge_Desc">أضف ملفات PDF الخاصة بك وادمجهما بالترتيب الذي تفضله.</system:String>
+    <system:String x:Key="Merge_AddFile">إضافة ملف</system:String>
+    <system:String x:Key="Merge_ClearList">مسح القائمة</system:String>
+    <system:String x:Key="Merge_MergeBtn">دمج وحفظ</system:String>
+    <system:String x:Key="Merge_EmptyStateDesc">اسحب ملفات PDF هنا or انقر فوق زر "إضافة ملف"</system:String>
+    <system:String x:Key="Merge_DefaultFileName">merged_ar.pdf</system:String>
+    <system:String x:Key="Merge_SuccessWithOpen">تم دمج الملفات بنجاح. هل تريد فتحها؟</system:String>
+    
+    <!-- Split Tool -->
+    <system:String x:Key="Split_Title">تقسيم PDF</system:String>
+    <system:String x:Key="Split_Desc">اختر ملف PDF الذي تريد تقسيمه.</system:String>
+    <system:String x:Key="Split_Browse">اختر ملفاً</system:String>
+    <system:String x:Key="Split_Options">خيارات التقسيم</system:String>
+    <system:String x:Key="Split_OptSeparate">تحويل كل الصفحات إلى ملفات PDF منفصلة</system:String>
+    <system:String x:Key="Split_OptDesc">يصدر كل صفحة من ملف PDF المختار كملف PDF منفصل.</system:String>
+    <system:String x:Key="Split_SplitBtn">تقسيم إلى أجزاء</system:String>
+    <system:String x:Key="Split_SuccessWithOpen">تم تقسيم PDF بنجاح. هل تريد فتح المجلد؟</system:String>
+    <system:String x:Key="Split_OptRange">تقسيم صفحات/نطاقات محددة</system:String>
+    <system:String x:Key="Split_RangeHint">يمكنك استخدام الفواصل (1,3,5) or النطاقات (5:8).</system:String>
+
+    <!-- Convert Tool -->
+    <system:String x:Key="Conv_Title">أدوات التحويل</system:String>
+    <system:String x:Key="Conv_Desc">أدر عمليات تحويل PDF الخاصة بك من هنا.</system:String>
+    <system:String x:Key="Conv_ImgToPdf">صورة إلى PDF</system:String>
+    <system:String x:Key="Conv_ImgToPdfDesc">حول ملفات JPG or PNG إلى PDF.</system:String>
+    <system:String x:Key="Conv_OfficeToPdf">أوفيس إلى PDF</system:String>
+    <system:String x:Key="Conv_OfficeToPdfDesc">حول ملفات وورد (.docx) or إكسل (.xlsx) or باوربوينت (.pptx) إلى PDF.</system:String>
+    <system:String x:Key="Conv_PdfToWord">PDF إلى وورد</system:String>
+    <system:String x:Key="Conv_PdfToWordDesc">حول ملفات PDF إلى تنسيق وورد (.docx) قابل للتعديل.</system:String>
+    <system:String x:Key="Conv_PdfToImg">PDF إلى صورة</system:String>
+    <system:String x:Key="Conv_PdfToImgDesc">يقسم صفحات PDF إلى ملفات صور (PNG) عالية الدقة.</system:String>
+    <system:String x:Key="Conv_Converting">جاري التحويل...</system:String>
+    <system:String x:Key="Conv_Success">اكتمل التحويل بنجاح!</system:String>
+    <system:String x:Key="Conv_SuccessWithOpen">اكتمل التحويل بنجاح. هل تريد فتح الملف/المجلد؟</system:String>
+    <system:String x:Key="Conv_Error">حدث خطأ أثناء التحويل. تأكد من تثبيت الأوفيس.</system:String>
+    <system:String x:Key="Conv_NoOffice">لم يتم العثور على مايكروسوفت أوفيس. يرجى التأكد من تثبيته.</system:String>
+    <system:String x:Key="Conv_NoWord">لم يتم العثور على مايكروسوفت وورد. يرجى التأكد من تثبيته.</system:String>
+    <system:String x:Key="Conv_NoExcel">لم يتم العثور على مايكروسوفت إكسل. يرجى التأكد من تثبيته.</system:String>
+    <system:String x:Key="Conv_NoPowerPoint">لم يتم العثور على مايكروسوفت باوربوينت. يرجى التأكد من تثبيته.</system:String>
+    <system:String x:Key="Conv_OfficeError">خطأ في تحويل مستند الأوفيس. التفاصيل في السجل.</system:String>
+    <system:String x:Key="Conv_OfficeBusy">قد يكون الأوفيس مشغولاً or مقفلاً. يرجى إغلاق جميع نوافذ الأوفيس والمحاولة مرة أخرى.</system:String>
+    <system:String x:Key="Conv_CleanOffice">تنظيف عمليات الأوفيس</system:String>
+    <system:String x:Key="Conv_CleanConfirm">سيتم إغلاق جميع نوافذ وورد وإكسل وباوربوينت المفتوحة. قد تضيع البيانات غير المحفوظة. هل تريد الاستمرار؟</system:String>
+    <system:String x:Key="Conv_BtnClean">تنظيف الأوفيس</system:String>
+    <system:String x:Key="Conv_SelectImgTitle">اختر الصور لتحويلها إلى PDF</system:String>
+    <system:String x:Key="Conv_SelectPdfToImgTitle">اختر ملف PDF لتحويله إلى صور</system:String>
+    <system:String x:Key="Conv_SelectFolderTitle">اختر المجلد لحفظ الصور</system:String>
+    <system:String x:Key="Conv_SelectOfficeTitle">اختر ملف الأوفيس لتحويله إلى PDF</system:String>
+    <system:String x:Key="Conv_SelectPdfToWordTitle">اختر ملف PDF لتحويله إلى وورد</system:String>
+
+    <!-- Office Convert -->
+    <system:String x:Key="Sec_Title_OfficeConvert">محول أوفيس</system:String>
+    <system:String x:Key="Sec_Desc_OfficeConvert">حول ملفات وورد إلى إكسل، or ملفات إكسل إلى وورد.</system:String>
+    <system:String x:Key="Office_RequirementTitle">متطلبات مايكروسوفت أوفيس</system:String>
+    <system:String x:Key="Office_RequirementDesc">يجب تثبيت Microsoft Office على جهاز الكمبيوتر الخاص بك لتعمل بعض عمليات التحويل والتحرير (Word، Excel، PowerPoint).</system:String>
+    <system:String x:Key="Office_WordToExcel">وورد إلى إكسل</system:String>
+    <system:String x:Key="Office_ExcelToWord">إكسل إلى وورد</system:String>
+    <system:String x:Key="Office_WordToExcelDesc">ينقل فقرات المستند إلى إكسل سطراً بسطر.</system:String>
+    <system:String x:Key="Office_ExcelToWordDesc">ينقل خلايا إكسل إلى وورد كنص عادي.</system:String>
+    <system:String x:Key="Office_PptToWord">باوربوينت إلى وورد</system:String>
+    <system:String x:Key="Office_PptToExcel">باوربوينت إلى إكسل</system:String>
+    <system:String x:Key="Office_PptToWordDesc">ينقل كل نص العرض التقديمي من الشرائح إلى وورد.</system:String>
+    <system:String x:Key="Office_PptToExcelDesc">ينقل كل نص الشرائح إلى إكسل سطراً بسطر.</system:String>
+    <system:String x:Key="Office_SelectWordTitle">اختر ملف وورد للتحويل</system:String>
+    <system:String x:Key="Office_SaveExcelTitle">حفظ ملف إكسل</system:String>
+    <system:String x:Key="Office_SelectExcelTitle">اختر ملف إكسل للتحويل</system:String>
+    <system:String x:Key="Office_SaveWordTitle">حفظ ملف وورد</system:String>
+    <system:String x:Key="Office_SelectPptTitle">اختر ملف باوربوينت للتحويل</system:String>
+
+    <!-- Settings -->
+    <system:String x:Key="Sett_Title">الإعدادات</system:String>
+    <system:String x:Key="Sett_Language">إعدادات اللغة (Language)</system:String>
+    <system:String x:Key="Sett_LanguageDesc">اختر لغة التطبيق.</system:String>
+    <system:String x:Key="Sett_LanguageAuto">لغة النظام (تلقائي)</system:String>
+    <system:String x:Key="Sett_Theme">السمة</system:String>
+    <system:String x:Key="Sett_ThemeDesc">تغيير نظام الألوان (فاتح or داكن) هنا.</system:String>
+    <system:String x:Key="Sett_AccentColor">لون التمييز</system:String>
+    <system:String x:Key="Sett_AccentColorDesc">خصص لون التمييز الأساسي (الأزرار، الحدود) هنا.</system:String>
+
+    <!-- Common -->
+    <system:String x:Key="Common_PathPlaceholder">لم يتم اختيار ملف...</system:String>
+    <system:String x:Key="Common_Save">حفظ</system:String>
+    <system:String x:Key="Common_Cancel">إلغاء</system:String>
+    <system:String x:Key="Common_Apply">تطبيق</system:String>
+    <system:String x:Key="Common_Back">رجوع</system:String>
+    <system:String x:Key="Common_PdfFilter">ملفات PDF (*.pdf)|*.pdf</system:String>
+    <system:String x:Key="Common_ImageFilter">ملفات الصور (*.jpg;*.jpeg;*.png)|*.jpg;*.jpeg;*.png</system:String>
+    <system:String x:Key="Common_OfficeFilter">مستندات أوفيس (*.docx;*.doc;*.xlsx;*.xls;*.pptx;*.ppt)|*.docx;*.doc;*.xlsx;*.xls;*.pptx;*.ppt</system:String>
+    <system:String x:Key="Common_WordFilter">مستند وورد (*.docx)|*.docx</system:String>
+    <system:String x:Key="Common_ExcelFilter">مستند إكسل (*.xlsx)|*.xlsx</system:String>
+    <system:String x:Key="Common_TxtFilter">ملف نصي (*.txt)|*.txt</system:String>
+    <system:String x:Key="Common_SavePdfTitle">حفظ كـ PDF</system:String>
+    <system:String x:Key="Common_SaveWordTitle">حفظ كـ وورد</system:String>
+    <system:String x:Key="Common_Copy">نسخ</system:String>
+    <system:String x:Key="Common_Select">اختر...</system:String>
+    <system:String x:Key="Common_Page">صفحة</system:String>
+
+    <!-- Messages -->
+    <system:String x:Key="Msg_SelectAtLeastTwo">يرجى اختيار ملفي PDF على الأقل!</system:String>
+    <system:String x:Key="Msg_MergeSuccess">تم دمج الملفات بنجاح!</system:String>
+    <system:String x:Key="Msg_SettingsSaved">تم حفظ الإعدادات وتطبيقها بنجاح.</system:String>
+    <system:String x:Key="Msg_OcrSuccess">تم استخراج النص بنجاح.</system:String>
+    <system:String x:Key="Ocr_SuccessWithOpen">تم حفظ النص بنجاح. هل تريد فتح الملف؟</system:String>
+    <system:String x:Key="Msg_Copied">تم النسخ</system:String>
+    <system:String x:Key="Msg_Warning">تحذير</system:String>
+    <system:String x:Key="Msg_Confirm">تأكيد</system:String>
+    <system:String x:Key="Msg_SelectFile">يرجى اختيار ملف.</system:String>
+    <system:String x:Key="Msg_AskOpenFile">تم إنشاء الملف بنجاح. هل تريد فتحه؟</system:String>
+    <system:String x:Key="Msg_AskOpenFolder">تم تقسيم ملفات PDF بنجاح. هل تريد فتح المجلد؟</system:String>
+    <system:String x:Key="Msg_AskOpenFolderPart">هل تريد فتح المجلد؟</system:String>
+    <system:String x:Key="Msg_SplitError">حدث خطأ أثناء التقسيم.</system:String>
+    <system:String x:Key="Msg_SelectPdfFirst">يرجى اختيار ملف PDF أولاً.</system:String>
+    <system:String x:Key="Msg_SplitSuccess">تم تقسيم PDF بنجاح!</system:String>
+    <system:String x:Key="Msg_SelectImageFirst">يرجى اختيار صورة للتحويل.</system:String>
+    <system:String x:Key="Msg_ConvertSuccess">تم تحويل الصورة إلى PDF بنجاح!</system:String>
+    <system:String x:Key="Msg_CleanSuccess">تم تنظيف عمليات الأوفيس بنجاح.</system:String>
+    <system:String x:Key="Msg_FileEncryptedSuccess">تم تشفير الملف بنجاح. هل تريد فتحه؟</system:String>
+    <system:String x:Key="Msg_EncryptionError">خطأ في التشفير!</system:String>
+    <system:String x:Key="Msg_ProcessSuccess">اكتملت العملية بنجاح!</system:String>
+    <system:String x:Key="Msg_ProcessError">حدث خطأ أثناء العملية.</system:String>
+    <system:String x:Key="Msg_SystemCleanSuccess">اكتملت عملية التنظيف بنجاح!</system:String>
+    <system:String x:Key="Msg_Success">نجاح</system:String>
+    <system:String x:Key="Msg_Error">خطأ</system:String>
+    <system:String x:Key="Update_AvailableTitle">تحديث متاح</system:String>
+    <system:String x:Key="Msg_UpdateAvailable">يتوفر إصدار جديد ({0}). يرجى التحديث لاستخدام أحدث الميزات.</system:String>
+    <system:String x:Key="Msg_UpdatePremiumFree">بصفتك عضواً في Premium، فإن جميع التحديثات مجانية تماماً لك.</system:String>
+    <system:String x:Key="Btn_DownloadNow">تنزيل الآن</system:String>
+    <system:String x:Key="Prem_Licensed">مرخص: إصدار Premium</system:String>
+    <system:String x:Key="Prem_ThankYou">شكراً لاختياركم وشراء منتجنا!</system:String>
+    <system:String x:Key="Prem_ActivatedSuccess">تم تفعيل Premium بنجاح!</system:String>
+
+    <!-- Watermark Prefix -->
+    <system:String x:Key="Watermark_TextPrefix">بعلامة_</system:String>
+    <system:String x:Key="Watermark_LogoPrefix">بشعار_</system:String>
+    <system:String x:Key="Watermark_SuccessWithOpen">تم إضافة العلامة المائية بنجاح. هل تريد فتح الملف؟</system:String>
+
+    <!-- Belge Koruma ve Filigran Detay -->
+    <system:String x:Key="Sec_Title_Password">تعيين وإزالة كلمة المرور</system:String>
+    <system:String x:Key="Sec_Desc_Password">قم بتعيين كلمات مرور آمنة لملفات PDF الخاصة بك or قم بإزالة الكلمات الحالية.</system:String>
+    <system:String x:Key="Sec_Title_Watermark">أدوات العلامة المائية والشعار</system:String>
+    <system:String x:Key="Sec_Desc_Watermark">أضف علامات مائية نصية or شعارات بشكل تفاعلي إلى ملفات PDF الخاصة بك.</system:String>
+    <system:String x:Key="Sec_Password">1. تشفير PDF</system:String>
+    <system:String x:Key="Sec_PasswordDesc">اختر ملف PDF أولاً، ثم قم بتعيين كلمة مرور الفتح.</system:String>
+    <system:String x:Key="Sec_BtnProtect">تشفير وحفظ</system:String>
+    <system:String x:Key="Sec_TextWatermark">1. علامة مائية نصية</system:String>
+    <system:String x:Key="Sec_TextWatermarkDesc">اضبط حجم النص وموقعه بشكل تفاعلي.</system:String>
+    <system:String x:Key="Sec_BtnAddText">تحديد الموقع والإضافة</system:String>
+    <system:String x:Key="Sec_ImageWatermark">2. إضافة شعار</system:String>
+    <system:String x:Key="Sec_ImageWatermarkDesc">حدد موقع الشعار وحجمه وشفافيته عن طريق السحب.</system:String>
+    <system:String x:Key="Sec_LogoStep1">الخطوة 1: يرجى اختيار ملف PDF للشعار</system:String>
+    <system:String x:Key="Sec_BtnSelectLogo">تحديد الموقع وإضافة الشعار</system:String>
+    <system:String x:Key="Sec_PassStep1">الخطوة 1: يرجى اختيار ملف PDF للتشفير</system:String>
+    <system:String x:Key="Sec_TextStep1">الخطوة 1: يرجى اختيار ملف PDF للعلامة المائية</system:String>
+    <system:String x:Key="Sec_PassStep2">الخطوة 2: تعيين كلمة المرور</system:String>
+    <system:String x:Key="Sec_TextStep2">الخطوة 2: نص العلامة المائية</system:String>
+    <system:String x:Key="Sec_Step3">الخطوة 3: اختيار الصفحات</system:String>
+    <system:String x:Key="Sec_SelectPdf">اختر ملف PDF</system:String>
+    <system:String x:Key="Sec_SelectPdfBtn">اختر PDF</system:String>
+    <system:String x:Key="Sec_SelectedFile">الملف المختار:</system:String>
+    <system:String x:Key="Sec_LogoStep2">الخطوة 2: اختيار الشعار</system:String>
+    <system:String x:Key="Sec_SelectLogoBtn">اختر الشعار</system:String>
+    <system:String x:Key="Sec_PassPlaceholder">قم بتعيين كلمة المرور الخاصة بك...</system:String>
+    <system:String x:Key="Sec_TextPlaceholder">النص المراد كتابته كعلامة مائية...</system:String>
+    <system:String x:Key="Sec_LogoPlaceholder">لم يتم اختيار شعار...</system:String>
+    <system:String x:Key="Sec_RangeAll">جميع الصفحات</system:String>
+    <system:String x:Key="Sec_RangeFirst">الصفحة الأولى فقط</system:String>
+    <system:String x:Key="Sec_Rotation">زاوية الدوران</system:String>
+    <system:String x:Key="Sec_RangeHelp">يمكنك تحديد الصفحات المراد معالجتها بهذه التنسيقات:
+• استخدم الفواصل للصفحات الفردية (مثال: 1,3,5)
+• استخدم الواصلة or النقطتين لنطاق (مثال: 2-5 or 2:5)
+• يمكن أيضاً استخدام أشكال مختلطة (مثال: 1,3,5-8)</system:String>
+    <system:String x:Key="Sec_RangeHelpTitle">مساعدة في نطاق الصفحات</system:String>
+    <system:String x:Key="Sec_SaveEncryptedFileName">محمي_</system:String>
+
+    <system:String x:Key="Sec_Help_Password">احمِ مستند PDF الخاص بك من الوصول غير المصرح به من خلال تعيين كلمة مرور آمنة. سيتم طلبها عند الفتح.</system:String>
+    <system:String x:Key="Sec_Unlock">2. مزيل كلمة مرور PDF</system:String>
+    <system:String x:Key="Sec_UnlockDesc">قم بإزالة الحماية بشكل دائم من ملفات PDF التي تعرف كلمة مرورها.</system:String>
+    <system:String x:Key="Sec_UnlockStep1">الخطوة 1: يرجى اختيار ملف PDF لإزالة كلمة المرور</system:String>
+    <system:String x:Key="Sec_UnlockStep2">الخطوة 2: أدخل كلمة المرور الحالية لملف PDF</system:String>
+    <system:String x:Key="Sec_UnlockPlaceholder">أدخل كلمة المرور الحالية هنا...</system:String>
+    <system:String x:Key="Sec_UnlockBtn">إزالة كلمة المرور</system:String>
+    <system:String x:Key="Msg_UnlockSuccess">تم إزالة كلمة مرور PDF بنجاح وحفظ الملف الجديد!</system:String>
+    <system:String x:Key="Unlock_SuccessWithOpen">تم إزالة كلمة مرور PDF بنجاح. هل تريد فتح الملف؟</system:String>
+    <system:String x:Key="Msg_UnlockError">كلمة المرور غير صحيحة or لم يتم فتح ملف PDF. يرجى التحقق والمحاولة مرة أخرى.</system:String>
+    <system:String x:Key="Sec_Help_Unlock">عند اختيار ملف PDF وإدخال كلمة المرور الصحيحة، يقوم التطبيق بإنشاء نسخة جديدة "بدون كلمة مرور" من المستند.</system:String>
+    <system:String x:Key="Sec_Help_TextWatermark">حدد مالك المستند بعلامة مائية نصية. عبر الزر (ⓘ)، يمكنك سحب النص وتغيير حجمه في النافذة التفاعلية.</system:String>
+    <system:String x:Key="Sec_Help_ImageWatermark">أضف شعاراً or صورة كعلامة مائية. في النافذة التفاعلية، يمكنك بسهولة ضبط موقع الشعار وحجمه وشفافيته.</system:String>
+
+    <!-- Themes -->
+    <system:String x:Key="Theme_Light">فاتح</system:String>
+    <system:String x:Key="Theme_Dark">داكن</system:String>
+    <system:String x:Key="Theme_HighContrast">تباين عالي</system:String>
+    <system:String x:Key="Theme_PastelBlue">سمة أزرق باستيل</system:String>
+    <system:String x:Key="Theme_Lavender">سمة الخزامى</system:String>
+    <system:String x:Key="Theme_Peach">سمة الخوخ</system:String>
+    <system:String x:Key="Theme_Mint">سمة النعناع</system:String>
+    <system:String x:Key="Theme_Apricot">سمة المشمش</system:String>
+
+    <!-- Dialogs -->
+    <system:String x:Key="Dialog_LogoTitle">تموضع الشعار</system:String>
+    <system:String x:Key="Dialog_LogoDesc">اسحب الشعار إلى المكان المطلوب واضبط حجمه.</system:String>
+    <system:String x:Key="Dialog_LogoScale">حجم الشعار</system:String>
+    <system:String x:Key="Dialog_LogoOpacity">شفافية الشعار</system:String>
+    <system:String x:Key="Dialog_TextTitle">تموضع النص</system:String>
+    <system:String x:Key="Dialog_TextDesc">اسحب النص إلى المكان المطلوب واضبط حجمه.</system:String>
+    <system:String x:Key="Dialog_TextScale">حجم النص</system:String>
+    <system:String x:Key="Dialog_TextOpacity">شفافية النص</system:String>
+    <system:String x:Key="Dialog_ExampleText">نص تجريبي</system:String>
+
+    <!-- Page Numbering Details -->
+    <system:String x:Key="PageNum_Title">إضافة أرقام الصفحات</system:String>
+    <system:String x:Key="PageNum_Desc">أضف أرقام صفحات احترافية إلى مستند PDF الخاص بك.</system:String>
+    <system:String x:Key="PageNum_Settings">إعدادات الترقيم</system:String>
+    <system:String x:Key="PageNum_StartPage">صفحة البداية</system:String>
+    <system:String x:Key="PageNum_EndPage">صفحة النهاية</system:String>
+    <system:String x:Key="PageNum_Position">الموقع</system:String>
+    <system:String x:Key="PageNum_PosBottomCenter">أسفل الوسط</system:String>
+    <system:String x:Key="PageNum_PosBottomRight">أسفل اليمين</system:String>
+    <system:String x:Key="PageNum_PosBottomLeft">أسفل اليسار</system:String>
+    <system:String x:Key="PageNum_PosTopCenter">أعلى الوسط</system:String>
+    <system:String x:Key="PageNum_PosTopRight">أعلى اليمين</system:String>
+    <system:String x:Key="PageNum_PosTopLeft">أعلى اليسار</system:String>
+    <system:String x:Key="PageNum_Format">التنسيق (مثال: صفحة {n})</system:String>
+    <system:String x:Key="PageNum_Font">الخط</system:String>
+    <system:String x:Key="PageNum_Size">الحجم</system:String>
+    <system:String x:Key="PageNum_Color">اللون (Hex)</system:String>
+    <system:String x:Key="PageNum_Btn">إضافة الأرقام</system:String>
+    <system:String x:Key="PageNum_StepRange">1. نطاق الصفحات</system:String>
+    <system:String x:Key="PageNum_StepPosition">2. الموقع</system:String>
+    <system:String x:Key="PageNum_StepFont">3. نمط الخط</system:String>
+    <system:String x:Key="PageNum_StepColor">4. اللون</system:String>
+    <system:String x:Key="PageNum_StartingValue">رقم البداية</system:String>
+    <system:String x:Key="PageNum_FormatType">تنسيق الرقم</system:String>
+    <system:String x:Key="PageNum_PrefixLabel">النص بجانب الرقم (مثال: صفحة)</system:String>
+    <system:String x:Key="PageNum_PrefixPlaceholder">يمكنك تركه فارغاً...</system:String>
+    <system:String x:Key="PageNum_MagicBtnTitle">ابدأ السحر</system:String>
+    <system:String x:Key="PageNum_MagicBtnSub">تطبيق الأرقام على المستند</system:String>
+    <system:String x:Key="PageNum_MoreColors">المزيد من الألوان...</system:String>
+
+    <!-- Delete Pages Details -->
+    <system:String x:Key="DeletePages_Title">حذف الصفحات</system:String>
+    <system:String x:Key="DeletePages_Desc">احذف الصفحات المطلوبة بشكل دائم.</system:String>
+    <system:String x:Key="DeletePages_Options">خيارات الحذف</system:String>
+    <system:String x:Key="DeletePages_InputLabel">الصفحات المراد حذفها</system:String>
+    <system:String x:Key="DeletePages_InputHint">مثال: 1, 3, 5-8 (يمكن استخدام الفواصل or النقطتين)</system:String>
+    <system:String x:Key="DeletePages_Btn">حذف الصفحات المختارة</system:String>
+    <system:String x:Key="Delete_SuccessWithOpen">تم حذف الصفحات المختارة بنجاح. هل تريد فتح الملف الجديد؟</system:String>
+
+    <!-- Preview Dialog -->
+    <system:String x:Key="Preview_WindowTitle">معاينة الترقيم</system:String>
+    <system:String x:Key="Preview_Title">المعاينة</system:String>
+    <system:String x:Key="Preview_Desc">سيبدو الترقيم هكذا على الصفحة:</system:String>
+    <system:String x:Key="Preview_Ask">هل توافق على هذا التصميم؟</system:String>
+    <system:String x:Key="Preview_Yes">نعم، أنشئ</system:String>
+    <system:String x:Key="Preview_No">لا، عدل</system:String>
+
+    <!-- OCR Tool Details -->
+    <system:String x:Key="Ocr_Title">OCR - التعرف على النصوص</system:String>
+    <system:String x:Key="Ocr_Desc">استخرج النص من الصور or ملفات PDF الممسوحة ضوئياً.</system:String>
+    <system:String x:Key="Ocr_SelectFile">اختر صورة or PDF</system:String>
+    <system:String x:Key="Ocr_ScanLang">لغة المسح</system:String>
+    <system:String x:Key="Ocr_RunBtn">مسح ضوئي واستخراج النص</system:String>
+    <system:String x:Key="Ocr_ResultTitle">النص المعترف به</system:String>
+    <system:String x:Key="Ocr_Placeholder">سيظهر النص المستخرج هنا...</system:String>
+    <system:String x:Key="Ocr_Scanning">جاري مسح النص، يرجى الانتظار...</system:String>
+
+    <!-- Crop Tool Details -->
+    <system:String x:Key="Crop_Title">قص PDF</system:String>
+    <system:String x:Key="Crop_Desc">اختر صفحة PDF وحدد المنطقة التي تريد قصها.</system:String>
+    <system:String x:Key="Crop_Settings">إعدادات القص</system:String>
+    <system:String x:Key="Crop_ApplyAll">تطبيق على جميع الصفحات</system:String>
+    <system:String x:Key="Crop_AreaInfo">يرجى اختيار منطقة عن طريق سحب الماوس فوق المعاينة.</system:String>
+    <system:String x:Key="Crop_Btn">قص وحفظ</system:String>
+    <system:String x:Key="Crop_SuccessWithOpen">تم قص الملف بنجاح. هل تريد فتحه؟</system:String>
+
+    <!-- Buttons & Others -->
+    <system:String x:Key="Btn_Open">فتح</system:String>
+    <system:String x:Key="Btn_Close">إغلاق</system:String>
+
+    <!-- Settings About -->
+    <system:String x:Key="Sett_DefaultPath">مجلد الإخراج الافتراضي</system:String>
+    <system:String x:Key="Sett_DefaultPathDesc">اختر مكان حفظ الملفات تلقائياً. إذا كان فارغاً، فسيتم سؤالك في كل مرة.</system:String>
+    <system:String x:Key="Sett_CleanMode">وضع التنظيف</system:String>
+    <system:String x:Key="Sett_CleanModeDesc">حرر مساحة عن طريق تنظيف سجلات التطبيق والملفات المؤقتة.</system:String>
+    <system:String x:Key="Sett_BtnClean">تنظيف السجلات والملفات المؤقتة</system:String>
+    <system:String x:Key="Sett_About">حول التطبيق</system:String>
+    <system:String x:Key="Sett_Version">الإصدار: 1.0.0</system:String>
+    <system:String x:Key="Sett_Author">المطور: Docentra AI Team</system:String>
+    <system:String x:Key="Sett_Website">الموقع الإلكتروني: www.docentrapdf.com</system:String>
+
+    <!-- Premium Details -->
+    <system:String x:Key="Prem_Title">تفعيل بريميوم</system:String>
+    <system:String x:Key="Prem_Subtitle">قم بالترقية إلى بريميوم لإزالة القيود ودعم التطوير.</system:String>
+    <system:String x:Key="Prem_HwidLabel">هوية جهازك (HWID)</system:String>
+    <system:String x:Key="Prem_HwidDesc">هذا المعرف فريد لجهاز الكمبيوتر الخاص بك ولا يمكن نقله.</system:String>
+    <system:String x:Key="Prem_KeyLabel">أدخل مفتاح الترخيص</system:String>
+    <system:String x:Key="Prem_BtnActivate">تفعيل بريميوم</system:String>
+    <system:String x:Key="Prem_Pricing_Title">باقات بريميوم</system:String>
+    <system:String x:Key="Prem_WhyGoPremium">لماذا تختار بريميوم؟</system:String>
+    <system:String x:Key="Prem_Feat1_Title">معالجة غير محدودة</system:String>
+    <system:String x:Key="Prem_Feat1_Desc">استخدم جميع أدوات PDF دون أي قيود يومية على الملفات أو الصفحات.</system:String>
+    <system:String x:Key="Prem_Feat2_Title">تقنية OCR المتقدمة</system:String>
+    <system:String x:Key="Prem_Feat2_Desc">قم بتحويل المستندات والصور الممسوحة ضوئيًا إلى تنسيقات نصية قابلة للتحرير في ثوانٍ.</system:String>
+    <system:String x:Key="Prem_Feat3_Title">أمن وإدارة المستندات</system:String>
+    <system:String x:Key="Prem_Feat3_Desc">قم بتشفير ملفات PDF الخاصة بك، وإدارة الصفحات، واحصل على وصول كامل إلى جميع الأدوات الاحترافية.</system:String>
+    <system:String x:Key="Prem_Plan_Lifetime_Name">ترخيص مدى الحياة</system:String>
+    <system:String x:Key="Prem_Plan_Lifetime_Desc">دفع لمرة واحدة، استخدام غير محدود وجميع التحديثات مدى الحياة مدرجة.</system:String>
+    <system:String x:Key="Prem_TrialBanner">نسخة تجريبية بريميوم</system:String>
+    <system:String x:Key="Prem_DaysRemaining">متبقي {0} أيام</system:String>
+    <system:String x:Key="Prem_RestartTitle">تم تفعيل بريميوم</system:String>
+    <system:String x:Key="Prem_RestartMsg">تم تفعيل بريميوم بنجاح! هل تريد إعادة تشغيل التطبيق الآن لتطبيق التغييرات؟</system:String>
+</ResourceDictionary>

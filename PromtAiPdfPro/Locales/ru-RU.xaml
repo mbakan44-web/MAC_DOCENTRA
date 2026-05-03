@@ -1,0 +1,401 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <!-- General -->
+    <system:String x:Key="AppTitle">DOCENTRA PDF &amp; РЕДАКТОР ДОКУМЕНТОВ</system:String>
+    <system:String x:Key="Nav_Dashboard">Центр управления</system:String>
+    <system:String x:Key="Nav_Merge">Объединить PDF</system:String>
+    <system:String x:Key="Nav_Split">Разделить PDF</system:String>
+    <system:String x:Key="Nav_Convert">Конвертировать</system:String>
+    <system:String x:Key="Nav_OfficeConvert">Office Конвертер</system:String>
+    <system:String x:Key="Nav_PasswordSecurity">Пароли и безопасность</system:String>
+    <system:String x:Key="Nav_Watermark">Водяной знак и логотип</system:String>
+    <system:String x:Key="Nav_Ocr">OCR - Распознавание текста</system:String>
+    <system:String x:Key="Nav_Crop">Обрезать PDF</system:String>
+    <system:String x:Key="Nav_AddPageNumbers">Добавить номера страниц</system:String>
+    <system:String x:Key="Nav_DeletePages">Удалить страницы</system:String>
+    <system:String x:Key="Nav_Sign">Подписать PDF</system:String>
+    <system:String x:Key="Nav_Settings">Настройки</system:String>
+
+    <!-- Premium & License -->
+    <system:String x:Key="Prem_LockReason_Discount">7-дневный пробный период истек. Некоторые страницы доступны только для Premium.</system:String>
+    <system:String x:Key="Prem_LockReason_Restricted">14-дневный пробный период истек. Некоторые страницы закрыты, действует лимит в 5 страниц.</system:String>
+    <system:String x:Key="Prem_Status_Full">Все функции открыты (Пробный период)</system:String>
+    <system:String x:Key="Prem_Status_Discount">Ограниченный доступ (Скидка 40%)</system:String>
+    <system:String x:Key="Prem_Status_Restricted">Ограниченная бесплатная версия</system:String>
+    <system:String x:Key="Prem_PurchaseRequired_Msg">Пожалуйста, купите лицензию, чтобы использовать этот экран.</system:String>
+    <system:String x:Key="Prem_PurchaseRequired_Title">Premium функция</system:String>
+    <system:String x:Key="Prem_LimitedMode">Ограниченный режим</system:String>
+    <system:String x:Key="Prem_RestrictedMode">Строгий режим</system:String>
+    <system:String x:Key="Prem_SomePagesLocked">Некоторые страницы заблокированы</system:String>
+    <system:String x:Key="Prem_PageLimitActive">Лимит в 5 страниц активен</system:String>
+    <system:String x:Key="Prem_GoToPremium">Перейти на Premium</system:String>
+    <system:String x:Key="Prem_Close">Закрыть</system:String>
+
+    <!-- Sign -->
+    <system:String x:Key="Sign_Title">Подписание PDF</system:String>
+    <system:String x:Key="Sign_SelectPdf">Выбрать PDF</system:String>
+    <system:String x:Key="Sign_Method">Метод подписи</system:String>
+    <system:String x:Key="Sign_Draw">Рукописный ввод (Рисование)</system:String>
+    <system:String x:Key="Sign_Upload">Загрузить изображение</system:String>
+    <system:String x:Key="Sign_Clear">Очистить</system:String>
+    <system:String x:Key="Sign_Position">Положение</system:String>
+    <system:String x:Key="Sign_Size">Размер</system:String>
+    <system:String x:Key="Sign_Opacity">Прозрачность</system:String>
+    <system:String x:Key="Sign_ApplyTo">Применить к</system:String>
+    <system:String x:Key="Sign_AllPages">Все страницы</system:String>
+    <system:String x:Key="Sign_CurrentPage">Только эта страница</system:String>
+    <system:String x:Key="Sign_CustomPages">Пользовательские страницы</system:String>
+    <system:String x:Key="Sign_Process">Подписать и сохранить</system:String>
+    <system:String x:Key="Sign_NoFile">Пожалуйста, сначала выберите PDF.</system:String>
+    <system:String x:Key="Sign_NoSignature">Пожалуйста, создайте или загрузите подпись.</system:String>
+    <system:String x:Key="Sign_Success">Файл успешно подписан.</system:String>
+    <system:String x:Key="Sign_SuccessWithOpen">Файл успешно подписан. Хотите открыть его?</system:String>
+
+    <!-- Dashboard -->
+    <system:String x:Key="Dash_Welcome">Добро пожаловать!</system:String>
+    <system:String x:Key="Dash_Desc">Ваш универсальный магазин для всех нужд PDF.</system:String>
+    <system:String x:Key="Dash_MergeTitle">Объединить</system:String>
+    <system:String x:Key="Dash_MergeSub">Объедините несколько файлов PDF в один.</system:String>
+    <system:String x:Key="Dash_SplitTitle">Разделить</system:String>
+    <system:String x:Key="Dash_SplitSub">Сохраняйте страницы как отдельные файлы PDF.</system:String>
+    <system:String x:Key="Dash_WordTitle">В Word</system:String>
+    <system:String x:Key="Dash_WordSub">Экспортируйте файлы PDF в формат Word.</system:String>
+    <system:String x:Key="Dash_ImgTitle">Изображение в PDF</system:String>
+    <system:String x:Key="Dash_ImgSub">Конвертируйте ваши изображения в формат PDF.</system:String>
+    <system:String x:Key="Dash_OfficeTitle">Office в PDF</system:String>
+    <system:String x:Key="Dash_OfficeSub">Конвертируйте файлы Word, Excel и PowerPoint в PDF.</system:String>
+    <system:String x:Key="Dash_ProtectTitle">Зашифровать</system:String>
+    <system:String x:Key="Dash_ProtectSub">Защитите свои PDF-файлы шифрованием.</system:String>
+    <system:String x:Key="Dash_UnlockTitle">Удалить пароль</system:String>
+    <system:String x:Key="Dash_UnlockSub">Удалите существующие пароли из PDF-файлов.</system:String>
+    <system:String x:Key="Dash_TextWatermarkTitle">Текстовый водяной знак</system:String>
+    <system:String x:Key="Dash_TextWatermarkSub">Добавьте интерактивный текстовый водяной знак.</system:String>
+    <system:String x:Key="Dash_LogoWatermarkTitle">Добавить логотип</system:String>
+    <system:String x:Key="Dash_LogoWatermarkSub">Разместите прозрачный логотип в своих файлах.</system:String>
+    <system:String x:Key="Dash_DragDrop">Перетащите файлы сюда</system:String>
+    <system:String x:Key="Dash_DragDropSub">Перетащите PDF-файлы, чтобы начать процесс.</system:String>
+    <system:String x:Key="Dash_OcrSub">Извлекайте текст из изображений и отсканированных PDF-файлов.</system:String>
+    <system:String x:Key="Dash_PageNumTitle">Номера страниц</system:String>
+    <system:String x:Key="Dash_PageNumSub">Добавьте автоматическую нумерацию страниц PDF.</system:String>
+    <system:String x:Key="Dash_DeletePagesTitle">Удалить страницы</system:String>
+    <system:String x:Key="Dash_DeletePagesSub">Удалите ненужные страницы из PDF.</system:String>
+    <system:String x:Key="Dash_SignTitle">Подписать PDF</system:String>
+    <system:String x:Key="Dash_SignSub">Добавьте рукописные или графические подписи к документам PDF.</system:String>
+    <system:String x:Key="Dash_CropTitle">Обрезать PDF</system:String>
+    <system:String x:Key="Dash_CropSub">Обрезайте страницы PDF до любого нужного вам размера.</system:String>
+
+    <!-- Merge Tool -->
+    <system:String x:Key="Merge_Title">Объединить PDF</system:String>
+    <system:String x:Key="Merge_Desc">Добавьте свои PDF-файлы и объедините их в любом удобном для вас порядке.</system:String>
+    <system:String x:Key="Merge_AddFile">Добавить файл</system:String>
+    <system:String x:Key="Merge_ClearList">Очистить список</system:String>
+    <system:String x:Key="Merge_MergeBtn">Объединить и сохранить</system:String>
+    <system:String x:Key="Merge_EmptyStateDesc">Перетащите PDF-файлы сюда or нажмите кнопку «Добавить файл»</system:String>
+    <system:String x:Key="Merge_DefaultFileName">объединенный.pdf</system:String>
+    <system:String x:Key="Merge_SuccessWithOpen">Файлы успешно объединены. Хотите их открыть?</system:String>
+    
+    <!-- Split Tool -->
+    <system:String x:Key="Split_Title">Разделить PDF</system:String>
+    <system:String x:Key="Split_Desc">Выберите PDF-файл, который хотите разделить.</system:String>
+    <system:String x:Key="Split_Browse">Выбрать файл</system:String>
+    <system:String x:Key="Split_Options">Параметры разделения</system:String>
+    <system:String x:Key="Split_OptSeparate">Преобразовать все страницы в отдельные PDF</system:String>
+    <system:String x:Key="Split_OptDesc">Экспортирует каждую страницу выбранного PDF-файла как отдельный PDF-файл.</system:String>
+    <system:String x:Key="Split_SplitBtn">Разделить на части</system:String>
+    <system:String x:Key="Split_SuccessWithOpen">PDF успешно разделен. Хотите открыть папку?</system:String>
+    <system:String x:Key="Split_OptRange">Разделить определенные страницы/диапазоны</system:String>
+    <system:String x:Key="Split_RangeHint">Вы можете использовать запятые (1,3,5) or диапазоны (5:8).</system:String>
+
+    <!-- Convert Tool -->
+    <system:String x:Key="Conv_Title">Инструменты конвертации</system:String>
+    <system:String x:Key="Conv_Desc">Управляйте операциями конвертации PDF отсюда.</system:String>
+    <system:String x:Key="Conv_ImgToPdf">Изображение в PDF</system:String>
+    <system:String x:Key="Conv_ImgToPdfDesc">Конвертируйте ваши файлы JPG or PNG в PDF.</system:String>
+    <system:String x:Key="Conv_OfficeToPdf">Office в PDF</system:String>
+    <system:String x:Key="Conv_OfficeToPdfDesc">Конвертируйте файлы Word (.docx), Excel (.xlsx) or PowerPoint (.pptx) в PDF.</system:String>
+    <system:String x:Key="Conv_PdfToWord">PDF в Word</system:String>
+    <system:String x:Key="Conv_PdfToWordDesc">Конвертируйте файлы PDF в редактируемый формат Word (.docx).</system:String>
+    <system:String x:Key="Conv_PdfToImg">PDF в изображение</system:String>
+    <system:String x:Key="Conv_PdfToImgDesc">Разделите страницы PDF на графические файлы (PNG) высокого разрешения.</system:String>
+    <system:String x:Key="Conv_Converting">Конвертация...</system:String>
+    <system:String x:Key="Conv_Success">Конвертация успешно завершена!</system:String>
+    <system:String x:Key="Conv_SuccessWithOpen">Конвертация успешно завершена. Хотите открыть файл/папку?</system:String>
+    <system:String x:Key="Conv_Error">Произошла ошибка при конвертации. Убедитесь, что Office установлен.</system:String>
+    <system:String x:Key="Conv_NoOffice">Microsoft Office не найден. Убедитесь, что он установлен.</system:String>
+    <system:String x:Key="Conv_NoWord">Microsoft Word не найден. Убедитесь, что он установлен.</system:String>
+    <system:String x:Key="Conv_NoExcel">Microsoft Excel не найден. Убедитесь, что он установлен.</system:String>
+    <system:String x:Key="Conv_NoPowerPoint">Microsoft PowerPoint не найден. Убедитесь, что он установлен.</system:String>
+    <system:String x:Key="Conv_OfficeError">Ошибка при конвертации документа Office. Подробности в журнале.</system:String>
+    <system:String x:Key="Conv_OfficeBusy">Office может быть занят or заблокирован. Закройте все окна Office и попробуйте снова.</system:String>
+    <system:String x:Key="Conv_CleanOffice">Очистить процессы Office</system:String>
+    <system:String x:Key="Conv_CleanConfirm">Все открытые окна Word, Excel и PowerPoint будут закрыты. Несохраненные данные могут быть потеряны. Продолжить?</system:String>
+    <system:String x:Key="Conv_BtnClean">Очистить Office</system:String>
+    <system:String x:Key="Conv_SelectImgTitle">Выберите изображения для конвертации в PDF</system:String>
+    <system:String x:Key="Conv_SelectPdfToImgTitle">Выберите PDF-файл для конвертации в изображения</system:String>
+    <system:String x:Key="Conv_SelectFolderTitle">Выберите папку для сохранения изображений</system:String>
+    <system:String x:Key="Conv_SelectOfficeTitle">Выберите файл Office для конвертации в PDF</system:String>
+    <system:String x:Key="Conv_SelectPdfToWordTitle">Выберите PDF-файл для конвертации в Word</system:String>
+
+    <!-- Office Convert -->
+    <system:String x:Key="Sec_Title_OfficeConvert">Office Конвертер</system:String>
+    <system:String x:Key="Sec_Desc_OfficeConvert">Конвертируйте файлы Word в Excel or файлы Excel в Word.</system:String>
+    <system:String x:Key="Office_RequirementTitle">Требование Microsoft Office</system:String>
+    <system:String x:Key="Office_RequirementDesc">Для работы некоторых операций конвертации и редактирования (Word, Excel, PowerPoint) на вашем компьютере должен быть установлен Microsoft Office.</system:String>
+    <system:String x:Key="Office_WordToExcel">Word в Excel</system:String>
+    <system:String x:Key="Office_ExcelToWord">Excel в Word</system:String>
+    <system:String x:Key="Office_WordToExcelDesc">Переносит абзацы документа в Excel построчно.</system:String>
+    <system:String x:Key="Office_ExcelToWordDesc">Переносит ячейки Excel в Word как обычный текст.</system:String>
+    <system:String x:Key="Office_PptToWord">PowerPoint в Word</system:String>
+    <system:String x:Key="Office_PptToExcel">PowerPoint в Excel</system:String>
+    <system:String x:Key="Office_PptToWordDesc">Переносит весь текст презентации из слайдов в Word.</system:String>
+    <system:String x:Key="Office_PptToExcelDesc">Переносит весь текст из слайдов в Excel построчно.</system:String>
+    <system:String x:Key="Office_SelectWordTitle">Выберите файл Word для конвертации</system:String>
+    <system:String x:Key="Office_SaveExcelTitle">Сохранить файл Excel</system:String>
+    <system:String x:Key="Office_SelectExcelTitle">Выберите файл Excel для конвертации</system:String>
+    <system:String x:Key="Office_SaveWordTitle">Сохранить файл Word</system:String>
+    <system:String x:Key="Office_SelectPptTitle">Выберите файл PowerPoint для конвертации</system:String>
+
+    <!-- Settings -->
+    <system:String x:Key="Sett_Title">Настройки</system:String>
+    <system:String x:Key="Sett_Language">Настройки языка (Language)</system:String>
+    <system:String x:Key="Sett_LanguageDesc">Выберите язык приложения.</system:String>
+    <system:String x:Key="Sett_LanguageAuto">Язык системы (Авто)</system:String>
+    <system:String x:Key="Sett_Theme">Тема</system:String>
+    <system:String x:Key="Sett_ThemeDesc">Измените цветовую схему приложения (Светлая or Темная) здесь.</system:String>
+    <system:String x:Key="Sett_AccentColor">Акцентный цвет</system:String>
+    <system:String x:Key="Sett_AccentColorDesc">Настройте основной акцентный цвет (кнопки, границы) здесь.</system:String>
+
+    <!-- Common -->
+    <system:String x:Key="Common_PathPlaceholder">Файл не выбран...</system:String>
+    <system:String x:Key="Common_Save">Сохранить</system:String>
+    <system:String x:Key="Common_Cancel">Отмена</system:String>
+    <system:String x:Key="Common_Apply">Применить</system:String>
+    <system:String x:Key="Common_Back">Назад</system:String>
+    <system:String x:Key="Common_PdfFilter">PDF файлы (*.pdf)|*.pdf</system:String>
+    <system:String x:Key="Common_ImageFilter">Изображения (*.jpg;*.jpeg;*.png)|*.jpg;*.jpeg;*.png</system:String>
+    <system:String x:Key="Common_OfficeFilter">Документы Office (*.docx;*.doc;*.xlsx;*.xls;*.pptx;*.ppt)|*.docx;*.doc;*.xlsx;*.xls;*.pptx;*.ppt</system:String>
+    <system:String x:Key="Common_WordFilter">Документ Word (*.docx)|*.docx</system:String>
+    <system:String x:Key="Common_ExcelFilter">Документ Excel (*.xlsx)|*.xlsx</system:String>
+    <system:String x:Key="Common_TxtFilter">Текстовый файл (*.txt)|*.txt</system:String>
+    <system:String x:Key="Common_SavePdfTitle">Сохранить как PDF</system:String>
+    <system:String x:Key="Common_SaveWordTitle">Сохранить как Word</system:String>
+    <system:String x:Key="Common_Copy">Копировать</system:String>
+    <system:String x:Key="Common_Select">Выбрать...</system:String>
+    <system:String x:Key="Common_Page">Страница</system:String>
+
+    <!-- Messages -->
+    <system:String x:Key="Msg_SelectAtLeastTwo">Пожалуйста, выберите как минимум два PDF-файла!</system:String>
+    <system:String x:Key="Msg_MergeSuccess">Файлы успешно объединены!</system:String>
+    <system:String x:Key="Msg_SettingsSaved">Настройки успешно сохранены и применены.</system:String>
+    <system:String x:Key="Msg_OcrSuccess">Текст успешно извлечен.</system:String>
+    <system:String x:Key="Ocr_SuccessWithOpen">Текст успешно сохранен. Хотите открыть файл?</system:String>
+    <system:String x:Key="Msg_Copied">Скопировано</system:String>
+    <system:String x:Key="Msg_Warning">Предупреждение</system:String>
+    <system:String x:Key="Msg_Confirm">Подтвердить</system:String>
+    <system:String x:Key="Msg_SelectFile">Пожалуйста, выберите файл.</system:String>
+    <system:String x:Key="Msg_AskOpenFile">Файл успешно создан. Хотите открыть его?</system:String>
+    <system:String x:Key="Msg_AskOpenFolder">PDF успешно разделены. Хотите открыть папку?</system:String>
+    <system:String x:Key="Msg_AskOpenFolderPart">Хотите открыть папку?</system:String>
+    <system:String x:Key="Msg_SplitError">Произошла ошибка при разделении.</system:String>
+    <system:String x:Key="Msg_SelectPdfFirst">Сначала выберите PDF-файл.</system:String>
+    <system:String x:Key="Msg_SplitSuccess">Разделение PDF успешно завершено!</system:String>
+    <system:String x:Key="Msg_SelectImageFirst">Выберите изображение для конвертации.</system:String>
+    <system:String x:Key="Msg_ConvertSuccess">Изображение успешно конвертировано в PDF!</system:String>
+    <system:String x:Key="Msg_CleanSuccess">Процессы Office успешно очищены.</system:String>
+    <system:String x:Key="Msg_FileEncryptedSuccess">Файл успешно зашифрован. Хотите открыть его?</system:String>
+    <system:String x:Key="Msg_EncryptionError">Ошибка шифрования!</system:String>
+    <system:String x:Key="Msg_ProcessSuccess">Процесс успешно завершен!</system:String>
+    <system:String x:Key="Msg_ProcessError">Произошла ошибка в процессе.</system:String>
+    <system:String x:Key="Msg_SystemCleanSuccess">Процесс очистки успешно завершен!</system:String>
+    <system:String x:Key="Msg_Success">Успех</system:String>
+    <system:String x:Key="Msg_Error">Ошибка</system:String>
+    <system:String x:Key="Update_AvailableTitle">Доступно обновление</system:String>
+    <system:String x:Key="Msg_UpdateAvailable">Доступна новая версия ({0}). Пожалуйста, обновитесь, чтобы использовать последние функции.</system:String>
+    <system:String x:Key="Msg_UpdatePremiumFree">Для вас как для Premium-пользователя все обновления совершенно бесплатны.</system:String>
+    <system:String x:Key="Btn_DownloadNow">Скачать сейчас</system:String>
+    <system:String x:Key="Prem_Licensed">Лицензировано: Premium-версия</system:String>
+    <system:String x:Key="Prem_ThankYou">Благодарим вас за выбор и покупку нашего продукта!</system:String>
+    <system:String x:Key="Prem_ActivatedSuccess">Premium успешно активирован!</system:String>
+
+    <!-- Watermark Prefix -->
+    <system:String x:Key="Watermark_TextPrefix">СВодянымЗнаком_</system:String>
+    <system:String x:Key="Watermark_LogoPrefix">СЛоготипом_</system:String>
+    <system:String x:Key="Watermark_SuccessWithOpen">Водяной знак успешно добавлен. Хотите открыть файл?</system:String>
+
+    <!-- Belge Koruma ve Filigran Detay -->
+    <system:String x:Key="Sec_Title_Password">Установка и удаление пароля</system:String>
+    <system:String x:Key="Sec_Desc_Password">Устанавливайте надежные пароли для ваших PDF or удаляйте существующие.</system:String>
+    <system:String x:Key="Sec_Title_Watermark">Инструменты водяных знаков и логотипов</system:String>
+    <system:String x:Key="Sec_Desc_Watermark">Интерактивно добавляйте текстовые or логотипные водяные знаки в ваши PDF.</system:String>
+    <system:String x:Key="Sec_Password">1. Шифрование PDF</system:String>
+    <system:String x:Key="Sec_PasswordDesc">Сначала выберите PDF, затем установите пароль на открытие.</system:String>
+    <system:String x:Key="Sec_BtnProtect">Зашифровать и сохранить</system:String>
+    <system:String x:Key="Sec_TextWatermark">1. Текстовый водяной знак</system:String>
+    <system:String x:Key="Sec_TextWatermarkDesc">Интерактивно настраивайте размер и положение текста.</system:String>
+    <system:String x:Key="Sec_BtnAddText">Позиционировать и добавить</system:String>
+    <system:String x:Key="Sec_ImageWatermark">2. Добавить логотип</system:String>
+    <system:String x:Key="Sec_ImageWatermarkDesc">Определите положение, размер и прозрачность логотипа перетаскиванием.</system:String>
+    <system:String x:Key="Sec_LogoStep1">Шаг 1: Выберите PDF-файл для логотипа</system:String>
+    <system:String x:Key="Sec_BtnSelectLogo">Позиционировать и добавить логотип</system:String>
+    <system:String x:Key="Sec_PassStep1">Шаг 1: Выберите PDF-файл для шифрования</system:String>
+    <system:String x:Key="Sec_TextStep1">Шаг 1: Выберите PDF-файл для водяного знака</system:String>
+    <system:String x:Key="Sec_PassStep2">Шаг 2: Установить пароль</system:String>
+    <system:String x:Key="Sec_TextStep2">Шаг 2: Текст водяного знака</system:String>
+    <system:String x:Key="Sec_Step3">Шаг 3: Выбор страниц</system:String>
+    <system:String x:Key="Sec_SelectPdf">Выбрать PDF файл</system:String>
+    <system:String x:Key="Sec_SelectPdfBtn">Выбрать PDF</system:String>
+    <system:String x:Key="Sec_SelectedFile">Выбранный файл:</system:String>
+    <system:String x:Key="Sec_LogoStep2">Шаг 2: Выбрать логотип</system:String>
+    <system:String x:Key="Sec_SelectLogoBtn">Выбрать логотип</system:String>
+    <system:String x:Key="Sec_PassPlaceholder">Установите ваш пароль...</system:String>
+    <system:String x:Key="Sec_TextPlaceholder">Текст для водяного знака...</system:String>
+    <system:String x:Key="Sec_LogoPlaceholder">Логотип не выбран...</system:String>
+    <system:String x:Key="Sec_RangeAll">Все страницы</system:String>
+    <system:String x:Key="Sec_RangeFirst">Только первая страница</system:String>
+    <system:String x:Key="Sec_Rotation">Угол поворота</system:String>
+    <system:String x:Key="Sec_RangeHelp">Вы можете указать страницы для обработки в следующих форматах:
+• Используйте запятые для отдельных страниц (например: 1,3,5)
+• Используйте дефис or двоеточие для диапазона (например: 2-5 or 2:5)
+• Также возможны смешанные формы (например: 1,3,5-8)</system:String>
+    <system:String x:Key="Sec_RangeHelpTitle">Справка по диапазону страниц</system:String>
+    <system:String x:Key="Sec_SaveEncryptedFileName">Защищено_</system:String>
+
+    <system:String x:Key="Sec_Help_Password">Защитите ваш PDF-документ от несанкционированного доступа, установив надежный пароль. Он будет запрашиваться при открытии.</system:String>
+    <system:String x:Key="Sec_Unlock">2. Удаление пароля PDF</system:String>
+    <system:String x:Key="Sec_UnlockDesc">Навсегда удаляйте защиту из PDF-файлов, пароль от которых вы знаете.</system:String>
+    <system:String x:Key="Sec_UnlockStep1">Шаг 1: Выберите PDF-файл для удаления пароля</system:String>
+    <system:String x:Key="Sec_UnlockStep2">Шаг 2: Введите текущий пароль PDF</system:String>
+    <system:String x:Key="Sec_UnlockPlaceholder">Введите текущий пароль здесь...</system:String>
+    <system:String x:Key="Sec_UnlockBtn">Удалить пароль</system:String>
+    <system:String x:Key="Msg_UnlockSuccess">Пароль PDF успешно удален, и новый файл сохранен!</system:String>
+    <system:String x:Key="Unlock_SuccessWithOpen">Пароль PDF успешно удален. Хотите открыть файл?</system:String>
+    <system:String x:Key="Msg_UnlockError">Неверный пароль or PDF не удалось открыть. Проверьте и попробуйте снова.</system:String>
+    <system:String x:Key="Sec_Help_Unlock">При выборе PDF и вводе правильного пароля приложение создает новую «беспарольную» копию документа.</system:String>
+    <system:String x:Key="Sec_Help_TextWatermark">Идентифицируйте владельца документа с помощью текстового водяного знака. С помощью кнопки (ⓘ) вы можете перетаскивать и изменять размер текста в интерактивном окне.</system:String>
+    <system:String x:Key="Sec_Help_ImageWatermark">Добавьте логотип or изображение в качестве водяного знака. В интерактивном окне вы можете легко настроить положение, размер и прозрачность логотипа.</system:String>
+
+    <!-- Themes -->
+    <system:String x:Key="Theme_Light">Светлая</system:String>
+    <system:String x:Key="Theme_Dark">Темная</system:String>
+    <system:String x:Key="Theme_HighContrast">Высокая контрастность</system:String>
+    <system:String x:Key="Theme_PastelBlue">Пастельно-синяя тема</system:String>
+    <system:String x:Key="Theme_Lavender">Лавандовая тема</system:String>
+    <system:String x:Key="Theme_Peach">Персиковая тема</system:String>
+    <system:String x:Key="Theme_Mint">Мятная тема</system:String>
+    <system:String x:Key="Theme_Apricot">Абрикосовая тема</system:String>
+
+    <!-- Dialogs -->
+    <system:String x:Key="Dialog_LogoTitle">Позиционирование логотипа</system:String>
+    <system:String x:Key="Dialog_LogoDesc">Перетащите логотип в нужное место и отрегулируйте его размер.</system:String>
+    <system:String x:Key="Dialog_LogoScale">Размер логотипа</system:String>
+    <system:String x:Key="Dialog_LogoOpacity">Прозрачность логотипа</system:String>
+    <system:String x:Key="Dialog_TextTitle">Позиционирование текста</system:String>
+    <system:String x:Key="Dialog_TextDesc">Перетащите текст в нужное место и отрегулируйте его размер.</system:String>
+    <system:String x:Key="Dialog_TextScale">Размер текста</system:String>
+    <system:String x:Key="Dialog_TextOpacity">Прозрачность текста</system:String>
+    <system:String x:Key="Dialog_ExampleText">Пример текста</system:String>
+
+    <!-- Page Numbering Details -->
+    <system:String x:Key="PageNum_Title">Добавить номера страниц</system:String>
+    <system:String x:Key="PageNum_Desc">Добавьте профессиональные номера страниц в ваш PDF-документ.</system:String>
+    <system:String x:Key="PageNum_Settings">Настройки нумерации</system:String>
+    <system:String x:Key="PageNum_StartPage">Начальная страница</system:String>
+    <system:String x:Key="PageNum_EndPage">Конечная страница</system:String>
+    <system:String x:Key="PageNum_Position">Положение</system:String>
+    <system:String x:Key="PageNum_PosBottomCenter">Снизу по центру</system:String>
+    <system:String x:Key="PageNum_PosBottomRight">Снизу справа</system:String>
+    <system:String x:Key="PageNum_PosBottomLeft">Снизу слева</system:String>
+    <system:String x:Key="PageNum_PosTopCenter">Сверху по центру</system:String>
+    <system:String x:Key="PageNum_PosTopRight">Сверху справа</system:String>
+    <system:String x:Key="PageNum_PosTopLeft">Сверху слева</system:String>
+    <system:String x:Key="PageNum_Format">Формат (например, Страница {n})</system:String>
+    <system:String x:Key="PageNum_Font">Шрифт</system:String>
+    <system:String x:Key="PageNum_Size">Размер</system:String>
+    <system:String x:Key="PageNum_Color">Цвет (Hex)</system:String>
+    <system:String x:Key="PageNum_Btn">Добавить номера</system:String>
+    <system:String x:Key="PageNum_StepRange">1. Диапазон страниц</system:String>
+    <system:String x:Key="PageNum_StepPosition">2. Положение</system:String>
+    <system:String x:Key="PageNum_StepFont">3. Стиль шрифта</system:String>
+    <system:String x:Key="PageNum_StepColor">4. Цвет</system:String>
+    <system:String x:Key="PageNum_StartingValue">Начальный номер</system:String>
+    <system:String x:Key="PageNum_FormatType">Формат номера</system:String>
+    <system:String x:Key="PageNum_PrefixLabel">Текст рядом с номером (напр. Страница)</system:String>
+    <system:String x:Key="PageNum_PrefixPlaceholder">Можно оставить пустым...</system:String>
+    <system:String x:Key="PageNum_MagicBtnTitle">Запустить магию</system:String>
+    <system:String x:Key="PageNum_MagicBtnSub">Применить нумерацию к документу</system:String>
+    <system:String x:Key="PageNum_MoreColors">Больше цветов...</system:String>
+
+    <!-- Delete Pages Details -->
+    <system:String x:Key="DeletePages_Title">Удалить страницы</system:String>
+    <system:String x:Key="DeletePages_Desc">Удалите нужные страницы безвозвратно.</system:String>
+    <system:String x:Key="DeletePages_Options">Параметры удаления</system:String>
+    <system:String x:Key="DeletePages_InputLabel">Страницы для удаления</system:String>
+    <system:String x:Key="DeletePages_InputHint">напр. 1, 3, 5-8 (можно через запятую or двоеточие)</system:String>
+    <system:String x:Key="DeletePages_Btn">Удалить выбранные страницы</system:String>
+    <system:String x:Key="Delete_SuccessWithOpen">Выбранные страницы успешно удалены. Хотите открыть новый файл?</system:String>
+
+    <!-- Preview Dialog -->
+    <system:String x:Key="Preview_WindowTitle">Предпросмотр нумерации</system:String>
+    <system:String x:Key="Preview_Title">Предпросмотр</system:String>
+    <system:String x:Key="Preview_Desc">Нумерация будет выглядеть на странице так:</system:String>
+    <system:String x:Key="Preview_Ask">Вы одобряете этот дизайн?</system:String>
+    <system:String x:Key="Preview_Yes">Да, создать</system:String>
+    <system:String x:Key="Preview_No">Нет, изменить</system:String>
+
+    <!-- OCR Tool Details -->
+    <system:String x:Key="Ocr_Title">OCR - Распознавание текста</system:String>
+    <system:String x:Key="Ocr_Desc">Извлекайте текст из изображений or отсканированных PDF-файлов.</system:String>
+    <system:String x:Key="Ocr_SelectFile">Выбрать изображение or PDF</system:String>
+    <system:String x:Key="Ocr_ScanLang">Scan-язык</system:String>
+    <system:String x:Key="Ocr_RunBtn">Сканировать и извлечь текст</system:String>
+    <system:String x:Key="Ocr_ResultTitle">Распознанный текст</system:String>
+    <system:String x:Key="Ocr_Placeholder">Извлеченный текст появится здесь...</system:String>
+    <system:String x:Key="Ocr_Scanning">Текст будет сканироваться, пожалуйста, подождите...</system:String>
+
+    <!-- Crop Tool Details -->
+    <system:String x:Key="Crop_Title">Обрезка PDF</system:String>
+    <system:String x:Key="Crop_Desc">Выберите страницу PDF и отметьте область, которую хотите обрезать.</system:String>
+    <system:String x:Key="Crop_Settings">Настройки обрезки</system:String>
+    <system:String x:Key="Crop_ApplyAll">Применить ко всем страницам</system:String>
+    <system:String x:Key="Crop_AreaInfo">Выберите область, перетаскивая мышь по предпросмотру.</system:String>
+    <system:String x:Key="Crop_Btn">Обрезать и сохранить</system:String>
+    <system:String x:Key="Crop_SuccessWithOpen">Файл успешно обрезан. Хотите открыть его?</system:String>
+
+    <!-- Buttons & Others -->
+    <system:String x:Key="Btn_Open">Открыть</system:String>
+    <system:String x:Key="Btn_Close">Закрыть</system:String>
+
+    <!-- Settings About -->
+    <system:String x:Key="Sett_DefaultPath">Папка вывода по умолчанию</system:String>
+    <system:String x:Key="Sett_DefaultPathDesc">Выберите, куда файлы будут сохраняться автоматически. Если пусто, запрос будет каждый раз.</system:String>
+    <system:String x:Key="Sett_CleanMode">Режим очистки</system:String>
+    <system:String x:Key="Sett_CleanModeDesc">Освободите место, очистив логи приложения и временные файлы.</system:String>
+    <system:String x:Key="Sett_BtnClean">Очистить логи и временные файлы</system:String>
+    <system:String x:Key="Sett_About">О приложении</system:String>
+    <system:String x:Key="Sett_Version">Версия: 1.0.0</system:String>
+    <system:String x:Key="Sett_Author">Разработчик: Docentra AI Team</system:String>
+    <system:String x:Key="Sett_Website">Веб-сайт: www.docentrapdf.com</system:String>
+
+    <!-- Premium Details -->
+    <system:String x:Key="Prem_Title">Активация Premium</system:String>
+    <system:String x:Key="Prem_Subtitle">Перейдите на Premium, чтобы снять лимиты и поддержать разработку.</system:String>
+    <system:String x:Key="Prem_HwidLabel">ID вашего устройства (HWID)</system:String>
+    <system:String x:Key="Prem_HwidDesc">Этот ID уникален для вашего компьютера и не может быть передан.</system:String>
+    <system:String x:Key="Prem_KeyLabel">Введите лицензионный ключ</system:String>
+    <system:String x:Key="Prem_BtnActivate">Активировать Премиум</system:String>
+    <system:String x:Key="Prem_Pricing_Title">Премиум планы</system:String>
+    <system:String x:Key="Prem_WhyGoPremium">Почему выбирают Премиум?</system:String>
+    <system:String x:Key="Prem_Feat1_Title">Безлимитная обработка</system:String>
+    <system:String x:Key="Prem_Feat1_Desc">Используйте все инструменты PDF без ограничений по количеству файлов или страниц в день.</system:String>
+    <system:String x:Key="Prem_Feat2_Title">Улучшенная технология OCR</system:String>
+    <system:String x:Key="Prem_Feat2_Desc">Превращайте отсканированные документы и изображения в редактируемые текстовые форматы за считанные секунды.</system:String>
+    <system:String x:Key="Prem_Feat3_Title">Безопасность и управление документами</system:String>
+    <system:String x:Key="Prem_Feat3_Desc">Шифруйте свои PDF, управляйте страницами и получите полный доступ ко всем профессиональным инструментам.</system:String>
+    <system:String x:Key="Prem_Plan_Lifetime_Name">Пожизненный профессионал</system:String>
+    <system:String x:Key="Prem_Plan_Lifetime_Desc">Единоразовый платеж, неограниченное использование и все обновления включены.</system:String>
+    <system:String x:Key="Prem_TrialBanner">Premium пробная версия</system:String>
+    <system:String x:Key="Prem_DaysRemaining">{0} дней осталось</system:String>
+    <system:String x:Key="Prem_RestartTitle">Premium активирован</system:String>
+    <system:String x:Key="Prem_RestartMsg">Premium успешно активирован! Хотите перезапустить приложение сейчас, чтобы применить изменения?</system:String>
+</ResourceDictionary>

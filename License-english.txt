@@ -1,0 +1,95 @@
+# DOCENTRA PDF & DOCUMENT EDITOR
+
+# END USER LICENSE AGREEMENT (EULA)
+
+**Last Updated:** May 01, 2026
+
+This End User License Agreement ("Agreement") governs the installation, use, licensing, and terms of use of the **Docentra – PDF & Document Editor** software ("Software").
+
+By downloading, installing, activating, or using the Software, you represent that you have read, understood, and accepted all the terms stated below.
+
+If you do not accept these terms, do not install or use the Software.
+
+---
+
+# 1. DEFINITIONS
+
+* **Docentra:** The owner and license provider of the Software.
+* **Software:** The Docentra – PDF & Document Editor application and all its components.
+* **User:** The natural or legal person who installs, uses, or licenses the Software.
+* **License Key:** The unique access code provided for the authorization of the Software.
+* **HWID (Hardware ID):** The unique system identity tied to the device hardware.
+* **Local Processing:** Data processing performed only on the user's device.
+
+---
+
+# 2. PRIVACY AND DATA SECURITY
+
+Docentra prioritizes user privacy and is developed with a "Privacy-Native" approach.
+
+## 2.1 Local Processing
+* All document processing operations are carried out entirely on the local device.
+* PDF editing, OCR, conversion, signing, cropping, merging, and other operations are performed without data transfer outside the device.
+* User documents are not automatically uploaded to cloud systems or remote servers.
+
+## 2.2 Data Transfer
+Docentra does not transfer user documents to third-party systems.
+
+---
+
+# 3. LICENSE TERMS
+
+## 3.1 License Type
+Docentra offers the user a limited, non-transferable, non-exclusive usage license.
+
+## 3.2 Hardware Lock (HWID)
+* The license key is tied only to the HWID information of the device on which it was first activated.
+* The same license key cannot be used on different devices.
+
+---
+
+# 4. USAGE RESTRICTIONS
+
+The user may not:
+* Analyze the software by reverse engineering
+* Attempt to extract the source code
+* Disassemble or decompile the software
+* Use the software for illegal activities
+
+---
+
+# 5. INTELLECTUAL PROPERTY RIGHTS
+
+All rights to the software belong to Docentra. The user only obtains the right to use.
+
+---
+
+# 6. DISCLAIMER OF LIABILITY
+
+The software is provided "as is". Docentra does not accept responsibility for:
+* Data loss
+* Document corruption
+* Indirect damages
+* Profit loss
+
+The user is responsible for backing up the documents they process.
+
+---
+
+# 7. TERMINATION OF LICENSE
+
+Docentra may terminate the license in case of license violation, piracy, or unauthorized sharing.
+
+---
+
+# 8. ACCEPTANCE STATEMENT
+
+The user accepts that they have read and understood this agreement and will use the software within the specified license terms.
+
+---
+
+# CONTACT
+
+For support, license, and other requests:
+**E-mail:** support@docentrapdf.com
+**Web:** https://docentrapdf.com

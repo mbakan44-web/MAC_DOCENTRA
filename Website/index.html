@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOCENTRA | Professional PDF & Document Editor</title>
+    <meta name="description" content="Privacy-Native PDF Editor with local OCR, splitting, merging, and professional document tools. One-time payment, lifetime access.">
+    <meta name="keywords" content="PDF editor, local OCR, merge PDF, split PDF, privacy, document editor, offline PDF tool">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Particle Canvas Background -->
+    <canvas id="particle-canvas"></canvas>
+
+    <header id="header">
+        <nav class="container">
+            <div class="logo">DOCENTRA</div>
+            <ul class="nav-links">
+                <li><a href="#features" data-i18n="nav-features">Features</a></li>
+                <li><a href="#how-it-works" data-i18n="nav-how">How It Works</a></li>
+                <li><a href="#privacy" data-i18n="nav-privacy">Privacy</a></li>
+                <li><a href="#pricing" data-i18n="nav-pricing">Pricing</a></li>
+                <li><a href="#faq" data-i18n="nav-faq">FAQ</a></li>
+                <li><a href="#download-cta" class="btn btn-secondary" data-i18n="btn-download">Download</a></li>
+            </ul>
+            <div class="nav-right">
+                <select id="lang-selector" class="lang-select">
+                    <option value="en">English</option>
+                    <option value="tr">Türkçe</option>
+                    <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
+                    <option value="es">Español</option>
+                    <option value="it">Italiano</option>
+                    <option value="zh">简体中文</option>
+                    <option value="ja">日本語</option>
+                    <option value="ru">Русский</option>
+                    <option value="ar">العربية</option>
+                </select>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ===================== HERO ===================== -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content reveal">
+                    <span class="badge" data-i18n="hero-badge">Privacy-Native Architecture</span>
+                    <h1 data-i18n="hero-title">Professional PDF Editing, <span>Reimagined.</span></h1>
+                    <p data-i18n="hero-desc">Experience the power of local processing. Edit, convert, and OCR your documents with total privacy and high performance. No subscriptions, no cloud, no compromise.</p>
+                    <div class="hero-btns">
+                        <a href="#download-cta" class="btn btn-primary" data-i18n="btn-get-started">Get Started for Free</a>
+                        <a href="#pricing" class="btn btn-outline" data-i18n="btn-pricing">View Pricing</a>
+                    </div>
+                </div>
+                <div class="hero-image reveal reveal-right">
+                    <img src="hero-mockup.png" alt="Docentra App Mockup" class="floating">
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== STATS BAR ===================== -->
+        <section class="stats-bar">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item reveal">
+                        <span class="stat-number" data-target="12">0</span><span class="stat-suffix">+</span>
+                        <p data-i18n="stat-tools">Professional Tools</p>
+                    </div>
+                    <div class="stat-item reveal">
+                        <span class="stat-number" data-target="10">0</span>
+                        <p data-i18n="stat-langs">Languages Supported</p>
+                    </div>
+                    <div class="stat-item reveal">
+                        <span class="stat-number" data-target="100">0</span><span class="stat-suffix">%</span>
+                        <p data-i18n="stat-local">Local Processing</p>
+                    </div>
+                    <div class="stat-item reveal">
+                        <span class="stat-number" data-target="0">0</span>
+                        <p data-i18n="stat-cloud">Cloud Uploads</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== FEATURES ===================== -->
+        <section id="features" class="features">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="badge" data-i18n="features-badge">All-in-One Suite</span>
+                    <h2 data-i18n="features-title">Professional Suite</h2>
+                    <p data-i18n="features-subtitle">Every tool you need to master your document workflow — offline and private.</p>
+                </div>
+                <div class="feature-grid">
+                    <div class="feature-card reveal">
+                        <div class="icon">🔗</div>
+                        <h3 data-i18n="feat-merge-title">PDF Merge</h3>
+                        <p data-i18n="feat-merge-desc">Combine multiple PDF files into a single professional document. Drag, drop, reorder, and merge in seconds.</p>
+                    </div>
+                    <div class="feature-card reveal">
+                        <div class="icon">✂️</div>
+                        <h3 data-i18n="feat-split-title">PDF Split</h3>
+                        <p data-i18n="feat-split-desc">Split large PDFs by page range or extract each page as a separate file. Perfect for extracting specific sections.</p>
+                    </div>
+                    <div class="feature-card reveal">
+                        <div class="icon">🖼️</div>
+                        <h3 data-i18n="feat-img-title">Image to PDF</h3>
+                        <p data-i18n="feat-img-desc">Convert photos, scans, and graphics (JPG, PNG) into high-resolution PDF documents instantly.</p>
+                    </div>
+                    <div class="feature-card reveal">
+                        <div class="icon">🔄</div>
+                        <h3 data-i18n="feat-office-title">Office Converter</h3>
+                        <p data-i18n="feat-office-desc">Convert Word, Excel, and PowerPoint files to PDF and back. Preserves styles, tables, and formatting.</p>
+                    </div>
+                    <div class="feature-card reveal">
+                        <div class="icon">🔐</div>
+                        <h3 data-i18n="feat-security-title">Password Security</h3>
+                        <p data-i18n="feat-security-desc">Encrypt sensitive documents with military-grade passwords. Remove existing passwords when authorized.</p>
+                    </div>
+                    <div class="feature-card reveal">
+                        <div class="icon">✍️</div>
+                        <h3 data-i18n="feat-sign-title">PDF Signing</h3>
+                        <p data-i18n="feat-sign-desc">Draw signatures, upload scanned images, and apply them precisely across single or all pages.</p>
+                    </div>
+                    <div class="feature-card reveal">
+                        <div class="icon">🔍</div>
+                        <h3 data-i18n="feat-ocr-title">Local OCR</h3>
+                        <p data-i18n="feat-ocr-desc">Turn scanned documents into editable, searchable text using high-accuracy local recognition — no internet needed.</p>
+                    </div>
+                    <div class="feature-card reveal">
+                        <div class="icon">📐</div>
+                        <h3 data-i18n="feat-crop-title">PDF Crop</h3>
+                        <p data-i18n="feat-crop-desc">Remove unwanted margins and whitespace to focus on the content that matters. Ideal for mobile reading.</p>
+                    </div>
+                    <div class="feature-card reveal">
+                        <div class="icon">🔢</div>
+                        <h3 data-i18n="feat-number-title">Page Numbering</h3>
+                        <p data-i18n="feat-number-desc">Add automatic page numbers as headers or footers. Full control over format, position, and style.</p>
+                    </div>
+                    <div class="feature-card reveal">
+                        <div class="icon">🗑️</div>
+                        <h3 data-i18n="feat-delete-title">Delete Pages</h3>
+                        <p data-i18n="feat-delete-desc">Remove unwanted or mistakenly scanned pages with a single click. Clean up documents instantly.</p>
+                    </div>
+                    <div class="feature-card reveal">
+                        <div class="icon">🧼</div>
+                        <h3 data-i18n="feat-clean-title">Metadata Cleaner</h3>
+                        <p data-i18n="feat-clean-desc">Strip hidden author names, computer info, and edit history from Office files before sharing. Prevent data leaks.</p>
+                    </div>
+                    <div class="feature-card reveal">
+                        <div class="icon">🏷️</div>
+                        <h3 data-i18n="feat-watermark-title">Watermark & Logo</h3>
+                        <p data-i18n="feat-watermark-desc">Add company logos or text watermarks like "Confidential" or "Draft" across all pages in batch.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== HOW IT WORKS ===================== -->
+        <section id="how-it-works" class="how-it-works">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="badge" data-i18n="hiw-badge">Simple Setup</span>
+                    <h2 data-i18n="hiw-title">Up and Running in 3 Steps</h2>
+                    <p data-i18n="hiw-subtitle">No account, no sign-up, no cloud configuration required.</p>
+                </div>
+                <div class="steps-grid">
+                    <div class="step-card reveal">
+                        <div class="step-number">1</div>
+                        <div class="step-icon">⬇️</div>
+                        <h3 data-i18n="step1-title">Download</h3>
+                        <p data-i18n="step1-desc">Download the lightweight installer — under 60 MB. No bloatware, no hidden add-ons.</p>
+                    </div>
+                    <div class="step-connector reveal"></div>
+                    <div class="step-card reveal">
+                        <div class="step-number">2</div>
+                        <div class="step-icon">⚡</div>
+                        <h3 data-i18n="step2-title">Install & Launch</h3>
+                        <p class="step-desc">Tüm araçları içeren eksiksiz ve hızlı kurulum paketini indirin. The app is ready to use within seconds — no sign-up or account needed.</p>
+                    </div>
+                    <div class="step-connector reveal"></div>
+                    <div class="step-card reveal">
+                        <div class="step-number">3</div>
+                        <div class="step-icon">🚀</div>
+                        <h3 data-i18n="step3-title">Start Working</h3>
+                        <p data-i18n="step3-desc">All 12+ tools are instantly available. Your documents stay on your PC — always private, always fast.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== PRIVACY ===================== -->
+        <section id="privacy" class="privacy-deep">
+            <div class="container">
+                <div class="privacy-box reveal">
+                    <div class="privacy-icon">🛡️</div>
+                    <h2 data-i18n="privacy-title">Your Documents, Your Rules.</h2>
+                    <p data-i18n="privacy-desc">Unlike cloud-based editors, Docentra processes every single byte on your local hardware. Your sensitive business data, personal IDs, and confidential contracts never touch a remote server. Total privacy isn't a feature — it's our foundation.</p>
+                    <div class="privacy-features">
+                        <div class="privacy-feat">
+                            <span class="pf-icon">💻</span>
+                            <span data-i18n="pf1">100% Offline Processing</span>
+                        </div>
+                        <div class="privacy-feat">
+                            <span class="pf-icon">🔒</span>
+                            <span data-i18n="pf2">No Data Collection</span>
+                        </div>
+                        <div class="privacy-feat">
+                            <span class="pf-icon">🚫</span>
+                            <span data-i18n="pf3">No Cloud Uploads</span>
+                        </div>
+                        <div class="privacy-feat">
+                            <span class="pf-icon">🛡️</span>
+                            <span data-i18n="pf4">Military-Grade Encryption</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== COMPARISON TABLE ===================== -->
+        <section id="comparison" class="comparison">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="badge" data-i18n="cmp-badge">Why Docentra?</span>
+                    <h2 data-i18n="cmp-title">See How We Compare</h2>
+                    <p data-i18n="cmp-subtitle">The honest comparison you won't find on their websites.</p>
+                </div>
+                <div class="table-wrapper reveal">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th data-i18n="cmp-feature">Feature</th>
+                                <th class="highlight-col">Docentra</th>
+                                <th>Adobe Acrobat</th>
+                                <th data-i18n="cmp-online">Online Tools</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-i18n="cmp-r1">Offline Processing</td>
+                                <td class="highlight-col">✅</td>
+                                <td>✅</td>
+                                <td>❌</td>
+                            </tr>
+                            <tr>
+                                <td data-i18n="cmp-r2">No Subscription</td>
+                                <td class="highlight-col">✅</td>
+                                <td>❌</td>
+                                <td>❌</td>
+                            </tr>
+                            <tr>
+                                <td data-i18n="cmp-r3">Local OCR</td>
+                                <td class="highlight-col">✅</td>
+                                <td>✅</td>
+                                <td>⚠️</td>
+                            </tr>
+                            <tr>
+                                <td data-i18n="cmp-r4">Privacy Guarantee</td>
+                                <td class="highlight-col">✅</td>
+                                <td>⚠️</td>
+                                <td>❌</td>
+                            </tr>
+                            <tr>
+                                <td data-i18n="cmp-r5">Office Conversion</td>
+                                <td class="highlight-col">✅</td>
+                                <td>✅</td>
+                                <td>⚠️</td>
+                            </tr>
+                            <tr>
+                                <td data-i18n="cmp-r6">Metadata Cleaning</td>
+                                <td class="highlight-col">✅</td>
+                                <td>❌</td>
+                                <td>❌</td>
+                            </tr>
+                            <tr>
+                                <td data-i18n="cmp-r7">Price</td>
+                                <td class="highlight-col price-cell dynamic-price">₺2250.00</td>
+                                <td data-i18n="cmp-r7-adobe">$239.88/year</td>
+                                <td data-i18n="cmp-r7-online">$72-$108/year</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== PRICING ===================== -->
+        <section id="pricing" class="pricing">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="badge" data-i18n="pricing-badge">One-Time Payment</span>
+                    <h2 data-i18n="pricing-title">Simple, Transparent Pricing</h2>
+                    <p data-i18n="pricing-subtitle">No hidden fees. No recurring charges. Pay once, own it forever.</p>
+                </div>
+                <div class="pricing-card reveal">
+                    <div class="pricing-ribbon" data-i18n="pricing-ribbon">BEST VALUE</div>
+                    <div class="pricing-header">
+                        <h3 data-i18n="pricing-card-title">Lifetime Professional</h3>
+                        <div class="price dynamic-price">₺2250.00</div>
+                        <p data-i18n="pricing-card-subtitle">Perpetual License per PC</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li data-i18n="price-feat1">✅ Lifetime Updates</li>
+                        <li data-i18n="price-feat2">✅ High-Accuracy Local OCR</li>
+                        <li data-i18n="price-feat3">✅ All 12+ Professional Tools</li>
+                        <li data-i18n="price-feat4">✅ Priority Support</li>
+                        <li data-i18n="price-feat5">✅ No Monthly Fees</li>
+                        <li data-i18n="price-feat6">✅ Metadata Cleaner Included</li>
+                        <li data-i18n="price-feat7">✅ 10 Language Support</li>
+                    </ul>
+                    <a href="https://www.etsy.com/shop/YourShop" class="btn btn-primary btn-block" data-i18n="btn-buy">Buy License Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== FAQ ===================== -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="badge" data-i18n="faq-badge">Got Questions?</span>
+                    <h2 data-i18n="faq-title">Frequently Asked Questions</h2>
+                    <p data-i18n="faq-subtitle">Everything you need to know about Docentra.</p>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item reveal">
+                        <button class="faq-question" data-i18n="faq-q1">Does Docentra require an internet connection?</button>
+                        <div class="faq-answer">
+                            <p data-i18n="faq-a1">No. Docentra is designed to work 100% offline. All processing — including OCR, conversion, and encryption — happens locally on your PC. No data is ever sent to any server.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <button class="faq-question" data-i18n="faq-q2">Is this a one-time payment or subscription?</button>
+                        <div class="faq-answer">
+                            <p data-i18n="faq-a2">One-time payment only. You pay once and own the license forever. All future updates are included at no extra cost. No monthly or annual fees.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <button class="faq-question" data-i18n="faq-q3">What operating systems are supported?</button>
+                        <div class="faq-answer">
+                            <p data-i18n="faq-a3">Docentra currently supports Windows 10 and Windows 11 (64-bit). macOS and Linux versions are being considered for future releases.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <button class="faq-question" data-i18n="faq-q4">Can I use my license on multiple PCs?</button>
+                        <div class="faq-answer">
+                            <p data-i18n="faq-a4">Each license is valid for one PC. If you need to use Docentra on multiple machines, you can purchase additional licenses at a discounted rate.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <button class="faq-question" data-i18n="faq-q5">How does local OCR work without internet?</button>
+                        <div class="faq-answer">
+                            <p data-i18n="faq-a5">Docentra uses Windows' built-in OCR engine (Windows.Media.Ocr) to perform text recognition directly on your device. This means your scanned documents never leave your computer, ensuring complete privacy.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <button class="faq-question" data-i18n="faq-q6">What is the Metadata Cleaner?</button>
+                        <div class="faq-answer">
+                            <p data-i18n="faq-a6">Before sharing Office documents, the Metadata Cleaner removes hidden information like author names, computer names, edit history, and timestamps. This prevents accidental data leaks and protects your privacy in corporate environments.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== DOWNLOAD CTA ===================== -->
+        <section id="download-cta" class="download-cta">
+            <div class="container">
+                <div class="cta-box reveal">
+                    <h2 data-i18n="cta-title">Ready to Take Control of Your Documents?</h2>
+                    <p data-i18n="cta-desc">Download Docentra for free and experience the difference of true local processing. No sign-up required.</p>
+                    <div class="cta-btns">
+                        <a href="https://github.com/mbakan44-web/DocentraWebsite/releases/download/v1.0.0/Docentra_PDF_Suite.exe" class="btn btn-primary btn-lg" data-i18n="cta-btn-download">
+                            ⬇️ Download for Windows
+                        </a>
+                        <span class="cta-meta" data-i18n="cta-meta">Windows 10/11 · 60 MB · Free Trial Included</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <div class="logo">DOCENTRA</div>
+                    <p data-i18n="footer-desc">Empowering professionals with secure, offline document tools. Your data stays yours.</p>
+                </div>
+                <div class="footer-links">
+                    <h4 data-i18n="footer-product">Product</h4>
+                    <ul>
+                        <li><a href="#features" data-i18n="nav-features">Features</a></li>
+                        <li><a href="#pricing" data-i18n="nav-pricing">Pricing</a></li>
+                        <li><a href="#faq" data-i18n="nav-faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 data-i18n="footer-support">Support</h4>
+                    <ul>
+                        <li><a href="mailto:support@docentrapdf.com">support@docentrapdf.com</a></li>
+                        <li><a href="#faq" data-i18n="footer-help">Help Center</a></li>
+                        <li><a href="#" data-i18n="footer-license">License Agreement</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 data-i18n="footer-legal">Legal</h4>
+                    <ul>
+                        <li><a href="#" data-i18n="footer-privacy-policy">Privacy Policy</a></li>
+                        <li><a href="#" data-i18n="footer-terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Docentra AI Team. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        /**
+         * Akıllı Dinamik Fiyatlandırma Sistemi - Psikolojik Fiyatlandırma (V4)
+         * Baz fiyat: 2250 TRY
+         */
+        async function syncGlobalPricing() {
+            const BASE_TRY = 2250; 
+            const priceElements = document.querySelectorAll('.dynamic-price');
+            
+            try {
+                const urlParams = new URLSearchParams(window.location.search);
+                let currencyCode = urlParams.get('currency');
+
+                if (!currencyCode) {
+                    try {
+                        const geoInfo = await fetch('https://ipapi.co/json/').then(res => res.json());
+                        currencyCode = geoInfo.currency;
+                    } catch (e) {
+                        const currentLang = document.getElementById('lang-selector')?.value || 'en';
+                        const langToCurrency = { 'tr': 'TRY', 'en': 'USD', 'de': 'EUR', 'fr': 'EUR', 'es': 'EUR', 'it': 'EUR', 'ja': 'JPY', 'zh': 'CNY', 'ru': 'RUB' };
+                        currencyCode = langToCurrency[currentLang] || 'USD';
+                    }
+                }
+                
+                const exchangeData = await fetch('https://api.exchangerate-api.com/v4/latest/TRY').then(res => res.json());
+                const conversionRate = exchangeData.rates[currencyCode] || 1;
+                
+                let localPriceValue = (BASE_TRY * conversionRate);
+                let formattedPrice;
+
+                // Psikolojik Fiyatlandırma Mantığı (x.90)
+                if (currencyCode === 'TRY') {
+                    // Türkiye için düz hesap 2250 ₺
+                    formattedPrice = "₺2250";
+                } else {
+                    // Yurt dışı için küsuratı .90 yap (Örn: 49.84 -> 49.90)
+                    const wholePart = Math.floor(localPriceValue);
+                    const finalValue = wholePart + 0.90;
+                    
+                    formattedPrice = finalValue.toLocaleString(undefined, { 
+                        style: 'currency', 
+                        currency: currencyCode,
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2
+                    });
+                }
+
+                priceElements.forEach(el => {
+                    el.innerText = formattedPrice;
+                    el.setAttribute('data-i18n-skip', 'true');
+                });
+
+                console.log(`Psikolojik Fiyatlandırma Uygulandı: ${formattedPrice}`);
+
+            } catch (err) {
+                console.error("Fiyat hatası:", err);
+                priceElements.forEach(el => el.innerText = "₺2250");
+            }
+        }
+
+        window.addEventListener('load', () => {
+            setTimeout(syncGlobalPricing, 500);
+        });
+
+        document.getElementById('lang-selector')?.addEventListener('change', () => {
+            setTimeout(syncGlobalPricing, 300);
+        });
+    </script>
+</body>
+</html>

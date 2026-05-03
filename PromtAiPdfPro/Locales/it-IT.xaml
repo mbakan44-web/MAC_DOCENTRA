@@ -1,0 +1,401 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <!-- General -->
+    <system:String x:Key="AppTitle">DOCENTRA PDF &amp; EDITOR DOCUMENTI</system:String>
+    <system:String x:Key="Nav_Dashboard">Centro di controllo</system:String>
+    <system:String x:Key="Nav_Merge">Unisci PDF</system:String>
+    <system:String x:Key="Nav_Split">Dividi PDF</system:String>
+    <system:String x:Key="Nav_Convert">Converti</system:String>
+    <system:String x:Key="Nav_OfficeConvert">Convertitore Office</system:String>
+    <system:String x:Key="Nav_PasswordSecurity">Password e sicurezza</system:String>
+    <system:String x:Key="Nav_Watermark">Filigrana e logo</system:String>
+    <system:String x:Key="Nav_Ocr">OCR - Riconoscimento testo</system:String>
+    <system:String x:Key="Nav_Crop">Ritaglia PDF</system:String>
+    <system:String x:Key="Nav_AddPageNumbers">Aggiungi numeri di pagina</system:String>
+    <system:String x:Key="Nav_DeletePages">Elimina pagine</system:String>
+    <system:String x:Key="Nav_Sign">Firma PDF</system:String>
+    <system:String x:Key="Nav_Settings">Impostazioni</system:String>
+
+    <!-- Premium & License -->
+    <system:String x:Key="Prem_LockReason_Discount">Il periodo di prova di 7 giorni è scaduto. Alcune pagine sono esclusive per i membri Premium.</system:String>
+    <system:String x:Key="Prem_LockReason_Restricted">Il periodo di prova di 14 giorni è scaduto. Alcune pagine sono chiuse ed è attivo il limite di 5 pagine.</system:String>
+    <system:String x:Key="Prem_Status_Full">Tutte le funzioni aperte (Periodo di prova)</system:String>
+    <system:String x:Key="Prem_Status_Discount">Accesso limitato (Possibilità di sconto del 40%)</system:String>
+    <system:String x:Key="Prem_Status_Restricted">Versione gratuita limitata</system:String>
+    <system:String x:Key="Prem_PurchaseRequired_Msg">Acquista una licenza per utilizzare questa schermata.</system:String>
+    <system:String x:Key="Prem_PurchaseRequired_Title">Funzionalità Premium</system:String>
+    <system:String x:Key="Prem_LimitedMode">Modalità limitata</system:String>
+    <system:String x:Key="Prem_RestrictedMode">Modalità ristretta</system:String>
+    <system:String x:Key="Prem_SomePagesLocked">Alcune pagine bloccate</system:String>
+    <system:String x:Key="Prem_PageLimitActive">Limite di 5 pagine attivo</system:String>
+    <system:String x:Key="Prem_GoToPremium">Passa a Premium</system:String>
+    <system:String x:Key="Prem_Close">Chiudi</system:String>
+
+    <!-- Sign -->
+    <system:String x:Key="Sign_Title">Firma PDF</system:String>
+    <system:String x:Key="Sign_SelectPdf">Scegli PDF</system:String>
+    <system:String x:Key="Sign_Method">Metodo di firma</system:String>
+    <system:String x:Key="Sign_Draw">Manoscritto (Disegno)</system:String>
+    <system:String x:Key="Sign_Upload">Carica immagine</system:String>
+    <system:String x:Key="Sign_Clear">Cancella</system:String>
+    <system:String x:Key="Sign_Position">Posizione</system:String>
+    <system:String x:Key="Sign_Size">Dimensione</system:String>
+    <system:String x:Key="Sign_Opacity">Opacità</system:String>
+    <system:String x:Key="Sign_ApplyTo">Applica a</system:String>
+    <system:String x:Key="Sign_AllPages">Tutte le pagine</system:String>
+    <system:String x:Key="Sign_CurrentPage">Solo questa pagina</system:String>
+    <system:String x:Key="Sign_CustomPages">Pagine personalizzate</system:String>
+    <system:String x:Key="Sign_Process">Firma e salva</system:String>
+    <system:String x:Key="Sign_NoFile">Seleziona prima un file PDF.</system:String>
+    <system:String x:Key="Sign_NoSignature">Crea o carica una firma.</system:String>
+    <system:String x:Key="Sign_Success">File firmato con successo.</system:String>
+    <system:String x:Key="Sign_SuccessWithOpen">File firmato con successo. Vuoi aprirlo?</system:String>
+
+    <!-- Dashboard -->
+    <system:String x:Key="Dash_Welcome">Benvenuto!</system:String>
+    <system:String x:Key="Dash_Desc">Il tuo punto di riferimento unico per tutte le tue esigenze PDF.</system:String>
+    <system:String x:Key="Dash_MergeTitle">Unisci</system:String>
+    <system:String x:Key="Dash_MergeSub">Combina più file PDF in uno solo.</system:String>
+    <system:String x:Key="Dash_SplitTitle">Dividi</system:String>
+    <system:String x:Key="Dash_SplitSub">Salva le pagine come file PDF separati.</system:String>
+    <system:String x:Key="Dash_WordTitle">In Word</system:String>
+    <system:String x:Key="Dash_WordSub">Esporta i file PDF in formato Word.</system:String>
+    <system:String x:Key="Dash_ImgTitle">Immagine in PDF</system:String>
+    <system:String x:Key="Dash_ImgSub">Converti le tue immagini in formato PDF.</system:String>
+    <system:String x:Key="Dash_OfficeTitle">Office in PDF</system:String>
+    <system:String x:Key="Dash_OfficeSub">Converti file Word, Excel e PowerPoint in PDF.</system:String>
+    <system:String x:Key="Dash_ProtectTitle">Cripta</system:String>
+    <system:String x:Key="Dash_ProtectSub">Proteggi i tuoi file PDF con la crittografia.</system:String>
+    <system:String x:Key="Dash_UnlockTitle">Rimuovi password</system:String>
+    <system:String x:Key="Dash_UnlockSub">Rimuovi le password esistenti dai PDF.</system:String>
+    <system:String x:Key="Dash_TextWatermarkTitle">Filigrana testo</system:String>
+    <system:String x:Key="Dash_TextWatermarkSub">Aggiungi una filigrana di testo interattiva.</system:String>
+    <system:String x:Key="Dash_LogoWatermarkTitle">Aggiungi logo</system:String>
+    <system:String x:Key="Dash_LogoWatermarkSub">Inserisci un logo trasparente nei tuoi file.</system:String>
+    <system:String x:Key="Dash_DragDrop">Trascina i file qui</system:String>
+    <system:String x:Key="Dash_DragDropSub">Rilascia i file PDF per iniziare il processo.</system:String>
+    <system:String x:Key="Dash_OcrSub">Estrae il testo da immagini e PDF scansionati.</system:String>
+    <system:String x:Key="Dash_PageNumTitle">Numeri di pagina</system:String>
+    <system:String x:Key="Dash_PageNumSub">Aggiungi la numerazione automatica alle pagine PDF.</system:String>
+    <system:String x:Key="Dash_DeletePagesTitle">Elimina pagine</system:String>
+    <system:String x:Key="Dash_DeletePagesSub">Rimuovi definitivamente le pagine indesiderate dal PDF.</system:String>
+    <system:String x:Key="Dash_SignTitle">Firma PDF</system:String>
+    <system:String x:Key="Dash_SignSub">Aggiungi firme autografe o immagini ai documenti PDF.</system:String>
+    <system:String x:Key="Dash_CropTitle">Ritaglia PDF</system:String>
+    <system:String x:Key="Dash_CropSub">Ritaglia le pagine PDF a qualsiasi dimensione desiderata.</system:String>
+
+    <!-- Merge Tool -->
+    <system:String x:Key="Merge_Title">Unisci PDF</system:String>
+    <system:String x:Key="Merge_Desc">Aggiungi i tuoi file PDF e uniscili nell'ordine che preferisci.</system:String>
+    <system:String x:Key="Merge_AddFile">Aggiungi file</system:String>
+    <system:String x:Key="Merge_ClearList">Svuota elenco</system:String>
+    <system:String x:Key="Merge_MergeBtn">Unisci e salva</system:String>
+    <system:String x:Key="Merge_EmptyStateDesc">Trascina i file PDF qui or fai clic sul pulsante "Aggiungi file"</system:String>
+    <system:String x:Key="Merge_DefaultFileName">unito.pdf</system:String>
+    <system:String x:Key="Merge_SuccessWithOpen">File uniti con successo. Vuoi aprirli?</system:String>
+    
+    <!-- Split Tool -->
+    <system:String x:Key="Split_Title">Dividi PDF</system:String>
+    <system:String x:Key="Split_Desc">Seleziona il file PDF che desideri dividere.</system:String>
+    <system:String x:Key="Split_Browse">Scegli file</system:String>
+    <system:String x:Key="Split_Options">Opzioni di divisione</system:String>
+    <system:String x:Key="Split_OptSeparate">Converti tutte le pagine in PDF separati</system:String>
+    <system:String x:Key="Split_OptDesc">Esporta ogni pagina del file PDF selezionato come file PDF separato.</system:String>
+    <system:String x:Key="Split_SplitBtn">Dividi in parti</system:String>
+    <system:String x:Key="Split_SuccessWithOpen">PDF diviso con successo. Vuoi aprire la cartella?</system:String>
+    <system:String x:Key="Split_OptRange">Dividi pagine/intervalli specifici</system:String>
+    <system:String x:Key="Split_RangeHint">Puoi usare le virgole (1,3,5) or gli intervalli (5:8).</system:String>
+
+    <!-- Convert Tool -->
+    <system:String x:Key="Conv_Title">Strumenti di conversione</system:String>
+    <system:String x:Key="Conv_Desc">Gestisci le tue operazioni di conversione PDF da qui.</system:String>
+    <system:String x:Key="Conv_ImgToPdf">Immagine in PDF</system:String>
+    <system:String x:Key="Conv_ImgToPdfDesc">Converti i tuoi file JPG or PNG in PDF.</system:String>
+    <system:String x:Key="Conv_OfficeToPdf">Office in PDF</system:String>
+    <system:String x:Key="Conv_OfficeToPdfDesc">Converti file Word (.docx), Excel (.xlsx) or PowerPoint (.pptx) in PDF.</system:String>
+    <system:String x:Key="Conv_PdfToWord">PDF in Word</system:String>
+    <system:String x:Key="Conv_PdfToWordDesc">Converti i file PDF in formato Word (.docx) modificabile.</system:String>
+    <system:String x:Key="Conv_PdfToImg">PDF in immagine</system:String>
+    <system:String x:Key="Conv_PdfToImgDesc">Dividi le pagine PDF in file immagine (PNG) ad alta risoluzione.</system:String>
+    <system:String x:Key="Conv_Converting">Conversione in corso...</system:String>
+    <system:String x:Key="Conv_Success">Conversione completata con successo!</system:String>
+    <system:String x:Key="Conv_SuccessWithOpen">Conversione completata con successo. Vuoi aprire il file/la cartella?</system:String>
+    <system:String x:Key="Conv_Error">Si è verificato un errore durante la conversione. Assicurati che Office sia installato.</system:String>
+    <system:String x:Key="Conv_NoOffice">Microsoft Office non trovato. Assicurati che sia installato.</system:String>
+    <system:String x:Key="Conv_NoWord">Microsoft Word non trovato. Assicurati che sia installato.</system:String>
+    <system:String x:Key="Conv_NoExcel">Microsoft Excel non trovato. Assicurati che sia installato.</system:String>
+    <system:String x:Key="Conv_NoPowerPoint">Microsoft PowerPoint non trovato. Assicurati che sia installato.</system:String>
+    <system:String x:Key="Conv_OfficeError">Errore durante la conversione del documento Office. Dettagli nel registro.</system:String>
+    <system:String x:Key="Conv_OfficeBusy">Office potrebbe essere occupato or bloccato. Chiudi tutte le finestre Office e riprova.</system:String>
+    <system:String x:Key="Conv_CleanOffice">Pulisci i processi Office</system:String>
+    <system:String x:Key="Conv_CleanConfirm">Tutte le finestre Word, Excel e PowerPoint aperte verranno chiuse. I dati non salvati potrebbero andare persi. Continuare?</system:String>
+    <system:String x:Key="Conv_BtnClean">Pulisci Office</system:String>
+    <system:String x:Key="Conv_SelectImgTitle">Scegli le immagini da convertire in PDF</system:String>
+    <system:String x:Key="Conv_SelectPdfToImgTitle">Scegli il file PDF da convertire in immagini</system:String>
+    <system:String x:Key="Conv_SelectFolderTitle">Scegli la cartella per salvare le immagini</system:String>
+    <system:String x:Key="Conv_SelectOfficeTitle">Scegli il file Office da convertire in PDF</system:String>
+    <system:String x:Key="Conv_SelectPdfToWordTitle">Scegli il file PDF da convertire in Word</system:String>
+
+    <!-- Office Convert -->
+    <system:String x:Key="Sec_Title_OfficeConvert">Convertitore Office</system:String>
+    <system:String x:Key="Sec_Desc_OfficeConvert">Converti file Word in Excel or file Excel in Word.</system:String>
+    <system:String x:Key="Office_RequirementTitle">Requisito di Microsoft Office</system:String>
+    <system:String x:Key="Office_RequirementDesc">Microsoft Office deve essere installato sul computer affinché alcune operazioni di conversione e modifica (Word, Excel, PowerPoint) funzionino.</system:String>
+    <system:String x:Key="Office_WordToExcel">Word in Excel</system:String>
+    <system:String x:Key="Office_ExcelToWord">Excel in Word</system:String>
+    <system:String x:Key="Office_WordToExcelDesc">Trasferisce i paragrafi del documento su Excel riga per riga.</system:String>
+    <system:String x:Key="Office_ExcelToWordDesc">Trasferisce le celle di Excel su Word come testo normale.</system:String>
+    <system:String x:Key="Office_PptToWord">PowerPoint in Word</system:String>
+    <system:String x:Key="Office_PptToExcel">PowerPoint in Excel</system:String>
+    <system:String x:Key="Office_PptToWordDesc">Trasferisce tutto il testo della presentazione dalle diapositive a Word.</system:String>
+    <system:String x:Key="Office_PptToExcelDesc">Trasferisce tutto il testo dalle diapositive a Excel riga per riga.</system:String>
+    <system:String x:Key="Office_SelectWordTitle">Scegli il file Word per la conversione</system:String>
+    <system:String x:Key="Office_SaveExcelTitle">Salva file Excel</system:String>
+    <system:String x:Key="Office_SelectExcelTitle">Scegli il file Excel per la conversione</system:String>
+    <system:String x:Key="Office_SaveWordTitle">Salva file Word</system:String>
+    <system:String x:Key="Office_SelectPptTitle">Scegli il file PowerPoint per la conversione</system:String>
+
+    <!-- Settings -->
+    <system:String x:Key="Sett_Title">Impostazioni</system:String>
+    <system:String x:Key="Sett_Language">Impostazioni lingua (Language)</system:String>
+    <system:String x:Key="Sett_LanguageDesc">Scegli la lingua dell'applicazione.</system:String>
+    <system:String x:Key="Sett_LanguageAuto">Lingua di sistema (Auto)</system:String>
+    <system:String x:Key="Sett_Theme">Tema</system:String>
+    <system:String x:Key="Sett_ThemeDesc">Cambia lo schema colori (Chiaro or Scuro) qui.</system:String>
+    <system:String x:Key="Sett_AccentColor">Colore accento</system:String>
+    <system:String x:Key="Sett_AccentColorDesc">Personalizza qui il colore accento principale (pulsanti, bordi).</system:String>
+
+    <!-- Common -->
+    <system:String x:Key="Common_PathPlaceholder">Nessun file selezionato...</system:String>
+    <system:String x:Key="Common_Save">Salva</system:String>
+    <system:String x:Key="Common_Cancel">Annulla</system:String>
+    <system:String x:Key="Common_Apply">Applica</system:String>
+    <system:String x:Key="Common_Back">Indietro</system:String>
+    <system:String x:Key="Common_PdfFilter">File PDF (*.pdf)|*.pdf</system:String>
+    <system:String x:Key="Common_ImageFilter">File immagine (*.jpg;*.jpeg;*.png)|*.jpg;*.jpeg;*.png</system:String>
+    <system:String x:Key="Common_OfficeFilter">Documenti Office (*.docx;*.doc;*.xlsx;*.xls;*.pptx;*.ppt)|*.docx;*.doc;*.xlsx;*.xls;*.pptx;*.ppt</system:String>
+    <system:String x:Key="Common_WordFilter">Documento Word (*.docx)|*.docx</system:String>
+    <system:String x:Key="Common_ExcelFilter">Documento Excel (*.xlsx)|*.xlsx</system:String>
+    <system:String x:Key="Common_TxtFilter">File di testo (*.txt)|*.txt</system:String>
+    <system:String x:Key="Common_SavePdfTitle">Salva come PDF</system:String>
+    <system:String x:Key="Common_SaveWordTitle">Salva come Word</system:String>
+    <system:String x:Key="Common_Copy">Copia</system:String>
+    <system:String x:Key="Common_Select">Scegli...</system:String>
+    <system:String x:Key="Common_Page">Pagina</system:String>
+
+    <!-- Messages -->
+    <system:String x:Key="Msg_SelectAtLeastTwo">Seleziona almeno due file PDF!</system:String>
+    <system:String x:Key="Msg_MergeSuccess">File uniti con successo!</system:String>
+    <system:String x:Key="Msg_SettingsSaved">Impostazioni salvate e applicate con successo.</system:String>
+    <system:String x:Key="Msg_OcrSuccess">Testo estratto con successo.</system:String>
+    <system:String x:Key="Ocr_SuccessWithOpen">Testo salvato con successo. Vuoi aprire il file?</system:String>
+    <system:String x:Key="Msg_Copied">Copiato</system:String>
+    <system:String x:Key="Msg_Warning">Avvertimento</system:String>
+    <system:String x:Key="Msg_Confirm">Conferma</system:String>
+    <system:String x:Key="Msg_SelectFile">Seleziona un file.</system:String>
+    <system:String x:Key="Msg_AskOpenFile">File creato con successo. Vuoi aprirlo?</system:String>
+    <system:String x:Key="Msg_AskOpenFolder">PDF divisi con successo. Vuoi aprire la cartella?</system:String>
+    <system:String x:Key="Msg_AskOpenFolderPart">Vuoi aprire la cartella?</system:String>
+    <system:String x:Key="Msg_SplitError">Si è verificato un errore durante la divisione.</system:String>
+    <system:String x:Key="Msg_SelectPdfFirst">Seleziona prima un file PDF.</system:String>
+    <system:String x:Key="Msg_SplitSuccess">Divisione PDF completata con successo!</system:String>
+    <system:String x:Key="Msg_SelectImageFirst">Seleziona un'immagine per la conversione.</system:String>
+    <system:String x:Key="Msg_ConvertSuccess">L'immagine è stata convertita in PDF con successo!</system:String>
+    <system:String x:Key="Msg_CleanSuccess">Processi Office puliti con successo.</system:String>
+    <system:String x:Key="Msg_FileEncryptedSuccess">File crittografato con successo. Vuoi aprirlo?</system:String>
+    <system:String x:Key="Msg_EncryptionError">Errore di crittografia!</system:String>
+    <system:String x:Key="Msg_ProcessSuccess">Processo completato con successo!</system:String>
+    <system:String x:Key="Msg_ProcessError">Si è verificato un errore durante il processo.</system:String>
+    <system:String x:Key="Msg_SystemCleanSuccess">Processo di pulizia completato con successo!</system:String>
+    <system:String x:Key="Msg_Success">Successo</system:String>
+    <system:String x:Key="Msg_Error">Errore</system:String>
+    <system:String x:Key="Update_AvailableTitle">Aggiornamento Disponibile</system:String>
+    <system:String x:Key="Msg_UpdateAvailable">È disponibile una nuova versione ({0}). Si prega di aggiornare per utilizzare le ultime funzionalità.</system:String>
+    <system:String x:Key="Msg_UpdatePremiumFree">In qualità di membro Premium, tutti gli aggiornamenti sono completamente gratuiti per te.</system:String>
+    <system:String x:Key="Btn_DownloadNow">Scarica Ora</system:String>
+    <system:String x:Key="Prem_Licensed">Licenziato: Versione Premium</system:String>
+    <system:String x:Key="Prem_ThankYou">Grazie per aver scelto e acquistato il nostro prodotto!</system:String>
+    <system:String x:Key="Prem_ActivatedSuccess">Premium attivato con successo!</system:String>
+
+    <!-- Watermark Prefix -->
+    <system:String x:Key="Watermark_TextPrefix">ConFiligrana_</system:String>
+    <system:String x:Key="Watermark_LogoPrefix">ConLogo_</system:String>
+    <system:String x:Key="Watermark_SuccessWithOpen">Filigrana aggiunta con successo. Vuoi aprire il file?</system:String>
+
+    <!-- Belge Koruma ve Filigran Detay -->
+    <system:String x:Key="Sec_Title_Password">Imposta e rimuovi password</system:String>
+    <system:String x:Key="Sec_Desc_Password">Imposta password sicure per i tuoi PDF or rimuovi quelle esistenti.</system:String>
+    <system:String x:Key="Sec_Title_Watermark">Strumenti filigrana e logo</system:String>
+    <system:String x:Key="Sec_Desc_Watermark">Aggiungi interattivamente filigrane di testo or logo ai tuoi PDF.</system:String>
+    <system:String x:Key="Sec_Password">1. Crittografia PDF</system:String>
+    <system:String x:Key="Sec_PasswordDesc">Scegli prima il PDF, poi imposta la password di apertura.</system:String>
+    <system:String x:Key="Sec_BtnProtect">Cripta e salva</system:String>
+    <system:String x:Key="Sec_TextWatermark">1. Filigrana testo</system:String>
+    <system:String x:Key="Sec_TextWatermarkDesc">Regola interattivamente la dimensione e la posizione del testo.</system:String>
+    <system:String x:Key="Sec_BtnAddText">Posiziona e aggiungi</system:String>
+    <system:String x:Key="Sec_ImageWatermark">2. Aggiungi logo</system:String>
+    <system:String x:Key="Sec_ImageWatermarkDesc">Definisci posizione, dimensione e opacità del logo trascinandolo.</system:String>
+    <system:String x:Key="Sec_LogoStep1">Passaggio 1: Scegli il file PDF per il logo</system:String>
+    <system:String x:Key="Sec_BtnSelectLogo">Posiziona e aggiungi logo</system:String>
+    <system:String x:Key="Sec_PassStep1">Passaggio 1: Scegli il file PDF da crittografare</system:String>
+    <system:String x:Key="Sec_TextStep1">Passaggio 1: Scegli il file PDF per la filigrana</system:String>
+    <system:String x:Key="Sec_PassStep2">Passaggio 2: Imposta password</system:String>
+    <system:String x:Key="Sec_TextStep2">Passaggio 2: Testo della filigrana</system:String>
+    <system:String x:Key="Sec_Step3">Passaggio 3: Scelta delle pagine</system:String>
+    <system:String x:Key="Sec_SelectPdf">Scegli file PDF</system:String>
+    <system:String x:Key="Sec_SelectPdfBtn">Scegli PDF</system:String>
+    <system:String x:Key="Sec_SelectedFile">File selezionato:</system:String>
+    <system:String x:Key="Sec_LogoStep2">Passaggio 2: Scegli logo</system:String>
+    <system:String x:Key="Sec_SelectLogoBtn">Scegli logo</system:String>
+    <system:String x:Key="Sec_PassPlaceholder">Imposta la tua password...</system:String>
+    <system:String x:Key="Sec_TextPlaceholder">Testo da scrivere in filigrana...</system:String>
+    <system:String x:Key="Sec_LogoPlaceholder">Nessun logo selezionato...</system:String>
+    <system:String x:Key="Sec_RangeAll">Tutte le pagine</system:String>
+    <system:String x:Key="Sec_RangeFirst">Solo prima pagina</system:String>
+    <system:String x:Key="Sec_Rotation">Angolo di rotazione</system:String>
+    <system:String x:Key="Sec_RangeHelp">Puoi specificare le pagine da elaborare in questi formati:
+• Virgole per singole pagine (es: 1,3,5)
+• Trattino or due punti per un intervallo (es: 2-5 or 2:5)
+• Sono possibili anche forme miste (es: 1,3,5-8)</system:String>
+    <system:String x:Key="Sec_RangeHelpTitle">Aiuto per intervallo pagine</system:String>
+    <system:String x:Key="Sec_SaveEncryptedFileName">Protetto_</system:String>
+
+    <system:String x:Key="Sec_Help_Password">Proteggi il tuo documento PDF da accessi non autorizzati impostando una password sicura. Verrà richiesta all'apertura.</system:String>
+    <system:String x:Key="Sec_Unlock">2. Rimozione password PDF</system:String>
+    <system:String x:Key="Sec_UnlockDesc">Rimuovi definitivamente la protezione dai file PDF di cui conosci la password.</system:String>
+    <system:String x:Key="Sec_UnlockStep1">Passaggio 1: Scegli il file PDF per rimuovere la password</system:String>
+    <system:String x:Key="Sec_UnlockStep2">Passaggio 2: Inserisci la password PDF attuale</system:String>
+    <system:String x:Key="Sec_UnlockPlaceholder">Inserisci la password attuale qui...</system:String>
+    <system:String x:Key="Sec_UnlockBtn">Rimuovi password</system:String>
+    <system:String x:Key="Msg_UnlockSuccess">Password PDF rimossa con successo e nuovo file salvato!</system:String>
+    <system:String x:Key="Unlock_SuccessWithOpen">Password PDF rimossa con successo. Vuoi aprire il file?</system:String>
+    <system:String x:Key="Msg_UnlockError">Password errata or impossibile aprire il PDF. Verifica e riprova.</system:String>
+    <system:String x:Key="Sec_Help_Unlock">Quando scegli un PDF e inserisci la password corretta, l'applicazione crea una nuova copia 'senza password' del documento.</system:String>
+    <system:String x:Key="Sec_Help_TextWatermark">Identifica il proprietario del documento con una filigrana di testo. Tramite il pulsante (ⓘ), puoi trascinare il testo e ridimensionarlo nella finestra interattiva.</system:String>
+    <system:String x:Key="Sec_Help_ImageWatermark">Aggiungi un logo or un'immagine come filigrana. Nella finestra interattiva, puoi facilmente regolare la posizione, la dimensione e l'opacità del logo.</system:String>
+
+    <!-- Themes -->
+    <system:String x:Key="Theme_Light">Chiaro</system:String>
+    <system:String x:Key="Theme_Dark">Scuro</system:String>
+    <system:String x:Key="Theme_HighContrast">Contrasto elevato</system:String>
+    <system:String x:Key="Theme_PastelBlue">Tema Blu Pastello</system:String>
+    <system:String x:Key="Theme_Lavender">Tema Lavanda</system:String>
+    <system:String x:Key="Theme_Peach">Tema Pesca</system:String>
+    <system:String x:Key="Theme_Mint">Tema Menta</system:String>
+    <system:String x:Key="Theme_Apricot">Tema Albicocca</system:String>
+
+    <!-- Dialogs -->
+    <system:String x:Key="Dialog_LogoTitle">Posizionamento logo</system:String>
+    <system:String x:Key="Dialog_LogoDesc">Trascina il logo nella posizione desiderata e regolane la dimensione.</system:String>
+    <system:String x:Key="Dialog_LogoScale">Dimensione logo</system:String>
+    <system:String x:Key="Dialog_LogoOpacity">Opacità logo</system:String>
+    <system:String x:Key="Dialog_TextTitle">Posizionamento testo</system:String>
+    <system:String x:Key="Dialog_TextDesc">Trascina il testo nella posizione desiderata e regolane la dimensione.</system:String>
+    <system:String x:Key="Dialog_TextScale">Dimensione testo</system:String>
+    <system:String x:Key="Dialog_TextOpacity">Opacità testo</system:String>
+    <system:String x:Key="Dialog_ExampleText">Testo di esempio</system:String>
+
+    <!-- Page Numbering Details -->
+    <system:String x:Key="PageNum_Title">Aggiungi numeri di pagina</system:String>
+    <system:String x:Key="PageNum_Desc">Aggiungi numeri di pagina professionali al tuo documento PDF.</system:String>
+    <system:String x:Key="PageNum_Settings">Impostazioni numerazione</system:String>
+    <system:String x:Key="PageNum_StartPage">Pagina iniziale</system:String>
+    <system:String x:Key="PageNum_EndPage">Pagina finale</system:String>
+    <system:String x:Key="PageNum_Position">Posizione</system:String>
+    <system:String x:Key="PageNum_PosBottomCenter">In basso al centro</system:String>
+    <system:String x:Key="PageNum_PosBottomRight">In basso a destra</system:String>
+    <system:String x:Key="PageNum_PosBottomLeft">In basso a sinistra</system:String>
+    <system:String x:Key="PageNum_PosTopCenter">In alto al centro</system:String>
+    <system:String x:Key="PageNum_PosTopRight">In alto a destra</system:String>
+    <system:String x:Key="PageNum_PosTopLeft">In alto a sinistra</system:String>
+    <system:String x:Key="PageNum_Format">Formato (es: Pagina {n})</system:String>
+    <system:String x:Key="PageNum_Font">Carattere</system:String>
+    <system:String x:Key="PageNum_Size">Dimensione</system:String>
+    <system:String x:Key="PageNum_Color">Colore (Hex)</system:String>
+    <system:String x:Key="PageNum_Btn">Aggiungi numeri</system:String>
+    <system:String x:Key="PageNum_StepRange">1. Intervallo pagine</system:String>
+    <system:String x:Key="PageNum_StepPosition">2. Posizione</system:String>
+    <system:String x:Key="PageNum_StepFont">3. Stile carattere</system:String>
+    <system:String x:Key="PageNum_StepColor">4. Colore</system:String>
+    <system:String x:Key="PageNum_StartingValue">Numero iniziale</system:String>
+    <system:String x:Key="PageNum_FormatType">Formato numero</system:String>
+    <system:String x:Key="PageNum_PrefixLabel">Testo accanto al numero (es: Pagina)</system:String>
+    <system:String x:Key="PageNum_PrefixPlaceholder">Può essere lasciato vuoto...</system:String>
+    <system:String x:Key="PageNum_MagicBtnTitle">Avvia magia</system:String>
+    <system:String x:Key="PageNum_MagicBtnSub">Applica numerazione al documento</system:String>
+    <system:String x:Key="PageNum_MoreColors">Altri colori...</system:String>
+
+    <!-- Delete Pages Details -->
+    <system:String x:Key="DeletePages_Title">Elimina pagine</system:String>
+    <system:String x:Key="DeletePages_Desc">Elimina definitivamente le pagine desiderate.</system:String>
+    <system:String x:Key="DeletePages_Options">Opzioni di eliminazione</system:String>
+    <system:String x:Key="DeletePages_InputLabel">Pagine da eliminare</system:String>
+    <system:String x:Key="DeletePages_InputHint">es: 1, 3, 5-8 (virgole or due punti possibili)</system:String>
+    <system:String x:Key="DeletePages_Btn">Elimina pagine selezionate</system:String>
+    <system:String x:Key="Delete_SuccessWithOpen">Pagine selezionate eliminate con successo. Vuoi aprire il nuovo file?</system:String>
+
+    <!-- Preview Dialog -->
+    <system:String x:Key="Preview_WindowTitle">Anteprima numerazione</system:String>
+    <system:String x:Key="Preview_Title">Anteprima</system:String>
+    <system:String x:Key="Preview_Desc">La numerazione apparirà così sulla pagina:</system:String>
+    <system:String x:Key="Preview_Ask">Approvi questo design?</system:String>
+    <system:String x:Key="Preview_Yes">Sì, crea</system:String>
+    <system:String x:Key="Preview_No">No, modifica</system:String>
+
+    <!-- OCR Tool Details -->
+    <system:String x:Key="Ocr_Title">OCR - Riconoscimento testo</system:String>
+    <system:String x:Key="Ocr_Desc">Estrai il testo da immagini or PDF scansionati.</system:String>
+    <system:String x:Key="Ocr_SelectFile">Scegli immagine or PDF</system:String>
+    <system:String x:Key="Ocr_ScanLang">Lingua di scansione</system:String>
+    <system:String x:Key="Ocr_RunBtn">Scansiona ed estrai testo</system:String>
+    <system:String x:Key="Ocr_ResultTitle">Testo riconosciuto</system:String>
+    <system:String x:Key="Ocr_Placeholder">Il testo estratto apparirà qui...</system:String>
+    <system:String x:Key="Ocr_Scanning">Il testo verrà scansionato, attendi...</system:String>
+
+    <!-- Crop Tool Details -->
+    <system:String x:Key="Crop_Title">Ritaglio PDF</system:String>
+    <system:String x:Key="Crop_Desc">Scegli una pagina PDF e segna l'area che desideri ritagliare.</system:String>
+    <system:String x:Key="Crop_Settings">Impostazioni ritaglio</system:String>
+    <system:String x:Key="Crop_ApplyAll">Applica a tutte le pagine</system:String>
+    <system:String x:Key="Crop_AreaInfo">Scegli un'area trascinando il mouse sull'anteprima.</system:String>
+    <system:String x:Key="Crop_Btn">Ritaglia e salva</system:String>
+    <system:String x:Key="Crop_SuccessWithOpen">File ritagliato con successo. Vuoi aprirlo?</system:String>
+
+    <!-- Buttons & Others -->
+    <system:String x:Key="Btn_Open">Apri</system:String>
+    <system:String x:Key="Btn_Close">Chiudi</system:String>
+
+    <!-- Settings About -->
+    <system:String x:Key="Sett_DefaultPath">Cartella di output predefinita</system:String>
+    <system:String x:Key="Sett_DefaultPathDesc">Scegli dove salvare i file automaticamente. Se vuoto, verrà chiesto ogni volta.</system:String>
+    <system:String x:Key="Sett_CleanMode">Modalità pulizia</system:String>
+    <system:String x:Key="Sett_CleanModeDesc">Libera spazio pulendo i log dell'applicazione e i file temporanei.</system:String>
+    <system:String x:Key="Sett_BtnClean">Pulisci log e file temporanei</system:String>
+    <system:String x:Key="Sett_About">Informazioni sull'applicazione</system:String>
+    <system:String x:Key="Sett_Version">Versione: 1.0.0</system:String>
+    <system:String x:Key="Sett_Author">Sviluppatore: Docentra AI Team</system:String>
+    <system:String x:Key="Sett_Website">Sito web: www.docentrapdf.com</system:String>
+
+    <!-- Premium Details -->
+    <system:String x:Key="Prem_Title">Attivazione Premium</system:String>
+    <system:String x:Key="Prem_Subtitle">Passa a Premium per rimuovere i limiti e supportare lo sviluppo.</system:String>
+    <system:String x:Key="Prem_HwidLabel">ID del tuo dispositivo (HWID)</system:String>
+    <system:String x:Key="Prem_HwidDesc">Questo ID è unico per il tuo computer e non può essere trasferito.</system:String>
+    <system:String x:Key="Prem_KeyLabel">Inserisci chiave di licenza</system:String>
+    <system:String x:Key="Prem_BtnActivate">Attiva Premium</system:String>
+    <system:String x:Key="Prem_Pricing_Title">Piani Premium</system:String>
+    <system:String x:Key="Prem_WhyGoPremium">Perché scegliere Premium?</system:String>
+    <system:String x:Key="Prem_Feat1_Title">Elaborazione illimitata</system:String>
+    <system:String x:Key="Prem_Feat1_Desc">Usa tutti gli strumenti PDF senza limiti giornalieri di file o pagine.</system:String>
+    <system:String x:Key="Prem_Feat2_Title">Tecnologia OCR avanzata</system:String>
+    <system:String x:Key="Prem_Feat2_Desc">Converti documenti scansiti e immagini in formati di testo modificabili in pochi secondi.</system:String>
+    <system:String x:Key="Prem_Feat3_Title">Sicurezza e gestione dei documenti</system:String>
+    <system:String x:Key="Prem_Feat3_Desc">Cripta i tuoi PDF, gestisci le pagine e ottieni l'accesso completo a tutti gli strumenti professionali.</system:String>
+    <system:String x:Key="Prem_Plan_Lifetime_Name">Professionista a vita</system:String>
+    <system:String x:Key="Prem_Plan_Lifetime_Desc">Pagamento una tantum, utilizzo illimitato e tutti gli aggiornamenti a vita inclusi.</system:String>
+    <system:String x:Key="Prem_TrialBanner">Prova Premium</system:String>
+    <system:String x:Key="Prem_DaysRemaining">{0} giorni rimanenti</system:String>
+    <system:String x:Key="Prem_RestartTitle">Premium attivato</system:String>
+    <system:String x:Key="Prem_RestartMsg">Premium attivato con successo! Vuoi riavviare l'applicazione ora per applicare le modifiche?</system:String>
+</ResourceDictionary>

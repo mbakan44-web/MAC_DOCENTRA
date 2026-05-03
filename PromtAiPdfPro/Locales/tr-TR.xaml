@@ -1,0 +1,403 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <!-- General -->
+    <system:String x:Key="AppTitle">DOCENTRA PDF &amp; DOCUMENT EDITOR</system:String>
+    <system:String x:Key="Nav_Dashboard">Kontrol Merkezi</system:String>
+    <system:String x:Key="Nav_Merge">PDF Birleştir</system:String>
+    <system:String x:Key="Nav_Split">PDF Parçala</system:String>
+    <system:String x:Key="Nav_Convert">Dönüştür</system:String>
+    <system:String x:Key="Nav_OfficeConvert">Ofis Dönüştürücü</system:String>
+    <system:String x:Key="Nav_PasswordSecurity">Şifre Koyma ve Kaldırma</system:String>
+    <system:String x:Key="Nav_Watermark">Filigran ve Logo</system:String>
+    <system:String x:Key="Nav_Ocr">OCR - Metin Tanıma</system:String>
+    <system:String x:Key="Nav_Crop">PDF Kırp</system:String>
+    <system:String x:Key="Nav_AddPageNumbers">Sayfa Numarası Ekle</system:String>
+    <system:String x:Key="Nav_DeletePages">Sayfaları Sil</system:String>
+    <system:String x:Key="Nav_Sign">PDF İmzala</system:String>
+    <system:String x:Key="Nav_Settings">Ayarlar</system:String>
+
+    <!-- Premium & License -->
+    <system:String x:Key="Prem_LockReason_Discount">7 günlük deneme süresi doldu. Bazı sayfalar Premium üyelerimize özeldir.</system:String>
+    <system:String x:Key="Prem_LockReason_Restricted">14 günlük deneme süresi doldu. Bazı sayfalar kapalı ve 5 sayfa limiti aktiftir.</system:String>
+    <system:String x:Key="Prem_Status_Full">Tüm Özellikler Açık (Deneme Süresi)</system:String>
+    <system:String x:Key="Prem_Status_Discount">Kısıtlı Erişim (%40 İndirim Fırsatı)</system:String>
+    <system:String x:Key="Prem_Status_Restricted">Kısıtlı Ücretsiz Sürüm</system:String>
+    <system:String x:Key="Prem_PurchaseRequired_Msg">Lütfen bu ekranı kullanmak için lisans satın alınız.</system:String>
+    <system:String x:Key="Prem_PurchaseRequired_Title">Premium Özelliği</system:String>
+    <system:String x:Key="Prem_LimitedMode">Limitli Mod</system:String>
+    <system:String x:Key="Prem_RestrictedMode">Kısıtlı Mod</system:String>
+    <system:String x:Key="Prem_SomePagesLocked">Bazı Sayfalar Kilitli</system:String>
+    <system:String x:Key="Prem_PageLimitActive">5 Sayfa Limiti Aktif</system:String>
+    <system:String x:Key="Prem_GoToPremium">Premium'a Geç</system:String>
+    <system:String x:Key="Prem_Close">Kapat</system:String>
+
+    <!-- Sign -->
+    <system:String x:Key="Sign_Title">PDF İmzalama</system:String>
+    <system:String x:Key="Sign_SelectPdf">PDF Seç</system:String>
+    <system:String x:Key="Sign_Method">İmza Yöntemi</system:String>
+    <system:String x:Key="Sign_Draw">El Yazısı (Çizim)</system:String>
+    <system:String x:Key="Sign_Upload">Resim Yükle</system:String>
+    <system:String x:Key="Sign_Clear">Temizle</system:String>
+    <system:String x:Key="Sign_Position">Pozisyon</system:String>
+    <system:String x:Key="Sign_Size">Boyut</system:String>
+    <system:String x:Key="Sign_Opacity">Şeffaflık</system:String>
+    <system:String x:Key="Sign_ApplyTo">Uygulanacak Sayfalar</system:String>
+    <system:String x:Key="Sign_AllPages">Tüm Sayfalar</system:String>
+    <system:String x:Key="Sign_CurrentPage">Sadece Bu Sayfa</system:String>
+    <system:String x:Key="Sign_CustomPages">Özel Sayfalar</system:String>
+    <system:String x:Key="Sign_Process">İmzala ve Kaydet</system:String>
+    <system:String x:Key="Sign_NoFile">Lütfen önce bir PDF dosyası seçin.</system:String>
+    <system:String x:Key="Sign_NoSignature">Lütfen bir imza oluşturun veya yükleyin.</system:String>
+    <system:String x:Key="Sign_Success">Dosya başarıyla imzalandı.</system:String>
+    <system:String x:Key="Sign_SuccessWithOpen">Dosya başarıyla imzalandı. Açmak ister misiniz?</system:String>
+
+    <!-- Dashboard -->
+    <system:String x:Key="Dash_Welcome">Hoş Geldiniz!</system:String>
+    <system:String x:Key="Dash_Desc">Tüm PDF ihtiyaçlarınız için tek durak noktanız.</system:String>
+    <system:String x:Key="Dash_MergeTitle">Birleştir</system:String>
+    <system:String x:Key="Dash_MergeSub">Birden fazla PDF dosyasını tek bir dosyada birleştirin.</system:String>
+    <system:String x:Key="Dash_SplitTitle">Parçala</system:String>
+    <system:String x:Key="Dash_SplitSub">Sayfaları ayrı PDF dosyaları olarak kaydedin.</system:String>
+    <system:String x:Key="Dash_WordTitle">Word'e Dönüştür</system:String>
+    <system:String x:Key="Dash_WordSub">PDF dosyalarını Word formatına aktarın.</system:String>
+    <system:String x:Key="Dash_ImgTitle">Resimden PDF'e</system:String>
+    <system:String x:Key="Dash_ImgSub">Resimlerinizi PDF formatına dönüştürün.</system:String>
+    <system:String x:Key="Dash_OfficeTitle">Ofis'ten PDF'e</system:String>
+    <system:String x:Key="Dash_OfficeSub">Word, Excel ve PowerPoint dosyalarını PDF'e dönüştürün.</system:String>
+    <system:String x:Key="Dash_ProtectTitle">Şifrele</system:String>
+    <system:String x:Key="Dash_ProtectSub">PDF dosyalarınızı şifreleme ile koruyun.</system:String>
+    <system:String x:Key="Dash_UnlockTitle">Şifre Kaldır</system:String>
+    <system:String x:Key="Dash_UnlockSub">PDF'lerden mevcut şifreleri kaldırın.</system:String>
+    <system:String x:Key="Dash_TextWatermarkTitle">Metin Filigranı</system:String>
+    <system:String x:Key="Dash_TextWatermarkSub">Etkileşimli bir metin filigranı ekleyin.</system:String>
+    <system:String x:Key="Dash_LogoWatermarkTitle">Logo Ekle</system:String>
+    <system:String x:Key="Dash_LogoWatermarkSub">Dosyalarınıza şeffaf bir logo yerleştirin.</system:String>
+    <system:String x:Key="Dash_DragDrop">Dosyaları Buraya Sürükleyin</system:String>
+    <system:String x:Key="Dash_DragDropSub">İşlemi başlatmak için PDF dosyalarını bırakın.</system:String>
+    <system:String x:Key="Dash_OcrSub">Resimlerden ve taranmış PDF'lerden metin ayıklar.</system:String>
+    <system:String x:Key="Dash_PageNumTitle">Sayfa Numarası</system:String>
+    <system:String x:Key="Dash_PageNumSub">PDF sayfalarına otomatik sayfa numaralandırması ekleyin.</system:String>
+    <system:String x:Key="Dash_DeletePagesTitle">Sayfaları Sil</system:String>
+    <system:String x:Key="Dash_DeletePagesSub">İstenmeyen sayfaları PDF'den kalıcı olarak kaldırın.</system:String>
+    <system:String x:Key="Dash_SignTitle">PDF İmzala</system:String>
+    <system:String x:Key="Dash_SignSub">PDF belgelerine el yazısı veya resim imzalar ekleyin.</system:String>
+    <system:String x:Key="Dash_CropTitle">PDF Kırp</system:String>
+    <system:String x:Key="Dash_CropSub">PDF sayfalarını istediğiniz herhangi bir boyuta kırpın.</system:String>
+
+    <!-- Merge Tool -->
+    <system:String x:Key="Merge_Title">PDF Birleştirme</system:String>
+    <system:String x:Key="Merge_Desc">PDF dosyalarınızı ekleyin ve istediğiniz sırayla birleştirin.</system:String>
+    <system:String x:Key="Merge_AddFile">Dosya Ekle</system:String>
+    <system:String x:Key="Merge_ClearList">Listeyi Temizle</system:String>
+    <system:String x:Key="Merge_MergeBtn">Birleştir ve Kaydet</system:String>
+    <system:String x:Key="Merge_EmptyStateDesc">PDF dosyalarını buraya sürükleyin veya 'Dosya Ekle' butonuna basın</system:String>
+    <system:String x:Key="Merge_DefaultFileName">birleştirildi.pdf</system:String>
+    <system:String x:Key="Merge_SuccessWithOpen">Dosyalar başarıyla birleştirildi. Açmak ister misiniz?</system:String>
+    
+    <!-- Split Tool -->
+    <system:String x:Key="Split_Title">PDF Parçalama</system:String>
+    <system:String x:Key="Split_Desc">Parçalamak istediğiniz PDF dosyasını seçin.</system:String>
+    <system:String x:Key="Split_Browse">Dosya Seç</system:String>
+    <system:String x:Key="Split_Options">Parçalama Seçenekleri</system:String>
+    <system:String x:Key="Split_OptSeparate">Tüm sayfaları ayrı PDF'lere dönüştür</system:String>
+    <system:String x:Key="Split_OptDesc">Seçilen PDF dosyasının her sayfasını ayrı bir PDF dosyası olarak dışa aktarır.</system:String>
+    <system:String x:Key="Split_SplitBtn">Parçalara Ayır</system:String>
+    <system:String x:Key="Split_SuccessWithOpen">PDF başarıyla parçalandı. Klasörü açmak ister misiniz?</system:String>
+    <system:String x:Key="Split_OptRange">Belirli sayfaları/aralıkları parçala</system:String>
+    <system:String x:Key="Split_RangeHint">Virgül (1,3,5) veya aralık (5:8) kullanabilirsiniz.</system:String>
+
+    <!-- Convert Tool -->
+    <system:String x:Key="Conv_Title">Dönüştürme Araçları</system:String>
+    <system:String x:Key="Conv_Desc">PDF dönüştürme işlemlerinizi buradan yönetin.</system:String>
+    <system:String x:Key="Conv_ImgToPdf">Resimden PDF'e</system:String>
+    <system:String x:Key="Conv_ImgToPdfDesc">JPG veya PNG dosyalarınızı PDF'e dönüştürün.</system:String>
+    <system:String x:Key="Conv_OfficeToPdf">Ofis'ten PDF'e</system:String>
+    <system:String x:Key="Conv_OfficeToPdfDesc">Word (.docx), Excel (.xlsx) veya PowerPoint (.pptx) dosyalarını PDF'e dönüştürün.</system:String>
+    <system:String x:Key="Conv_PdfToWord">PDF'ten Word'e</system:String>
+    <system:String x:Key="Conv_PdfToWordDesc">PDF dosyalarını düzenlenebilir Word (.docx) formatına dönüştürün.</system:String>
+    <system:String x:Key="Conv_PdfToImg">PDF'ten Resme</system:String>
+    <system:String x:Key="Conv_PdfToImgDesc">PDF sayfalarını yüksek çözünürlüklü resim (PNG) dosyalarına bölün.</system:String>
+    <system:String x:Key="Conv_Converting">Dönüştürülüyor...</system:String>
+    <system:String x:Key="Conv_Success">Dönüştürme başarıyla tamamlandı!</system:String>
+    <system:String x:Key="Conv_SuccessWithOpen">Dönüştürme başarıyla tamamlandı. Dosyayı/Klasörü açmak ister misiniz?</system:String>
+    <system:String x:Key="Conv_Error">Dönüştürme sırasında hata oluştu. Ofis yüklü olduğundan emin olun.</system:String>
+    <system:String x:Key="Conv_NoOffice">Microsoft Ofis bulunamadı. Lütfen yüklü olduğundan emin olun.</system:String>
+    <system:String x:Key="Conv_NoWord">Microsoft Word bulunamadı. Lütfen yüklü olduğundan emin olun.</system:String>
+    <system:String x:Key="Conv_NoExcel">Microsoft Excel bulunamadı. Lütfen yüklü olduğundan emin olun.</system:String>
+    <system:String x:Key="Conv_NoPowerPoint">Microsoft PowerPoint bulunamadı. Lütfen yüklü olduğundan emin olun.</system:String>
+    <system:String x:Key="Conv_OfficeError">Ofis belgesi dönüştürülürken hata oluştu. Detaylar log dosyasında.</system:String>
+    <system:String x:Key="Conv_OfficeBusy">Ofis meşgul veya kilitli olabilir. Lütfen tüm ofis pencerelerini kapatıp tekrar deneyin.</system:String>
+    <system:String x:Key="Conv_CleanOffice">Ofis Süreçlerini Temizle</system:String>
+    <system:String x:Key="Conv_CleanConfirm">Açık olan tüm Word, Excel ve PowerPoint pencereleri kapatılacaktır. Kaydedilmemiş veriler kaybolabilir. Devam edilsin mi?</system:String>
+    <system:String x:Key="Conv_BtnClean">Ofis'i Temizle</system:String>
+    <system:String x:Key="Conv_SelectImgTitle">PDF'e dönüştürülecek resimleri seçin</system:String>
+    <system:String x:Key="Conv_SelectPdfToImgTitle">Resme dönüştürülecek PDF dosyasını seçin</system:String>
+    <system:String x:Key="Conv_SelectFolderTitle">Resimlerin kaydedileceği klasörü seçin</system:String>
+    <system:String x:Key="Conv_SelectOfficeTitle">PDF'e dönüştürülecek Ofis dosyasını seçin</system:String>
+    <system:String x:Key="Conv_SelectPdfToWordTitle">Word'e dönüştürülecek PDF dosyasını seçin</system:String>
+
+    <!-- Office Convert -->
+    <system:String x:Key="Sec_Title_OfficeConvert">Ofis Dönüştürücü</system:String>
+    <system:String x:Key="Sec_Desc_OfficeConvert">Word dosyalarını Excel'e veya Excel dosyalarını Word'e dönüştürün.</system:String>
+    <system:String x:Key="Office_RequirementTitle">Microsoft Office Gereksinimi</system:String>
+    <system:String x:Key="Office_RequirementDesc">Bazı dönüştürme ve düzenleme işlemlerinin (Word, Excel, PowerPoint) çalışabilmesi için bilgisayarınızda Microsoft Office yüklü olmalıdır.</system:String>
+    <system:String x:Key="Office_WordToExcel">Word'den Excel'e</system:String>
+    <system:String x:Key="Office_ExcelToWord">Excel'den Word'e</system:String>
+    <system:String x:Key="Office_WordToExcelDesc">Doküman paragraflarını satır satır Excel'e aktarır.</system:String>
+    <system:String x:Key="Office_ExcelToWordDesc">Excel hücrelerini düz metin olarak Word'e aktarır.</system:String>
+    <system:String x:Key="Office_PptToWord">PowerPoint'ten Word'e</system:String>
+    <system:String x:Key="Office_PptToExcel">PowerPoint'ten Excel'e</system:String>
+    <system:String x:Key="Office_PptToWordDesc">Slaytlardaki tüm sunum metinlerini Word'e aktarır.</system:String>
+    <system:String x:Key="Office_PptToExcelDesc">Slaytlardaki tüm metinleri satır satır Excel'e aktarır.</system:String>
+    <system:String x:Key="Office_SelectWordTitle">Dönüştürülecek Word dosyasını seçin</system:String>
+    <system:String x:Key="Office_SaveExcelTitle">Excel dosyasını kaydet</system:String>
+    <system:String x:Key="Office_SelectExcelTitle">Dönüştürülecek Excel dosyasını seçin</system:String>
+    <system:String x:Key="Office_SaveWordTitle">Word dosyasını kaydet</system:String>
+    <system:String x:Key="Office_SelectPptTitle">Dönüştürülecek PowerPoint dosyasını seçin</system:String>
+
+    <!-- Settings -->
+    <system:String x:Key="Sett_Title">Ayarlar</system:String>
+    <system:String x:Key="Sett_Language">Dil Ayarları (Language)</system:String>
+    <system:String x:Key="Sett_LanguageDesc">Uygulama dilini seçin.</system:String>
+    <system:String x:Key="Sett_LanguageAuto">Sistem Dili (Auto)</system:String>
+    <system:String x:Key="Sett_Theme">Tema</system:String>
+    <system:String x:Key="Sett_ThemeDesc">Renk temasını (Aydınlık veya Karanlık) buradan değiştirebilirsiniz.</system:String>
+    <system:String x:Key="Sett_AccentColor">Vurgu Rengi</system:String>
+    <system:String x:Key="Sett_AccentColorDesc">Ana vurgu rengini (butonlar, kenarlıklar) buradan özelleştirebilirsiniz.</system:String>
+
+    <!-- Common -->
+    <system:String x:Key="Common_PathPlaceholder">Dosya seçilmedi...</system:String>
+    <system:String x:Key="Common_Save">Kaydet</system:String>
+    <system:String x:Key="Common_Cancel">İptal</system:String>
+    <system:String x:Key="Common_Apply">Uygula</system:String>
+    <system:String x:Key="Common_Back">Geri</system:String>
+    <system:String x:Key="Common_PdfFilter">PDF Dosyaları (*.pdf)|*.pdf</system:String>
+    <system:String x:Key="Common_ImageFilter">Resim Dosyaları (*.jpg;*.jpeg;*.png)|*.jpg;*.jpeg;*.png</system:String>
+    <system:String x:Key="Common_OfficeFilter">Ofis Belgeleri (*.docx;*.doc;*.xlsx;*.xls;*.pptx;*.ppt)|*.docx;*.doc;*.xlsx;*.xls;*.pptx;*.ppt</system:String>
+    <system:String x:Key="Common_WordFilter">Word Belgesi (*.docx)|*.docx</system:String>
+    <system:String x:Key="Common_ExcelFilter">Excel Belgesi (*.xlsx)|*.xlsx</system:String>
+    <system:String x:Key="Common_TxtFilter">Metin Dosyası (*.txt)|*.txt</system:String>
+    <system:String x:Key="Common_SavePdfTitle">PDF Olarak Kaydet</system:String>
+    <system:String x:Key="Common_SaveWordTitle">Word Olarak Kaydet</system:String>
+    <system:String x:Key="Common_Copy">Kopyala</system:String>
+    <system:String x:Key="Common_Select">Seç...</system:String>
+    <system:String x:Key="Common_Page">Sayfa</system:String>
+
+    <!-- Messages -->
+    <system:String x:Key="Msg_SelectAtLeastTwo">Lütfen en az iki PDF dosyası seçin!</system:String>
+    <system:String x:Key="Msg_MergeSuccess">Dosyalar başarıyla birleştirildi!</system:String>
+    <system:String x:Key="Msg_SettingsSaved">Ayarlar başarıyla kaydedildi ve uygulandı.</system:String>
+    <system:String x:Key="Msg_OcrSuccess">Metin başarıyla ayıklandı.</system:String>
+    <system:String x:Key="Ocr_SuccessWithOpen">Metin başarıyla kaydedildi. Dosyayı açmak ister misiniz?</system:String>
+    <system:String x:Key="Msg_Copied">Kopyalandı</system:String>
+    <system:String x:Key="Msg_Warning">Uyarı</system:String>
+    <system:String x:Key="Msg_Confirm">Onayla</system:String>
+    <system:String x:Key="Msg_SelectFile">Lütfen bir dosya seçin.</system:String>
+    <system:String x:Key="Msg_AskOpenFile">Dosya başarıyla oluşturuldu. Açmak ister misiniz?</system:String>
+    <system:String x:Key="Msg_AskOpenFolder">PDF'ler başarıyla parçalandı. Klasörü açmak ister misiniz?</system:String>
+    <system:String x:Key="Msg_AskOpenFolderPart">Klasörü açmak ister misiniz?</system:String>
+    <system:String x:Key="Msg_SplitError">Parçalama işlemi sırasında bir hata oluştu.</system:String>
+    <system:String x:Key="Msg_SelectPdfFirst">Lütfen önce bir PDF dosyası seçin.</system:String>
+    <system:String x:Key="Msg_SplitSuccess">PDF parçalama başarıyla tamamlandı!</system:String>
+    <system:String x:Key="Msg_SelectImageFirst">Lütfen dönüştürülecek bir resim seçin.</system:String>
+    <system:String x:Key="Msg_ConvertSuccess">Resim başarıyla PDF'e dönüştürüldü!</system:String>
+    <system:String x:Key="Msg_CleanSuccess">Ofis süreçleri başarıyla temizlendi.</system:String>
+    <system:String x:Key="Msg_FileEncryptedSuccess">Dosya başarıyla şifrelendi. Açmak ister misiniz?</system:String>
+    <system:String x:Key="Msg_EncryptionError">Şifreleme hatası!</system:String>
+    <system:String x:Key="Msg_ProcessSuccess">İşlem başarıyla tamamlandı!</system:String>
+    <system:String x:Key="Msg_ProcessError">İşlem sırasında bir hata oluştu.</system:String>
+    <system:String x:Key="Msg_SystemCleanSuccess">Temizlik işlemi başarıyla tamamlandı!</system:String>
+    <system:String x:Key="Msg_Success">Başarılı</system:String>
+    <system:String x:Key="Msg_Error">Hata</system:String>
+    <system:String x:Key="Update_AvailableTitle">Güncelleme Mevcut</system:String>
+    <system:String x:Key="Msg_UpdateAvailable">Yeni bir sürüm ({0}) mevcut. Lütfen güncel özellikleri kullanmak için güncelleyin.</system:String>
+    <system:String x:Key="Msg_UpdatePremiumFree">Premium üye olduğunuz için tüm güncellemeler size tamamen ücretsizdir.</system:String>
+    <system:String x:Key="Btn_DownloadNow">Şimdi İndir</system:String>
+    <system:String x:Key="Prem_Licensed">Lisanslı: Premium Sürüm</system:String>
+    <system:String x:Key="Prem_ThankYou">Ürünümüzü tercih ettiğiniz ve satın aldığınız için teşekkür ederiz!</system:String>
+    <system:String x:Key="Prem_ActivatedSuccess">Premium başarıyla aktif edildi!</system:String>
+
+    <!-- Watermark Prefix -->
+    <system:String x:Key="Watermark_TextPrefix">Filigranlı_</system:String>
+    <system:String x:Key="Watermark_LogoPrefix">Logolu_</system:String>
+    <system:String x:Key="Watermark_SuccessWithOpen">Filigran başarıyla eklendi. Dosyayı açmak ister misiniz?</system:String>
+
+    <!-- Belge Koruma ve Filigran Detay -->
+    <system:String x:Key="Sec_Title_Password">Şifre Koyma ve Kaldırma</system:String>
+    <system:String x:Key="Sec_Desc_Password">PDF'lerinize güvenli şifreler koyun veya mevcut olanları kaldırın.</system:String>
+    <system:String x:Key="Sec_Title_Watermark">Filigran ve Logo Araçları</system:String>
+    <system:String x:Key="Sec_Desc_Watermark">PDF'lerinize etkileşimli olarak metin veya logo filigranları ekleyin.</system:String>
+    <system:String x:Key="Sec_Password">1. PDF Şifreleme</system:String>
+    <system:String x:Key="Sec_PasswordDesc">Önce PDF'i seçin, sonra açılış şifresini belirleyin.</system:String>
+    <system:String x:Key="Sec_BtnProtect">Şifrele ve Kaydet</system:String>
+    <system:String x:Key="Sec_TextWatermark">1. Metin Filigranı</system:String>
+    <system:String x:Key="Sec_TextWatermarkDesc">Metin boyutunu ve konumunu etkileşimli olarak ayarlayın.</system:String>
+    <system:String x:Key="Sec_BtnAddText">Konumlandır ve Ekle</system:String>
+    <system:String x:Key="Sec_ImageWatermark">2. Logo Ekle</system:String>
+    <system:String x:Key="Sec_ImageWatermarkDesc">Logonun konumunu, boyutunu ve şeffaflığını sürükleyerek belirleyin.</system:String>
+    <system:String x:Key="Sec_LogoStep1">Adım 1: Lütfen logo için PDF dosyası seçin</system:String>
+    <system:String x:Key="Sec_BtnSelectLogo">Konumlandır ve Logo Ekle</system:String>
+    <system:String x:Key="Sec_PassStep1">Adım 1: Lütfen şifrelenecek PDF dosyası seçin</system:String>
+    <system:String x:Key="Sec_TextStep1">Adım 1: Lütfen filigran için PDF dosyası seçin</system:String>
+    <system:String x:Key="Sec_PassStep2">Adım 2: Şifre Belirleyin</system:String>
+    <system:String x:Key="Sec_TextStep2">Adım 2: Filigran Metni</system:String>
+    <system:String x:Key="Sec_Step3">Adım 3: Sayfa Seçimi</system:String>
+    <system:String x:Key="Sec_SelectPdf">PDF Dosyası Seç</system:String>
+    <system:String x:Key="Sec_SelectPdfBtn">PDF Seç</system:String>
+    <system:String x:Key="Sec_SelectedFile">Seçilen Dosya:</system:String>
+    <system:String x:Key="Sec_LogoStep2">Adım 2: Logo Seçin</system:String>
+    <system:String x:Key="Sec_SelectLogoBtn">Logo Seç</system:String>
+    <system:String x:Key="Sec_PassPlaceholder">Şifrenizi belirleyin...</system:String>
+    <system:String x:Key="Sec_TextPlaceholder">Filigran olarak yazılacak metin...</system:String>
+    <system:String x:Key="Sec_LogoPlaceholder">Logo seçilmedi...</system:String>
+    <system:String x:Key="Sec_RangeAll">Tüm Sayfalar</system:String>
+    <system:String x:Key="Sec_RangeFirst">Sadece İlk Sayfa</system:String>
+    <system:String x:Key="Sec_Rotation">Döndürme Açısı</system:String>
+    <system:String x:Key="Sec_RangeHelp">İşlem yapılacak sayfaları şu formatlarda belirtebilirsiniz:
+• Tek sayfalar için virgül (ör: 1,3,5)
+• Bir aralık için tire veya iki nokta (ör: 2-5 veya 2:5)
+• Karma şekiller de mümkündür (ör: 1,3,5-8)</system:String>
+    <system:String x:Key="Sec_RangeHelpTitle">Sayfa Aralığı Yardımı</system:String>
+    <system:String x:Key="Sec_SaveEncryptedFileName">Korumalı_</system:String>
+
+    <system:String x:Key="Sec_Help_Password">Güvenli bir şifre koyarak PDF belgenizi yetkisiz erişimlere karşı koruyun. Açılışta sorulacaktır.</system:String>
+    <system:String x:Key="Sec_Unlock">2. PDF Şifre Kaldırıcı</system:String>
+    <system:String x:Key="Sec_UnlockDesc">Şifresini bildiğiniz PDF dosyalarının korumasını kalıcı olarak kaldırın.</system:String>
+    <system:String x:Key="Sec_UnlockStep1">Adım 1: Lütfen şifresini kaldırmak için PDF dosyası seçin</system:String>
+    <system:String x:Key="Sec_UnlockStep2">Adım 2: Mevcut PDF Şifresini Girin</system:String>
+    <system:String x:Key="Sec_UnlockPlaceholder">Mevcut şifreyi buraya girin...</system:String>
+    <system:String x:Key="Sec_UnlockBtn">Şifreyi Kaldır</system:String>
+    <system:String x:Key="Msg_UnlockSuccess">PDF şifresi başarıyla kaldırıldı ve yeni dosya kaydedildi!</system:String>
+    <system:String x:Key="Unlock_SuccessWithOpen">PDF şifresi başarıyla kaldırıldı. Dosyayı açmak ister misiniz?</system:String>
+    <system:String x:Key="Msg_UnlockError">Hatalı şifre veya PDF açılamadı. Lütfen kontrol edip tekrar deneyin.</system:String>
+    <system:String x:Key="Sec_Help_Unlock">PDF seçip doğru şifreyi girdiğinizde, uygulama belgenin 'şifresiz' yeni bir kopyasını oluşturur.</system:String>
+    <system:String x:Key="Sec_Help_TextWatermark">Metin filigranı ile belge sahibini belirtin. (ⓘ) butonu üzerinden, etkileşimli pencerede metni sürükleyebilir ve boyutlandırabilirsiniz.</system:String>
+    <system:String x:Key="Sec_Help_ImageWatermark">Bir logo veya resmi filigran olarak ekleyin. Etkileşimli pencerede logonun konumunu, boyutunu ve şeffaflığını kolayca ayarlayabilirsiniz.</system:String>
+
+    <!-- Themes -->
+    <system:String x:Key="Theme_Light">Aydınlık</system:String>
+    <system:String x:Key="Theme_Dark">Karanlık</system:String>
+    <system:String x:Key="Theme_HighContrast">Yüksek Kontrast</system:String>
+    <system:String x:Key="Theme_PastelBlue">Pastel Mavi Teması</system:String>
+    <system:String x:Key="Theme_Lavender">Lavanta Teması</system:String>
+    <system:String x:Key="Theme_Peach">Şeftali Teması</system:String>
+    <system:String x:Key="Theme_Mint">Nane Teması</system:String>
+    <system:String x:Key="Theme_Apricot">Kayısı Teması</system:String>
+
+    <!-- Dialogs -->
+    <system:String x:Key="Dialog_LogoTitle">Logo Konumlandırma</system:String>
+    <system:String x:Key="Dialog_LogoDesc">Logoyu istediğiniz yere sürükleyin ve boyutunu ayarlayın.</system:String>
+    <system:String x:Key="Dialog_LogoScale">Logo Boyutu</system:String>
+    <system:String x:Key="Dialog_LogoOpacity">Logo Şeffaflığı</system:String>
+    <system:String x:Key="Dialog_TextTitle">Metin Konumlandırma</system:String>
+    <system:String x:Key="Dialog_TextDesc">Metni istediğiniz yere sürükleyin ve boyutunu ayarlayın.</system:String>
+    <system:String x:Key="Dialog_TextScale">Metin Boyutu</system:String>
+    <system:String x:Key="Dialog_TextOpacity">Metin Şeffaflığı</system:String>
+    <system:String x:Key="Dialog_ExampleText">Örnek Metin</system:String>
+
+    <!-- Page Numbering Details -->
+    <system:String x:Key="PageNum_Title">Sayfa Numarası Ekle</system:String>
+    <system:String x:Key="PageNum_Desc">PDF belgenize profesyonel sayfa numaraları ekleyin.</system:String>
+    <system:String x:Key="PageNum_Settings">Numaralandırma Ayarları</system:String>
+    <system:String x:Key="PageNum_StartPage">Başlangıç Sayfası</system:String>
+    <system:String x:Key="PageNum_EndPage">Bitiş Sayfası</system:String>
+    <system:String x:Key="PageNum_Position">Pozisyon</system:String>
+    <system:String x:Key="PageNum_PosBottomCenter">Alt Orta</system:String>
+    <system:String x:Key="PageNum_PosBottomRight">Alt Sağ</system:String>
+    <system:String x:Key="PageNum_PosBottomLeft">Alt Sol</system:String>
+    <system:String x:Key="PageNum_PosTopCenter">Üst Orta</system:String>
+    <system:String x:Key="PageNum_PosTopRight">Üst Sağ</system:String>
+    <system:String x:Key="PageNum_PosTopLeft">Üst Sol</system:String>
+    <system:String x:Key="PageNum_Format">Format (Örn: Sayfa {n})</system:String>
+    <system:String x:Key="PageNum_Font">Yazı Tipi</system:String>
+    <system:String x:Key="PageNum_Size">Boyut</system:String>
+    <system:String x:Key="PageNum_Color">Renk (Hex)</system:String>
+    <system:String x:Key="PageNum_Btn">Numaraları Ekle</system:String>
+    <system:String x:Key="PageNum_StepRange">1. Sayfa Aralığı</system:String>
+    <system:String x:Key="PageNum_StepPosition">2. Konum</system:String>
+    <system:String x:Key="PageNum_StepFont">3. Yazı Stili</system:String>
+    <system:String x:Key="PageNum_StepColor">4. Renk</system:String>
+    <system:String x:Key="PageNum_StartingValue">Başlangıç Numarası</system:String>
+    <system:String x:Key="PageNum_FormatType">Sayı Formatı</system:String>
+    <system:String x:Key="PageNum_PrefixLabel">Numara Yanı Metin (Örn: Sayfa)</system:String>
+    <system:String x:Key="PageNum_PrefixPlaceholder">Boş bırakılabilir...</system:String>
+    <system:String x:Key="PageNum_MagicBtnTitle">Sihri Başlat</system:String>
+    <system:String x:Key="PageNum_MagicBtnSub">Numaraları Belgeye Uygula</system:String>
+    <system:String x:Key="PageNum_MoreColors">Daha Fazla Renk...</system:String>
+
+    <!-- Delete Pages Details -->
+    <system:String x:Key="DeletePages_Title">Sayfaları Sil</system:String>
+    <system:String x:Key="DeletePages_Desc">İstediğiniz sayfaları kalıcı olarak silin.</system:String>
+    <system:String x:Key="DeletePages_Options">Silme Seçenekleri</system:String>
+    <system:String x:Key="DeletePages_InputLabel">Silinecek Sayfalar</system:String>
+    <system:String x:Key="DeletePages_InputHint">Örn: 1, 3, 5-8 (virgül veya iki nokta olabilir)</system:String>
+    <system:String x:Key="DeletePages_Btn">Seçilen Sayfaları Sil</system:String>
+    <system:String x:Key="Delete_SuccessWithOpen">Seçilen sayfalar başarıyla silindi. Yeni dosyayı açmak ister misiniz?</system:String>
+
+    <!-- Preview Dialog -->
+    <system:String x:Key="Preview_WindowTitle">Numaralandırma Önizleme</system:String>
+    <system:String x:Key="Preview_Title">Önizleme</system:String>
+    <system:String x:Key="Preview_Desc">Numaralandırma sayfa üzerinde şu şekilde görünecek:</system:String>
+    <system:String x:Key="Preview_Ask">Bu tasarımı onaylıyor musunuz?</system:String>
+    <system:String x:Key="Preview_Yes">Evet, Oluştur</system:String>
+    <system:String x:Key="Preview_No">Hayır, Düzenle</system:String>
+
+    <!-- OCR Tool Details -->
+    <system:String x:Key="Ocr_Title">OCR - Metin Tanıma</system:String>
+    <system:String x:Key="Ocr_Desc">Resimlerden veya taranmış PDF'lerden metin ayıklayın.</system:String>
+    <system:String x:Key="Ocr_SelectFile">Resim veya PDF Seç</system:String>
+    <system:String x:Key="Ocr_ScanLang">Tarama Dili</system:String>
+    <system:String x:Key="Ocr_RunBtn">Tara ve Metin Ayıkla</system:String>
+    <system:String x:Key="Ocr_ResultTitle">Tanınan Metin</system:String>
+    <system:String x:Key="Ocr_Placeholder">Ayıklanan metin burada görünecektir...</system:String>
+    <system:String x:Key="Ocr_Scanning">Metin taranacak, lütfen bekleyin...</system:String>
+
+    <!-- Crop Tool Details -->
+    <system:String x:Key="Crop_Title">PDF Kırpma</system:String>
+    <system:String x:Key="Crop_Desc">Bir PDF sayfası seçin ve kırpmak istediğiniz alanı işaretleyin.</system:String>
+    <system:String x:Key="Crop_Settings">Kırpma Ayarları</system:String>
+    <system:String x:Key="Crop_ApplyAll">Tüm Sayfalara Uygula</system:String>
+    <system:String x:Key="Crop_AreaInfo">Önizleme üzerinde fareyi sürükleyerek bir alan seçin.</system:String>
+    <system:String x:Key="Crop_Btn">Kırp ve Kaydet</system:String>
+    <system:String x:Key="Crop_SuccessWithOpen">Dosya başarıyla kırpıldı. Açmak ister misiniz?</system:String>
+
+    <!-- Buttons & Others -->
+    <system:String x:Key="Btn_Open">Aç</system:String>
+    <system:String x:Key="Btn_Close">Kapat</system:String>
+
+    <!-- Settings About -->
+    <system:String x:Key="Sett_DefaultPath">Varsayılan Kayıt Klasörü</system:String>
+    <system:String x:Key="Sett_DefaultPathDesc">Dosyaların otomatik kaydedileceği konumu seçin. Boşsa her seferinde sorulur.</system:String>
+    <system:String x:Key="Sett_CleanMode">Temizlik Modu</system:String>
+    <system:String x:Key="Sett_CleanModeDesc">Uygulama loglarını ve geçici dosyaları temizleyerek yer açın.</system:String>
+    <system:String x:Key="Sett_BtnClean">Logları ve Geçici Dosyaları Sil</system:String>
+    <system:String x:Key="Sett_About">Uygulama Hakkında</system:String>
+    <system:String x:Key="Sett_Version">Versiyon: 1.0.0</system:String>
+    <system:String x:Key="Sett_Author">Geliştirici: Docentra AI Team</system:String>
+    <system:String x:Key="Sett_Website">Web Sitesi: www.docentrapdf.com</system:String>
+
+    <!-- Premium Details -->
+    <system:String x:Key="Prem_Title">Premium Aktivasyon</system:String>
+    <system:String x:Key="Prem_Subtitle">Limitleri kaldırmak ve geliştirmeye destek olmak için Premium'a geçin.</system:String>
+    <system:String x:Key="Prem_HwidLabel">Cihaz Kimliğiniz (HWID)</system:String>
+    <system:String x:Key="Prem_HwidDesc">Bu kimlik bilgisayarınıza özeldir ve devredilemez.</system:String>
+    <system:String x:Key="Prem_KeyLabel">Lisans Anahtarını Girin</system:String>
+    <system:String x:Key="Prem_BtnActivate">Premium'u Aktif Et</system:String>
+    <system:String x:Key="Prem_Pricing_Title">Premium Paketler</system:String>
+    <system:String x:Key="Prem_WhyGoPremium">Neden Premium Olmalısınız?</system:String>
+    <system:String x:Key="Prem_HowToActivate_Title">Nasıl Aktif Edilir?</system:String>
+    <system:String x:Key="Prem_HowToActivate_Sub">Etsy satın alım ve kurulum rehberini görüntüleyin.</system:String>
+    <system:String x:Key="Prem_Feat1_Title">Sınırsız İşlem</system:String>
+    <system:String x:Key="Prem_Feat1_Desc">Günlük dosya ve sayfa limitlerine takılmadan tüm PDF araçlarını özgürce kullanın.</system:String>
+    <system:String x:Key="Prem_Feat2_Title">Gelişmiş OCR Teknolojisi</system:String>
+    <system:String x:Key="Prem_Feat2_Desc">Taranmış belgeleri ve resimleri saniyeler içinde düzenlenebilir metin formatına dönüştürün.</system:String>
+    <system:String x:Key="Prem_Feat3_Title">Belge Güvenliği ve Yönetimi</system:String>
+    <system:String x:Key="Prem_Feat3_Desc">PDF'lerinizi şifreleyin, sayfaları düzenleyin ve tüm profesyonel araçlara tam erişim sağlayın.</system:String>
+    <system:String x:Key="Prem_Plan_Lifetime_Name">Ömür Boyu Profesyonel</system:String>
+    <system:String x:Key="Prem_Plan_Lifetime_Desc">Tek seferlik ödeme, sınırsız kullanım ve ömür boyu tüm güncellemeler dahildir.</system:String>
+    <system:String x:Key="Prem_TrialBanner">Premium Deneme</system:String>
+    <system:String x:Key="Prem_DaysRemaining">{0} Gün Kaldı</system:String>
+    <system:String x:Key="Prem_RestartTitle">Premium Aktif Edildi</system:String>
+    <system:String x:Key="Prem_RestartMsg">Premium başarıyla aktif edildi! Değişikliklerin uygulanması için uygulamayı şimdi yeniden başlatmak ister misiniz?</system:String>
+</ResourceDictionary>

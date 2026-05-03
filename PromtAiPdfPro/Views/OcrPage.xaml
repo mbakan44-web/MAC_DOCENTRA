@@ -1,0 +1,104 @@
+<Page x:Class="PromtAiPdfPro.Views.OcrPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      Title="{DynamicResource Nav_Ocr}">
+
+    <Grid Margin="48,32">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Grid Grid.Row="0" Margin="0,0,0,32">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <ui:Button Grid.Column="0" Click="BtnBack_Click" Margin="0,0,16,0" Padding="8" VerticalAlignment="Center" ToolTip="{DynamicResource Common_Back}">
+                <ui:SymbolIcon Symbol="ArrowLeft24"/>
+            </ui:Button>
+            <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                <TextBlock Text="{DynamicResource Ocr_Title}" Style="{StaticResource PremiumHeaderTitle}"/>
+                <TextBlock Text="{DynamicResource Ocr_Desc}" FontSize="16" Opacity="0.7"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- Content -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.2*"/>
+                <ColumnDefinition Width="1.8*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Left Panel: Controls -->
+            <StackPanel Grid.Column="0" Margin="0,0,24,0">
+                <ui:CardAction Margin="0,0,0,16" Padding="24" Click="BtnBrowse_Click">
+                    <StackPanel>
+                        <ui:SymbolIcon Symbol="ImageSearch24" FontSize="40" Foreground="{DynamicResource PremiumAccentBrush}" Margin="0,0,0,12"/>
+                        <TextBlock Text="{DynamicResource Ocr_SelectFile}" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="TxtSourcePath" Text="{DynamicResource Common_PathPlaceholder}" FontSize="12" Opacity="0.6" Margin="0,4,0,0" HorizontalAlignment="Center" TextTrimming="CharacterEllipsis"/>
+                    </StackPanel>
+                </ui:CardAction>
+
+                <ui:CardControl Header="{DynamicResource Ocr_ScanLang}" Margin="0,0,0,16">
+                    <ui:CardControl.Icon>
+                        <ui:SymbolIcon Symbol="LocalLanguage24" Foreground="#FFD700"/>
+                    </ui:CardControl.Icon>
+                    <ComboBox x:Name="CboLanguages" Width="180" DisplayMemberPath="DisplayName"/>
+                </ui:CardControl>
+
+                <ui:Button x:Name="BtnRunOcr" Click="BtnRunOcr_Click" Appearance="Primary" Padding="0,16" HorizontalAlignment="Stretch" Margin="0,8,0,0" IsEnabled="False">
+                    <StackPanel Orientation="Horizontal">
+                        <ui:SymbolIcon Symbol="ScanText24" Margin="0,0,10,0" FontSize="20"/>
+                        <TextBlock Text="{DynamicResource Ocr_RunBtn}" FontSize="18" FontWeight="Bold"/>
+                    </StackPanel>
+                </ui:Button>
+
+                <!-- Preview Area -->
+                <Border x:Name="PreviewContainer" Visibility="Collapsed" Margin="0,24,0,0" CornerRadius="12" Background="{DynamicResource ControlFillColorDefaultBrush}" BorderBrush="{DynamicResource ControlElevationBorderBrush}" BorderThickness="1" Height="250">
+                    <Image x:Name="ImgPreview" Margin="10" Stretch="Uniform"/>
+                </Border>
+            </StackPanel>
+
+            <!-- Right Panel: Result -->
+            <ui:Card Grid.Column="1" Padding="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    
+                    <Border Grid.Row="0" Background="{DynamicResource ControlFillColorSecondaryBrush}" Padding="16,12" CornerRadius="8,8,0,0">
+                        <TextBlock Text="{DynamicResource Ocr_ResultTitle}" FontWeight="Bold" Opacity="0.8"/>
+                    </Border>
+
+                    <ui:TextBox Grid.Row="1" x:Name="TxtResult" 
+                             AcceptsReturn="True" 
+                             TextWrapping="Wrap" 
+                             VerticalScrollBarVisibility="Auto" 
+                             BorderThickness="0"
+                             Padding="16"
+                             FontSize="14"
+                             Background="Transparent"
+                             PlaceholderText="{DynamicResource Ocr_Placeholder}"/>
+
+                    <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="16">
+                        <ui:Button Click="BtnCopy_Click" Margin="0,0,8,0" Appearance="Secondary" Icon="Copy24" Content="{DynamicResource Common_Copy}"/>
+                        <ui:Button Click="BtnSave_Click" Appearance="Secondary" Icon="Save24" Content="{DynamicResource Common_Save}"/>
+                    </StackPanel>
+
+                    <!-- Loading Overlay -->
+                    <Grid x:Name="GridLoading" Grid.RowSpan="3" Background="#AA000000" Visibility="Collapsed">
+                        <StackPanel VerticalAlignment="Center">
+                            <ui:ProgressRing IsIndeterminate="True" Width="50" Height="50" Margin="0,0,0,16"/>
+                            <TextBlock Text="{DynamicResource Ocr_Scanning}" Foreground="White" HorizontalAlignment="Center" FontSize="16"/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </ui:Card>
+        </Grid>
+    </Grid>
+</Page>

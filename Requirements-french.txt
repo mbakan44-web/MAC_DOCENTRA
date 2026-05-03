@@ -1,0 +1,30 @@
+===========================================================
+    MICROSOFT OFFICE REQUIREMENT / GEREKSINIMI
+===========================================================
+
+[FRENCH]
+Pour que les fonctionnalités professionnelles de cette application fonctionnent correctement, 
+Microsoft Office doit être installé sur votre ordinateur.
+
+Les outils suivants dépendent de Microsoft Office :
+- Conversion Word vers PDF / PDF vers Word
+- Conversion Excel vers PDF / PDF vers Excel
+- Conversion PowerPoint vers PDF
+- Outils de conversion Office
+
+Si Microsoft Office n'est pas installé, ces fonctionnalités spécifiques 
+ne seront pas disponibles ou pourraient rencontrer des erreurs.
+
+-----------------------------------------------------------
+
+[ENGLISH]
+For the professional features of this application to function correctly, 
+Microsoft Office must be installed on your computer.
+
+-----------------------------------------------------------
+
+[TURKISH]
+Bu uygulamanın profesyonel özelliklerinin doğru çalışabilmesi için 
+bilgisayarınızda Microsoft Office yüklü olmalıdır.
+
+===========================================================

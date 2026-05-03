@@ -1,0 +1,28 @@
+===========================================================
+    MICROSOFT OFFICE REQUIREMENT / GEREKSINIMI
+===========================================================
+
+[CHINESE]
+为了使此应用程序的专业功能正常运行，您的计算机上必须安装 Microsoft Office。
+
+以下工具依赖于 Microsoft Office：
+- Word 转 PDF / PDF 转 Word 转换
+- Excel 转 PDF / PDF 转 Excel 转换
+- PowerPoint 转 PDF 转换
+- Office 转换工具
+
+如果您未安装 Microsoft Office，这些特定功能将无法使用或可能会遇到错误。
+
+-----------------------------------------------------------
+
+[ENGLISH]
+For the professional features of this application to function correctly, 
+Microsoft Office must be installed on your computer.
+
+-----------------------------------------------------------
+
+[TURKISH]
+Bu uygulamanın profesyonel özelliklerinin doğru çalışabilmesi için 
+bilgisayarınızda Microsoft Office yüklü olmalıdır.
+
+===========================================================
