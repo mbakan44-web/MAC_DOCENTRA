@@ -160,7 +160,7 @@ namespace Docentra_Mac.Services
                             {
                                 var size = gfx.MeasureString(watermarkText, font);
                                 
-                                gfx.TranslateTransform(page.Width / 2, page.Height / 2);
+                                gfx.TranslateTransform(page.Width.Point / 2, page.Height.Point / 2);
                                 gfx.RotateTransform(rotation);
                                 gfx.DrawString(watermarkText, font, brush, new XPoint(-size.Width / 2, size.Height / 2));
                             }
