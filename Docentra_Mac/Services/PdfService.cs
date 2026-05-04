@@ -226,15 +226,11 @@ namespace Docentra_Mac.Services
                             targetDoc.SecuritySettings.UserPassword = userPassword;
                             targetDoc.SecuritySettings.OwnerPassword = ownerPassword;
                             
-                            // Set basic permissions
-                            targetDoc.SecuritySettings.PermitAccessibilityExtractContent = false;
-                            targetDoc.SecuritySettings.PermitAnnotations = false;
-                            targetDoc.SecuritySettings.PermitAssembleDocument = false;
-                            targetDoc.SecuritySettings.PermitExtractContent = false;
-                            targetDoc.SecuritySettings.PermitFormsFill = false;
-                            targetDoc.SecuritySettings.PermitFullQualityPrint = false;
-                            targetDoc.SecuritySettings.PermitModifyDocument = false;
+                            // Set basic permissions for PDFsharp 6.x
                             targetDoc.SecuritySettings.PermitPrint = false;
+                            targetDoc.SecuritySettings.PermitModifyDocument = false;
+                            targetDoc.SecuritySettings.PermitExtractContent = false;
+                            targetDoc.SecuritySettings.PermitAnnotations = false;
 
                             targetDoc.Save(targetPath);
                         }
