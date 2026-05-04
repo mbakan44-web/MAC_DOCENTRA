@@ -10,7 +10,7 @@ namespace PromtAiPdfPro.Services
         private const string VersionUrl = "https://docentrapdf.com/version.txt";
         private const string DownloadPageUrl = "https://docentrapdf.com/download";
 
-        public string CurrentVersion => Assembly.GetExecutingAssembly().GetName().Version?.ToString(3) ?? "1.0.0";
+        public string CurrentVersion => Assembly.GetExecutingAssembly().GetName().Version?.ToString(3) ?? "1.0.2";
 
         public async Task<(bool isAvailable, string newVersion, string downloadUrl)> CheckForUpdatesAsync()
         {

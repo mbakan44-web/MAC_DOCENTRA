@@ -14,6 +14,9 @@
     <Product>DOCENTRA PDF &amp; DOCUMENT EDITOR</Product>
     <Company>Docentra AI Team</Company>
     <Description>Professional and Private PDF Editor</Description>
+    <Version>1.0.2</Version>
+    <AssemblyVersion>1.0.2.0</AssemblyVersion>
+    <FileVersion>1.0.2.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

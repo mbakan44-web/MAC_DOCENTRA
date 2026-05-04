@@ -373,7 +373,7 @@
     <system:String x:Key="Sett_CleanModeDesc">حرر مساحة عن طريق تنظيف سجلات التطبيق والملفات المؤقتة.</system:String>
     <system:String x:Key="Sett_BtnClean">تنظيف السجلات والملفات المؤقتة</system:String>
     <system:String x:Key="Sett_About">حول التطبيق</system:String>
-    <system:String x:Key="Sett_Version">الإصدار: 1.0.0</system:String>
+    <system:String x:Key="Sett_Version">الإصدار: 1.0.2</system:String>
     <system:String x:Key="Sett_Author">المطور: Docentra AI Team</system:String>
     <system:String x:Key="Sett_Website">الموقع الإلكتروني: www.docentrapdf.com</system:String>
 

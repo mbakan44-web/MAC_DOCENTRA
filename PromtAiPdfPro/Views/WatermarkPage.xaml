@@ -34,7 +34,7 @@
                 <!-- 1. Metin Filigranı -->
                 <ui:CardControl Margin="0,0,0,24">
                     <ui:CardControl.Icon>
-                        <ui:SymbolIcon Symbol="Text24" Foreground="{DynamicResource PremiumAccentBrush}"/>
+                        <ui:SymbolIcon Symbol="ScanText24" Foreground="{DynamicResource PremiumAccentBrush}"/>
                     </ui:CardControl.Icon>
                     <ui:CardControl.Header>
                         <StackPanel VerticalAlignment="Center">
@@ -67,7 +67,7 @@
                         </Border>
 
                         <Grid Margin="0,0,0,16" x:Name="GridTextStep2" IsEnabled="False">
-                            <ui:TextBox x:Name="TxtWatermarkText" PlaceholderText="{DynamicResource Sec_TextPlaceholder}" TextChanged="TxtWatermarkText_TextChanged" Icon="Text24"/>
+                            <ui:TextBox x:Name="TxtWatermarkText" PlaceholderText="{DynamicResource Sec_TextPlaceholder}" TextChanged="TxtWatermarkText_TextChanged" Icon="ScanText24"/>
                         </Grid>
 
                         <StackPanel x:Name="StackTextOptions" IsEnabled="False">
@@ -86,7 +86,7 @@
                             </Expander>
                             <ui:Button Click="BtnTextWatermark_Click" Appearance="Primary" Padding="32,12" HorizontalAlignment="Right">
                                 <StackPanel Orientation="Horizontal">
-                                    <ui:SymbolIcon Symbol="PositionToFront24" Margin="0,0,10,0"/>
+                                    <ui:SymbolIcon Symbol="ArrowCircleRight24" Margin="0,0,10,0"/>
                                     <TextBlock Text="{DynamicResource Sec_BtnAddText}" FontWeight="Bold"/>
                                 </StackPanel>
                             </ui:Button>
@@ -156,7 +156,7 @@
                             </Expander>
                             <ui:Button Click="BtnImageWatermark_Click" Appearance="Primary" Padding="32,12" HorizontalAlignment="Right">
                                 <StackPanel Orientation="Horizontal">
-                                    <ui:SymbolIcon Symbol="PositionToFront24" Margin="0,0,10,0"/>
+                                    <ui:SymbolIcon Symbol="ArrowCircleRight24" Margin="0,0,10,0"/>
                                     <TextBlock Text="{DynamicResource Sec_BtnSelectLogo}" FontWeight="Bold"/>
                                 </StackPanel>
                             </ui:Button>

@@ -4,7 +4,7 @@
 [Setup]
 AppId={{D0C312A-1234-5678-90AB-CDEF12345678}}
 AppName=DOCENTRA PDF & DOCUMENT EDITOR
-AppVersion=1.0.0
+AppVersion=1.0.2
 AppPublisher=Docentra AI Team
 AppPublisherURL=https://www.docentrapdf.com
 AppSupportURL=https://www.docentrapdf.com
@@ -16,7 +16,7 @@ UninstallDisplayIcon={app}\PromtAiPdfPro.exe
 ; İkon dosyası (.ico formatında olmalıdır, şimdilik .png üzerinden ikon ayarlanabilir ama gerçek installer için .ico tercih edilir)
 SetupIconFile=PromtAiPdfPro\Assets\app_icon.ico
 OutputDir=.
-OutputBaseFilename=Docentra_Setup_v1.0
+OutputBaseFilename=Docentra_Setup_v1.0.2
 Compression=lzma
 SolidCompression=yes
 ShowLanguageDialog=auto

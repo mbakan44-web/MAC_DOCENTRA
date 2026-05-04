@@ -229,6 +229,7 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 .price { font-size: 4rem; font-weight: 700; margin: 1rem 0; color: #fff; }
 .pricing-features { list-style: none; margin-bottom: 2.5rem; }
 .pricing-features li { padding: 0.9rem 0; border-bottom: 1px solid var(--glass-border); color: var(--text-color); }
+.tax-notice { font-size: 0.8rem; color: var(--text-dim); margin-top: 1rem; text-align: center; font-style: italic; opacity: 0.8; }
 
 /* ========== FAQ ========== */
 .faq { padding: 8rem 0; }

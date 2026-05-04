@@ -1,0 +1,33 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Docentra_Mac.Views.Pages.ProtectPage">
+    <Grid RowDefinitions="Auto, *">
+        <TextBlock Grid.Row="0" Text="{DynamicResource Protect_Title}" 
+                   FontSize="24" FontWeight="Bold" Margin="0,0,0,20"/>
+
+        <StackPanel Grid.Row="1" Spacing="15" MaxWidth="500" HorizontalAlignment="Left">
+            <Button Content="{DynamicResource Gen_SelectFile}" Click="SelectFile_Click" 
+                    Classes="accent" HorizontalAlignment="Stretch"/>
+            
+            <TextBlock x:Name="SelectedFileText" Text="..." FontSize="12" Opacity="0.6"/>
+
+            <StackPanel Spacing="5">
+                <TextBlock Text="{DynamicResource Protect_PassLabel}"/>
+                <TextBox x:Name="UserPassword" PasswordChar="*"/>
+            </StackPanel>
+
+            <StackPanel Spacing="5">
+                <TextBlock Text="{DynamicResource Protect_OwnerPassLabel}"/>
+                <TextBox x:Name="OwnerPassword" PasswordChar="*"/>
+            </StackPanel>
+
+            <Button Content="{DynamicResource Protect_Start}" Click="Protect_Click" 
+                    Classes="accent" HorizontalAlignment="Stretch" Margin="0,20,0,0"/>
+            
+            <TextBlock x:Name="StatusText" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

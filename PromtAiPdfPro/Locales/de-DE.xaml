@@ -373,7 +373,7 @@
     <system:String x:Key="Sett_CleanModeDesc">Geben Sie Speicherplatz frei, indem Sie Anwendungsprotokolle und temporäre Dateien löschen.</system:String>
     <system:String x:Key="Sett_BtnClean">Protokolle &amp; temporäre Dateien löschen</system:String>
     <system:String x:Key="Sett_About">Über die Anwendung</system:String>
-    <system:String x:Key="Sett_Version">Version: 1.0.0</system:String>
+    <system:String x:Key="Sett_Version">Version: 1.0.2</system:String>
     <system:String x:Key="Sett_Author">Entwickler: Docentra AI Team</system:String>
     <system:String x:Key="Sett_Website">Website: www.docentrapdf.com</system:String>
 

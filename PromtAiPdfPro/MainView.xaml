@@ -21,10 +21,13 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <wpfui:TitleBar
-            Grid.Row="0"
-            Title="{DynamicResource AppTitle}"
-            Icon="pack://application:,,,/Assets/app_icon.ico"/>
+        <Grid Grid.Row="0">
+            <wpfui:TitleBar />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="12,0,0,0" IsHitTestVisible="False">
+                <Image Source="pack://application:,,,/Assets/app_icon.ico" Width="20" Height="20" Margin="0,0,8,0"/>
+                <TextBlock Text="{DynamicResource AppTitle}" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="12"/>
+            </StackPanel>
+        </Grid>
 
         <Grid Grid.Row="1">
             <wpfui:NavigationView 
@@ -70,6 +73,11 @@
                         Content="{DynamicResource Nav_PasswordSecurity}"
                         TargetPageType="{x:Type views:PasswordSecurityPage}"
                         Icon="{wpfui:SymbolIcon ShieldLock24}" />
+
+                    <wpfui:NavigationViewItem 
+                        Content="{DynamicResource Nav_Watermark}"
+                        TargetPageType="{x:Type views:WatermarkPage}"
+                        Icon="{wpfui:SymbolIcon Image24}" />
 
                     <wpfui:NavigationViewItem 
                         Content="{DynamicResource Nav_Ocr}"

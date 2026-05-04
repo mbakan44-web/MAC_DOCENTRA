@@ -1,0 +1,41 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Docentra_Mac.Views.Pages.WatermarkPage">
+    <Grid RowDefinitions="Auto, *">
+        <!-- Header -->
+        <TextBlock Grid.Row="0" Text="{DynamicResource Watermark_Title}" 
+                   FontSize="24" FontWeight="Bold" Margin="0,0,0,20"/>
+
+        <!-- Content -->
+        <StackPanel Grid.Row="1" Spacing="15" MaxWidth="500" HorizontalAlignment="Left">
+            <Button Content="{DynamicResource Gen_SelectFile}" Click="SelectFile_Click" 
+                    Classes="accent" HorizontalAlignment="Stretch"/>
+            
+            <TextBlock x:Name="SelectedFileText" Text="..." FontSize="12" Opacity="0.6"/>
+
+            <StackPanel Spacing="5">
+                <TextBlock Text="{DynamicResource Watermark_TextLabel}"/>
+                <TextBox x:Name="WatermarkText" Watermark="Docentra PDF"/>
+            </StackPanel>
+
+            <Grid ColumnDefinitions="*, *">
+                <StackPanel Grid.Column="0" Spacing="5" Margin="0,0,10,0">
+                    <TextBlock Text="{DynamicResource Watermark_OpacityLabel}"/>
+                    <NumericUpDown x:Name="OpacityValue" Value="50" Minimum="0" Maximum="100"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Spacing="5" Margin="10,0,0,0">
+                    <TextBlock Text="{DynamicResource Watermark_RotationLabel}"/>
+                    <NumericUpDown x:Name="RotationValue" Value="45" Minimum="-360" Maximum="360"/>
+                </StackPanel>
+            </Grid>
+
+            <Button Content="{DynamicResource Watermark_Apply}" Click="Apply_Click" 
+                    Classes="accent" HorizontalAlignment="Stretch" Margin="0,20,0,0"/>
+            
+            <TextBlock x:Name="StatusText" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

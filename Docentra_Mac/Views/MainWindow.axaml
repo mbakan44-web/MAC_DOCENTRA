@@ -51,6 +51,34 @@
                             <TextBlock Text="{DynamicResource Nav_Split}"/>
                         </StackPanel>
                     </ListBoxItem>
+
+                    <ListBoxItem>
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <PathIcon Data="{StaticResource WatermarkRegular}" Width="18"/>
+                            <TextBlock Text="{DynamicResource Watermark_Title}"/>
+                        </StackPanel>
+                    </ListBoxItem>
+
+                    <ListBoxItem>
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <PathIcon Data="{StaticResource LockRegular}" Width="18"/>
+                            <TextBlock Text="{DynamicResource Protect_Title}"/>
+                        </StackPanel>
+                    </ListBoxItem>
+
+                    <ListBoxItem>
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <PathIcon Data="{StaticResource DeleteRegular}" Width="18"/>
+                            <TextBlock Text="{DynamicResource Delete_Title}"/>
+                        </StackPanel>
+                    </ListBoxItem>
+
+                    <ListBoxItem>
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <PathIcon Data="{StaticResource PageNumRegular}" Width="18"/>
+                            <TextBlock Text="{DynamicResource PageNum_Title}"/>
+                        </StackPanel>
+                    </ListBoxItem>
                 </ListBox>
 
                 <!-- Footer / Premium Banner -->

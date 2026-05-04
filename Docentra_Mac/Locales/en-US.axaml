@@ -26,4 +26,40 @@
     <x:String x:Key="Split_RangeLabel">Page Range (e.g. 1, 3-5, 8):</x:String>
     <x:String x:Key="Split_Start">Start Splitting</x:String>
     <x:String x:Key="Split_Success">File split successfully!</x:String>
+
+    <!-- Watermark -->
+    <x:String x:Key="Watermark_Title">Add Watermark</x:String>
+    <x:String x:Key="Watermark_TextLabel">Watermark Text:</x:String>
+    <x:String x:Key="Watermark_OpacityLabel">Opacity (%):</x:String>
+    <x:String x:Key="Watermark_RotationLabel">Rotation (Degrees):</x:String>
+    <x:String x:Key="Watermark_Apply">Apply Watermark</x:String>
+    <x:String x:Key="Watermark_Success">Watermark added successfully!</x:String>
+
+    <!-- General -->
+    <x:String x:Key="Gen_Processing">Processing...</x:String>
+    <x:String x:Key="Gen_Error">An error occurred!</x:String>
+    <x:String x:Key="Gen_SelectFile">Select File</x:String>
+    <x:String x:Key="Gen_SaveFile">Save File</x:String>
+
+    <!-- Delete Pages -->
+    <x:String x:Key="Delete_Title">Delete Pages</x:String>
+    <x:String x:Key="Delete_RangeLabel">Pages to Delete (e.g. 1, 3-5):</x:String>
+    <x:String x:Key="Delete_Start">Delete Pages</x:String>
+    <x:String x:Key="Delete_Success">Pages deleted successfully!</x:String>
+
+    <!-- Protect -->
+    <x:String x:Key="Protect_Title">Protect &amp; Encrypt</x:String>
+    <x:String x:Key="Protect_PassLabel">User Password:</x:String>
+    <x:String x:Key="Protect_OwnerPassLabel">Owner Password (for permissions):</x:String>
+    <x:String x:Key="Protect_Start">Encrypt</x:String>
+    <x:String x:Key="Protect_Success">PDF encrypted successfully!</x:String>
+
+    <!-- Page Numbers -->
+    <x:String x:Key="PageNum_Title">Add Page Numbers</x:String>
+    <x:String x:Key="PageNum_PosLabel">Position:</x:String>
+    <x:String x:Key="PageNum_BottomCenter">Bottom Center</x:String>
+    <x:String x:Key="PageNum_BottomRight">Bottom Right</x:String>
+    <x:String x:Key="PageNum_TopCenter">Top Center</x:String>
+    <x:String x:Key="PageNum_Start">Add Numbers</x:String>
+    <x:String x:Key="PageNum_Success">Page numbers added successfully!</x:String>
 </ResourceDictionary>

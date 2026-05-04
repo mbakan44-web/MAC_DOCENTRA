@@ -373,7 +373,7 @@
     <system:String x:Key="Sett_CleanModeDesc">Освободите место, очистив логи приложения и временные файлы.</system:String>
     <system:String x:Key="Sett_BtnClean">Очистить логи и временные файлы</system:String>
     <system:String x:Key="Sett_About">О приложении</system:String>
-    <system:String x:Key="Sett_Version">Версия: 1.0.0</system:String>
+    <system:String x:Key="Sett_Version">Версия: 1.0.2</system:String>
     <system:String x:Key="Sett_Author">Разработчик: Docentra AI Team</system:String>
     <system:String x:Key="Sett_Website">Веб-сайт: www.docentrapdf.com</system:String>
 

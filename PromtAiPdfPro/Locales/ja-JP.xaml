@@ -373,7 +373,7 @@
     <system:String x:Key="Sett_CleanModeDesc">アプリのログや一時ファイルをクリーンアップして空き容量を増やします。</system:String>
     <system:String x:Key="Sett_BtnClean">ログと一時ファイルを削除</system:String>
     <system:String x:Key="Sett_About">アプリについて</system:String>
-    <system:String x:Key="Sett_Version">バージョン: 1.0.0</system:String>
+    <system:String x:Key="Sett_Version">バージョン: 1.0.2</system:String>
     <system:String x:Key="Sett_Author">開発者: Docentra AI Team</system:String>
     <system:String x:Key="Sett_Website">ウェブサイト: www.docentrapdf.com</system:String>
 

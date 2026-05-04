@@ -20,4 +20,40 @@
     <x:String x:Key="Split_RangeLabel">Sayfa Aralığı (Örn: 1, 3-5, 8):</x:String>
     <x:String x:Key="Split_Start">Ayırmayı Başlat</x:String>
     <x:String x:Key="Split_Success">Dosya başarıyla ayrıldı!</x:String>
+
+    <!-- Watermark -->
+    <x:String x:Key="Watermark_Title">Filigran Ekle</x:String>
+    <x:String x:Key="Watermark_TextLabel">Filigran Metni:</x:String>
+    <x:String x:Key="Watermark_OpacityLabel">Opaklık (%):</x:String>
+    <x:String x:Key="Watermark_RotationLabel">Döndürme (Derece):</x:String>
+    <x:String x:Key="Watermark_Apply">Filigran Uygula</x:String>
+    <x:String x:Key="Watermark_Success">Filigran başarıyla eklendi!</x:String>
+
+    <!-- General -->
+    <x:String x:Key="Gen_Processing">İşleniyor...</x:String>
+    <x:String x:Key="Gen_Error">Bir hata oluştu!</x:String>
+    <x:String x:Key="Gen_SelectFile">Dosya Seç</x:String>
+    <x:String x:Key="Gen_SaveFile">Dosyayı Kaydet</x:String>
+
+    <!-- Delete Pages -->
+    <x:String x:Key="Delete_Title">Sayfa Sil</x:String>
+    <x:String x:Key="Delete_RangeLabel">Silinecek Sayfalar (Örn: 1, 3-5):</x:String>
+    <x:String x:Key="Delete_Start">Sayfaları Sil</x:String>
+    <x:String x:Key="Delete_Success">Sayfalar başarıyla silindi!</x:String>
+
+    <!-- Protect -->
+    <x:String x:Key="Protect_Title">Şifrele &amp; Koru</x:String>
+    <x:String x:Key="Protect_PassLabel">Kullanıcı Şifresi:</x:String>
+    <x:String x:Key="Protect_OwnerPassLabel">Sahip Şifresi (Yetki için):</x:String>
+    <x:String x:Key="Protect_Start">Şifrele</x:String>
+    <x:String x:Key="Protect_Success">PDF başarıyla şifrelendi!</x:String>
+
+    <!-- Page Numbers -->
+    <x:String x:Key="PageNum_Title">Sayfa Numarası Ekle</x:String>
+    <x:String x:Key="PageNum_PosLabel">Konum:</x:String>
+    <x:String x:Key="PageNum_BottomCenter">Alt Orta</x:String>
+    <x:String x:Key="PageNum_BottomRight">Alt Sağ</x:String>
+    <x:String x:Key="PageNum_TopCenter">Üst Orta</x:String>
+    <x:String x:Key="PageNum_Start">Numaraları Ekle</x:String>
+    <x:String x:Key="PageNum_Success">Sayfa numaraları başarıyla eklendi!</x:String>
 </ResourceDictionary>

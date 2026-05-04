@@ -38,6 +38,31 @@ namespace Docentra_Mac.Views
                 MainContent.Content = new Pages.SplitPage();
                 TxtHeader.Text = (string)this.FindResource("Nav_Split")!;
             }
+            else if (NavList.SelectedIndex == 3)
+            {
+                MainContent.Content = new Pages.WatermarkPage();
+                TxtHeader.Text = (string)this.FindResource("Watermark_Title")!;
+            }
+            else if (NavList.SelectedIndex == 4)
+            {
+                MainContent.Content = new Pages.ProtectPage();
+                TxtHeader.Text = (string)this.FindResource("Protect_Title")!;
+            }
+            else if (NavList.SelectedIndex == 5)
+            {
+                MainContent.Content = new Pages.DeletePagesPage();
+                TxtHeader.Text = (string)this.FindResource("Delete_Title")!;
+            }
+            else if (NavList.SelectedIndex == 6)
+            {
+                MainContent.Content = new Pages.AddPageNumbersPage();
+                TxtHeader.Text = (string)this.FindResource("PageNum_Title")!;
+            }
+        }
+
+        public void NavigateToPage(int index)
+        {
+            NavList.SelectedIndex = index;
         }
 
         private async Task InitializeAppAsync()

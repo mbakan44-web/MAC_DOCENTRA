@@ -176,5 +176,127 @@ namespace Docentra_Mac.Services
                 }
             });
         }
+        public async Task<bool> DeletePagesAsync(string sourcePath, string targetPath, string rangeInput)
+        {
+            return await Task.Run(() =>
+            {
+                try
+                {
+                    using (PdfDocument sourceDoc = PdfReader.Open(sourcePath, PdfDocumentOpenMode.Import))
+                    {
+                        var pagesToDelete = ParsePageRange(rangeInput, sourceDoc.PageCount);
+                        if (pagesToDelete.Count == 0) return false;
+
+                        using (PdfDocument targetDoc = new PdfDocument())
+                        {
+                            for (int i = 0; i < sourceDoc.PageCount; i++)
+                            {
+                                if (!pagesToDelete.Contains(i))
+                                {
+                                    targetDoc.AddPage(sourceDoc.Pages[i]);
+                                }
+                            }
+                            targetDoc.Save(targetPath);
+                        }
+                    }
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Delete Error: {ex.Message}");
+                    return false;
+                }
+            });
+        }
+        public async Task<bool> ProtectPdfAsync(string sourcePath, string targetPath, string userPassword, string ownerPassword)
+        {
+            return await Task.Run(() =>
+            {
+                try
+                {
+                    using (PdfDocument sourceDoc = PdfReader.Open(sourcePath, PdfDocumentOpenMode.Import))
+                    {
+                        using (PdfDocument targetDoc = new PdfDocument())
+                        {
+                            foreach (PdfPage page in sourceDoc.Pages)
+                            {
+                                targetDoc.AddPage(page);
+                            }
+
+                            targetDoc.SecuritySettings.UserPassword = userPassword;
+                            targetDoc.SecuritySettings.OwnerPassword = ownerPassword;
+                            
+                            // Set basic permissions
+                            targetDoc.SecuritySettings.PermitAccessibilityExtractContent = false;
+                            targetDoc.SecuritySettings.PermitAnnotations = false;
+                            targetDoc.SecuritySettings.PermitAssembleDocument = false;
+                            targetDoc.SecuritySettings.PermitExtractContent = false;
+                            targetDoc.SecuritySettings.PermitFormsFill = false;
+                            targetDoc.SecuritySettings.PermitFullQualityPrint = false;
+                            targetDoc.SecuritySettings.PermitModifyDocument = false;
+                            targetDoc.SecuritySettings.PermitPrint = false;
+
+                            targetDoc.Save(targetPath);
+                        }
+                    }
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Protect Error: {ex.Message}");
+                    return false;
+                }
+            });
+        }
+        public async Task<bool> AddPageNumbersAsync(string sourcePath, string targetPath, string position)
+        {
+            return await Task.Run(() =>
+            {
+                try
+                {
+                    using (PdfDocument doc = PdfReader.Open(sourcePath, PdfDocumentOpenMode.Modify))
+                    {
+                        XFont font = new XFont("Helvetica", 10, XFontStyleEx.Regular);
+                        XBrush brush = XBrushes.Black;
+
+                        for (int i = 0; i < doc.PageCount; i++)
+                        {
+                            PdfPage page = doc.Pages[i];
+                            using (XGraphics gfx = XGraphics.FromPdfPage(page))
+                            {
+                                string text = $"Page {i + 1} of {doc.PageCount}";
+                                XSize size = gfx.MeasureString(text, font);
+                                double x = 0, y = 0;
+
+                                switch (position)
+                                {
+                                    case "BottomCenter":
+                                        x = (page.Width.Point - size.Width) / 2;
+                                        y = page.Height.Point - 30;
+                                        break;
+                                    case "BottomRight":
+                                        x = page.Width.Point - size.Width - 30;
+                                        y = page.Height.Point - 30;
+                                        break;
+                                    case "TopCenter":
+                                        x = (page.Width.Point - size.Width) / 2;
+                                        y = 40;
+                                        break;
+                                }
+
+                                gfx.DrawString(text, font, brush, x, y);
+                            }
+                        }
+                        doc.Save(targetPath);
+                    }
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Page Number Error: {ex.Message}");
+                    return false;
+                }
+            });
+        }
     }
 }

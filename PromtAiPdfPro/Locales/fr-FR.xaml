@@ -373,7 +373,7 @@
     <system:String x:Key="Sett_CleanModeDesc">Libérez de l'espace en nettoyant les journaux de l'application et les fichiers temporaires.</system:String>
     <system:String x:Key="Sett_BtnClean">Nettoyer les journaux et les fichiers temporaires</system:String>
     <system:String x:Key="Sett_About">À propos de l'application</system:String>
-    <system:String x:Key="Sett_Version">Version : 1.0.0</system:String>
+    <system:String x:Key="Sett_Version">Version : 1.0.2</system:String>
     <system:String x:Key="Sett_Author">Développeur : Docentra AI Team</system:String>
     <system:String x:Key="Sett_Website">Site Web : www.docentrapdf.com</system:String>
 

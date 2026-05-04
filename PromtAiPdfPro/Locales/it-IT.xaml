@@ -373,7 +373,7 @@
     <system:String x:Key="Sett_CleanModeDesc">Libera spazio pulendo i log dell'applicazione e i file temporanei.</system:String>
     <system:String x:Key="Sett_BtnClean">Pulisci log e file temporanei</system:String>
     <system:String x:Key="Sett_About">Informazioni sull'applicazione</system:String>
-    <system:String x:Key="Sett_Version">Versione: 1.0.0</system:String>
+    <system:String x:Key="Sett_Version">Versione: 1.0.2</system:String>
     <system:String x:Key="Sett_Author">Sviluppatore: Docentra AI Team</system:String>
     <system:String x:Key="Sett_Website">Sito web: www.docentrapdf.com</system:String>
 

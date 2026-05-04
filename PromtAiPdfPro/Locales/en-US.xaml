@@ -228,6 +228,7 @@
     <system:String x:Key="Sec_LogoPlaceholder">No logo selected...</system:String>
     <system:String x:Key="Sec_RangeAll">All Pages</system:String>
     <system:String x:Key="Sec_RangeFirst">Only First Page</system:String>
+    <system:String x:Key="Sec_RangeCustom">Custom Page Range</system:String>
     <system:String x:Key="Sec_Rotation">Rotation Angle</system:String>
     <system:String x:Key="Sec_RangeHelp">You can specify pages to process in these formats:
 â€¢ Use comma for individual pages (e.g. 1,3,5)
@@ -356,7 +357,7 @@
     <system:String x:Key="Sett_CleanModeDesc">Free up space by cleaning app logs and temporary files.</system:String>
     <system:String x:Key="Sett_BtnClean">Clean Logs and Temp Files</system:String>
     <system:String x:Key="Sett_About">About App</system:String>
-    <system:String x:Key="Sett_Version">Version: 1.0.0</system:String>
+    <system:String x:Key="Sett_Version">Version: 1.0.2</system:String>
     <system:String x:Key="Sett_Author">Developer: Docentra AI Team</system:String>
     <system:String x:Key="Sett_Website">Website: www.docentrapdf.com</system:String>
     <system:String x:Key="Msg_SystemCleanSuccess">Cleanup process completed successfully!</system:String>

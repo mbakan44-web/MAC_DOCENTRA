@@ -1,2 +1,2 @@
-1.0.0
-https://github.com/mbakan44-web/DocentraWebsite/releases/download/v1.0.0/Docentra_PDF_Suite.exe
+1.0.2
+https://github.com/mbakan44-web/DocentraWebsite/releases/download/v1.0.0/DOCENTRA.PDF.DOCUMENT.EDITOR.V.1.02.exe

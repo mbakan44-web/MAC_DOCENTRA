@@ -38,7 +38,7 @@
     </StackPanel>
 
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
-            <WrapPanel Margin="-5" HorizontalAlignment="Center">
+            <WrapPanel Margin="-5" HorizontalAlignment="Left" ItemWidth="270" ItemHeight="150">
                 <!-- 1. PDF Merge -->
                 <ui:CardAction Margin="5" Padding="15" Style="{StaticResource PremiumCardStyle}" Click="NavigateToMerge_Click" MinWidth="260">
                     <StackPanel>

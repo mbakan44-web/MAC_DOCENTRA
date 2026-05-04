@@ -253,6 +253,7 @@
     <system:String x:Key="Sec_LogoPlaceholder">Logo seçilmedi...</system:String>
     <system:String x:Key="Sec_RangeAll">Tüm Sayfalar</system:String>
     <system:String x:Key="Sec_RangeFirst">Sadece İlk Sayfa</system:String>
+    <system:String x:Key="Sec_RangeCustom">Özel Sayfa Aralığı</system:String>
     <system:String x:Key="Sec_Rotation">Döndürme Açısı</system:String>
     <system:String x:Key="Sec_RangeHelp">İşlem yapılacak sayfaları şu formatlarda belirtebilirsiniz:
 • Tek sayfalar için virgül (ör: 1,3,5)
@@ -373,7 +374,7 @@
     <system:String x:Key="Sett_CleanModeDesc">Uygulama loglarını ve geçici dosyaları temizleyerek yer açın.</system:String>
     <system:String x:Key="Sett_BtnClean">Logları ve Geçici Dosyaları Sil</system:String>
     <system:String x:Key="Sett_About">Uygulama Hakkında</system:String>
-    <system:String x:Key="Sett_Version">Versiyon: 1.0.0</system:String>
+    <system:String x:Key="Sett_Version">Versiyon: 1.0.2</system:String>
     <system:String x:Key="Sett_Author">Geliştirici: Docentra AI Team</system:String>
     <system:String x:Key="Sett_Website">Web Sitesi: www.docentrapdf.com</system:String>
 

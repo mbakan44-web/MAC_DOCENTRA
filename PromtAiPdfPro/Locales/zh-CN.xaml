@@ -373,7 +373,7 @@
     <system:String x:Key="Sett_CleanModeDesc">通过清理应用程序日志和临时文件来释放空间。</system:String>
     <system:String x:Key="Sett_BtnClean">清理日志和临时文件</system:String>
     <system:String x:Key="Sett_About">关于应用程序</system:String>
-    <system:String x:Key="Sett_Version">版本: 1.0.0</system:String>
+    <system:String x:Key="Sett_Version">版本: 1.0.2</system:String>
     <system:String x:Key="Sett_Author">开发者: Docentra AI Team</system:String>
     <system:String x:Key="Sett_Website">网站: www.docentrapdf.com</system:String>
 
