@@ -1,0 +1,40 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Docentra_Mac.Views.Pages.SettingsPage">
+    <Grid RowDefinitions="Auto, *">
+        <TextBlock Grid.Row="0" Text="{DynamicResource Nav_Settings}" 
+                   FontSize="24" FontWeight="Bold" Margin="0,0,0,20"/>
+
+        <StackPanel Grid.Row="1" Spacing="20" MaxWidth="400" HorizontalAlignment="Left">
+            <!-- Language Selection -->
+            <StackPanel Spacing="5">
+                <TextBlock Text="Language / Dil" FontWeight="SemiBold"/>
+                <ComboBox x:Name="LanguageList" HorizontalAlignment="Stretch" SelectedIndex="0">
+                    <ComboBoxItem Content="English (US)"/>
+                    <ComboBoxItem Content="Türkçe (TR)"/>
+                </ComboBox>
+            </StackPanel>
+
+            <!-- Version Info -->
+            <Border Background="#1E1E1E" Padding="15" CornerRadius="10">
+                <StackPanel Spacing="5">
+                    <TextBlock Text="App Information" FontWeight="SemiBold" Opacity="0.8"/>
+                    <Separator Margin="0,5"/>
+                    <Grid ColumnDefinitions="*, Auto">
+                        <TextBlock Grid.Column="0" Text="Version" Opacity="0.6"/>
+                        <TextBlock Grid.Column="1" Text="1.0.0" FontWeight="Bold"/>
+                    </Grid>
+                    <Grid ColumnDefinitions="*, Auto" Margin="0,5,0,0">
+                        <TextBlock Grid.Column="0" Text="License" Opacity="0.6"/>
+                        <TextBlock Grid.Column="1" x:Name="LicenseStatusText" Text="Trial" Foreground="#FFD700"/>
+                    </Grid>
+                </StackPanel>
+            </Border>
+
+            <TextBlock Text="Docentra PDF Suite © 2026" FontSize="11" Opacity="0.4" HorizontalAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

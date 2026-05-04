@@ -60,6 +60,13 @@ namespace Docentra_Mac.Views
             }
         }
 
+        private void Settings_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            NavList.SelectedIndex = -1; // Deselect navigation items
+            MainContent.Content = new Pages.SettingsPage();
+            TxtHeader.Text = (string)this.FindResource("Nav_Settings")!;
+        }
+
         public void NavigateToPage(int index)
         {
             NavList.SelectedIndex = index;

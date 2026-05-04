@@ -93,7 +93,7 @@
                         </Grid>
                     </Border>
                     
-                    <Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Background="Transparent">
+                    <Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Background="Transparent" Click="Settings_Click">
                         <StackPanel Orientation="Horizontal" Spacing="10">
                             <PathIcon Data="{StaticResource SettingsRegular}" Width="16"/>
                             <TextBlock Text="{DynamicResource Nav_Settings}" FontSize="13"/>
