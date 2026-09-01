@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AutoCura AI - OBD2 Diagnostics, Live Engine Gauges & Smart AI Automotive Assistant">
+    <title>AutoCura AI - Smart OBD2 & Automotive AI Assistant</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --accent: #10b981;
+            --dark: #0f172a;
+            --dark-card: #1e293b;
+            --text-light: #f8fafc;
+            --text-gray: #94a3b8;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1050px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-bottom: 1px solid #334155;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #38bdf8;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .nav-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+        .hero {
+            text-align: center;
+            padding: 70px 0 50px;
+        }
+        .badge {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            padding: 6px 16px;
+            border-radius: 9999px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 18px;
+            background: linear-gradient(135deg, #ffffff 0%, #93c5fd 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: 18px;
+            color: var(--text-gray);
+            max-width: 680px;
+            margin: 0 auto 30px;
+        }
+        .btn-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: #ffffff;
+            padding: 14px 32px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px -5px rgba(37, 99, 235, 0.6);
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            padding: 50px 0;
+        }
+        .feature-card {
+            background-color: var(--dark-card);
+            padding: 28px;
+            border-radius: 16px;
+            border: 1px solid #334155;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: #38bdf8;
+        }
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 14px;
+        }
+        .feature-card h3 {
+            font-size: 19px;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        .feature-card p {
+            color: var(--text-gray);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .trust-section {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid #334155;
+            border-radius: 16px;
+            padding: 36px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        .trust-section h2 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+        .trust-section p {
+            color: var(--text-gray);
+            font-size: 15px;
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+        footer {
+            border-top: 1px solid #334155;
+            padding: 40px 0;
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+        footer a {
+            color: #38bdf8;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <nav>
+            <div class="logo">🚗 AutoCura AI</div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="https://docentrapdf.com/autocura-ai-privacy.html">Privacy Policy</a>
+                <a href="mailto:mustafabakan.app@gmail.com">Support</a>
+            </div>
+        </nav>
+
+        <section class="hero">
+            <span class="badge">AI-Powered Automotive Intelligence</span>
+            <h1>Smart OBD2 Diagnostics &amp; Vehicle Care Assistant</h1>
+            <p>Connect to your car with Bluetooth OBD2, scan engine trouble codes (DTC), monitor real-time telemetry, track fuel &amp; inspection deadlines, and get AI-powered repair insights.</p>
+            <a href="https://docentrapdf.com/autocura-ai-privacy.html" class="btn-cta">View Privacy Policy &amp; Terms</a>
+        </section>
+
+        <section id="features" class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🔌</div>
+                <h3>Live OBD2 Telemetry</h3>
+                <p>Read real-time RPM, vehicle speed, coolant temperature, intake manifold pressure (MAP), and mass air flow (MAF) straight from your car's ECU.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🧠</div>
+                <h3>Gemini AI Trouble Diagnosis</h3>
+                <p>Scan Check Engine fault codes (DTCs), understand root causes in plain language, and receive instant troubleshooting advice powered by Google Vertex AI.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⛽</div>
+                <h3>Fuel &amp; Expense Log</h3>
+                <p>Record fuel fills, maintenance repairs, and calculate exact per-kilometer running costs with intelligent fuel consumption analytics.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔔</div>
+                <h3>Inspection &amp; Insurance Alerts</h3>
+                <p>Automated periodic reminders for mandatory vehicle inspections and traffic insurance expiration to avoid penalties and stay fully protected.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">☁️</div>
+                <h3>Encrypted Cloud Sync</h3>
+                <p>Sign in securely with Google Firebase to backup your vehicle garage, expense receipts, and maintenance history with SSL encryption.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🧪</div>
+                <h3>Built-in Demo Simulator</h3>
+                <p>Test the full OBD2 diagnostic dashboard and AI scanner instantly without needing a physical vehicle or OBD2 hardware adapter.</p>
+            </div>
+        </section>
+
+        <section class="trust-section">
+            <h2>Your Privacy &amp; Data Security First</h2>
+            <p>AutoCura AI uses Google Firebase security rules, end-to-end HTTPS/TLS encryption, and offers a 100% private Guest Mode where all data remains solely on your device.</p>
+            <a href="https://docentrapdf.com/autocura-ai-privacy.html" style="color: #38bdf8; font-weight: 600; text-decoration: underline;">Read our complete Privacy Policy &amp; Terms of Service &rarr;</a>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 AutoCura AI &middot; MAB AI Team &middot; All Rights Reserved</p>
+            <p style="margin-top: 10px;">
+                <a href="https://docentrapdf.com/autocura-ai.html">Home</a> &middot;
+                <a href="https://docentrapdf.com/autocura-ai-privacy.html">Privacy Policy</a> &middot;
+                <a href="mailto:mustafabakan.app@gmail.com">Contact Support</a>
+            </p>
+        </footer>
+    </div>
+
+</body>
+</html>
