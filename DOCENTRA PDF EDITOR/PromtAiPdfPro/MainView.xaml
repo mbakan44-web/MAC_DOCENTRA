@@ -1,0 +1,224 @@
+<wpfui:FluentWindow
+    x:Class="PromtAiPdfPro.MainView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:wpfui="http://schemas.lepo.co/wpfui/2022/xaml"
+    xmlns:views="clr-namespace:PromtAiPdfPro.Views"
+    mc:Ignorable="d"
+    Title="DOCENTRA"
+    Width="1200"
+    Height="800"
+    WindowStartupLocation="CenterScreen"
+    ExtendsContentIntoTitleBar="True"
+    Icon="pack://application:,,,/Assets/app_icon.ico"
+    Background="{DynamicResource DocentraWindowBackground}">
+
+    <Grid Background="{DynamicResource DocentraWindowBackground}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <wpfui:TitleBar />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="12,0,0,0" IsHitTestVisible="False">
+                <Image Source="pack://application:,,,/Assets/app_icon.ico" Width="20" Height="20" Margin="0,0,8,0"/>
+                <TextBlock VerticalAlignment="Center" FontWeight="SemiBold" FontSize="12">
+                    <Run Text="{DynamicResource AppTitle}"/>
+                    <Run Text=" (v2.1)"/>
+                </TextBlock>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <!-- Viewbox'ın dikeyde asla tasmaması için Stretch="Uniform" ve ic Grid'in orantisini sabitledik -->
+            <Viewbox Stretch="Uniform" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <Grid Width="1250" Height="800">
+                    <wpfui:NavigationView 
+                        x:Name="RootNavigation"
+                        PaneDisplayMode="Left"
+                        PaneTitle=""
+                        IsBackButtonVisible="Collapsed"
+                        HeaderVisibility="Collapsed"
+                        OpenPaneLength="220"
+                        TransitionDuration="600"
+                        Transition="FadeInWithSlide"
+                        Background="Transparent"
+                        BackRequested="RootNavigation_BackRequested">
+
+                        <wpfui:NavigationView.MenuItems>
+                            <!-- ... existing menu items ... -->
+                            <wpfui:NavigationViewItem 
+                                Content="{DynamicResource Nav_Dashboard}"
+                                TargetPageType="{x:Type views:ControlCenterPage}">
+                                <wpfui:NavigationViewItem.Icon>
+                                    <wpfui:SymbolIcon Symbol="Home24" Filled="True" Foreground="#0078D4" />
+                                </wpfui:NavigationViewItem.Icon>
+                            </wpfui:NavigationViewItem>
+
+                            <wpfui:NavigationViewItem 
+                                Content="{DynamicResource Viewer_PdfAreaTitle}"
+                                TargetPageType="{x:Type views:PdfAreaPage}">
+                                <wpfui:NavigationViewItem.Icon>
+                                    <wpfui:SymbolIcon Symbol="DocumentPdf24" Filled="True" Foreground="#DA0A00" />
+                                </wpfui:NavigationViewItem.Icon>
+                            </wpfui:NavigationViewItem>
+
+                            <wpfui:NavigationViewItemSeparator />
+
+                            <wpfui:NavigationViewItem 
+                                Content="{DynamicResource Nav_Merge}"
+                                TargetPageType="{x:Type views:MergePage}">
+                                <wpfui:NavigationViewItem.Icon>
+                                    <wpfui:SymbolIcon Symbol="Copy24" Filled="True" Foreground="#107C10" />
+                                </wpfui:NavigationViewItem.Icon>
+                            </wpfui:NavigationViewItem>
+
+                            <wpfui:NavigationViewItem 
+                                Content="{DynamicResource Nav_Split}"
+                                TargetPageType="{x:Type views:SplitPage}">
+                                <wpfui:NavigationViewItem.Icon>
+                                    <wpfui:SymbolIcon Symbol="Cut24" Filled="True" Foreground="#D83B01" />
+                                </wpfui:NavigationViewItem.Icon>
+                            </wpfui:NavigationViewItem>
+
+                            <wpfui:NavigationViewItem 
+                                Content="{DynamicResource Nav_Sign}"
+                                TargetPageType="{x:Type views:SignPage}">
+                                <wpfui:NavigationViewItem.Icon>
+                                    <wpfui:SymbolIcon Symbol="Signature24" Filled="True" Foreground="#D9A05B" />
+                                </wpfui:NavigationViewItem.Icon>
+                            </wpfui:NavigationViewItem>
+
+                            <wpfui:NavigationViewItem 
+                                Content="{DynamicResource Nav_DeletePages}"
+                                TargetPageType="{x:Type views:DeletePagesPage}">
+                                <wpfui:NavigationViewItem.Icon>
+                                    <wpfui:SymbolIcon Symbol="Delete24" Filled="True" Foreground="#E81123" />
+                                </wpfui:NavigationViewItem.Icon>
+                            </wpfui:NavigationViewItem>
+
+                            <wpfui:NavigationViewItem 
+                                Content="{DynamicResource Nav_AddPageNumbers}"
+                                TargetPageType="{x:Type views:AddPageNumbersPage}">
+                                <wpfui:NavigationViewItem.Icon>
+                                    <wpfui:SymbolIcon Symbol="NumberCircle124" Filled="True" Foreground="#002050" />
+                                </wpfui:NavigationViewItem.Icon>
+                            </wpfui:NavigationViewItem>
+
+                            <wpfui:NavigationViewItem 
+                                Content="{DynamicResource Nav_Crop}"
+                                TargetPageType="{x:Type views:CropPage}">
+                                <wpfui:NavigationViewItem.Icon>
+                                    <wpfui:SymbolIcon Symbol="Crop24" Filled="True" Foreground="#C239B3" />
+                                </wpfui:NavigationViewItem.Icon>
+                            </wpfui:NavigationViewItem>
+
+                            <wpfui:NavigationViewItem 
+                                Content="{DynamicResource Nav_Compress}"
+                                TargetPageType="{x:Type views:CompressPage}">
+                                <wpfui:NavigationViewItem.Icon>
+                                    <wpfui:SymbolIcon Symbol="ArrowMinimize24" Filled="True" Foreground="#0078D4" />
+                                </wpfui:NavigationViewItem.Icon>
+                            </wpfui:NavigationViewItem>
+
+                            <wpfui:NavigationViewItem 
+                                Content="{DynamicResource Nav_PasswordSecurity}"
+                                TargetPageType="{x:Type views:PasswordSecurityPage}">
+                                <wpfui:NavigationViewItem.Icon>
+                                    <wpfui:SymbolIcon Symbol="ShieldLock24" Filled="True" Foreground="#A4262C" />
+                                </wpfui:NavigationViewItem.Icon>
+                            </wpfui:NavigationViewItem>
+
+                            <wpfui:NavigationViewItem 
+                                Content="{DynamicResource Nav_Metadata}"
+                                TargetPageType="{x:Type views:MetadataEditorPage}">
+                                <wpfui:NavigationViewItem.Icon>
+                                    <wpfui:SymbolIcon Symbol="Tag24" Filled="True" Foreground="#005A9E" />
+                                </wpfui:NavigationViewItem.Icon>
+                            </wpfui:NavigationViewItem>
+
+                            <wpfui:NavigationViewItem 
+                                Content="{DynamicResource Nav_Watermark}"
+                                TargetPageType="{x:Type views:WatermarkPage}">
+                                <wpfui:NavigationViewItem.Icon>
+                                    <wpfui:SymbolIcon Symbol="Image24" Filled="True" Foreground="#008272" />
+                                </wpfui:NavigationViewItem.Icon>
+                            </wpfui:NavigationViewItem>
+
+                            <wpfui:NavigationViewItemSeparator />
+
+                            <wpfui:NavigationViewItem 
+                                Content="{DynamicResource Nav_Convert}"
+                                TargetPageType="{x:Type views:ConvertPage}">
+                                <wpfui:NavigationViewItem.Icon>
+                                    <wpfui:SymbolIcon Symbol="DocumentPdf24" Filled="True" Foreground="#5C2D91" />
+                                </wpfui:NavigationViewItem.Icon>
+                            </wpfui:NavigationViewItem>
+
+                            <wpfui:NavigationViewItem 
+                                Content="{DynamicResource Nav_OfficeConvert}"
+                                TargetPageType="{x:Type views:OfficeConvertPage}">
+                                <wpfui:NavigationViewItem.Icon>
+                                    <wpfui:SymbolIcon Symbol="ArrowSwap24" Filled="True" Foreground="#005A9E" />
+                                </wpfui:NavigationViewItem.Icon>
+                            </wpfui:NavigationViewItem>
+
+                            <wpfui:NavigationViewItem 
+                                Content="{DynamicResource Nav_Ocr}"
+                                TargetPageType="{x:Type views:OcrPage}">
+                                <wpfui:NavigationViewItem.Icon>
+                                    <wpfui:SymbolIcon Symbol="ScanText24" Filled="True" Foreground="#0065B3" />
+                                </wpfui:NavigationViewItem.Icon>
+                            </wpfui:NavigationViewItem>
+                        </wpfui:NavigationView.MenuItems>
+
+                        <wpfui:NavigationView.FooterMenuItems>
+                            <wpfui:NavigationViewItem 
+                                Content="{DynamicResource Prem_Title}"
+                                TargetPageType="{x:Type views:PremiumPage}"
+                                Foreground="{DynamicResource PremiumAccentBrush}">
+                                <wpfui:NavigationViewItem.Icon>
+                                    <wpfui:SymbolIcon Symbol="Star24" Filled="True" Foreground="{DynamicResource PremiumAccentBrush}" />
+                                </wpfui:NavigationViewItem.Icon>
+                            </wpfui:NavigationViewItem>
+
+                            <wpfui:NavigationViewItem 
+                                Content="{DynamicResource Nav_Settings}"
+                                TargetPageType="{x:Type views:SettingsPage}">
+                                <wpfui:NavigationViewItem.Icon>
+                                    <wpfui:SymbolIcon Symbol="Settings24" Filled="True" Foreground="#797775" />
+                                </wpfui:NavigationViewItem.Icon>
+                            </wpfui:NavigationViewItem>
+                        </wpfui:NavigationView.FooterMenuItems>
+
+                        <wpfui:NavigationView.PaneFooter>
+                            <wpfui:Card Margin="8" Padding="12" x:Name="TrialBanner" ToolTipService.InitialShowDelay="0">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <wpfui:SymbolIcon Symbol="Star24" Margin="0,0,8,0" Foreground="{DynamicResource PremiumAccentBrush}"/>
+                                    <StackPanel Grid.Column="1">
+                                        <TextBlock x:Name="TxtTrialTitle" Text="{DynamicResource Prem_TrialBanner}" FontSize="11" FontWeight="Bold"/>
+                                        <TextBlock x:Name="TxtTrialDays" Text="{DynamicResource Prem_DaysRemaining}" FontSize="10" Opacity="0.7"/>
+                                        <TextBlock x:Name="TxtLockStatus" Text="" FontSize="10" Foreground="#E81123" Visibility="Collapsed" TextWrapping="Wrap" FontWeight="SemiBold" Margin="0,2,0,0"/>
+                                    </StackPanel>
+                                </Grid>
+                            </wpfui:Card>
+                        </wpfui:NavigationView.PaneFooter>
+                    </wpfui:NavigationView>
+                </Grid>
+            </Viewbox>
+            
+            <!-- Global Notification System -->
+            <wpfui:SnackbarPresenter x:Name="RootSnackbar" VerticalAlignment="Bottom" Margin="24" Panel.ZIndex="1000"/>
+        </Grid>
+    </Grid>
+
+</wpfui:FluentWindow>
+
+

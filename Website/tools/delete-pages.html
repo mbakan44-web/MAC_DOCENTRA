@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="delete-title-seo">Delete Pages from PDF Offline | Remove Unwanted PDF Pages | DOCENTRA</title>
+    <meta name="description" content="Remove blank or mistakenly scanned pages from PDF documents with a single click. Fast, secure, and 100% offline on Windows." data-i18n="delete-meta-desc">
+    <meta name="keywords" content="delete pages from pdf, remove pages from pdf offline, remove blank pdf pages, clean pdf pages, docentra delete pages">
+    <link rel="canonical" href="https://docentrapdf.com/tools/delete-pages.html" />
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://docentrapdf.com/tools/delete-pages.html">
+    <meta property="og:title" content="Delete Pages from PDF Offline | Remove PDF Pages">
+    <meta property="og:description" content="Quickly delete unwanted, duplicate, or blank pages from large PDF files 100% offline.">
+    <meta property="og:image" content="https://docentrapdf.com/assets/screenshots/dashboard.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Docentra PDF Page Remover",
+          "operatingSystem": "Windows 10, Windows 11",
+          "applicationCategory": "BusinessApplication, PDFSoftware",
+          "description": "Delete unwanted pages from PDF files 100% offline.",
+          "offers": {
+            "@type": "Offer",
+            "price": "2250",
+            "priceCurrency": "TRY"
+          }
+        },
+        {
+          "@type": "HowTo",
+          "name": "How to Delete Pages from a PDF Offline",
+          "description": "Remove unwanted or blank pages from a PDF document on Windows.",
+          "step": [
+            {
+              "@type": "HowToStep",
+              "name": "Launch Docentra",
+              "text": "Open Docentra on your PC."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Select Delete Pages",
+              "text": "Open the 'Delete Pages' tool."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Select Pages to Remove",
+              "text": "Specify the page numbers or click pages to delete."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Export Clean PDF",
+              "text": "Save the cleaned PDF document to your device."
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header id="header">
+        <nav class="container">
+            <div class="logo"><a href="../index.html" style="text-decoration: none; color: inherit;">DOCENTRA</a></div>
+            <ul class="nav-links">
+                <li><a href="../index.html#features" data-i18n="nav-features">Features</a></li>
+                <li><a href="../online-vs-offline.html" data-i18n="nav-compare">Why Offline?</a></li>
+                <li><a href="../blog/index.html" data-i18n="nav-blog">Blog</a></li>
+                <li><a href="../index.html#pricing" data-i18n="nav-pricing">Pricing</a></li>
+                <li><a href="../index.html#faq" data-i18n="nav-faq">FAQ</a></li>
+                <li><a href="../index.html#download-cta" class="btn btn-secondary" data-i18n="btn-download">Download</a></li>
+            </ul>
+            <div class="nav-right">
+                <select id="lang-selector" class="lang-select">
+                    <option value="en">English</option>
+                    <option value="tr">Türkçe</option>
+                    <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
+                    <option value="es">Español</option>
+                    <option value="it">Italiano</option>
+                    <option value="zh">简体中文</option>
+                    <option value="ja">日本語</option>
+                    <option value="ru">Русский</option>
+                    <option value="ar">العربية</option>
+                </select>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container" style="padding: 100px 20px; position: relative;">
+        <canvas id="particle-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; opacity: 0.3;"></canvas>
+
+        <span class="badge" data-i18n="tool-badge" style="margin-bottom: 20px; display: inline-block;">Secure Local Tool</span>
+        <h1 style="font-size: 3rem; margin-bottom: 20px;" data-i18n="feat-delete-title">Delete Pages & Document Cleanup</h1>
+        <p style="font-size: 1.2rem; margin-bottom: 40px; opacity: 0.8; max-width: 800px; line-height: 1.6;" data-i18n="feat-delete-desc">Remove unwanted, duplicate, or blank pages with a single click. Clean up scanned document archives instantly 100% offline.</p>
+        
+        <section class="feature-card reveal" style="padding: 40px; margin-bottom: 60px; background: rgba(255,255,255,0.02); border-left: 4px solid var(--primary-color); border-radius: 12px; backdrop-filter: blur(10px);">
+            <h2 style="margin-bottom: 20px;">Why Delete PDF Pages Offline?</h2>
+            <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <li style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: 8px;">
+                    🔒 <strong data-i18n="tool-li1-title" style="display: block; margin: 10px 0 5px 0;">Total Privacy</strong>
+                    <span data-i18n="tool-li1-desc" style="font-size: 0.95rem; opacity: 0.8;">100% processed locally on your computer. Sensitive pages are destroyed locally and never sent to cloud servers.</span>
+                </li>
+                <li style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: 8px;">
+                    ⚡ <strong data-i18n="tool-li2-title" style="display: block; margin: 10px 0 5px 0;">Maximum Speed</strong>
+                    <span data-i18n="tool-li2-desc" style="font-size: 0.95rem; opacity: 0.8;">Instant page deletion and file rebuilding on local CPU.</span>
+                </li>
+                <li style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: 8px;">
+                    📦 <strong data-i18n="tool-li3-title" style="display: block; margin: 10px 0 5px 0;">No Restrictions</strong>
+                    <span data-i18n="tool-li3-desc" style="font-size: 0.95rem; opacity: 0.8;">Clean documents containing hundreds of pages without limitations or ads.</span>
+                </li>
+            </ul>
+            <div style="margin-top: 30px;">
+                <a href="../index.html#download-cta" class="btn btn-primary" data-i18n="tool-btn-cta">Download Docentra Free Trial</a>
+            </div>
+        </section>
+
+        <!-- ===================== HOW IT WORKS ===================== -->
+        <section class="reveal" style="margin-bottom: 60px;">
+            <h2 data-i18n="tool-how-title" style="margin-bottom: 20px;">How it works:</h2>
+            <ol style="line-height: 2; margin-left: 20px; font-size: 1.1rem; opacity: 0.9;">
+                <li data-i18n="tool-step1">Launch Docentra PDF Suite on your Windows PC.</li>
+                <li data-i18n="tool-step2">Select 'Delete Pages' from the local dashboard.</li>
+                <li data-i18n="tool-step3">Specify the page numbers or ranges to remove.</li>
+                <li data-i18n="tool-step4">Click 'Delete & Save' to export your cleaned document.</li>
+            </ol>
+        </section>
+
+        <!-- ===================== RELATED TOOLS ===================== -->
+        <section class="reveal" style="margin-bottom: 40px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05);">
+            <h3 style="font-size: 1.4rem; margin-bottom: 20px; color: var(--primary-color);">Explore Related Offline PDF Tools</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px;">
+                <a href="split-pdf.html" style="text-decoration: none; color: inherit; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); display: block;">
+                    <strong>✂️ Split PDF</strong>
+                    <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 5px;">Extract specific pages.</p>
+                </a>
+                <a href="page-numbering.html" style="text-decoration: none; color: inherit; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); display: block;">
+                    <strong>🔢 Page Numbering</strong>
+                    <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 5px;">Add headers & footers.</p>
+                </a>
+                <a href="pdf-crop.html" style="text-decoration: none; color: inherit; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); display: block;">
+                    <strong>📐 PDF Crop</strong>
+                    <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 5px;">Trim whitespace.</p>
+                </a>
+                <a href="merge-pdf.html" style="text-decoration: none; color: inherit; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); display: block;">
+                    <strong>🔗 Merge PDF</strong>
+                    <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 5px;">Combine documents.</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer style="text-align: center; padding: 40px; margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.05);">
+        <p data-i18n="footer-rights">&copy; 2026 Docentra AI Team. All rights reserved.</p>
+        <p style="margin-top: 10px; font-size: 0.9rem;"><a href="../open-source-notices.html" data-i18n="footer-os-notices" style="color: var(--primary-color); text-decoration: none;">Open Source Notices</a> · <a href="../index.html" style="color: #fff; text-decoration: none;">Home</a> · <a href="../blog/index.html" style="color: #fff; text-decoration: none;">Blog</a></p>
+    </footer>
+
+    <script>
+        window.addEventListener('load', () => {
+            const canvas = document.getElementById('particle-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let width = canvas.width = canvas.offsetWidth;
+            let height = canvas.height = canvas.offsetHeight;
+            const particles = [];
+            for (let i = 0; i < 40; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    r: Math.random() * 2 + 0.5,
+                    vx: (Math.random() - 0.5) * 0.3,
+                    vy: (Math.random() - 0.5) * 0.3
+                });
+            }
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+                ctx.fillStyle = 'rgba(212, 175, 55, 0.4)';
+                particles.forEach(p => {
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fill();
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    if (p.x < 0 || p.x > width) p.vx *= -1;
+                    if (p.y < 0 || p.y > height) p.vy *= -1;
+                });
+                requestAnimationFrame(animate);
+            }
+            animate();
+            window.addEventListener('resize', () => {
+                width = canvas.width = canvas.offsetWidth;
+                height = canvas.height = canvas.offsetHeight;
+            });
+        });
+    </script>
+    <script src="../script.js?v=2"></script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="viewer-title-seo">Multi-Tabbed PDF Reader & Viewer for Windows (Offline) | DOCENTRA</title>
+    <meta name="description" content="High-speed, multi-tabbed PDF reader and document viewer for Windows. Open multiple PDFs side-by-side with zero memory lag, annotation tools, and total privacy." data-i18n="viewer-meta-desc">
+    <meta name="keywords" content="pdf reader windows, multi tab pdf viewer, offline pdf reader, lightweight pdf viewer, private pdf viewer, docentra pdf reader">
+    <link rel="canonical" href="https://docentrapdf.com/tools/pdf-viewer.html" />
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://docentrapdf.com/tools/pdf-viewer.html">
+    <meta property="og:title" content="Multi-Tabbed PDF Reader & Viewer for Windows (Offline)">
+    <meta property="og:description" content="Read and manage multiple PDF documents in a sleek tabbed interface with zero lag.">
+    <meta property="og:image" content="https://docentrapdf.com/assets/screenshots/pdf_reader.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Docentra Multi-Tabbed PDF Reader",
+          "operatingSystem": "Windows 10, Windows 11",
+          "applicationCategory": "BusinessApplication, PDFSoftware",
+          "description": "Multi-tabbed, lightweight offline PDF reader and document annotator for Windows.",
+          "offers": {
+            "@type": "Offer",
+            "price": "2250",
+            "priceCurrency": "TRY"
+          }
+        },
+        {
+          "@type": "HowTo",
+          "name": "How to Open and Read Multiple PDFs in Tabs",
+          "description": "View and manage multiple documents simultaneously using Docentra.",
+          "step": [
+            {
+              "@type": "HowToStep",
+              "name": "Launch Docentra",
+              "text": "Open Docentra on your Windows device."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Open Files",
+              "text": "Double click or drag and drop any number of PDF files."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Switch Tabs & Annotate",
+              "text": "Easily switch between tabs, zoom, draw annotations, and search text offline."
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header id="header">
+        <nav class="container">
+            <div class="logo"><a href="../index.html" style="text-decoration: none; color: inherit;">DOCENTRA</a></div>
+            <ul class="nav-links">
+                <li><a href="../index.html#features" data-i18n="nav-features">Features</a></li>
+                <li><a href="../online-vs-offline.html" data-i18n="nav-compare">Why Offline?</a></li>
+                <li><a href="../blog/index.html" data-i18n="nav-blog">Blog</a></li>
+                <li><a href="../index.html#pricing" data-i18n="nav-pricing">Pricing</a></li>
+                <li><a href="../index.html#faq" data-i18n="nav-faq">FAQ</a></li>
+                <li><a href="../index.html#download-cta" class="btn btn-secondary" data-i18n="btn-download">Download</a></li>
+            </ul>
+            <div class="nav-right">
+                <select id="lang-selector" class="lang-select">
+                    <option value="en">English</option>
+                    <option value="tr">Türkçe</option>
+                    <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
+                    <option value="es">Español</option>
+                    <option value="it">Italiano</option>
+                    <option value="zh">简体中文</option>
+                    <option value="ja">日本語</option>
+                    <option value="ru">Русский</option>
+                    <option value="ar">العربية</option>
+                </select>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container" style="padding: 100px 20px; position: relative;">
+        <canvas id="particle-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; opacity: 0.3;"></canvas>
+
+        <span class="badge" data-i18n="tool-badge" style="margin-bottom: 20px; display: inline-block;">Secure Local Tool</span>
+        <h1 style="font-size: 3rem; margin-bottom: 20px;" data-i18n="feat-viewer-title">Multi-Tabbed PDF Reader & Annotator</h1>
+        <p style="font-size: 1.2rem; margin-bottom: 40px; opacity: 0.8; max-width: 800px; line-height: 1.6;" data-i18n="feat-viewer-desc">Read and manage multiple PDF documents in a sleek tabbed interface. Draw, highlight, erase, add text notes, and stamp documents 100% offline with zero lag.</p>
+        
+        <section class="feature-card reveal" style="padding: 40px; margin-bottom: 60px; background: rgba(255,255,255,0.02); border-left: 4px solid var(--primary-color); border-radius: 12px; backdrop-filter: blur(10px);">
+            <h2 style="margin-bottom: 20px;">Why Choose Docentra PDF Reader?</h2>
+            <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <li style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: 8px;">
+                    📖 <strong style="display: block; margin: 10px 0 5px 0;">Multi-Tab Productivity</strong>
+                    <span style="font-size: 0.95rem; opacity: 0.8;">Open dozens of PDFs without crashing or slowing down your PC.</span>
+                </li>
+                <li style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: 8px;">
+                    ⚡ <strong data-i18n="tool-li2-title" style="display: block; margin: 10px 0 5px 0;">Maximum Speed</strong>
+                    <span data-i18n="tool-li2-desc" style="font-size: 0.95rem; opacity: 0.8;">Instant hardware rendering powered by local engine. Zero lag.</span>
+                </li>
+                <li style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: 8px;">
+                    🔒 <strong data-i18n="tool-li1-title" style="display: block; margin: 10px 0 5px 0;">Total Privacy</strong>
+                    <span data-i18n="tool-li1-desc" style="font-size: 0.95rem; opacity: 0.8;">No background telemetry or analytics. Your reading habits stay private.</span>
+                </li>
+            </ul>
+            <div style="margin-top: 30px;">
+                <a href="../index.html#download-cta" class="btn btn-primary" data-i18n="tool-btn-cta">Download Docentra Free Trial</a>
+            </div>
+        </section>
+
+        <!-- ===================== INTERFACE PREVIEW ===================== -->
+        <section class="reveal" style="margin-bottom: 60px;">
+            <h2 style="font-size: 1.8rem; margin-bottom: 20px; color: #fff; font-weight: 700; display: flex; align-items: center; gap: 10px;">
+                🖥️ <span>Reader Interface Preview</span>
+            </h2>
+            <div class="desktop-mockup-frame" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; overflow: hidden; backdrop-filter: blur(10px); box-shadow: 0 30px 60px rgba(0,0,0,0.4); max-width: 800px;">
+                <div class="mockup-header" style="background: rgba(0,0,0,0.3); padding: 12px 18px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                    <div class="mockup-dots" style="display: flex; gap: 8px;">
+                        <span class="dot" style="width: 12px; height: 12px; border-radius: 50%; display: inline-block; background: #ff5f56;"></span>
+                        <span class="dot" style="width: 12px; height: 12px; border-radius: 50%; display: inline-block; background: #ffbd2e;"></span>
+                        <span class="dot" style="width: 12px; height: 12px; border-radius: 50%; display: inline-block; background: #27c93f;"></span>
+                    </div>
+                    <div style="font-size: 0.82rem; font-weight: 600; opacity: 0.6; letter-spacing: 1px; text-transform: uppercase;">Docentra tabbed reader</div>
+                </div>
+                <div class="mockup-body" style="position: relative; aspect-ratio: 16/10; overflow: hidden; background: rgba(0,0,0,0.4);">
+                    <img src="../assets/screenshots/pdf_reader.png" alt="Docentra Multi-Tabbed PDF Reader" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; document.getElementById('viewer-placeholder').style.display='flex';">
+                    <div id="viewer-placeholder" class="mockup-placeholder" style="display: none; width: 100%; height: 100%; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px; color: #fff;">
+                        <div style="font-size: 3.5rem; margin-bottom: 15px;">📖</div>
+                        <h3 style="font-size: 1.4rem; font-weight: 700; color: var(--primary-color); margin-bottom: 8px;">Multi-Tabbed PDF Reader</h3>
+                        <p style="font-size: 0.95rem; opacity: 0.7; max-width: 340px; line-height: 1.5;">Fast, lightweight, offline reading experience.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== HOW IT WORKS ===================== -->
+        <section class="reveal" style="margin-bottom: 60px;">
+            <h2 data-i18n="tool-how-title" style="margin-bottom: 20px;">How it works:</h2>
+            <ol style="line-height: 2; margin-left: 20px; font-size: 1.1rem; opacity: 0.9;">
+                <li data-i18n="tool-step1">Launch Docentra PDF Suite on your Windows PC.</li>
+                <li data-i18n="tool-step2">Open any PDF file or drop multiple documents.</li>
+                <li data-i18n="tool-step3">Browse documents in sleek browser-like tabs.</li>
+                <li data-i18n="tool-step4">Annotate, highlight, draw, and search text instantly.</li>
+            </ol>
+        </section>
+
+        <!-- ===================== RELATED TOOLS ===================== -->
+        <section class="reveal" style="margin-bottom: 40px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05);">
+            <h3 style="font-size: 1.4rem; margin-bottom: 20px; color: var(--primary-color);">Explore Related Offline PDF Tools</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px;">
+                <a href="local-ocr.html" style="text-decoration: none; color: inherit; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); display: block;">
+                    <strong>🔍 Local OCR</strong>
+                    <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 5px;">Scan documents to text.</p>
+                </a>
+                <a href="merge-pdf.html" style="text-decoration: none; color: inherit; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); display: block;">
+                    <strong>🔗 Merge PDF</strong>
+                    <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 5px;">Combine documents.</p>
+                </a>
+                <a href="split-pdf.html" style="text-decoration: none; color: inherit; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); display: block;">
+                    <strong>✂️ Split PDF</strong>
+                    <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 5px;">Extract specific pages.</p>
+                </a>
+                <a href="pdf-signing.html" style="text-decoration: none; color: inherit; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); display: block;">
+                    <strong>✍️ PDF Signing</strong>
+                    <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 5px;">Sign contracts locally.</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer style="text-align: center; padding: 40px; margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.05);">
+        <p data-i18n="footer-rights">&copy; 2026 Docentra AI Team. All rights reserved.</p>
+        <p style="margin-top: 10px; font-size: 0.9rem;"><a href="../open-source-notices.html" data-i18n="footer-os-notices" style="color: var(--primary-color); text-decoration: none;">Open Source Notices</a> · <a href="../index.html" style="color: #fff; text-decoration: none;">Home</a> · <a href="../blog/index.html" style="color: #fff; text-decoration: none;">Blog</a></p>
+    </footer>
+
+    <script>
+        window.addEventListener('load', () => {
+            const canvas = document.getElementById('particle-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let width = canvas.width = canvas.offsetWidth;
+            let height = canvas.height = canvas.offsetHeight;
+            const particles = [];
+            for (let i = 0; i < 40; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    r: Math.random() * 2 + 0.5,
+                    vx: (Math.random() - 0.5) * 0.3,
+                    vy: (Math.random() - 0.5) * 0.3
+                });
+            }
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+                ctx.fillStyle = 'rgba(212, 175, 55, 0.4)';
+                particles.forEach(p => {
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fill();
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    if (p.x < 0 || p.x > width) p.vx *= -1;
+                    if (p.y < 0 || p.y > height) p.vy *= -1;
+                });
+                requestAnimationFrame(animate);
+            }
+            animate();
+            window.addEventListener('resize', () => {
+                width = canvas.width = canvas.offsetWidth;
+                height = canvas.height = canvas.offsetHeight;
+            });
+        });
+    </script>
+    <script src="../script.js?v=2"></script>
+</body>
+</html>

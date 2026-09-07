@@ -1,0 +1,70 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows10.0.17763.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <XamlDebuggingInformation>False</XamlDebuggingInformation>
+    <DisableFastUpToDateCheck>True</DisableFastUpToDateCheck>
+    <ApplicationIcon>Assets\app_icon.ico</ApplicationIcon>
+    <Title>Docentra PDF Suite (Viewer &amp; Editor)</Title>
+    <Product>Docentra PDF Suite (Viewer &amp; Editor)</Product>
+    <Company>Docentra AI Team</Company>
+    <Description>Professional and Private PDF Editor</Description>
+    <Version>1.0.4</Version>
+    <AssemblyName>Docentra</AssemblyName>
+    <AssemblyVersion>1.0.4.0</AssemblyVersion>
+    <FileVersion>1.0.4.0</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3912.50" />
+    <PackageReference Include="PdfiumViewer" Version="2.13.0" />
+    <PackageReference Include="PdfiumViewer.Native.x86_64.v8-xfa" Version="2018.4.8.256" />
+    <PackageReference Include="PDFsharp" Version="6.1.1" />
+    <PackageReference Include="WPF-UI" Version="3.0.5" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Management" Version="8.0.0" />
+    <PackageReference Include="Obfuscar" Version="2.2.39" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\app_icon.ico" />
+    <Resource Include="Assets\pdf_file.ico" />
+    <Resource Include="Assets\logo_watermark.png" />
+    <Resource Include="Assets\text_watermark.png" />
+    
+    <Content Include="Assets\pdf_file.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\pdf_file.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <!-- Native DLL kopyalama otomasyonu -->
+  <Target Name="CopyPdfiumDll" AfterTargets="Publish">
+    <Copy SourceFiles="$(OutputPath)x64\pdfium.dll" DestinationFolder="$(PublishDir)" Condition="Exists('$(OutputPath)x64\pdfium.dll')" />
+  </Target>
+
+  <!-- OBFUSCATION OTOMASYONU: Derlemeden sonra otomatik şifrele -->
+  <Target Name="Obfuscate" AfterTargets="Build" Condition="'$(Configuration)' == 'Release'">
+    <PropertyGroup>
+      <InDir>$(OutputPath)</InDir>
+      <OutDir>$(OutputPath)Obfuscated\</OutDir>
+    </PropertyGroup>
+    
+    <MakeDir Directories="$(OutDir)" />
+    
+    <!-- Run Obfuscar -->
+    <Exec Command="&quot;$(Obfuscar)&quot; obfuscar.xml" WorkingDirectory="$(ProjectDir)" />
+    
+    <!-- Korumalı DLL'i asıl DLL'in üzerine yaz -->
+    <Copy SourceFiles="$(OutDir)Docentra.dll" DestinationFolder="$(InDir)" />
+    <Copy SourceFiles="$(OutDir)Docentra.dll" DestinationFolder="$(PublishDir)" Condition="Exists('$(PublishDir)')" />
+  </Target>
+
+</Project>

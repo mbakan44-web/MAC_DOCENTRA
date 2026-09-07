@@ -1,0 +1,47 @@
+using System;
+using System.Net.Http;
+using System.Threading.Tasks;
+using System.Reflection;
+
+namespace PromtAiPdfPro.Services
+{
+    public class UpdateService
+    {
+        private const string VersionUrl = "https://docentrapdf.com/version.txt";
+        private const string DownloadPageUrl = "https://docentrapdf.com/download";
+
+        public string CurrentVersion => Assembly.GetExecutingAssembly().GetName().Version?.ToString(3) ?? "1.0.3";
+
+        public async Task<(bool isAvailable, string newVersion, string downloadUrl)> CheckForUpdatesAsync()
+        {
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    client.Timeout = TimeSpan.FromSeconds(5);
+                    var response = await client.GetStringAsync(VersionUrl);
+                    if (string.IsNullOrWhiteSpace(response)) return (false, CurrentVersion, null);
+
+                    var lines = response.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+                    var onlineVersion = lines[0].Trim();
+                    var downloadUrl = lines.Length > 1 ? lines[1].Trim() : DownloadPageUrl;
+
+                    // Basit versiyon karşılaştırması
+                    if (Version.TryParse(onlineVersion, out var v1) && 
+                        Version.TryParse(CurrentVersion, out var v2))
+                    {
+                        if (v1 > v2)
+                        {
+                            return (true, onlineVersion, downloadUrl);
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                // Sessiz hata: İnternet yoksa veya sunucu kapalıysa kullanıcıyı rahatsız etme
+            }
+            return (false, CurrentVersion, null);
+        }
+    }
+}

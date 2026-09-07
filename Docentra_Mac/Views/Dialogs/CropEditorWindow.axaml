@@ -1,0 +1,68 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Docentra_Mac.Views.Dialogs.CropEditorWindow"
+        Title="Crop PDF Editor"
+        Width="700" Height="900"
+        WindowStartupLocation="CenterOwner"
+        Background="#0F172A"
+        TransparencyLevelHint="AcrylicBlur"
+        ExtendClientAreaToDecorationsHint="True">
+
+    <Panel>
+        <ExperimentalAcrylicBorder IsHitTestVisible="False">
+            <ExperimentalAcrylicBorder.Material>
+                <ExperimentalAcrylicMaterial TintColor="#020617" TintOpacity="0.9" MaterialOpacity="0.8" />
+            </ExperimentalAcrylicBorder.Material>
+        </ExperimentalAcrylicBorder>
+
+        <Grid RowDefinitions="Auto, *, Auto" Margin="20">
+            <!-- Header -->
+            <StackPanel Grid.Row="0" Margin="0,40,0,20">
+                <TextBlock Text="VISUAL CROP EDITOR" FontSize="20" FontWeight="Black" HorizontalAlignment="Center" Foreground="{DynamicResource PremiumAccentBrush}"/>
+                <TextBlock Text="Resize the box to select the crop area" FontSize="12" Opacity="0.5" HorizontalAlignment="Center"/>
+            </StackPanel>
+
+            <!-- Preview Area -->
+            <Border Grid.Row="1" Background="#1A1A1A" BorderBrush="#33FFFFFF" BorderThickness="1" 
+                    Width="450" Height="635" BoxShadow="0 10 30 0 #50000000" VerticalAlignment="Center" ClipToBounds="True">
+                <Canvas x:Name="CropCanvas" Background="Transparent"
+                        PointerPressed="Canvas_PointerPressed"
+                        PointerMoved="Canvas_PointerMoved"
+                        PointerReleased="Canvas_PointerReleased">
+                    
+                    <!-- Full Page Overlay (Semi-transparent) -->
+                    <Rectangle Canvas.Left="0" Canvas.Top="0" Width="450" Height="635" Fill="#80000000" IsHitTestVisible="False"/>
+
+                    <!-- Selection Box (The Clear Area) -->
+                    <Border x:Name="SelectionBox" Background="White" BorderBrush="{DynamicResource PremiumAccentBrush}" BorderThickness="2"
+                            Width="200" Height="200" Canvas.Left="125" Canvas.Top="217" Cursor="SizeAll">
+                        <Border.Styles>
+                            <Style Selector="Border">
+                                <Setter Property="BoxShadow" Value="0 0 20 0 #40000000"/>
+                            </Style>
+                        </Border.Styles>
+                        
+                        <!-- Resize Handles (Simplified NW, SE) -->
+                        <Grid>
+                            <Ellipse Width="12" Height="12" Fill="White" Stroke="{DynamicResource PremiumAccentBrush}" StrokeThickness="2"
+                                     HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-6,-6,0,0" Cursor="TopLeftCorner"/>
+                            <Ellipse Width="12" Height="12" Fill="White" Stroke="{DynamicResource PremiumAccentBrush}" StrokeThickness="2"
+                                     HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,-6,-6" Cursor="BottomRightCorner"
+                                     x:Name="ResizeHandle" PointerPressed="Handle_PointerPressed"/>
+                        </Grid>
+                    </Border>
+                </Canvas>
+            </Border>
+
+            <!-- Bottom Actions -->
+            <StackPanel Grid.Row="2" Spacing="15" Margin="20,20,20,0">
+                <CheckBox x:Name="ChkApplyToAll" Content="Apply to all pages" Foreground="White" IsChecked="True" HorizontalAlignment="Center"/>
+                
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10">
+                    <Button Content="Cancel" Click="Cancel_Click" Width="100" HorizontalContentAlignment="Center" Background="#20FFFFFF" CornerRadius="10"/>
+                    <Button Content="Apply Crop" Click="Apply_Click" Width="150" HorizontalContentAlignment="Center" Background="{DynamicResource PremiumAccentBrush}" Foreground="Black" CornerRadius="10" FontWeight="Bold"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Panel>
+</Window>

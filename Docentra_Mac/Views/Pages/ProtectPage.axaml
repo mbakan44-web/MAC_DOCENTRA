@@ -2,32 +2,123 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="1100" d:DesignHeight="800"
              x:Class="Docentra_Mac.Views.Pages.ProtectPage">
+    
     <Grid RowDefinitions="Auto, *">
-        <TextBlock Grid.Row="0" Text="{DynamicResource Protect_Title}" 
-                   FontSize="24" FontWeight="Bold" Margin="0,0,0,20"/>
-
-        <StackPanel Grid.Row="1" Spacing="15" MaxWidth="500" HorizontalAlignment="Left">
-            <Button Content="{DynamicResource Gen_SelectFile}" Click="SelectFile_Click" 
-                    Classes="accent" HorizontalAlignment="Stretch"/>
-            
-            <TextBlock x:Name="SelectedFileText" Text="..." FontSize="12" Opacity="0.6"/>
-
-            <StackPanel Spacing="5">
-                <TextBlock Text="{DynamicResource Protect_PassLabel}"/>
-                <TextBox x:Name="UserPassword" PasswordChar="*"/>
-            </StackPanel>
-
-            <StackPanel Spacing="5">
-                <TextBlock Text="{DynamicResource Protect_OwnerPassLabel}"/>
-                <TextBox x:Name="OwnerPassword" PasswordChar="*"/>
-            </StackPanel>
-
-            <Button Content="{DynamicResource Protect_Start}" Click="Protect_Click" 
-                    Classes="accent" HorizontalAlignment="Stretch" Margin="0,20,0,0"/>
-            
-            <TextBlock x:Name="StatusText" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+        <!-- Header -->
+        <StackPanel Grid.Row="0" Margin="30,30,30,40">
+            <TextBlock Text="{DynamicResource Sec_Title_Password}" FontSize="32" FontWeight="Black" Foreground="{DynamicResource PremiumAccentBrush}"/>
+            <TextBlock Text="{DynamicResource Sec_Desc_Password}" FontSize="14" Opacity="0.6" TextWrapping="Wrap" MaxWidth="800" HorizontalAlignment="Left"/>
         </StackPanel>
+
+        <ScrollViewer Grid.Row="1">
+            <StackPanel Spacing="30" Margin="30,0,30,30">
+                <Grid ColumnDefinitions="*, *">
+                    <!-- 1. Password Protection Card -->
+                    <Border Grid.Column="0" Background="{DynamicResource ToolCardBackground}" CornerRadius="20" Padding="30" Margin="0,0,15,0"
+                            BorderBrush="#15FFFFFF" BorderThickness="1">
+                        <StackPanel Spacing="20">
+                            <Grid ColumnDefinitions="Auto, *">
+                                <Border Background="#10FFD700" CornerRadius="12" Width="50" Height="50" Margin="0,0,20,0">
+                                    <PathIcon Data="{StaticResource LockClosedRegular}" Width="24" Height="24" Foreground="#FFD700"/>
+                                </Border>
+                                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                    <TextBlock Text="{DynamicResource Sec_Password}" FontSize="20" FontWeight="Bold"/>
+                                    <TextBlock Text="{DynamicResource Sec_PasswordDesc}" FontSize="13" Opacity="0.6"/>
+                                </StackPanel>
+                            </Grid>
+
+                            <Separator Background="#10FFFFFF" Height="1" Margin="0,5"/>
+
+                            <Button HorizontalAlignment="Stretch" Padding="20" Background="#08FFFFFF" CornerRadius="15" Click="SelectFile_Click">
+                                <Grid ColumnDefinitions="Auto, *">
+                                    <PathIcon Data="{StaticResource DocumentSearchRegular}" Width="22" Height="22" Foreground="{DynamicResource PremiumAccentBrush}" Margin="0,0,15,0"/>
+                                    <StackPanel Grid.Column="1">
+                                        <TextBlock Text="{DynamicResource Sec_PassStep1}" FontWeight="SemiBold" FontSize="14"/>
+                                        <TextBlock x:Name="SelectedFileText" Text="..." FontSize="11" Opacity="0.5" TextTrimming="CharacterEllipsis"/>
+                                    </StackPanel>
+                                </Grid>
+                            </Button>
+
+                            <StackPanel Spacing="10">
+                                <TextBlock Text="{DynamicResource Protect_PassLabel}" FontSize="13" FontWeight="SemiBold" Opacity="0.8" Margin="5,0,0,0"/>
+                                <TextBox x:Name="UserPassword" PasswordChar="*" Watermark="{DynamicResource Protect_Placeholder}" 
+                                         Background="#10000000" CornerRadius="12" Padding="15" FontSize="14"/>
+                            </StackPanel>
+
+                            <Button Content="{DynamicResource Protect_Start}" Click="Protect_Click" 
+                                    Background="{DynamicResource PremiumAccentBrush}" Foreground="Black" FontWeight="Heavy"
+                                    HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="55" CornerRadius="15">
+                                <Button.Styles>
+                                    <Style Selector="Button:hover">
+                                        <Setter Property="RenderTransform" Value="scale(1.02)"/>
+                                    </Style>
+                                </Button.Styles>
+                            </Button>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- 2. PDF Unlock Card -->
+                    <Border Grid.Column="1" Background="{DynamicResource ToolCardBackground}" CornerRadius="20" Padding="30" Margin="15,0,0,0"
+                            BorderBrush="#15FFFFFF" BorderThickness="1">
+                        <StackPanel Spacing="20">
+                            <Grid ColumnDefinitions="Auto, *">
+                                <Border Background="#1000CC66" CornerRadius="12" Width="50" Height="50" Margin="0,0,20,0">
+                                    <PathIcon Data="{StaticResource LockOpenRegular}" Width="24" Height="24" Foreground="#00CC66"/>
+                                </Border>
+                                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                    <TextBlock Text="{DynamicResource Unlock_Title}" FontSize="20" FontWeight="Bold"/>
+                                    <TextBlock Text="{DynamicResource Unlock_Desc}" FontSize="13" Opacity="0.6"/>
+                                </StackPanel>
+                            </Grid>
+
+                            <Separator Background="#10FFFFFF" Height="1" Margin="0,5"/>
+
+                            <Button HorizontalAlignment="Stretch" Padding="20" Background="#08FFFFFF" CornerRadius="15" Click="SelectFileForUnlock_Click">
+                                <Grid ColumnDefinitions="Auto, *">
+                                    <PathIcon Data="{StaticResource DocumentLockRegular}" Width="22" Height="22" Foreground="{DynamicResource PremiumAccentBrush}" Margin="0,0,15,0"/>
+                                    <StackPanel Grid.Column="1">
+                                        <TextBlock Text="{DynamicResource Sec_PassStep1}" FontWeight="SemiBold" FontSize="14"/>
+                                        <TextBlock x:Name="SelectedUnlockFileText" Text="..." FontSize="11" Opacity="0.5" TextTrimming="CharacterEllipsis"/>
+                                    </StackPanel>
+                                </Grid>
+                            </Button>
+
+                            <StackPanel Spacing="10">
+                                <TextBlock Text="{DynamicResource Unlock_PassLabel}" FontSize="13" FontWeight="SemiBold" Opacity="0.8" Margin="5,0,0,0"/>
+                                <TextBox x:Name="UnlockPassword" PasswordChar="*" Watermark="{DynamicResource Unlock_Placeholder}" 
+                                         Background="#10000000" CornerRadius="12" Padding="15" FontSize="14"/>
+                            </StackPanel>
+
+                            <Button Content="{DynamicResource Unlock_Start}" Click="Unlock_Click" 
+                                    Background="{DynamicResource PremiumAccentBrush}" Foreground="Black" FontWeight="Heavy"
+                                    HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="55" CornerRadius="15">
+                                <Button.Styles>
+                                    <Style Selector="Button:hover">
+                                        <Setter Property="RenderTransform" Value="scale(1.02)"/>
+                                    </Style>
+                                </Button.Styles>
+                            </Button>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+
+                <Border Background="#10FFFFFF" CornerRadius="10" Padding="15" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" Spacing="10">
+                        <PathIcon Data="{StaticResource InfoRegular}" Width="16" Height="16" Opacity="0.5"/>
+                        <TextBlock x:Name="StatusText" FontSize="13" Opacity="0.7" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
+
+    <UserControl.Resources>
+        <StreamGeometry x:Key="LockClosedRegular">M12 2C9.23858 2 7 4.23858 7 7V9H6C4.89543 9 4 9.89543 4 11V19C4 20.1046 4.89543 21 6 21H18C19.1046 21 20 20.1046 20 19V11C20 9.89543 19.1046 9 18 9H17V7C17 4.23858 14.7614 2 12 2ZM9 7C9 5.34315 10.3431 4 12 4C13.6569 4 15 5.34315 15 7V9H9V7ZM6 11H18V19H6V11Z</StreamGeometry>
+        <StreamGeometry x:Key="LockOpenRegular">M12 2C9.23858 2 7 4.23858 7 7V9H6C4.89543 9 4 9.89543 4 11V19C4 20.1046 4.89543 21 6 21H18C19.1046 21 20 20.1046 20 19V11C20 9.89543 19.1046 9 18 9H9V7C9 5.34315 10.3431 4 12 4C13.6569 4 15 5.34315 15 7V9H17V7C17 4.23858 14.7614 2 12 2ZM6 11H18V19H6V11Z</StreamGeometry>
+        <StreamGeometry x:Key="DocumentSearchRegular">M14 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V8L14 2ZM13 9V3.5L18.5 9H13ZM10.5 13C11.3284 13 12 13.6716 12 14.5C12 14.8219 11.8988 15.1197 11.7262 15.3626L13.8536 17.4899L13.1464 18.197L11.0191 16.0697C10.8647 16.3409 10.5 16.5 10.5 16.5C9.67157 16.5 9 15.8284 9 15C9 14.1716 9.67157 13.5 10.5 13.5V13Z</StreamGeometry>
+        <StreamGeometry x:Key="DocumentLockRegular">M14 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V8L14 2ZM13 9V3.5L18.5 9H13ZM11 13C12.1046 13 13 13.8954 13 15V16H14V19H8V16H9V15C9 13.8954 9.89543 13 11 13ZM11 14C10.4477 14 10 14.4477 10 15V16H12V15C12 14.4477 11.5523 14 11 14Z</StreamGeometry>
+        <StreamGeometry x:Key="InfoRegular">M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4C16.4183 4 20 7.58172 20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4ZM12 10.5C12.5523 10.5 13 10.9477 13 11.5V16.5C13 17.0523 12.5523 17.5 12 17.5C11.4477 17.5 11 17.0523 11 16.5V11.5C11 10.9477 11.4477 10.5 12 10.5ZM12 6.5C12.5523 6.5 13 6.94772 13 7.5C13 8.05228 12.5523 8.5 12 8.5C11.4477 8.5 11 8.05228 11 7.5C11 6.94772 11.4477 6.5 12 6.5Z</StreamGeometry>
+    </UserControl.Resources>
 </UserControl>

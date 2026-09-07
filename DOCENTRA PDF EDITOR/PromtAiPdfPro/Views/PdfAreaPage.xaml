@@ -1,0 +1,85 @@
+<Page x:Class="PromtAiPdfPro.Views.PdfAreaPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      Title="PDF Area">
+
+    <Grid Margin="30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/> <!-- Header -->
+            <RowDefinition Height="Auto"/> <!-- Action Card -->
+            <RowDefinition Height="*"/>    <!-- Recent Files List -->
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <StackPanel Grid.Row="0" Margin="0,0,0,25">
+            <TextBlock Style="{DynamicResource PremiumHeaderTitle}" FontSize="28" Margin="0">
+                <Run Text="{DynamicResource Viewer_PdfAreaTitle}"/>
+                <Run Text=" (v2.1)"/>
+            </TextBlock>
+            <TextBlock Text="{DynamicResource Viewer_PdfAreaDesc}" Style="{DynamicResource PremiumHeaderSub}" FontSize="14" Opacity="0.7"/>
+        </StackPanel>
+
+        <!-- Gelişmiş PDF Açma Alanı -->
+        <ui:CardAction Grid.Row="1" 
+                        Padding="40,30" 
+                        Margin="0,0,0,40"
+                        Click="BtnOpenPdf_Click"
+                        HorizontalAlignment="Stretch"
+                        Style="{DynamicResource PremiumCardStyle}"
+                        AllowDrop="True"
+                        Drop="Card_Drop"
+                        DragOver="Card_DragOver">
+            <StackPanel HorizontalAlignment="Center">
+                <ui:SymbolIcon Symbol="DocumentPdf24" FontSize="64" Foreground="{DynamicResource PremiumAccentBrush}" Margin="0,0,0,15"/>
+                <TextBlock Text="{DynamicResource Viewer_PdfAreaPrompt}" 
+                           FontWeight="Bold" FontSize="20" 
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,8"/>
+                <TextBlock Text="{DynamicResource Viewer_PdfAreaDropHint}" 
+                           FontSize="14" Opacity="0.5" 
+                           HorizontalAlignment="Center"/>
+                
+                <ui:Button Content="{DynamicResource Viewer_SelectFile}" 
+                           Appearance="Primary"
+                           Margin="0,20,0,0"
+                           HorizontalAlignment="Center"
+                           Padding="30,8"/>
+            </StackPanel>
+        </ui:CardAction>
+
+        <!-- Son Kullanılanlar Listesi -->
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,15">
+                <ui:SymbolIcon Symbol="History24" FontSize="18" Foreground="{DynamicResource PremiumAccentBrush}" Margin="0,0,10,0"/>
+                <TextBlock Text="{DynamicResource Dash_RecentFiles}" FontSize="16" FontWeight="SemiBold" VerticalAlignment="Center"/>
+                
+                <ui:Button Content="{DynamicResource Dash_RecentFilesClear}" 
+                           Icon="{ui:SymbolIcon Delete24}"
+                           Click="BtnClearRecent_Click"
+                           Appearance="Secondary"
+                           Margin="20,0,0,0"
+                           Padding="10,2"
+                           FontSize="11"
+                           x:Name="BtnClearAll"/>
+            </StackPanel>
+
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                <StackPanel x:Name="RecentFilesContainer">
+                    <!-- Dinamik olarak doldurulacak -->
+                    <TextBlock x:Name="TxtNoRecent" 
+                               Text="{DynamicResource Dash_RecentFilesEmpty}" 
+                               FontSize="14" Opacity="0.5" 
+                               HorizontalAlignment="Center" 
+                               Margin="0,50,0,0"
+                               Visibility="Collapsed"/>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Page>

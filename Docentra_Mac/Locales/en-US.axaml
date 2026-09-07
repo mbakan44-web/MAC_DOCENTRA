@@ -1,11 +1,5 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Design.PreviewWith>
-        <Border Padding="20">
-            <!-- Add Controls for Previewer Here -->
-        </Border>
-    </Design.PreviewWith>
-
     <x:String x:Key="AppTitle">DOCENTRA PDF &amp; DOCUMENT EDITOR</x:String>
     <x:String x:Key="Nav_Dashboard">Dashboard</x:String>
     <x:String x:Key="Nav_Merge">Merge PDF</x:String>
@@ -13,53 +7,232 @@
     <x:String x:Key="Nav_Settings">Settings</x:String>
     <x:String x:Key="Prem_Title">Premium</x:String>
     <x:String x:Key="Prem_TrialBanner">TRIAL MODE</x:String>
-    <x:String x:Key="Prem_DaysRemaining">7 days remaining</x:String>
+    <x:String x:Key="Prem_DaysRemaining">7 days left</x:String>
+    
+    <!-- Dashboard -->
+    <x:String x:Key="Dash_Welcome">Welcome Back</x:String>
+    <x:String x:Key="Dash_DragDrop">Drag and drop files here to add</x:String>
+    <x:String x:Key="Dash_Desc">Manage your documents easily with Docentra PDF Suite.</x:String>
+    <x:String x:Key="Dash_MergeSub">Combine multiple PDFs into a single file.</x:String>
+    <x:String x:Key="Dash_SplitSub">Divide your document or extract pages.</x:String>
+    <x:String x:Key="Dash_ImgSub">Convert images to high-quality PDF files.</x:String>
+    <x:String x:Key="Dash_ImgTitle">Images to PDF</x:String>
+    <x:String x:Key="Dash_OfficeSub">Convert Office documents to PDF.</x:String>
+    <x:String x:Key="Dash_OfficeTitle">Office to PDF</x:String>
+    <x:String x:Key="Dash_WordSub">Convert PDF files to Word documents.</x:String>
+    <x:String x:Key="Dash_WordTitle">PDF to Word</x:String>
+    <x:String x:Key="Dash_SignSub">Add digital signatures or logos to docs.</x:String>
+    <x:String x:Key="Dash_ProtectSub">Secure your files with advanced encryption.</x:String>
+    <x:String x:Key="Dash_CropSub">Trim and adjust page boundaries.</x:String>
 
+    <!-- Merge -->
     <x:String x:Key="Merge_Title">Merge PDF Files</x:String>
     <x:String x:Key="Merge_AddFiles">Add Files</x:String>
     <x:String x:Key="Merge_Clear">Clear List</x:String>
-    <x:String x:Key="Merge_Start">Start Merging</x:String>
+    <x:String x:Key="Merge_Desc">Combine multiple PDF files into a single document in your preferred order.</x:String>
+    <x:String x:Key="Merge_Start">MERGE AND SAVE</x:String>
     <x:String x:Key="Merge_Success">Files merged successfully!</x:String>
-
+    <x:String x:Key="Merge_SelectError">Please select at least two files.</x:String>
+    
+    <!-- Split -->
     <x:String x:Key="Split_Title">Split PDF File</x:String>
-    <x:String x:Key="Split_SelectFile">Select File</x:String>
-    <x:String x:Key="Split_RangeLabel">Page Range (e.g. 1, 3-5, 8):</x:String>
-    <x:String x:Key="Split_Start">Start Splitting</x:String>
+    <x:String x:Key="Split_Desc">Divide your document or extract specific ranges.</x:String>
+    <x:String x:Key="Split_Options">Splitting Options</x:String>
+    <x:String x:Key="Split_OptSeparate">Split All Pages</x:String>
+    <x:String x:Key="Split_OptDesc">Saves each page as a separate PDF file.</x:String>
+    <x:String x:Key="Split_OptRange">Extract Specific Pages</x:String>
+    <x:String x:Key="Split_RangeHint">e.g., 1, 3, 5-10</x:String>
+    <x:String x:Key="Split_SplitBtn">SPLIT AND SAVE</x:String>
     <x:String x:Key="Split_Success">File split successfully!</x:String>
+    <x:String x:Key="Split_SelectError">Please select a PDF file.</x:String>
 
     <!-- Watermark -->
     <x:String x:Key="Watermark_Title">Add Watermark</x:String>
+    <x:String x:Key="Watermark_Desc">Protect your documents with text or image watermarks.</x:String>
     <x:String x:Key="Watermark_TextLabel">Watermark Text:</x:String>
-    <x:String x:Key="Watermark_OpacityLabel">Opacity (%):</x:String>
-    <x:String x:Key="Watermark_RotationLabel">Rotation (Degrees):</x:String>
-    <x:String x:Key="Watermark_Apply">Apply Watermark</x:String>
+    <x:String x:Key="Watermark_Apply">Open Visual Editor</x:String>
     <x:String x:Key="Watermark_Success">Watermark added successfully!</x:String>
-
-    <!-- General -->
-    <x:String x:Key="Gen_Processing">Processing...</x:String>
-    <x:String x:Key="Gen_Error">An error occurred!</x:String>
-    <x:String x:Key="Gen_SelectFile">Select File</x:String>
-    <x:String x:Key="Gen_SaveFile">Save File</x:String>
-
-    <!-- Delete Pages -->
-    <x:String x:Key="Delete_Title">Delete Pages</x:String>
-    <x:String x:Key="Delete_RangeLabel">Pages to Delete (e.g. 1, 3-5):</x:String>
-    <x:String x:Key="Delete_Start">Delete Pages</x:String>
-    <x:String x:Key="Delete_Success">Pages deleted successfully!</x:String>
+    <x:String x:Key="Sec_TextWatermark">Text Watermark</x:String>
+    <x:String x:Key="Sec_ImageWatermark">Image/Logo Watermark</x:String>
+    <x:String x:Key="Watermark_SelectFile">Please select a PDF file and text/image.</x:String>
+    <x:String x:Key="Watermark_ImgDesc">Place your logo or image anywhere on the document with full control.</x:String>
 
     <!-- Protect -->
+    <x:String x:Key="Sec_Title_Password">Protect &amp; Encrypt</x:String>
+    <x:String x:Key="Sec_Desc_Password">Secure your files against unauthorized access.</x:String>
+    <x:String x:Key="Sec_Password">Set Password</x:String>
+    <x:String x:Key="Sec_PasswordDesc">Enter a password to open the file.</x:String>
+    <x:String x:Key="Sec_PassStep1">Select PDF File</x:String>
     <x:String x:Key="Protect_Title">Protect &amp; Encrypt</x:String>
-    <x:String x:Key="Protect_PassLabel">User Password:</x:String>
-    <x:String x:Key="Protect_OwnerPassLabel">Owner Password (for permissions):</x:String>
-    <x:String x:Key="Protect_Start">Encrypt</x:String>
+    <x:String x:Key="Protect_Start">ENCRYPT AND SAVE</x:String>
     <x:String x:Key="Protect_Success">PDF encrypted successfully!</x:String>
+    <x:String x:Key="Protect_Error">Error: Encryption failed!</x:String>
+    <x:String x:Key="Protect_SelectError">Please select a file and enter a password.</x:String>
+    <x:String x:Key="Protect_PassLabel">Set Password:</x:String>
+    <x:String x:Key="Protect_Placeholder">Enter a password to protect the file...</x:String>
+    
+    <!-- Unlock -->
+    <x:String x:Key="Unlock_Title">Remove Password</x:String>
+    <x:String x:Key="Unlock_Start">REMOVE PASS AND SAVE</x:String>
+    <x:String x:Key="Unlock_Success">Password removed successfully!</x:String>
+    <x:String x:Key="Unlock_Error">Error: Wrong password or failed operation!</x:String>
+    <x:String x:Key="Unlock_SelectError">Please select a file and enter the current password.</x:String>
+    <x:String x:Key="Unlock_Desc">Remove existing password protection from your document.</x:String>
+    <x:String x:Key="Unlock_PassLabel">Current Password:</x:String>
+    <x:String x:Key="Unlock_Placeholder">Enter the password required to open the file...</x:String>
+
+    <!-- Settings -->
+    <x:String x:Key="Sett_Title">Settings &amp; Preferences</x:String>
+    <x:String x:Key="Sett_Language">App Language</x:String>
+    <x:String x:Key="Sett_LanguageDesc">Choose your preferred language.</x:String>
+    <x:String x:Key="Sett_Theme">Appearance Theme</x:String>
+    <x:String x:Key="Sett_ThemeDesc">Change the application's color theme.</x:String>
+    <x:String x:Key="Sett_Success">Settings saved successfully!</x:String>
+    <x:String x:Key="Sett_ThemeActive">Theme activated.</x:String>
 
     <!-- Page Numbers -->
     <x:String x:Key="PageNum_Title">Add Page Numbers</x:String>
-    <x:String x:Key="PageNum_PosLabel">Position:</x:String>
-    <x:String x:Key="PageNum_BottomCenter">Bottom Center</x:String>
-    <x:String x:Key="PageNum_BottomRight">Bottom Right</x:String>
-    <x:String x:Key="PageNum_TopCenter">Top Center</x:String>
-    <x:String x:Key="PageNum_Start">Add Numbers</x:String>
+    <x:String x:Key="PageNum_Desc">Add professional numbering to your doc.</x:String>
+    <x:String x:Key="PageNum_Start">ADD NUMBERS AND SAVE</x:String>
     <x:String x:Key="PageNum_Success">Page numbers added successfully!</x:String>
+    <x:String x:Key="PageNum_SelectError">Please select a file.</x:String>
+    <x:String x:Key="PageNum_StepRange">File &amp; Range Settings</x:String>
+    <x:String x:Key="PageNum_StartPage">Start Page</x:String>
+    <x:String x:Key="PageNum_EndPage">End Page</x:String>
+    <x:String x:Key="PageNum_PosBottomCenter">Bottom Center</x:String>
+    <x:String x:Key="PageNum_PosBottomRight">Bottom Right</x:String>
+    <x:String x:Key="PageNum_PosBottomLeft">Bottom Left</x:String>
+    <x:String x:Key="PageNum_PosTopCenter">Top Center</x:String>
+    <x:String x:Key="PageNum_PosTopRight">Top Right</x:String>
+    <x:String x:Key="PageNum_PosTopLeft">Top Left</x:String>
+
+    <!-- Delete Pages -->
+    <x:String x:Key="Delete_Title">Delete Pages</x:String>
+    <x:String x:Key="Delete_Desc">Remove unnecessary pages from your document.</x:String>
+    <x:String x:Key="Delete_Start">DELETE AND SAVE</x:String>
+    <x:String x:Key="Delete_Success">Pages deleted successfully!</x:String>
+    <x:String x:Key="Delete_SelectError">Please select a file and pages to delete.</x:String>
+    <x:String x:Key="Delete_RangeLabel">Pages to Delete:</x:String>
+    <x:String x:Key="Delete_RangeHint">e.g. 1, 3, 5-8</x:String>
+    <!-- DeletePagesPage.axaml uses DeletePages_ prefix -->
+    <x:String x:Key="DeletePages_Title">Delete Pages</x:String>
+    <x:String x:Key="DeletePages_Desc">Remove unnecessary pages from your document.</x:String>
+    <x:String x:Key="DeletePages_Options">Page Selection</x:String>
+    <x:String x:Key="DeletePages_InputLabel">Pages to Delete:</x:String>
+    <x:String x:Key="DeletePages_InputHint">Enter page numbers or ranges separated by commas. Example: 1, 3, 5-8</x:String>
+    <x:String x:Key="DeletePages_Btn">DELETE PAGES AND SAVE</x:String>
+
+    <!-- Crop -->
+    <x:String x:Key="Crop_Title">Crop PDF</x:String>
+    <x:String x:Key="Crop_Desc">Edit page dimensions with interactive editor.</x:String>
+    <x:String x:Key="Crop_Start">OPEN EDITOR</x:String>
+    <x:String x:Key="Crop_Success">PDF cropped successfully!</x:String>
+    <x:String x:Key="Crop_SelectError">Please select a PDF file.</x:String>
+    <x:String x:Key="Crop_Settings">Crop Settings</x:String>
+    <x:String x:Key="Crop_AreaInfo">Open the visual editor to select the crop area interactively on the PDF page.</x:String>
+    <x:String x:Key="Crop_Btn">APPLY CROP AND SAVE</x:String>
+
+    <!-- Sign -->
+    <x:String x:Key="Sign_Title">Sign PDF</x:String>
+    <x:String x:Key="Sign_Method">Signature Method</x:String>
+    <x:String x:Key="Sign_SelectImage">Select Image/Sign</x:String>
+    <x:String x:Key="Sign_Start">OPEN EDITOR</x:String>
+    <x:String x:Key="Sign_Success">PDF signed successfully!</x:String>
+    <x:String x:Key="Sign_SelectError">Please select a PDF file and signature image.</x:String>
+
+    <!-- Convert -->
+    <x:String x:Key="Conv_Title">Converter</x:String>
+    <x:String x:Key="Conv_Desc">Quickly convert between PDF and other formats.</x:String>
+    <x:String x:Key="Conv_PdfToImg">PDF to Image</x:String>
+    <x:String x:Key="Conv_PdfToImgDesc">Converts PDF pages to high-quality images.</x:String>
+    <x:String x:Key="Conv_Success">Conversion completed successfully!</x:String>
+    <x:String x:Key="Conv_SelectError">Please select files to convert.</x:String>
+
+    <!-- General -->
+    <x:String x:Key="Gen_Processing">Processing...</x:String>
+    <x:String x:Key="Gen_SelectFile">Select File</x:String>
+    <x:String x:Key="Gen_SuccessTitle">Process Completed</x:String>
+    <x:String x:Key="Gen_OpenQuestion">Process completed. Do you want to open the file?</x:String>
+    <x:String x:Key="Gen_Error">An error occurred!</x:String>
+    <x:String x:Key="Gen_SaveFile">Save File</x:String>
+    <x:String x:Key="Sec_SelectPdf">Select PDF File</x:String>
+    <!-- Settings extras -->
+
+
+    <!-- PDF Viewer -->
+    <x:String x:Key="PdfViewer_Title">PDF Viewer</x:String>
+    <x:String x:Key="PdfViewer_Desc">Analyze and open your PDF documents in a seamless reader.</x:String>
+    <x:String x:Key="PdfViewer_Open">Open PDF</x:String>
+    <x:String x:Key="PdfViewer_NoFile">No file selected</x:String>
+    <x:String x:Key="PdfViewer_EmptyTitle">No Document Loaded</x:String>
+    <x:String x:Key="PdfViewer_EmptyDesc">Select a PDF file to analyze its metadata, pages, properties, and quickly launch it in your default system PDF reader.</x:String>
+    <x:String x:Key="PdfViewer_OpenExternal">Open Externally</x:String>
+    <x:String x:Key="PdfViewer_NativeNote">For the best cross-platform reading, printing, and form-filling experience, Docentra seamlessly bridges to your macOS default PDF viewer.</x:String>
+
+    <!-- Navigation additions -->
+    <x:String x:Key="Nav_Compress">Compress PDF</x:String>
+    <x:String x:Key="Nav_Metadata">Edit Metadata</x:String>
+    <x:String x:Key="Nav_Premium">Go Premium</x:String>
+
+    <!-- Compress -->
+    <x:String x:Key="Compress_Title">Compress PDF</x:String>
+    <x:String x:Key="Compress_Desc">Reduce the file size of your PDF documents while keeping optimal quality.</x:String>
+    <x:String x:Key="Compress_SelectFile">Select PDF File for Compression</x:String>
+    <x:String x:Key="Compress_LevelTitle">Compression Level</x:String>
+    <x:String x:Key="Compress_LevelLow">Low Compression</x:String>
+    <x:String x:Key="Compress_LevelLowDesc">Slight size reduction, highest image quality.</x:String>
+    <x:String x:Key="Compress_LevelMed">Medium Compression</x:String>
+    <x:String x:Key="Compress_LevelMedDesc">Recommended. Great size reduction, good quality.</x:String>
+    <x:String x:Key="Compress_LevelHigh">High Compression</x:String>
+    <x:String x:Key="Compress_LevelHighDesc">Maximum size reduction, lower image quality.</x:String>
+    <x:String x:Key="Compress_ProcessBtn">COMPRESS AND SAVE</x:String>
+
+    <!-- Metadata -->
+    <x:String x:Key="Metadata_Title">Edit PDF Metadata</x:String>
+    <x:String x:Key="Metadata_Desc">Update author, title, keywords, and other tags embedded in your PDF document.</x:String>
+    <x:String x:Key="Metadata_TitleField">Document Title</x:String>
+    <x:String x:Key="Metadata_Author">Author</x:String>
+    <x:String x:Key="Metadata_Subject">Subject</x:String>
+    <x:String x:Key="Metadata_Keywords">Keywords</x:String>
+    <x:String x:Key="Metadata_Creator">Creator Application</x:String>
+    <x:String x:Key="Metadata_Producer">PDF Producer</x:String>
+    <x:String x:Key="Metadata_CreationDate">Created Date</x:String>
+    <x:String x:Key="Metadata_ModificationDate">Modified Date</x:String>
+    <x:String x:Key="Metadata_SaveBtn">SAVE METADATA</x:String>
+
+    <!-- Premium -->
+    <x:String x:Key="Prem_Title">Go Premium</x:String>
+    <x:String x:Key="Prem_Subtitle">Unlock all professional features and remove all platform limitations.</x:String>
+    <x:String x:Key="Prem_Licensed">License Activated</x:String>
+    <x:String x:Key="Prem_ThankYou">Thank you for supporting Docentra!</x:String>
+    <x:String x:Key="Prem_HowToActivate_Title">How to activate?</x:String>
+    <x:String x:Key="Prem_HowToActivate_Sub">Copy your Device Hardware ID below and send it to our support box on Etsy to retrieve your activation key.</x:String>
+    <x:String x:Key="Prem_HwidLabel">Device Hardware ID (HWID)</x:String>
+    <x:String x:Key="Prem_HwidDesc">This unique hardware signature keeps your license bound safely to this workstation.</x:String>
+    <x:String x:Key="Prem_KeyLabel">Enter License Key</x:String>
+    <x:String x:Key="Prem_BtnActivate">ACTIVATE NOW</x:String>
+    <x:String x:Key="Prem_WhyGoPremium">Why upgrade to Premium?</x:String>
+    <x:String x:Key="Prem_Feat1_Title">Complete PDF Toolkit</x:String>
+    <x:String x:Key="Prem_Feat1_Desc">Access split, merge, crop, watermark, numbers, and compress features with no restrictions.</x:String>
+    <x:String x:Key="Prem_Feat2_Title">Fast Multi-threading Engine</x:String>
+    <x:String x:Key="Prem_Feat2_Desc">Render and execute large document actions up to 10x faster using full processor scaling.</x:String>
+    <x:String x:Key="Prem_Feat3_Title">Professional Lifetime Support</x:String>
+    <x:String x:Key="Prem_Feat3_Desc">Receive all minor and major updates for free with standard priority ticketing service.</x:String>
+    <x:String x:Key="Dash_CompressSub">Reduce PDF document size with optimal compression ratios.</x:String>
+    <x:String x:Key="Dash_MetadataSub">Update embedded yazar, title, and keywords tags.</x:String>
+
+    <!-- OCR -->
+    <x:String x:Key="Ocr_Title">Text Recognition (OCR)</x:String>
+    <x:String x:Key="Ocr_Desc">Extract text from images and PDF documents automatically using native hardware engines.</x:String>
+    <x:String x:Key="Ocr_SelectFile">Select Image or PDF File</x:String>
+    <x:String x:Key="Ocr_Language">Recognition Language</x:String>
+    <x:String x:Key="Ocr_RunBtn">RECOGNIZE TEXT</x:String>
+    <x:String x:Key="Ocr_ResultPlaceholder">Recognized text will be displayed here...</x:String>
+    <x:String x:Key="Ocr_Success">OCR completed successfully!</x:String>
+    <x:String x:Key="Ocr_SaveSuccess">OCR result saved successfully!</x:String>
+    <x:String x:Key="Ocr_NoFile">Please select an image or PDF file first.</x:String>
+    <x:String x:Key="Ocr_SelectFilter">PDF and Images (*.pdf;*.png;*.jpg;*.jpeg)|*.pdf;*.png;*.jpg;*.jpeg</x:String>
+    <x:String x:Key="Ocr_BtnCopy">Copy Text</x:String>
+    <x:String x:Key="Ocr_BtnSave">Save as TXT</x:String>
+    <x:String x:Key="Dash_OcrSub">Recognize and extract text from images and documents using native hardware acceleration.</x:String>
 </ResourceDictionary>

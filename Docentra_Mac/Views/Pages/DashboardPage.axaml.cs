@@ -21,8 +21,16 @@ namespace Docentra_Mac.Views.Pages
                     "Split" => 2,
                     "Watermark" => 3,
                     "Protect" => 4,
-                    "Delete" => 5,
+                    "DeletePages" => 5,
                     "PageNumbers" => 6,
+                    "Crop" => 7,
+                    "Sign" => 8,
+                    "Convert" => 9,
+                    "PdfViewer" => 10,
+                    "Compress" => 11,
+                    "Metadata" => 12,
+                    "Premium" => 13,
+                    "Ocr" => 14,
                     _ => 0
                 };
 

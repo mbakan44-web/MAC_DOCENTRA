@@ -1,13 +1,14 @@
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Reflection;
 
 namespace Docentra_Mac.Services
 {
     public class UpdateService
     {
         private const string VersionUrl = "https://docentrapdf.com/version.txt";
-        private const string CurrentVersion = "1.0.0";
+        public string CurrentVersion => Assembly.GetExecutingAssembly().GetName().Version?.ToString(3) ?? "1.0.0";
         private readonly HttpClient _httpClient;
 
         public UpdateService()

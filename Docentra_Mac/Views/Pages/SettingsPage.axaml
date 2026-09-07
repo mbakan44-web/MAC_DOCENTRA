@@ -2,39 +2,125 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
              x:Class="Docentra_Mac.Views.Pages.SettingsPage">
+    
     <Grid RowDefinitions="Auto, *">
-        <TextBlock Grid.Row="0" Text="{DynamicResource Nav_Settings}" 
-                   FontSize="24" FontWeight="Bold" Margin="0,0,0,20"/>
-
-        <StackPanel Grid.Row="1" Spacing="20" MaxWidth="400" HorizontalAlignment="Left">
-            <!-- Language Selection -->
-            <StackPanel Spacing="5">
-                <TextBlock Text="Language / Dil" FontWeight="SemiBold"/>
-                <ComboBox x:Name="LanguageList" HorizontalAlignment="Stretch" SelectedIndex="0">
-                    <ComboBoxItem Content="English (US)"/>
-                    <ComboBoxItem Content="Türkçe (TR)"/>
-                </ComboBox>
-            </StackPanel>
-
-            <!-- Version Info -->
-            <Border Background="#1E1E1E" Padding="15" CornerRadius="10">
-                <StackPanel Spacing="5">
-                    <TextBlock Text="App Information" FontWeight="SemiBold" Opacity="0.8"/>
-                    <Separator Margin="0,5"/>
-                    <Grid ColumnDefinitions="*, Auto">
-                        <TextBlock Grid.Column="0" Text="Version" Opacity="0.6"/>
-                        <TextBlock Grid.Column="1" Text="1.0.0" FontWeight="Bold"/>
-                    </Grid>
-                    <Grid ColumnDefinitions="*, Auto" Margin="0,5,0,0">
-                        <TextBlock Grid.Column="0" Text="License" Opacity="0.6"/>
-                        <TextBlock Grid.Column="1" x:Name="LicenseStatusText" Text="Trial" Foreground="#FFD700"/>
-                    </Grid>
-                </StackPanel>
-            </Border>
-
-            <TextBlock Text="Docentra PDF Suite © 2026" FontSize="11" Opacity="0.4" HorizontalAlignment="Center"/>
+        <!-- Header -->
+        <StackPanel Grid.Row="0" Margin="20,20,20,30">
+            <TextBlock Text="{DynamicResource Sett_Title}" FontSize="28" FontWeight="Black" Foreground="{DynamicResource PremiumAccentBrush}"/>
+            <TextBlock Text="Manage your preferences and app appearance" FontSize="14" Opacity="0.6"/>
         </StackPanel>
+
+        <ScrollViewer Grid.Row="1">
+            <StackPanel Spacing="25" Margin="20,0,20,20" MaxWidth="700" HorizontalAlignment="Left">
+                
+                <!-- Language Card -->
+                <Border Background="{DynamicResource ToolCardBackground}" CornerRadius="15" Padding="20" BorderBrush="#20FFFFFF" BorderThickness="1">
+                    <StackPanel Spacing="15">
+                        <Grid ColumnDefinitions="Auto, *">
+                            <PathIcon Data="{StaticResource LanguageRegular}" Width="24" Height="24" Foreground="{DynamicResource PremiumAccentBrush}" Margin="0,0,15,0"/>
+                            <StackPanel Grid.Column="1">
+                                <TextBlock Text="{DynamicResource Sett_Language}" FontSize="16" FontWeight="Bold"/>
+                                <TextBlock Text="{DynamicResource Sett_LanguageDesc}" FontSize="12" Opacity="0.5"/>
+                            </StackPanel>
+                        </Grid>
+                        <ComboBox x:Name="LanguageList" HorizontalAlignment="Stretch" SelectedIndex="0" Background="#15000000" CornerRadius="8">
+                            <ComboBoxItem Content="English (US)" Tag="en-US"/>
+                            <ComboBoxItem Content="Türkçe (TR)" Tag="tr-TR"/>
+                        </ComboBox>
+                    </StackPanel>
+                </Border>
+
+                <!-- Theme Card -->
+                <Border Background="{DynamicResource ToolCardBackground}" CornerRadius="15" Padding="20" BorderBrush="#20FFFFFF" BorderThickness="1">
+                    <StackPanel Spacing="15">
+                        <Grid ColumnDefinitions="Auto, *">
+                            <PathIcon Data="{StaticResource ThemeRegular}" Width="24" Height="24" Foreground="{DynamicResource PremiumAccentBrush}" Margin="0,0,15,0"/>
+                            <StackPanel Grid.Column="1">
+                                <TextBlock Text="{DynamicResource Sett_Theme}" FontSize="16" FontWeight="Bold"/>
+                                <TextBlock Text="{DynamicResource Sett_ThemeDesc}" FontSize="12" Opacity="0.5"/>
+                            </StackPanel>
+                        </Grid>
+                        
+                        <UniformGrid x:Name="ThemePanel" Columns="5" Margin="0,10,0,0">
+                            <!-- Light Theme -->
+                            <Border Tag="Light" Width="100" Height="60" CornerRadius="10" 
+                                    Background="#F8FAFC" BorderThickness="3" BorderBrush="Transparent"
+                                    PointerPressed="Theme_PointerPressed" Cursor="Hand" Margin="5">
+                                <TextBlock Text="Aydınlık" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#0F172A" FontSize="12" FontWeight="Bold"/>
+                            </Border>
+
+                            <!-- Dark Theme -->
+                            <Border Tag="Dark" Width="100" Height="60" CornerRadius="10" 
+                                    Background="#0F172A" BorderThickness="3" BorderBrush="Transparent"
+                                    PointerPressed="Theme_PointerPressed" Cursor="Hand" Margin="5">
+                                <TextBlock Text="Karanlık" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="12" FontWeight="Bold"/>
+                            </Border>
+
+                            <!-- Lavender Theme -->
+                            <Border Tag="Lavender" Width="100" Height="70" CornerRadius="10" Margin="5" Cursor="Hand" BorderThickness="2" BorderBrush="Transparent" PointerPressed="Theme_PointerPressed">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                        <GradientStop Color="#EDE7F6" Offset="0"/>
+                                        <GradientStop Color="#CE93D8" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <TextBlock Text="Lavender" Foreground="#4A0072" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                            </Border>
+
+                            <!-- Peach Theme -->
+                            <Border Tag="Peach" Width="100" Height="70" CornerRadius="10" Margin="5" Cursor="Hand" BorderThickness="2" BorderBrush="Transparent" PointerPressed="Theme_PointerPressed">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                        <GradientStop Color="#FFEDE7" Offset="0"/>
+                                        <GradientStop Color="#FFBBA0" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <TextBlock Text="Peach" Foreground="#7A2000" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                            </Border>
+
+                            <!-- Mint Theme -->
+                            <Border Tag="Mint" Width="100" Height="70" CornerRadius="10" Margin="5" Cursor="Hand" BorderThickness="2" BorderBrush="Transparent" PointerPressed="Theme_PointerPressed">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                        <GradientStop Color="#E3F5ED" Offset="0"/>
+                                        <GradientStop Color="#A5D6B9" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <TextBlock Text="Mint" Foreground="#0A4A2A" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                            </Border>
+                        </UniformGrid>
+                    </StackPanel>
+                </Border>
+
+                <!-- App Info Card -->
+                <Border Background="{DynamicResource PremiumGradientBrush}" BorderBrush="#30FFFFFF" BorderThickness="1" Padding="20" CornerRadius="15">
+                    <StackPanel Spacing="10">
+                        <TextBlock Text="App Information" FontWeight="Bold" Foreground="White"/>
+                        <Separator Margin="0,5" Background="#20FFFFFF"/>
+                        <Grid ColumnDefinitions="*, Auto">
+                            <TextBlock Text="Version" Foreground="White" Opacity="0.8"/>
+                            <TextBlock Grid.Column="1" Text="1.0.2" Foreground="White" FontWeight="Bold"/>
+                        </Grid>
+                        <Grid ColumnDefinitions="*, Auto">
+                            <TextBlock Text="License Status" Foreground="White" Opacity="0.8"/>
+                            <TextBlock Grid.Column="1" x:Name="LicenseStatusText" Text="Premium Active" Foreground="White" FontWeight="Bold"/>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <Button Content="SAVE SETTINGS" Click="Save_Click" 
+                        Background="{DynamicResource PremiumAccentBrush}" Foreground="Black" FontWeight="Black"
+                        HorizontalAlignment="Right" Padding="40,15" CornerRadius="10"/>
+
+                <TextBlock x:Name="StatusText" HorizontalAlignment="Center" FontSize="12" Opacity="0.8"/>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
+
+    <UserControl.Resources>
+        <StreamGeometry x:Key="LanguageRegular">M12.87,15.07L10.33,12.56L10.36,12.53C12.1,10.59 13.34,8.36 14.07,6H17V4H10V2H8V4H1V6H12.17C11.5,7.92 10.44,9.75 9,11.35C8.07,10.32 7.3,9.19 6.69,8H4.69C5.42,9.63 6.42,11.17 7.67,12.56L2.58,17.58L4,19L9,14L12.11,17.11L12.87,15.07M18.5,10H16.5L12,22H14L15.12,19H19.87L21,22H23L18.5,10M15.88,17L17.5,12.67L19.12,17H15.88Z</StreamGeometry>
+        <StreamGeometry x:Key="ThemeRegular">M12,3V4.82C14.41,4.82 16.43,6.47 16.93,8.71C17.5,11.23 15.87,13.7 13.32,14.33C12.44,14.55 12,15.34 12,16.24V21H10V16C10,14.06 11.5,12.41 13.44,12.04C14.9,11.77 15.8,10.35 15.51,8.91C15.22,7.5 13.88,6.58 12.5,6.58C10.15,6.58 8.25,8.48 8.25,10.83V11H6.25V10.83C6.25,7.38 9.04,4.58 12.5,4.58C12.67,4.58 12.83,4.59 13,4.61V3H12M4.5,10H6V14H4.5V10M18,10H19.5V14H18V10M12,2H12A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z</StreamGeometry>
+    </UserControl.Resources>
 </UserControl>

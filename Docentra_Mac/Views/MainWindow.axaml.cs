@@ -58,6 +58,46 @@ namespace Docentra_Mac.Views
                 MainContent.Content = new Pages.AddPageNumbersPage();
                 TxtHeader.Text = (string)this.FindResource("PageNum_Title")!;
             }
+            else if (NavList.SelectedIndex == 7)
+            {
+                MainContent.Content = new Pages.CropPage();
+                TxtHeader.Text = (string)this.FindResource("Crop_Title")!;
+            }
+            else if (NavList.SelectedIndex == 8)
+            {
+                MainContent.Content = new Pages.SignPage();
+                TxtHeader.Text = (string)this.FindResource("Sign_Title")!;
+            }
+            else if (NavList.SelectedIndex == 9)
+            {
+                MainContent.Content = new Pages.ConvertPage();
+                TxtHeader.Text = (string)this.FindResource("Conv_Title")!;
+            }
+            else if (NavList.SelectedIndex == 10)
+            {
+                MainContent.Content = new Pages.PdfViewerPage();
+                TxtHeader.Text = (string)this.FindResource("PdfViewer_Title")!;
+            }
+            else if (NavList.SelectedIndex == 11)
+            {
+                MainContent.Content = new Pages.CompressPage();
+                TxtHeader.Text = (string)this.FindResource("Nav_Compress")!;
+            }
+            else if (NavList.SelectedIndex == 12)
+            {
+                MainContent.Content = new Pages.MetadataEditorPage();
+                TxtHeader.Text = (string)this.FindResource("Nav_Metadata")!;
+            }
+            else if (NavList.SelectedIndex == 13)
+            {
+                MainContent.Content = new Pages.PremiumPage();
+                TxtHeader.Text = (string)this.FindResource("Nav_Premium")!;
+            }
+            else if (NavList.SelectedIndex == 14)
+            {
+                MainContent.Content = new Pages.OcrPage();
+                TxtHeader.Text = (string)this.FindResource("Ocr_Title")!;
+            }
         }
 
         private void Settings_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)

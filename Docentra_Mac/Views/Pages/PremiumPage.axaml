@@ -1,0 +1,94 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="850" d:DesignHeight="700"
+             x:Class="Docentra_Mac.Views.Pages.PremiumPage">
+
+    <Grid RowDefinitions="Auto, *, Auto" Margin="20">
+        <!-- Header -->
+        <StackPanel Grid.Row="0" Margin="0,0,0,20">
+            <TextBlock Text="{DynamicResource Prem_Title}" FontSize="28" FontWeight="Black" Foreground="{DynamicResource PremiumAccentBrush}"/>
+            <TextBlock Text="{DynamicResource Prem_Subtitle}" FontSize="14" Opacity="0.6" TextWrapping="Wrap"/>
+        </StackPanel>
+
+        <!-- Content Area -->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <Grid ColumnDefinitions="*, 30, *">
+                
+                <!-- Left Column: Activation Fields -->
+                <StackPanel Grid.Column="0" Spacing="20">
+                    
+                    <!-- Premium Status Notification -->
+                    <Border x:Name="PremiumStatusBox" Background="#2000FF00" BorderBrush="#8000FF00" BorderThickness="1" CornerRadius="12" Padding="15" IsVisible="False">
+                        <StackPanel Spacing="5">
+                            <TextBlock Text="{DynamicResource Prem_Licensed}" FontWeight="Bold" Foreground="#40FF40"/>
+                            <TextBlock Text="{DynamicResource Prem_ThankYou}" FontSize="12" Opacity="0.8"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Etsy Info Card -->
+                    <Border Background="{DynamicResource ToolCardBackground}" BorderBrush="#15FFFFFF" BorderThickness="1" CornerRadius="12" Padding="15">
+                        <StackPanel Spacing="8">
+                            <TextBlock Text="{DynamicResource Prem_HowToActivate_Title}" FontWeight="Bold" FontSize="14" Foreground="{DynamicResource PremiumAccentBrush}"/>
+                            <TextBlock Text="{DynamicResource Prem_HowToActivate_Sub}" FontSize="12" Opacity="0.7" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- HWID Copy Section -->
+                    <StackPanel Spacing="8">
+                        <TextBlock Text="{DynamicResource Prem_HwidLabel}" FontWeight="SemiBold" FontSize="13"/>
+                        <Grid ColumnDefinitions="*, Auto">
+                            <TextBox x:Name="TxtHwid" IsReadOnly="True" Text="Fetching Device ID..." CornerRadius="8" Background="#15FFFFFF" BorderThickness="1" BorderBrush="#25FFFFFF"/>
+                            <Button Grid.Column="1" Click="BtnCopyHwid_Click" Margin="8,0,0,0" Padding="12" CornerRadius="8" Background="#33FFFFFF">
+                                <PathIcon Data="{StaticResource CopyRegular}" Width="16" Height="16"/>
+                            </Button>
+                        </Grid>
+                        <TextBlock Text="{DynamicResource Prem_HwidDesc}" FontSize="11" Opacity="0.5" TextWrapping="Wrap"/>
+                    </StackPanel>
+
+                    <!-- Activation Key Section -->
+                    <StackPanel Spacing="8">
+                        <TextBlock Text="{DynamicResource Prem_KeyLabel}" FontWeight="SemiBold" FontSize="13"/>
+                        <TextBox x:Name="TxtLicenseKey" Watermark="XXXX-XXXX-XXXX-XXXX" CornerRadius="8" Background="#15FFFFFF" BorderThickness="1" BorderBrush="#25FFFFFF"/>
+                        <Button x:Name="BtnActivate" Click="BtnActivate_Click" Background="{DynamicResource PremiumAccentBrush}" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalAlignment="Center" Height="40" CornerRadius="8">
+                            <TextBlock Text="{DynamicResource Prem_BtnActivate}" VerticalAlignment="Center"/>
+                        </Button>
+                    </StackPanel>
+
+                </StackPanel>
+
+                <!-- Right Column: Benefits list -->
+                <StackPanel Grid.Column="2" Spacing="15">
+                    <TextBlock Text="{DynamicResource Prem_WhyGoPremium}" FontWeight="Bold" FontSize="18"/>
+                    
+                    <Border Background="#10FFFFFF" CornerRadius="10" Padding="15">
+                        <StackPanel Spacing="5">
+                            <TextBlock Text="{DynamicResource Prem_Feat1_Title}" FontWeight="Bold" FontSize="14" Foreground="{DynamicResource PremiumAccentBrush}"/>
+                            <TextBlock Text="{DynamicResource Prem_Feat1_Desc}" FontSize="11" Opacity="0.7" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Background="#10FFFFFF" CornerRadius="10" Padding="15">
+                        <StackPanel Spacing="5">
+                            <TextBlock Text="{DynamicResource Prem_Feat2_Title}" FontWeight="Bold" FontSize="14" Foreground="{DynamicResource PremiumAccentBrush}"/>
+                            <TextBlock Text="{DynamicResource Prem_Feat2_Desc}" FontSize="11" Opacity="0.7" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Background="#10FFFFFF" CornerRadius="10" Padding="15">
+                        <StackPanel Spacing="5">
+                            <TextBlock Text="{DynamicResource Prem_Feat3_Title}" FontWeight="Bold" FontSize="14" Foreground="{DynamicResource PremiumAccentBrush}"/>
+                            <TextBlock Text="{DynamicResource Prem_Feat3_Desc}" FontSize="11" Opacity="0.7" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+
+    <UserControl.Resources>
+        <StreamGeometry x:Key="CopyRegular">M16 1H4C2.9 1 2 1.9 2 3V17H4V3H16V1ZM19 5H8C6.9 5 6 5.9 6 7V21C6 22.1 6.9 23 8 23H19C20.1 23 21 22.1 21 21V7C21 5.9 20.1 5 19 5ZM19 21H8V7H19V21Z</StreamGeometry>
+    </UserControl.Resources>
+</UserControl>

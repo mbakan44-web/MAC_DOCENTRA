@@ -1,0 +1,177 @@
+<UserControl x:Class="PromtAiPdfPro.Views.PdfTabContent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ui:ControlsDictionary />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="180" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="280" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Sol: küçük resimler -->
+        <Border Grid.Column="0" Background="Transparent" Margin="5,5,0,5" CornerRadius="8" BorderThickness="1" BorderBrush="{DynamicResource ControlStrokeColorDefaultBrush}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="{DynamicResource Viewer_Thumbnails}" FontSize="12" FontWeight="SemiBold" Opacity="0.7" Margin="15,10" />
+                <ListBox Grid.Row="1" x:Name="ListThumbnails"
+                         Background="Transparent" BorderThickness="0" Margin="5,0"
+                         ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                         SelectionChanged="ListThumbnails_SelectionChanged">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border Margin="5" Background="White" CornerRadius="4" Padding="2" BorderBrush="Black" BorderThickness="1">
+                                <StackPanel>
+                                    <Image Source="{Binding Image}" Width="120" Stretch="Uniform" />
+                                    <TextBlock Text="{Binding PageNumber}" HorizontalAlignment="Center" FontSize="10" Opacity="0.6" Margin="0,2" />
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+        </Border>
+
+        <!-- Orta -->
+        <Grid Grid.Column="1" Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Mod seçimi -->
+            <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,6">
+                <ui:Button x:Name="BtnModeView" Content="{DynamicResource Viewer_ViewMode}"
+                           Click="BtnModeView_Click" Margin="0,0,8,0" Appearance="Primary" Padding="14,8" />
+                <ui:Button x:Name="BtnModeAnnotate" Content="{DynamicResource Viewer_AnnotateMode}"
+                           Click="BtnModeAnnotate_Click" Appearance="Secondary" Padding="14,8" />
+            </StackPanel>
+
+            <!-- Notlar modu araç çubuğu -->
+            <Border x:Name="PanelAnnotateToolbar" Grid.Row="1" Visibility="Collapsed"
+                    Background="{DynamicResource ControlFillColorDefaultBrush}" CornerRadius="8"
+                    BorderBrush="{DynamicResource ControlStrokeColorDefaultBrush}" BorderThickness="1"
+                    Margin="0,0,0,6" Padding="6,4">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <ui:Button Icon="{ui:SymbolIcon ArrowLeft24}" ToolTip="{DynamicResource Viewer_PrevPage}"
+                                   Click="BtnAnnotPrev_Click" Appearance="Transparent" Padding="8" Margin="0,0,2,0" />
+                        <ui:Button Icon="{ui:SymbolIcon ArrowRight24}" ToolTip="{DynamicResource Viewer_NextPage}"
+                                   Click="BtnAnnotNext_Click" Appearance="Transparent" Padding="8" Margin="0,0,8,0" />
+                        <TextBlock x:Name="TxtAnnotPage" VerticalAlignment="Center" FontSize="13" Margin="0,0,10,0" Opacity="0.85" />
+
+                        <Rectangle Width="1" Height="22" Margin="4,4,8,4" Opacity="0.35"
+                                   Fill="{DynamicResource ControlStrokeColorDefaultBrush}" />
+
+                        <ui:Button x:Name="BtnToolPen" Icon="{ui:SymbolIcon Edit24}" ToolTip="{DynamicResource Viewer_ToolPen}"
+                                   Click="BtnToolPen_Click" Appearance="Primary" Padding="8" Margin="0,0,4,0" />
+                        <ui:Button x:Name="BtnToolHighlighter" Icon="{ui:SymbolIcon Color24}" ToolTip="{DynamicResource Viewer_ToolHighlighter}"
+                                   Click="BtnToolHighlighter_Click" Appearance="Secondary" Padding="8" Margin="0,0,4,0" />
+                        <ui:Button x:Name="BtnToolEraser" Icon="{ui:SymbolIcon Broom24}" ToolTip="{DynamicResource Viewer_ToolEraser}"
+                                   Click="BtnToolEraser_Click" Appearance="Secondary" Padding="8" Margin="0,0,4,0" />
+                        <ui:Button Icon="{ui:SymbolIcon TextFont24}" ToolTip="{DynamicResource Viewer_ToolText}"
+                                   Click="BtnToolText_Click" Appearance="Secondary" Padding="8" Margin="0,0,4,0" />
+                        <ui:Button Icon="{ui:SymbolIcon Certificate24}" ToolTip="{DynamicResource Viewer_ToolStamp}"
+                                   Click="BtnToolStamp_Click" Appearance="Secondary" Padding="8" Margin="0,0,8,0" />
+
+                        <Rectangle Width="1" Height="22" Margin="4,4,8,4" Opacity="0.35"
+                                   Fill="{DynamicResource ControlStrokeColorDefaultBrush}" />
+
+                        <ComboBox x:Name="CmbInkColor" Width="90" VerticalAlignment="Center" Margin="0,0,6,0"
+                                  SelectionChanged="CmbInkColor_SelectionChanged" />
+                        <ComboBox x:Name="CmbStampType" Width="110" VerticalAlignment="Center" Margin="0,0,6,0"
+                                  Visibility="Collapsed" SelectionChanged="CmbStampType_SelectionChanged" />
+                        <Slider x:Name="SliderThickness" Minimum="1" Maximum="12" Value="3" Width="80"
+                                VerticalAlignment="Center" Margin="0,0,8,0" ValueChanged="SliderThickness_ValueChanged" />
+
+                        <ui:Button Icon="{ui:SymbolIcon ArrowUndo24}" ToolTip="{DynamicResource Viewer_Undo}"
+                                   Click="BtnUndo_Click" Appearance="Transparent" Padding="8" Margin="0,0,4,0" />
+                        <ui:Button Icon="{ui:SymbolIcon Delete24}" ToolTip="{DynamicResource Viewer_ClearDrawings}"
+                                   Click="BtnClearPage_Click" Appearance="Transparent" Padding="8" Margin="0,0,8,0" />
+
+                        <ui:Button Icon="{ui:SymbolIcon ZoomOut24}" ToolTip="{DynamicResource Viewer_ZoomOut}"
+                                   Click="BtnZoomOut_Click" Appearance="Transparent" Padding="8" Margin="0,0,2,0" />
+                        <ui:Button Icon="{ui:SymbolIcon ZoomIn24}" ToolTip="{DynamicResource Viewer_ZoomIn}"
+                                   Click="BtnZoomIn_Click" Appearance="Transparent" Padding="8" Margin="0,0,8,0" />
+                        <ui:Button Icon="{ui:SymbolIcon Print24}" ToolTip="{DynamicResource Viewer_Print}"
+                                   Click="BtnPrint_Click" Appearance="Transparent" Padding="8" Margin="0,0,8,0" />
+                        <ui:Button Icon="{ui:SymbolIcon Save24}" Content="{DynamicResource Viewer_SaveShort}"
+                                   ToolTip="{DynamicResource Viewer_SaveDrawings}" Click="BtnSaveDrawings_Click"
+                                   Appearance="Primary" Padding="8,8,12,8" />
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+
+            <!-- İçerik -->
+            <Border Grid.Row="2" Background="Transparent" CornerRadius="8"
+                    BorderBrush="{DynamicResource ControlStrokeColorDefaultBrush}" BorderThickness="1" ClipToBounds="True">
+                <Grid>
+                    <!-- Görüntüle: Edge PDF (yazdır, zoom dahili) -->
+                    <wv2:WebView2 x:Name="PdfWebView" Visibility="Visible" />
+
+                    <!-- Notlar & çizim -->
+                    <Grid x:Name="AnnotateSurface" Visibility="Collapsed" ClipToBounds="True">
+                        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"
+                                      PanningMode="Both" Background="#2A2A2A">
+                            <Viewbox Stretch="Uniform">
+                                <Grid x:Name="DrawPageHost" SnapsToDevicePixels="True"
+                                      MouseLeftButtonDown="DrawPageHost_MouseLeftButtonDown"
+                                      RenderTransformOrigin="0.5,0.5">
+                                    <Grid.RenderTransform>
+                                        <ScaleTransform x:Name="PageScale" ScaleX="1" ScaleY="1" />
+                                    </Grid.RenderTransform>
+                                    <Image x:Name="DrawPageImage" Stretch="Fill" IsHitTestVisible="False" />
+                                    <InkCanvas x:Name="DrawInkCanvas" Background="Transparent"
+                                               EditingMode="Ink" IsHitTestVisible="True"
+                                               StrokeCollected="DrawInkCanvas_StrokeCollected" />
+                                    <Canvas x:Name="OverlayCanvas" Background="Transparent" IsHitTestVisible="False" />
+                                </Grid>
+                            </Viewbox>
+                        </ScrollViewer>
+                    </Grid>
+
+                    <ui:ProgressRing x:Name="LoadingRing" IsIndeterminate="True"
+                                     VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed" />
+                </Grid>
+            </Border>
+        </Grid>
+
+        <!-- Sağ panel -->
+        <Border Grid.Column="2" Background="Transparent" Margin="5" CornerRadius="8"
+                BorderThickness="1" BorderBrush="{DynamicResource ControlStrokeColorDefaultBrush}">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel Margin="15">
+                    <TextBlock Text="Docentra Viewer" FontSize="20" FontWeight="Bold" Margin="0,0,0,5" />
+                    <TextBlock x:Name="TxtModeHint" Text="{DynamicResource Viewer_ViewModeHint}" FontSize="12"
+                               Opacity="0.75" TextWrapping="Wrap" Margin="0,0,0,16" />
+                    <TextBlock Text="{DynamicResource Viewer_QuickTools}" FontSize="14" Opacity="0.7" Margin="0,0,0,12" />
+                    <ui:Button Content="{DynamicResource Viewer_EditPdf}" Icon="{ui:SymbolIcon Edit24}"
+                               Width="240" Height="45" Margin="0,5" Appearance="Primary" Click="BtnEditPdf_Click" />
+                    <Separator Margin="0,15" />
+                    <ui:Button Content="{DynamicResource Viewer_ConvertToWord}" Icon="{ui:SymbolIcon DocumentData24}"
+                               HorizontalAlignment="Stretch" Margin="0,5" Click="BtnConvertToWord_Click" />
+                    <ui:Button Content="{DynamicResource Viewer_Protect}" Icon="{ui:SymbolIcon LockClosed24}"
+                               HorizontalAlignment="Stretch" Margin="0,5" Click="BtnProtect_Click" />
+                    <ui:Button Content="{DynamicResource Viewer_Sign}" Icon="{ui:SymbolIcon Signature24}"
+                               HorizontalAlignment="Stretch" Margin="0,5" Click="BtnSign_Click" />
+                    <ui:Button Content="{DynamicResource Viewer_Compress}" Icon="{ui:SymbolIcon ScaleFill24}"
+                               HorizontalAlignment="Stretch" Margin="0,5" Click="BtnCompress_Click" />
+                    <ui:Button Content="{DynamicResource Viewer_Metadata}" Icon="{ui:SymbolIcon Info24}"
+                               HorizontalAlignment="Stretch" Margin="0,5" Click="BtnMetadata_Click" />
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+    </Grid>
+</UserControl>

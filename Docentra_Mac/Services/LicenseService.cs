@@ -144,5 +144,16 @@ namespace Docentra_Mac.Services
             }
             catch { }
         }
+
+        public bool ActivatePremium(string key)
+        {
+            string hwid = GetHardwareId();
+            bool isValid = ValidateKey(key, hwid);
+            if (isValid)
+            {
+                SaveLicenseKey(key);
+            }
+            return isValid;
+        }
     }
 }

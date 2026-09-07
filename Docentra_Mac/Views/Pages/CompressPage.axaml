@@ -1,0 +1,97 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+             x:Class="Docentra_Mac.Views.Pages.CompressPage">
+
+    <Grid RowDefinitions="Auto, *, Auto" Margin="20">
+        <!-- Header -->
+        <StackPanel Grid.Row="0" Margin="0,0,0,20">
+            <TextBlock Text="{DynamicResource Compress_Title}" FontSize="28" FontWeight="Black" Foreground="{DynamicResource PremiumAccentBrush}"/>
+            <TextBlock Text="{DynamicResource Compress_Desc}" FontSize="14" Opacity="0.6"/>
+        </StackPanel>
+
+        <!-- Content Area -->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel Spacing="25" MaxWidth="900" HorizontalAlignment="Left">
+                
+                <!-- Main Selection Card -->
+                <Button x:Name="BtnBrowse" HorizontalAlignment="Stretch" Background="{DynamicResource ToolCardBackground}" 
+                        BorderBrush="#20FFFFFF" BorderThickness="1" CornerRadius="15" Padding="25" Click="BtnBrowse_Click">
+                    <Grid ColumnDefinitions="Auto, *, Auto">
+                        <PathIcon Grid.Column="0" Data="{StaticResource CompressRegular}" Width="40" Height="40" Foreground="#0078D4" Margin="0,0,20,0"/>
+                        
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                            <TextBlock Text="{DynamicResource Compress_SelectFile}" FontSize="18" FontWeight="Bold" Margin="0,0,0,4"/>
+                            <TextBlock x:Name="TxtSourceFile" Text="{DynamicResource Common_PathPlaceholder}" FontSize="13" Opacity="0.6" TextTrimming="CharacterEllipsis"/>
+                        </StackPanel>
+                        
+                        <PathIcon Grid.Column="2" Data="{StaticResource ChevronRightRegular}" Width="16" Height="16" Opacity="0.5" VerticalAlignment="Center"/>
+                    </Grid>
+                </Button>
+
+                <!-- Compression Level Selection -->
+                <StackPanel Spacing="10">
+                    <TextBlock Text="{DynamicResource Compress_LevelTitle}" FontSize="18" FontWeight="Bold"/>
+                    
+                    <Grid ColumnDefinitions="*, *, *">
+                        <!-- Low -->
+                        <Button x:Name="CardLow" Grid.Column="0" Margin="0,0,8,0" Padding="15" 
+                                Background="{DynamicResource ToolCardBackground}" BorderThickness="2" BorderBrush="{DynamicResource PremiumAccentBrush}"
+                                CornerRadius="12" Click="CardLevel_Click" Tag="Low" HorizontalAlignment="Stretch">
+                            <StackPanel Spacing="8">
+                                <PathIcon Data="{StaticResource ShieldCheckmarkRegular}" Width="28" Height="28" Foreground="#27AE60" HorizontalAlignment="Left"/>
+                                <TextBlock Text="{DynamicResource Compress_LevelLow}" FontWeight="Bold" FontSize="14"/>
+                                <TextBlock Text="{DynamicResource Compress_LevelLowDesc}" FontSize="11" Opacity="0.6" TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </Button>
+
+                        <!-- Medium -->
+                        <Button x:Name="CardMed" Grid.Column="1" Margin="4,0,4,0" Padding="15" 
+                                Background="{DynamicResource ToolCardBackground}" BorderThickness="1" BorderBrush="#15FFFFFF"
+                                CornerRadius="12" Click="CardLevel_Click" Tag="Medium" HorizontalAlignment="Stretch">
+                            <StackPanel Spacing="8">
+                                <PathIcon Data="{StaticResource ArrowSortRegular}" Width="28" Height="28" Foreground="#0078D4" HorizontalAlignment="Left"/>
+                                <TextBlock Text="{DynamicResource Compress_LevelMed}" FontWeight="Bold" FontSize="14"/>
+                                <TextBlock Text="{DynamicResource Compress_LevelMedDesc}" FontSize="11" Opacity="0.6" TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </Button>
+
+                        <!-- High -->
+                        <Button x:Name="CardHigh" Grid.Column="2" Margin="8,0,0,0" Padding="15" 
+                                Background="{DynamicResource ToolCardBackground}" BorderThickness="1" BorderBrush="#15FFFFFF"
+                                CornerRadius="12" Click="CardLevel_Click" Tag="High" HorizontalAlignment="Stretch">
+                            <StackPanel Spacing="8">
+                                <PathIcon Data="{StaticResource FlashRegular}" Width="28" Height="28" Foreground="#E67E22" HorizontalAlignment="Left"/>
+                                <TextBlock Text="{DynamicResource Compress_LevelHigh}" FontWeight="Bold" FontSize="14"/>
+                                <TextBlock Text="{DynamicResource Compress_LevelHighDesc}" FontSize="11" Opacity="0.6" TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- Actions -->
+        <Grid Grid.Row="2" ColumnDefinitions="*, Auto" Margin="0,20,0,0">
+            <ProgressBar x:Name="ProgressRing" IsIndeterminate="True" VerticalAlignment="Center" IsVisible="False" Width="100" HorizontalAlignment="Left"/>
+            
+            <Button Grid.Column="1" x:Name="BtnCompress" Click="BtnCompress_Click"
+                    Background="{DynamicResource PremiumAccentBrush}" Foreground="Black" FontWeight="Bold" Padding="35,15" CornerRadius="10">
+                <StackPanel Orientation="Horizontal" Spacing="10">
+                    <PathIcon Data="{StaticResource FlashRegular}" Width="16" Height="16" Foreground="Black"/>
+                    <TextBlock Text="{DynamicResource Compress_ProcessBtn}" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+        </Grid>
+    </Grid>
+
+    <UserControl.Resources>
+        <StreamGeometry x:Key="CompressRegular">M4 4C4 2.89543 4.89543 2 6 2H18C19.1046 2 20 2.89543 20 4V20C20 21.1046 19.1046 22 18 22H6C4.89543 22 4 21.1046 4 20V4ZM13 4V9H18L13 4Z</StreamGeometry>
+        <StreamGeometry x:Key="ChevronRightRegular">M6.29289 4.29289C5.90237 4.68342 5.90237 5.31658 6.29289 5.70711L12.5858 12L6.29289 18.2929C5.90237 18.6834 5.90237 19.3166 6.29289 19.7071C6.68342 20.0976 7.31658 20.0976 7.70711 19.7071L14.7071 12.7071C15.0976 12.3166 15.0976 11.6834 14.7071 11.2929L7.70711 4.29289C7.31658 3.90237 6.68342 3.90237 6.29289 4.29289Z</StreamGeometry>
+        <StreamGeometry x:Key="ShieldCheckmarkRegular">M12 2L4 5V11C4 16.52 7.38 21.74 12 23C16.62 21.74 20 16.52 20 11V5L12 2ZM10.5 16.5L7 13L8.5 11.5L10.5 13.5L15.5 8.5L17 10L10.5 16.5Z</StreamGeometry>
+        <StreamGeometry x:Key="ArrowSortRegular">M16 17.01V10H14V17.01H11L15 21L19 17.01H16ZM9 3L5 6.99H8V14H10V6.99H13L9 3Z</StreamGeometry>
+        <StreamGeometry x:Key="FlashRegular">M11.5 2H4V12H9V22L17.5 10H12L15 2H11.5Z</StreamGeometry>
+    </UserControl.Resources>
+</UserControl>

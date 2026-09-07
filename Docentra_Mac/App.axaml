@@ -2,34 +2,142 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="Docentra_Mac.App"
              RequestedThemeVariant="Dark">
-             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
-
     <Application.Styles>
         <FluentTheme />
+        <!-- Premium Styles -->
+        <Style Selector="Button.ToolCard">
+            <Setter Property="Background" Value="{DynamicResource CardBackgroundBrush}"/>
+            <Setter Property="BorderBrush" Value="#20FFFFFF"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="24"/>
+            <Setter Property="CornerRadius" Value="20"/>
+            <Setter Property="Width" Value="280"/>
+            <Setter Property="Height" Value="180"/>
+            <Setter Property="Transitions">
+                <Transitions>
+                    <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.3" Easing="CubicEaseOut"/>
+                    <BrushTransition Property="Background" Duration="0:0:0.2"/>
+                    <BrushTransition Property="BorderBrush" Duration="0:0:0.2"/>
+                </Transitions>
+            </Setter>
+        </Style>
+        <Style Selector="Button.ToolCard:pointerover">
+            <Setter Property="Background" Value="{DynamicResource CardHoverBackgroundBrush}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource PremiumAccentBrush}"/>
+            <Setter Property="RenderTransform" Value="translateY(-5px)"/>
+        </Style>
+
+        <!-- Tool Card (smaller cards for Convert page) -->
+        <Style Selector="Button.tool">
+            <Setter Property="Background" Value="{DynamicResource CardBackgroundBrush}"/>
+            <Setter Property="BorderBrush" Value="#20FFFFFF"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="20"/>
+            <Setter Property="CornerRadius" Value="16"/>
+            <Setter Property="Transitions">
+                <Transitions>
+                    <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.25" Easing="CubicEaseOut"/>
+                    <BrushTransition Property="Background" Duration="0:0:0.2"/>
+                </Transitions>
+            </Setter>
+        </Style>
+        <Style Selector="Button.tool:pointerover">
+            <Setter Property="Background" Value="{DynamicResource CardHoverBackgroundBrush}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource PremiumAccentBrush}"/>
+            <Setter Property="RenderTransform" Value="scale(1.04)"/>
+        </Style>
+
+        <!-- Global Text Styling -->
+        <Style Selector="TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource TextForeground}"/>
+        </Style>
+        <Style Selector="PathIcon">
+            <Setter Property="Foreground" Value="{DynamicResource TextForeground}"/>
+        </Style>
     </Application.Styles>
 
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <!-- Locales will be loaded here dynamically -->
                 <ResourceInclude Source="/Locales/en-US.axaml" />
             </ResourceDictionary.MergedDictionaries>
             
-            <SolidColorBrush x:Key="PremiumAccentBrush" Color="#FFD700" />
-            <SolidColorBrush x:Key="SidebarBackground" Color="#1E1E1E" />
-            <SolidColorBrush x:Key="MainBackground" Color="#121212" />
+            <!-- Vibrant Color Palette -->
+            <SolidColorBrush x:Key="PremiumAccentBrush" Color="#4F46E5" /> <!-- Indigo 600 -->
+            <SolidColorBrush x:Key="SidebarBackground" Color="#0F172A" /> <!-- Slate 900 -->
+            <SolidColorBrush x:Key="MainBackground" Color="#020617" /> <!-- Slate 950 -->
+            <SolidColorBrush x:Key="TextForeground" Color="#FFFFFF" />
+            <SolidColorBrush x:Key="SecondaryTextForeground" Color="#94A3B8" />
+            
+            <LinearGradientBrush x:Key="CardBackgroundBrush" StartPoint="0%,0%" EndPoint="100%,100%">
+                <GradientStop Color="#15FFFFFF" Offset="0.0"/>
+                <GradientStop Color="#05FFFFFF" Offset="1.0"/>
+            </LinearGradientBrush>
+            
+            <!-- Premium Gradient (used by AddPageNumbers button and App Info card) -->
+            <LinearGradientBrush x:Key="PremiumGradientBrush" StartPoint="0%,0%" EndPoint="100%,100%">
+                <GradientStop Color="#4F46E5" Offset="0.0"/>
+                <GradientStop Color="#7C3AED" Offset="1.0"/>
+            </LinearGradientBrush>
 
-            <!-- Shared Icons -->
-            <StreamGeometry x:Key="HomeRegular">M12 2.09961L2 9.09961V20.0996C2 21.2042 2.89543 22.0996 4 22.0996H20C21.1046 22.0996 22 21.2042 22 20.0996V9.09961L12 2.09961ZM20 20.0996H4V10.244L12 4.64402L20 10.244V20.0996Z</StreamGeometry>
-            <StreamGeometry x:Key="MergeRegular">M4 4C2.89543 4 2 4.89543 2 6V18C2 19.1046 2.89543 20 4 20H8V18H4V6H8V4H4ZM16 4C17.1046 4 18 4.89543 18 6V18C18 19.1046 17.1046 20 16 20H12V18H16V6H12V4H16ZM10 7V17L14 12L10 7Z</StreamGeometry>
-            <StreamGeometry x:Key="SplitRegular">M3 5C3 3.89543 3.89543 3 5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5ZM5 5V19H11V5H5ZM13 19H19V5H13V19Z</StreamGeometry>
-            <StreamGeometry x:Key="WatermarkRegular">M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z</StreamGeometry>
-            <StreamGeometry x:Key="LockRegular">M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5zm-3 5a3 3 0 0 1 6 0v3H9V7zm3 10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z</StreamGeometry>
-            <StreamGeometry x:Key="DeleteRegular">M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z</StreamGeometry>
-            <StreamGeometry x:Key="PageNumRegular">M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 15h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V8h2v2zm-4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V8h2v2zm-4 8H7v-2h2v2zm0-4H7v-2h2v2zm0-4H7V8h2v2z</StreamGeometry>
-            <StreamGeometry x:Key="SettingsRegular">M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z</StreamGeometry>
+            <!-- Tool Card Background (solid, used by Settings/AddPageNumbers cards) -->
+            <SolidColorBrush x:Key="ToolCardBackground" Color="#0F172A"/>
+
+            <LinearGradientBrush x:Key="CardHoverBackgroundBrush" StartPoint="0%,0%" EndPoint="100%,100%">
+                <GradientStop Color="#2563EB" Offset="0.0"/> <!-- Blue 600 -->
+                <GradientStop Color="#4F46E5" Offset="1.0"/> <!-- Indigo 600 -->
+            </LinearGradientBrush>
+
+            <SolidColorBrush x:Key="GlassBackgroundBrush" Color="#0F172A" Opacity="0.8"/>
+            
+            <!-- Modern & Beautiful Icons (Lucide Style) -->
+            <!-- Home -->
+            <StreamGeometry x:Key="HomeRegular">M3 9.5L12 3L21 9.5V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V9.5Z M9 21V12H15V21</StreamGeometry>
+            
+            <!-- Merge (Layers) -->
+            <StreamGeometry x:Key="MergeRegular">M12 2L2 7L12 12L22 7L12 2Z M2 17L12 22L22 17 M2 12L12 17L22 12</StreamGeometry>
+            
+            <!-- Split (Scissors/Cut) -->
+            <StreamGeometry x:Key="SplitRegular">M6 3C4.34315 3 3 4.34315 3 6C3 7.65685 4.34315 9 6 9C7.65685 9 9 7.65685 9 6C9 4.34315 7.65685 3 6 3Z M6 15C4.34315 15 3 16.3431 3 18C3 19.6569 4.34315 21 6 21C7.65685 21 9 19.6569 9 18C9 16.3431 7.65685 15 6 15Z M20 4L8.12 15.88 M14.47 14.48L20 20 M8.12 8.12L12.06 12.06</StreamGeometry>
+            
+            <!-- Watermark (Type) -->
+            <StreamGeometry x:Key="WatermarkRegular">M4 7V4H20V7 M9 20H15 M12 4V20</StreamGeometry>
+            
+            <!-- Lock -->
+            <StreamGeometry x:Key="LockRegular">M19 11H5C3.89543 11 3 11.8954 3 13V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V13C21 11.8954 20.1046 11 19 11Z M7 11V7C7 4.23858 9.23858 2 12 2C14.7614 2 17 4.23858 17 7V11</StreamGeometry>
+            
+            <!-- Delete (Trash) -->
+            <StreamGeometry x:Key="DeleteRegular">M3 6H21 M19 6V20C19 21 18 22 17 22H7C6 22 5 21 5 20V6 M8 6V4C8 3 9 2 10 2H14C15 2 16 3 16 4V6</StreamGeometry>
+            
+            <!-- Page Numbers (Hash) -->
+            <StreamGeometry x:Key="PageNumRegular">M4 9H20 M4 15H20 M10 3V21 M16 3V21</StreamGeometry>
+            
+            <!-- Crop -->
+            <StreamGeometry x:Key="CropRegular">M6 1V6H1M18 23V18H23M6 18H18V6</StreamGeometry>
+            
+            <!-- Sign (Pen) -->
+            <StreamGeometry x:Key="SignRegular">M12 19H21 M16.5 3.5C17.3284 2.67157 18.6716 2.67157 19.5 3.5C20.3284 4.32843 20.3284 5.67157 19.5 6.5L7 19L3 20L4 16L16.5 3.5Z</StreamGeometry>
+            
+            <!-- Convert (Refresh) -->
+            <StreamGeometry x:Key="ConvertRegular">M23 4V10H17 M1 20V14H7 M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15</StreamGeometry>
+            
+            <!-- Settings -->
+            <StreamGeometry x:Key="SettingsRegular">M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z</StreamGeometry>
+            
+            <!-- Star (Premium) -->
             <StreamGeometry x:Key="StarRegular">M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z</StreamGeometry>
-            <StreamGeometry x:Key="FileRegular">M14,2H6C4.9,2,4,2.9,4,4v16c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2V8L14,2z M13,9V3.5L18.5,9H13z</StreamGeometry>
+
+            <!-- PDF Viewer -->
+            <StreamGeometry x:Key="PdfViewerRegular">M20 2H8C6.9 2 6 2.9 6 4V16C6 17.1 6.9 18 8 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM11.5 9.5C11.5 10.33 10.83 11 10 11H9V13H7.5V7H10C10.83 7 11.5 7.67 11.5 8.5V9.5ZM4 6H2V20C2 21.1 2.9 22 4 22H18V20H4V6ZM9 9.5H10V8.5H9V9.5Z</StreamGeometry>
+
+            <!-- Compress (Minimize scale) -->
+            <StreamGeometry x:Key="CompressRegular">M4 14h6v6H8v-4H4v-2zm10 0h6v2h-4v4h-2v-6z M4 4h2v4h4v2H4V4zm16 0v6h-6V8h4V4h2z</StreamGeometry>
+
+            <!-- Metadata (Tag/Label info) -->
+            <StreamGeometry x:Key="MetadataRegular">M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z</StreamGeometry>
+
+            <!-- OCR / Scan Text (Vibrant Lucide ScanText Icon) -->
+            <StreamGeometry x:Key="OcrRegular">M3 7V5C3 3.9 3.9 3 5 3H7 M17 3H19C20.1 3 21 3.9 21 5V7 M21 17V19C21 20.1 20.1 21 19 21H17 M7 21H5C3.9 21 3 20.1 3 19V17 M7 8H17 M7 12H17 M7 16H17</StreamGeometry>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

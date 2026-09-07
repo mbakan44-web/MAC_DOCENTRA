@@ -3,8 +3,8 @@
 
 [Setup]
 AppId={{D0C312A-1234-5678-90AB-CDEF12345678}}
-AppName=DOCENTRA PDF & DOCUMENT EDITOR
-AppVersion=1.0.2
+AppName=Docentra PDF Suite (Viewer & Editor)
+AppVersion=1.0.4
 AppPublisher=Docentra AI Team
 AppPublisherURL=https://www.docentrapdf.com
 AppSupportURL=https://www.docentrapdf.com
@@ -12,11 +12,11 @@ AppUpdatesURL=https://www.docentrapdf.com
 DefaultDirName={autopf}\Docentra PDF Editor
 DefaultGroupName=Docentra PDF Editor
 AllowNoIcons=yes
-UninstallDisplayIcon={app}\PromtAiPdfPro.exe
+UninstallDisplayIcon={app}\Docentra.exe
 ; İkon dosyası (.ico formatında olmalıdır, şimdilik .png üzerinden ikon ayarlanabilir ama gerçek installer için .ico tercih edilir)
-SetupIconFile=PromtAiPdfPro\Assets\app_icon.ico
+SetupIconFile=DOCENTRA PDF EDITOR\PromtAiPdfPro\Assets\app_icon.ico
 OutputDir=.
-OutputBaseFilename=Docentra_Setup_v1.0.2
+OutputBaseFilename=Docentra_Setup_v1.0.4
 Compression=lzma
 SolidCompression=yes
 ShowLanguageDialog=auto
@@ -38,16 +38,16 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 
 [Files]
 ; Zırhlanmış ve full-runtime içeren publish klasörünü paketliyoruz
-Source: "PromtAiPdfPro\bin\Release\net8.0-windows10.0.17763.0\win-x64\publish\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "DOCENTRA PDF EDITOR\PromtAiPdfPro\bin\Release\net8.0-windows10.0.17763.0\win-x64\publish\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; Not: Önce 'dotnet publish' yapılmış olmalıdır.
 
 [Icons]
-Name: "{group}\DOCENTRA PDF & DOCUMENT EDITOR"; Filename: "{app}\PromtAiPdfPro.exe"
-Name: "{group}\{cm:UninstallProgram,DOCENTRA PDF & DOCUMENT EDITOR}"; Filename: "{uninstallexe}"
-Name: "{autodesktop}\DOCENTRA PDF & DOCUMENT EDITOR"; Filename: "{app}\PromtAiPdfPro.exe"; Tasks: desktopicon
+Name: "{group}\Docentra PDF Suite (Viewer & Editor)"; Filename: "{app}\Docentra.exe"
+Name: "{group}\{cm:UninstallProgram,Docentra PDF Suite (Viewer & Editor)}"; Filename: "{uninstallexe}"
+Name: "{autodesktop}\Docentra PDF Suite (Viewer & Editor)"; Filename: "{app}\Docentra.exe"; Tasks: desktopicon
 
 [Run]
-Filename: "{app}\PromtAiPdfPro.exe"; Description: "{cm:LaunchProgram,DOCENTRA PDF & DOCUMENT EDITOR}"; Flags: nowait postinstall skipifsilent
+Filename: "{app}\Docentra.exe"; Description: "{cm:LaunchProgram,Docentra PDF Suite (Viewer & Editor)}"; Flags: nowait postinstall skipifsilent
 
 [Code]
 function InitializeSetup(): Boolean;

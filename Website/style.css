@@ -351,3 +351,24 @@ body[dir="rtl"] .nav-links.active { left: 0; }
 body[dir="rtl"] { text-align: right; }
 body[dir="rtl"] .faq-question { text-align: right; }
 body[dir="rtl"] .comparison-table td:first-child { text-align: right; }
+
+/* Mockup Frame & Simulator Interactivity */
+.sim-dropzone-ui:hover {
+    border-color: #d4af37 !important;
+    background: rgba(212, 175, 55, 0.04) !important;
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.05);
+}
+.mockup-tab:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    opacity: 1 !important;
+}
+.mockup-tab.active {
+    background: rgba(212, 175, 55, 0.15) !important;
+    border-color: rgba(212, 175, 55, 0.4) !important;
+    color: var(--primary-color) !important;
+    opacity: 1 !important;
+}
+.mockup-view {
+    transition: opacity 0.4s ease-in-out;
+}
+

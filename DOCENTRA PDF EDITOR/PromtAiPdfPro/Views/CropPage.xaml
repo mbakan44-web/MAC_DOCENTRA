@@ -1,0 +1,125 @@
+<Page x:Class="PromtAiPdfPro.Views.CropPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      xmlns:local="clr-namespace:PromtAiPdfPro.Views"
+      Title="{DynamicResource Nav_Crop}">
+    <Page.Resources>
+        <local:CenterConverter x:Key="CenterConverter"/>
+        <Style TargetType="Thumb" x:Key="HandleStyle">
+            <Setter Property="Width" Value="12"/>
+            <Setter Property="Height" Value="12"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource PremiumAccentBrush}"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Thumb">
+                        <Ellipse Fill="{TemplateBinding Background}" Stroke="{TemplateBinding BorderBrush}" StrokeThickness="{TemplateBinding BorderThickness}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <Viewbox Stretch="Uniform" VerticalAlignment="Top" HorizontalAlignment="Center">
+        <Grid Width="1150" Height="820" Margin="48,32">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Header -->
+            <Grid Grid.Row="0" Margin="0,0,0,24">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <ui:Button Click="BtnBack_Click" Margin="0,0,16,0" Padding="8" VerticalAlignment="Center" ToolTip="{DynamicResource Common_Back}">
+                    <ui:SymbolIcon Symbol="ArrowLeft24"/>
+                </ui:Button>
+                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                    <TextBlock Text="{DynamicResource Crop_Title}" Style="{StaticResource PremiumHeaderTitle}" FontSize="28"/>
+                    <TextBlock x:Name="TxtFileName" Text="{DynamicResource Common_PathPlaceholder}" FontSize="14" Opacity="0.6"/>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="320"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Left: Preview -->
+                <Grid Grid.Column="0" Margin="0,0,24,0">
+                    <Border Background="#1A1A1A" CornerRadius="12" ClipToBounds="True">
+                        <Grid>
+                            <ScrollViewer x:Name="PreviewScrollViewer" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" SizeChanged="PreviewScrollViewer_SizeChanged">
+                                <Grid x:Name="GridPreview" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Grid.LayoutTransform>
+                                        <ScaleTransform x:Name="CropGridTransform"/>
+                                    </Grid.LayoutTransform>
+                                    <Image x:Name="ImgPreview" Stretch="None"/>
+                                    <Canvas x:Name="SelectionCanvas" Visibility="Collapsed" Background="Transparent">
+                                        <Path Fill="#88000000">
+                                            <Path.Data>
+                                                <CombinedGeometry GeometryCombineMode="Exclude">
+                                                    <CombinedGeometry.Geometry1><RectangleGeometry x:Name="OverlayFullRect"/></CombinedGeometry.Geometry1>
+                                                    <CombinedGeometry.Geometry2><RectangleGeometry x:Name="OverlaySelectionRect"/></CombinedGeometry.Geometry2>
+                                                </CombinedGeometry>
+                                            </Path.Data>
+                                        </Path>
+                                        <Border x:Name="SelectionBox" BorderBrush="{DynamicResource PremiumAccentBrush}" BorderThickness="2" Background="Transparent">
+                                            <Grid>
+                                                <Thumb Cursor="SizeAll" Opacity="0" DragDelta="MoveThumb_DragDelta"/>
+                                                <Thumb Tag="NW" Style="{StaticResource HandleStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-6,-6,0,0" DragDelta="ResizeHandle_DragDelta" Cursor="SizeNWSE"/>
+                                                <Thumb Tag="NE" Style="{StaticResource HandleStyle}" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-6,-6,0" DragDelta="ResizeHandle_DragDelta" Cursor="SizeNESW"/>
+                                                <Thumb Tag="SW" Style="{StaticResource HandleStyle}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="-6,0,0,-6" DragDelta="ResizeHandle_DragDelta" Cursor="SizeNESW"/>
+                                                <Thumb Tag="SE" Style="{StaticResource HandleStyle}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,-6,-6" DragDelta="ResizeHandle_DragDelta" Cursor="SizeNWSE"/>
+                                                <Thumb Tag="N" Style="{StaticResource HandleStyle}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,-6,0,0" DragDelta="ResizeHandle_DragDelta" Cursor="SizeNS"/>
+                                                <Thumb Tag="S" Style="{StaticResource HandleStyle}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,-6" DragDelta="ResizeHandle_DragDelta" Cursor="SizeNS"/>
+                                                <Thumb Tag="W" Style="{StaticResource HandleStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-6,0,0,0" DragDelta="ResizeHandle_DragDelta" Cursor="SizeWE"/>
+                                                <Thumb Tag="E" Style="{StaticResource HandleStyle}" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,-6,0" DragDelta="ResizeHandle_DragDelta" Cursor="SizeWE"/>
+                                            </Grid>
+                                        </Border>
+                                    </Canvas>
+                                </Grid>
+                            </ScrollViewer>
+                            
+                            <!-- Zoom & Page Info Overlaid (As in 8.png) -->
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="20" Background="#88000000" IsHitTestVisible="False">
+                                <ui:Button Icon="ZoomOut24" Click="BtnZoomOut_Click" Margin="0,0,4,0" Appearance="Transparent" IsHitTestVisible="True"/>
+                                <TextBlock x:Name="TxtZoom" Text="100%" VerticalAlignment="Center" Width="50" TextAlignment="Center" Foreground="White"/>
+                                <ui:Button Icon="ZoomIn24" Click="BtnZoomIn_Click" Margin="4,0,20,0" Appearance="Transparent" IsHitTestVisible="True"/>
+                                
+                                <ui:Button Icon="ArrowLeft24" Click="BtnPrevPage_Click" Margin="0,0,4,0" Appearance="Transparent" IsHitTestVisible="True"/>
+                                <TextBlock x:Name="TxtPageInfo" Text="0 / 0" VerticalAlignment="Center" Width="80" TextAlignment="Center" FontWeight="Bold" Foreground="White"/>
+                                <ui:Button Icon="ArrowRight24" Click="BtnNextPage_Click" Margin="4,0,0,0" Appearance="Transparent" IsHitTestVisible="True"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </Grid>
+
+                <!-- Right: Controls -->
+                <StackPanel Grid.Column="1">
+                    <ui:Card Padding="20">
+                        <StackPanel>
+                            <ui:Button Content="{DynamicResource Common_Select}" Click="BtnBrowse_Click" Width="240" Appearance="Primary" Margin="0,0,0,16" HorizontalAlignment="Left" Height="40"/>
+                            
+                            <CheckBox x:Name="ChkApplyToAll" Content="{DynamicResource Crop_ApplyAll}" IsChecked="True" Margin="0,0,0,24" FontSize="14"/>
+                            
+                            <ui:Button Click="BtnCrop_Click" Background="#28a745" Foreground="White" BorderThickness="0" CornerRadius="8" Width="240" Height="60" HorizontalAlignment="Left">
+                                <StackPanel Orientation="Horizontal">
+                                    <ui:SymbolIcon Symbol="Crop24" Margin="0,0,12,0" Filled="True" FontSize="24"/>
+                                    <TextBlock Text="{DynamicResource Crop_Btn}" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"/>
+                                </StackPanel>
+                            </ui:Button>
+                        </StackPanel>
+                    </ui:Card>
+                    
+                    <ui:InfoBar Title="Tip" Message="{DynamicResource Dash_CropSub}" IsOpen="True" Severity="Informational" Margin="0,20,0,0"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Viewbox>
+</Page>

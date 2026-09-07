@@ -1,0 +1,288 @@
+Siteyi canlı olarak kontrol ettim.
+
+İlk izlenimim: Ürün iyi konumlandırılmış, ama SEO tarafı henüz yeterince agresif değil
+
+Docentra'nın ana mesajı net:
+
+Offline + Private + PDF/Document tools + Windows
+
+Bu güzel bir farklılaştırma.
+
+Sitede PDF birleştirme, bölme, OCR, Office dönüştürme, imzalama, metadata temizleme, watermark, sayfa numaralandırma vb. birçok araç sunuluyor.
+
+Ayrıca örneğin PDF Split için ayrı SEO sayfası oluşturulmuş:
+
+/tools/split-pdf.html
+
+Bu çok doğru bir yaklaşım.
+
+🔥 Ama asıl fırsat burada
+
+Senin ürünün aslında tek bir ürün değil.
+
+Google açısından:
+
+Docentra
+│
+├── PDF Editor
+├── PDF Merger
+├── PDF Splitter
+├── PDF OCR
+├── PDF Sign
+├── PDF Compressor
+├── Image to PDF
+├── PDF to Word
+├── Word to PDF
+├── Excel to PDF
+├── PDF Metadata Editor
+├── PDF Metadata Cleaner
+├── PDF Watermark
+├── PDF Crop
+├── PDF Page Numbering
+└── PDF Reader
+
+Her biri ayrı bir arama niyeti.
+
+Dolayısıyla sadece:
+
+"Docentra PDF Editor"
+
+kelimesine odaklanmak hata olur.
+
+🎯 Google'da hedefleyebileceğin kelimeler
+
+Örneğin:
+
+PDF
+pdf editor
+pdf editor windows
+free pdf editor
+offline pdf editor
+private pdf editor
+pdf editor without upload
+pdf editor no subscription
+PDF Merge
+merge pdf
+combine pdf files
+merge pdf offline
+merge pdf windows
+combine pdf without uploading
+PDF Split
+split pdf
+split pdf pages
+extract pages from pdf
+split pdf offline
+OCR
+pdf ocr
+ocr pdf
+convert scanned pdf to text
+offline ocr
+offline pdf ocr
+Metadata
+
+Burada çok güzel bir niş var:
+
+remove pdf metadata
+pdf metadata remover
+remove author from pdf
+remove metadata from pdf
+pdf privacy tool
+document metadata cleaner
+
+Docentra'nın metadata cleaner özelliği gerçekten farklılaştırıcı. Sitede Office belgelerindeki yazar, bilgisayar adı, düzenleme geçmişi ve zaman damgaları gibi bilgileri temizlediği belirtiliyor.
+
+🚨 Fakat sitede birkaç ciddi problem gördüm
+
+Bunlar bence hemen düzeltilmeli.
+
+1. Ana sayfada "0+" / "0%" gibi değerler var
+
+Şu anda canlı sayfada:
+
+0+
+Professional Tools
+
+0
+Languages Supported
+
+0%
+Local Processing
+
+0
+Cloud Uploads
+
+görünüyor.
+
+Bu profesyonel bir ürün sitesi için kötü görünüyor.
+
+Muhtemelen JavaScript sayaçlarının düzgün yüklenmemesi veya placeholder kalması.
+
+Bunları direkt:
+
+14+
+Professional Tools
+
+10
+Languages Supported
+
+100%
+Local Processing
+
+0
+Cloud Uploads
+
+gibi gerçek değerlerle göstermeni öneririm.
+
+🚨 2. Daha da önemlisi: Screenshot placeholder'ları
+
+Sayfada:
+
+"Your genuine offline dashboard screenshot will load here."
+
+ve
+
+"Please place dashboard.png in assets/screenshots/"
+
+ifadeleri gerçekten HTML içeriğinde görünüyor.
+
+Bu kesinlikle production sitesinde kalmamalı.
+
+Google açısından da kullanıcı deneyimi açısından da kötü.
+
+Gerçek screenshot koy:
+
+Docentra Dashboard
+
+ve
+
+Docentra PDF Reader
+🚨 3. "Free" ile "₺2250" arasındaki funnel daha iyi olabilir
+
+Site:
+
+Download for Windows
+Free Trial Included
+
+diyor.
+
+Sonra:
+
+Lifetime Professional ₺2250
+
+sunuyor.
+
+Bu aslında çok güzel bir satış modeli.
+
+Ama landing page'de şöyle bir funnel yapardım:
+
+                    DOCENTRA
+                       ↓
+              FREE DOWNLOAD
+                       ↓
+               Kullanıcı indirir
+                       ↓
+                Ürünü kullanır
+                       ↓
+          ┌────────────┴───────────┐
+          │                        │
+       Ücretsiz                 Pro
+          │                        │
+          └────────────┬───────────┘
+                       ↓
+              ₺2250 Lifetime
+
+Ve özellikle:
+
+"Why pay?"
+
+sayfası oluştururdum.
+
+💰 Bence en güçlü SEO stratejisi burada
+
+AlyaGames'te:
+
+oyun → oyun sayfaları
+
+yapıyorduk.
+
+Docentra'da:
+
+problem → çözüm sayfaları
+
+yapmalıyız.
+
+Örneğin:
+
+/tools/merge-pdf
+/tools/split-pdf
+/tools/pdf-ocr
+/tools/pdf-sign
+/tools/pdf-metadata-cleaner
+/tools/pdf-watermark
+/tools/pdf-crop
+
+Ama bunun yanında:
+
+/solutions/remove-pdf-metadata
+/solutions/edit-pdf-offline
+/solutions/convert-pdf-to-word
+/solutions/merge-pdf-offline
+/solutions/ocr-scanned-pdf
+
+oluşturabiliriz.
+
+🔥 Daha da ileri götürelim
+
+Blog da açardım:
+
+/blog/how-to-edit-pdf-offline/
+/blog/how-to-remove-pdf-metadata/
+/blog/how-to-merge-pdf-files/
+/blog/how-to-convert-word-to-pdf/
+/blog/how-to-ocr-scanned-pdf/
+/blog/how-to-sign-pdf/
+/blog/best-pdf-editor-for-windows/
+
+Ama AI ile 10.000 tane boş makale üretmezdim.
+
+Her yazı gerçekten problemi çözmeli.
+Sitenin kendisi zaten 10 dil desteğinden bahsediyor.
+
+Ben olsam ilk etapta:
+
+English
+Türkçe
+German
+Spanish
+French
+Portuguese
+
+üzerinden giderdim.
+
+Örneğin:
+
+/en/pdf-editor/
+/en/pdf-merger/
+/en/pdf-splitter/
+/en/pdf-ocr/
+/en/remove-pdf-metadata/
+
+Bunun getirisi Türkiye'ye göre çok daha büyük olabilir.
+
+⚠️ Fakat burada önemli bir SEO kuralı var
+
+Türkçe sayfayı Google Translate ile 10 dile kopyalayıp yayınlamak yeterli değil.
+
+Her dil:
+
+title
+description
+H1
+açıklamalar
+FAQ
+internal links
+structured data
+
+açısından düzgün lokalize edilmeli.
+
+Ve hreflang kullanılmalı.

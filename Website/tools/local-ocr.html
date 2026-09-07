@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="ocr-title-seo">Local PDF OCR Tool | Scanned Document to Searchable PDF (Offline) | DOCENTRA</title>
+    <meta name="description" content="Convert scanned PDF documents into searchable and editable text 100% offline. High-accuracy local Windows OCR engine with zero cloud uploads and total privacy." data-i18n="ocr-meta-desc">
+    <meta name="keywords" content="pdf ocr, local ocr, convert scanned pdf to text, offline ocr windows, private ocr, searchable pdf, docentra ocr">
+    <link rel="canonical" href="https://docentrapdf.com/tools/local-ocr.html" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://docentrapdf.com/tools/local-ocr.html">
+    <meta property="og:title" content="Local PDF OCR Tool | Scanned Document to Searchable PDF (Offline)">
+    <meta property="og:description" content="Convert scanned PDF documents into searchable and editable text 100% offline. Zero cloud uploads.">
+    <meta property="og:image" content="https://docentrapdf.com/assets/screenshots/ocr_screen.png">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Docentra Local PDF OCR Tool",
+          "operatingSystem": "Windows 10, Windows 11",
+          "applicationCategory": "BusinessApplication, PDFSoftware",
+          "description": "Convert scanned PDF documents into searchable and editable text 100% offline using native Windows OCR technology.",
+          "offers": {
+            "@type": "Offer",
+            "price": "2250",
+            "priceCurrency": "TRY"
+          }
+        },
+        {
+          "@type": "HowTo",
+          "name": "How to OCR Scanned PDFs Offline on Windows",
+          "description": "Step-by-step guide to recognizing and converting scanned PDF documents to searchable text without internet.",
+          "step": [
+            {
+              "@type": "HowToStep",
+              "name": "Launch Docentra",
+              "text": "Open Docentra PDF Suite on your Windows PC."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Select Local OCR",
+              "text": "Choose the 'Local OCR' module from the tools dashboard."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Load Scanned PDF",
+              "text": "Drag and drop your scanned document or image file."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Execute & Save",
+              "text": "Click 'Run OCR' to generate a searchable, editable PDF document instantly."
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header id="header">
+        <nav class="container">
+            <div class="logo"><a href="../index.html" style="text-decoration: none; color: inherit;">DOCENTRA</a></div>
+            <ul class="nav-links">
+                <li><a href="../index.html#features" data-i18n="nav-features">Features</a></li>
+                <li><a href="../online-vs-offline.html" data-i18n="nav-compare">Why Offline?</a></li>
+                <li><a href="../blog/index.html" data-i18n="nav-blog">Blog</a></li>
+                <li><a href="../index.html#pricing" data-i18n="nav-pricing">Pricing</a></li>
+                <li><a href="../index.html#faq" data-i18n="nav-faq">FAQ</a></li>
+                <li><a href="../index.html#download-cta" class="btn btn-secondary" data-i18n="btn-download">Download</a></li>
+            </ul>
+            <div class="nav-right">
+                <select id="lang-selector" class="lang-select">
+                    <option value="en">English</option>
+                    <option value="tr">Türkçe</option>
+                    <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
+                    <option value="es">Español</option>
+                    <option value="it">Italiano</option>
+                    <option value="zh">简体中文</option>
+                    <option value="ja">日本語</option>
+                    <option value="ru">Русский</option>
+                    <option value="ar">العربية</option>
+                </select>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container" style="padding: 100px 20px; position: relative;">
+        <!-- Canvas for particle background -->
+        <canvas id="particle-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; opacity: 0.3;"></canvas>
+
+        <span class="badge" data-i18n="tool-badge" style="margin-bottom: 20px; display: inline-block;">Secure Local Tool</span>
+        <h1 style="font-size: 3rem; margin-bottom: 20px;" data-i18n="feat-ocr-title">Local OCR (Offline Recognition)</h1>
+        <p style="font-size: 1.2rem; margin-bottom: 40px; opacity: 0.8; max-width: 800px; line-height: 1.6;" data-i18n="feat-ocr-desc">Turn scanned documents, receipts, and image-based PDFs into editable, searchable text using high-accuracy local recognition — 100% offline with zero cloud uploads.</p>
+        
+        <section class="feature-card reveal" style="padding: 40px; margin-bottom: 60px; background: rgba(255,255,255,0.02); border-left: 4px solid var(--primary-color); border-radius: 12px; backdrop-filter: blur(10px);">
+            <h2 style="margin-bottom: 20px;">Why Choose Offline Local OCR?</h2>
+            <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <li style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: 8px;">
+                    🔒 <strong data-i18n="tool-li1-title" style="display: block; margin: 10px 0 5px 0;">Total Privacy</strong>
+                    <span data-i18n="tool-li1-desc" style="font-size: 0.95rem; opacity: 0.8;">100% processed locally on your PC. Sensitive medical records, contracts, and IDs never touch the cloud.</span>
+                </li>
+                <li style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: 8px;">
+                    ⚡ <strong data-i18n="tool-li2-title" style="display: block; margin: 10px 0 5px 0;">Maximum Speed</strong>
+                    <span data-i18n="tool-li2-desc" style="font-size: 0.95rem; opacity: 0.8;">Runs instantly using your device's native OCR hardware acceleration. No upload wait times.</span>
+                </li>
+                <li style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: 8px;">
+                    📦 <strong data-i18n="tool-li3-title" style="display: block; margin: 10px 0 5px 0;">No Restrictions</strong>
+                    <span data-i18n="tool-li3-desc" style="font-size: 0.95rem; opacity: 0.8;">OCR hundreds of pages without page caps, recurring fees, or internet connection requirements.</span>
+                </li>
+            </ul>
+            <div style="margin-top: 30px;">
+                <a href="../index.html#download-cta" class="btn btn-primary" data-i18n="tool-btn-cta">Download Docentra Free Trial</a>
+            </div>
+        </section>
+
+        <!-- ===================== INTERFACE PREVIEW ===================== -->
+        <section class="reveal" style="margin-bottom: 60px;">
+            <h2 style="font-size: 1.8rem; margin-bottom: 20px; color: #fff; font-weight: 700; display: flex; align-items: center; gap: 10px;">
+                🖥️ <span>Local OCR Interface Preview</span>
+            </h2>
+            <div class="desktop-mockup-frame" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; overflow: hidden; backdrop-filter: blur(10px); box-shadow: 0 30px 60px rgba(0,0,0,0.4); max-width: 800px;">
+                <div class="mockup-header" style="background: rgba(0,0,0,0.3); padding: 12px 18px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                    <div class="mockup-dots" style="display: flex; gap: 8px;">
+                        <span class="dot" style="width: 12px; height: 12px; border-radius: 50%; display: inline-block; background: #ff5f56;"></span>
+                        <span class="dot" style="width: 12px; height: 12px; border-radius: 50%; display: inline-block; background: #ffbd2e;"></span>
+                        <span class="dot" style="width: 12px; height: 12px; border-radius: 50%; display: inline-block; background: #27c93f;"></span>
+                    </div>
+                    <div style="font-size: 0.82rem; font-weight: 600; opacity: 0.6; letter-spacing: 1px; text-transform: uppercase;">Docentra local OCR module</div>
+                </div>
+                <div class="mockup-body" style="position: relative; aspect-ratio: 16/10; overflow: hidden; background: rgba(0,0,0,0.4);">
+                    <img src="../assets/screenshots/ocr_screen.png" alt="Docentra Local OCR Screen" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; document.getElementById('ocr-placeholder').style.display='flex';">
+                    <div id="ocr-placeholder" class="mockup-placeholder" style="display: none; width: 100%; height: 100%; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px; color: #fff;">
+                        <div style="font-size: 3.5rem; margin-bottom: 15px;">🔍</div>
+                        <h3 style="font-size: 1.4rem; font-weight: 700; color: var(--primary-color); margin-bottom: 8px;">Offline OCR Workspace</h3>
+                        <p style="font-size: 0.95rem; opacity: 0.7; max-width: 340px; line-height: 1.5;">High-speed local OCR engine for Windows.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== HOW IT WORKS ===================== -->
+        <section class="reveal" style="margin-bottom: 60px;">
+            <h2 data-i18n="tool-how-title" style="margin-bottom: 20px;">How it works:</h2>
+            <ol style="line-height: 2; margin-left: 20px; font-size: 1.1rem; opacity: 0.9;">
+                <li data-i18n="tool-step1">Launch Docentra PDF Suite on your Windows PC.</li>
+                <li data-i18n="tool-step2">Select the 'Local OCR' module from the tools dashboard.</li>
+                <li data-i18n="tool-step3">Drag and drop the scanned document or image file you wish to recognize.</li>
+                <li data-i18n="tool-step4">Click 'Run OCR' and save your searchable, selectable PDF document instantly.</li>
+            </ol>
+        </section>
+
+        <!-- ===================== RELATED TOOLS ===================== -->
+        <section class="reveal" style="margin-bottom: 40px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05);">
+            <h3 style="font-size: 1.4rem; margin-bottom: 20px; color: var(--primary-color);">Explore Related Offline PDF Tools</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px;">
+                <a href="merge-pdf.html" style="text-decoration: none; color: inherit; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); display: block; transition: all 0.3s ease;">
+                    <strong>🔗 Merge PDF</strong>
+                    <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 5px;">Combine multiple PDFs offline.</p>
+                </a>
+                <a href="metadata-cleaner.html" style="text-decoration: none; color: inherit; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); display: block; transition: all 0.3s ease;">
+                    <strong>🧼 Metadata Cleaner</strong>
+                    <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 5px;">Scrub author & revision data.</p>
+                </a>
+                <a href="office-converter.html" style="text-decoration: none; color: inherit; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); display: block; transition: all 0.3s ease;">
+                    <strong>🔄 Office Converter</strong>
+                    <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 5px;">Convert Word/Excel to PDF.</p>
+                </a>
+                <a href="pdf-viewer.html" style="text-decoration: none; color: inherit; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); display: block; transition: all 0.3s ease;">
+                    <strong>📑 Multi-Tab Viewer</strong>
+                    <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 5px;">Fast offline tabbed reader.</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer style="text-align: center; padding: 40px; margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.05);">
+        <p data-i18n="footer-rights">&copy; 2026 Docentra AI Team. All rights reserved.</p>
+        <p style="margin-top: 10px; font-size: 0.9rem;"><a href="../open-source-notices.html" data-i18n="footer-os-notices" style="color: var(--primary-color); text-decoration: none;">Open Source Notices</a> · <a href="../index.html" style="color: #fff; text-decoration: none;">Home</a> · <a href="../blog/index.html" style="color: #fff; text-decoration: none;">Blog</a></p>
+    </footer>
+
+    <!-- Particles script + dynamic language integration -->
+    <script>
+        window.addEventListener('load', () => {
+            const canvas = document.getElementById('particle-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let width = canvas.width = canvas.offsetWidth;
+            let height = canvas.height = canvas.offsetHeight;
+            const particles = [];
+            for (let i = 0; i < 40; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    r: Math.random() * 2 + 0.5,
+                    vx: (Math.random() - 0.5) * 0.3,
+                    vy: (Math.random() - 0.5) * 0.3
+                });
+            }
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+                ctx.fillStyle = 'rgba(212, 175, 55, 0.4)';
+                particles.forEach(p => {
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fill();
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    if (p.x < 0 || p.x > width) p.vx *= -1;
+                    if (p.y < 0 || p.y > height) p.vy *= -1;
+                });
+                requestAnimationFrame(animate);
+            }
+            animate();
+            window.addEventListener('resize', () => {
+                width = canvas.width = canvas.offsetWidth;
+                height = canvas.height = canvas.offsetHeight;
+            });
+        });
+    </script>
+    <script src="../script.js?v=2"></script>
+</body>
+</html>

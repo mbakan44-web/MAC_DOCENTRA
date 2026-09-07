@@ -1,0 +1,214 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="700"
+             x:Class="Docentra_Mac.Views.Pages.PdfViewerPage">
+
+    <Grid RowDefinitions="Auto, Auto, *">
+
+        <!-- Header -->
+        <StackPanel Grid.Row="0" Margin="20,20,20,0">
+            <TextBlock Text="{DynamicResource PdfViewer_Title}" FontSize="28" FontWeight="Black"
+                       Foreground="{DynamicResource PremiumAccentBrush}"/>
+            <TextBlock Text="{DynamicResource PdfViewer_Desc}" FontSize="14" Opacity="0.6"/>
+        </StackPanel>
+
+        <!-- Toolbar -->
+        <Border Grid.Row="1" Background="{DynamicResource ToolCardBackground}"
+                BorderBrush="#20FFFFFF" BorderThickness="1"
+                CornerRadius="14" Margin="20,15,20,0" Padding="15,10">
+            <Grid ColumnDefinitions="Auto, *, Auto">
+
+                <!-- Left: File + zoom + page controls -->
+                <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="10">
+                    <Button x:Name="BtnOpen" Click="Open_Click"
+                            Background="{DynamicResource PremiumAccentBrush}" Foreground="Black"
+                            FontWeight="Bold" CornerRadius="10" Padding="15,8">
+                        <StackPanel Orientation="Horizontal" Spacing="8">
+                            <PathIcon Data="{StaticResource FolderOpenRegular}" Width="16" Height="16"/>
+                            <TextBlock Text="{DynamicResource PdfViewer_Open}" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Border Background="#20FFFFFF" Width="1" Margin="5,0"/>
+
+                    <Button x:Name="BtnZoomOut" Click="ZoomOut_Click" Background="#15FFFFFF"
+                            CornerRadius="8" Padding="10,8" ToolTip.Tip="Zoom Out">
+                        <PathIcon Data="{StaticResource ZoomOutRegular}" Width="16" Height="16"/>
+                    </Button>
+
+                    <Border Background="#10FFFFFF" CornerRadius="8" Padding="12,6" VerticalAlignment="Center">
+                        <TextBlock x:Name="TxtZoom" Text="100%" FontWeight="Bold" FontSize="13"
+                                   VerticalAlignment="Center" MinWidth="45" TextAlignment="Center"/>
+                    </Border>
+
+                    <Button x:Name="BtnZoomIn" Click="ZoomIn_Click" Background="#15FFFFFF"
+                            CornerRadius="8" Padding="10,8" ToolTip.Tip="Zoom In">
+                        <PathIcon Data="{StaticResource ZoomInRegular}" Width="16" Height="16"/>
+                    </Button>
+
+                    <Border Background="#20FFFFFF" Width="1" Margin="5,0"/>
+
+                    <Button x:Name="BtnPrev" Click="PrevPage_Click" Background="#15FFFFFF"
+                            CornerRadius="8" Padding="10,8" ToolTip.Tip="Previous Page">
+                        <PathIcon Data="{StaticResource ChevronLeftRegular}" Width="16" Height="16"/>
+                    </Button>
+
+                    <Border Background="#10FFFFFF" CornerRadius="8" Padding="12,6" VerticalAlignment="Center">
+                        <TextBlock x:Name="TxtPage" Text="— / —" FontWeight="Bold" FontSize="13"
+                                   VerticalAlignment="Center" MinWidth="60" TextAlignment="Center"/>
+                    </Border>
+
+                    <Button x:Name="BtnNext" Click="NextPage_Click" Background="#15FFFFFF"
+                            CornerRadius="8" Padding="10,8" ToolTip.Tip="Next Page">
+                        <PathIcon Data="{StaticResource ChevronRightRegular}" Width="16" Height="16"/>
+                    </Button>
+                </StackPanel>
+
+                <!-- Center: File name -->
+                <Border Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                        Background="#08FFFFFF" CornerRadius="8" Padding="12,5" MaxWidth="350">
+                    <TextBlock x:Name="TxtFileName" Text="{DynamicResource PdfViewer_NoFile}"
+                               Opacity="0.6" FontSize="13" TextTrimming="CharacterEllipsis"
+                               VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Border>
+
+                <!-- Right: Open External -->
+                <Button Grid.Column="2" x:Name="BtnExternal" Click="OpenExternal_Click"
+                        Background="#15FFFFFF" CornerRadius="8" Padding="12,8"
+                        ToolTip.Tip="Open in System PDF Viewer">
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <PathIcon Data="{StaticResource ExternalLinkRegular}" Width="16" Height="16"/>
+                        <TextBlock Text="{DynamicResource PdfViewer_OpenExternal}"
+                                   FontSize="12" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </Grid>
+        </Border>
+
+        <!-- Viewer Area -->
+        <Border Grid.Row="2" Margin="20,10,20,20" CornerRadius="14"
+                ClipToBounds="True" BorderBrush="#20FFFFFF" BorderThickness="1"
+                Background="{DynamicResource ToolCardBackground}">
+            <Grid>
+                <!-- Empty State -->
+                <StackPanel x:Name="EmptyState" VerticalAlignment="Center"
+                            HorizontalAlignment="Center" Spacing="20" IsVisible="True">
+                    <PathIcon Data="{StaticResource DocumentPdfRegular}" Width="80" Height="80"
+                              Opacity="0.12" HorizontalAlignment="Center"/>
+                    <StackPanel Spacing="8" HorizontalAlignment="Center">
+                        <TextBlock Text="{DynamicResource PdfViewer_EmptyTitle}"
+                                   FontSize="22" FontWeight="Bold" TextAlignment="Center"/>
+                        <TextBlock Text="{DynamicResource PdfViewer_EmptyDesc}"
+                                   FontSize="14" Opacity="0.5" TextAlignment="Center"
+                                   MaxWidth="380" TextWrapping="Wrap"/>
+                    </StackPanel>
+                    <Button Content="{DynamicResource PdfViewer_Open}" Click="Open_Click"
+                            Background="{DynamicResource PremiumAccentBrush}" Foreground="Black"
+                            FontWeight="Bold" HorizontalAlignment="Center"
+                            Padding="30,12" CornerRadius="12"/>
+                </StackPanel>
+
+                <!-- Loading Indicator -->
+                <StackPanel x:Name="LoadingPanel" VerticalAlignment="Center"
+                            HorizontalAlignment="Center" Spacing="15" IsVisible="False">
+                    <TextBlock Text="Loading PDF..." FontSize="16" Opacity="0.6"
+                               TextAlignment="Center"/>
+                </StackPanel>
+
+                <!-- PDF Page Display -->
+                <ScrollViewer x:Name="PageScrollViewer" IsVisible="False"
+                              HorizontalScrollBarVisibility="Auto"
+                              VerticalScrollBarVisibility="Auto">
+                    <StackPanel HorizontalAlignment="Center" Margin="20">
+                        <!-- Info Banner -->
+                        <Border Background="#10FFFFFF" CornerRadius="10" Padding="15,10" Margin="0,0,0,15">
+                            <StackPanel Orientation="Horizontal" Spacing="10">
+                                <PathIcon Data="{StaticResource InfoRegular}" Width="16" Height="16" Opacity="0.5"/>
+                                <TextBlock x:Name="TxtInfo"
+                                           FontSize="13" Opacity="0.7" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Page Metadata Card -->
+                        <Border Background="{DynamicResource CardBackgroundBrush}" CornerRadius="14"
+                                Padding="25" MaxWidth="700" HorizontalAlignment="Center">
+                            <StackPanel Spacing="15">
+                                <Grid ColumnDefinitions="Auto, *">
+                                    <PathIcon Data="{StaticResource DocumentPdfRegular}" Width="48" Height="48"
+                                              Foreground="#E11D48" Margin="0,0,20,0" VerticalAlignment="Top"/>
+                                    <StackPanel Grid.Column="1" Spacing="10">
+                                        <TextBlock x:Name="TxtDocTitle"
+                                                   FontSize="20" FontWeight="Bold" TextWrapping="Wrap"/>
+                                        <WrapPanel Orientation="Horizontal">
+                                            <Border Background="#10FFFFFF" CornerRadius="6"
+                                                    Padding="10,4" Margin="0,0,8,8">
+                                                <StackPanel Orientation="Horizontal" Spacing="6">
+                                                    <PathIcon Data="{StaticResource PageRegular}" Width="12" Height="12" Opacity="0.6"/>
+                                                    <TextBlock x:Name="TxtPageCount" FontSize="12" Opacity="0.8"/>
+                                                </StackPanel>
+                                            </Border>
+                                            <Border Background="#10FFFFFF" CornerRadius="6"
+                                                    Padding="10,4" Margin="0,0,8,8">
+                                                <StackPanel Orientation="Horizontal" Spacing="6">
+                                                    <PathIcon Data="{StaticResource SizeRegular}" Width="12" Height="12" Opacity="0.6"/>
+                                                    <TextBlock x:Name="TxtPageSize" FontSize="12" Opacity="0.8"/>
+                                                </StackPanel>
+                                            </Border>
+                                            <Border Background="#10FFFFFF" CornerRadius="6"
+                                                    Padding="10,4" Margin="0,0,8,8">
+                                                <StackPanel Orientation="Horizontal" Spacing="6">
+                                                    <PathIcon Data="{StaticResource FileRegular}" Width="12" Height="12" Opacity="0.6"/>
+                                                    <TextBlock x:Name="TxtFileSize" FontSize="12" Opacity="0.8"/>
+                                                </StackPanel>
+                                            </Border>
+                                        </WrapPanel>
+                                    </StackPanel>
+                                </Grid>
+
+                                <Border Background="#08FFFFFF" CornerRadius="8" Height="1"/>
+
+                                <!-- Page navigation center -->
+                                <StackPanel Spacing="12" HorizontalAlignment="Center">
+                                    <TextBlock Text="{DynamicResource PdfViewer_NativeNote}"
+                                               FontSize="13" Opacity="0.5" TextAlignment="Center"
+                                               TextWrapping="Wrap" MaxWidth="500"/>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="12">
+                                        <Button Content="{DynamicResource PdfViewer_Open}"
+                                                Click="Open_Click"
+                                                Background="{DynamicResource PremiumAccentBrush}"
+                                                Foreground="Black" FontWeight="Bold"
+                                                Padding="20,10" CornerRadius="10"/>
+                                        <Button Click="OpenExternal_Click"
+                                                Background="#20FFFFFF" CornerRadius="10" Padding="20,10">
+                                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                                <PathIcon Data="{StaticResource ExternalLinkRegular}" Width="14" Height="14"/>
+                                                <TextBlock Text="{DynamicResource PdfViewer_OpenExternal}"
+                                                           VerticalAlignment="Center"/>
+                                            </StackPanel>
+                                        </Button>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+    </Grid>
+
+    <UserControl.Resources>
+        <StreamGeometry x:Key="FolderOpenRegular">M22 19C22 20.1 21.1 21 20 21H4C2.9 21 2 20.1 2 19V5C2 3.9 2.9 3 4 3H9L11 5H20C21.1 5 22 5.9 22 7V19ZM4 19H20V9H4V19Z</StreamGeometry>
+        <StreamGeometry x:Key="ZoomInRegular">M15.5 14H14.71L14.43 13.73C15.41 12.59 16 11.11 16 9.5C16 5.91 13.09 3 9.5 3C5.91 3 3 5.91 3 9.5C3 13.09 5.91 16 9.5 16C11.11 16 12.59 15.41 13.73 14.43L14 14.71V15.5L19 20.49L20.49 19L15.5 14ZM9.5 14C7.01 14 5 11.99 5 9.5C5 7.01 7.01 5 9.5 5C11.99 5 14 7.01 14 9.5C14 11.99 11.99 14 9.5 14ZM10.5 8.5H13V10.5H10.5V13H8.5V10.5H6V8.5H8.5V6H10.5V8.5Z</StreamGeometry>
+        <StreamGeometry x:Key="ZoomOutRegular">M15.5 14H14.71L14.43 13.73C15.41 12.59 16 11.11 16 9.5C16 5.91 13.09 3 9.5 3C5.91 3 3 5.91 3 9.5C3 13.09 5.91 16 9.5 16C11.11 16 12.59 15.41 13.73 14.43L14 14.71V15.5L19 20.49L20.49 19L15.5 14ZM9.5 14C7.01 14 5 11.99 5 9.5C5 7.01 7.01 5 9.5 5C11.99 5 14 7.01 14 9.5C14 11.99 11.99 14 9.5 14ZM6 8.5H13V10.5H6V8.5Z</StreamGeometry>
+        <StreamGeometry x:Key="ChevronLeftRegular">M15.41 7.41L14 6L8 12L14 18L15.41 16.59L10.83 12L15.41 7.41Z</StreamGeometry>
+        <StreamGeometry x:Key="ChevronRightRegular">M10 6L8.59 7.41L13.17 12L8.59 16.59L10 18L16 12L10 6Z</StreamGeometry>
+        <StreamGeometry x:Key="ExternalLinkRegular">M19 19H5V5H12V3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V12H19V19ZM14 3V5H17.59L7.76 14.83L9.17 16.24L19 6.41V10H21V3H14Z</StreamGeometry>
+        <StreamGeometry x:Key="DocumentPdfRegular">M20 2H8C6.9 2 6 2.9 6 4V16C6 17.1 6.9 18 8 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM11.5 9.5C11.5 10.33 10.83 11 10 11H9V13H7.5V7H10C10.83 7 11.5 7.67 11.5 8.5V9.5ZM4 6H2V20C2 21.1 2.9 22 4 22H18V20H4V6ZM9 9.5H10V8.5H9V9.5Z</StreamGeometry>
+        <StreamGeometry x:Key="InfoRegular">M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V11H13V17ZM13 9H11V7H13V9Z</StreamGeometry>
+        <StreamGeometry x:Key="PageRegular">M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2ZM16 18H8V16H16V18ZM16 14H8V12H16V14ZM13 9V3.5L18.5 9H13Z</StreamGeometry>
+        <StreamGeometry x:Key="SizeRegular">M21 11V3H13L16.29 6.29L6.29 16.29L3 13V21H11L7.71 17.71L17.71 7.71L21 11Z</StreamGeometry>
+        <StreamGeometry x:Key="FileRegular">M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2ZM13 9V3.5L18.5 9H13Z</StreamGeometry>
+    </UserControl.Resources>
+</UserControl>

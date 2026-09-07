@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="os-title-seo">Open Source Notices | DOCENTRA</title>
+    <meta name="description" content="Open source software licenses and notices for libraries used by Docentra PDF Suite on Windows and macOS." data-i18n="os-meta-desc">
+    <link rel="stylesheet" href="style.css">
+    <link rel="canonical" href="https://docentrapdf.com/open-source-notices.html" />
+    <style>
+        .os-summary-card {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.04), rgba(255, 255, 255, 0.02));
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 3rem;
+            margin-bottom: 4rem;
+            backdrop-filter: blur(10px);
+            border-left: 4px solid var(--primary-color);
+        }
+        .os-summary-card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        .os-summary-card p {
+            font-size: 1.1rem;
+            color: var(--text-dim);
+            line-height: 1.7;
+        }
+        .lib-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 6rem;
+        }
+        .lib-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+        .lib-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        .lib-title-link {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .lib-title-link:hover {
+            color: var(--primary-color);
+        }
+        .lib-badge {
+            display: inline-block;
+            padding: 0.2rem 0.8rem;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--primary-color);
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .lib-desc {
+            font-size: 0.95rem;
+            color: var(--text-dim);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        .lib-footer-link {
+            font-size: 0.85rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+        .lib-footer-link:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Particle Canvas Background -->
+    <canvas id="particle-canvas"></canvas>
+
+    <header id="header">
+        <nav class="container">
+            <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">DOCENTRA</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html#features" data-i18n="nav-features">Features</a></li>
+                <li><a href="online-vs-offline.html" data-i18n="nav-compare">Why Offline?</a></li>
+                <li><a href="blog/index.html" data-i18n="nav-blog">Blog</a></li>
+                <li><a href="index.html#pricing" data-i18n="nav-pricing">Pricing</a></li>
+                <li><a href="index.html#faq" data-i18n="nav-faq">FAQ</a></li>
+                <li><a href="index.html#download-cta" class="btn btn-secondary" data-i18n="btn-download">Download</a></li>
+            </ul>
+            <div class="nav-right">
+                <select id="lang-selector" class="lang-select">
+                    <option value="en">English</option>
+                    <option value="tr">Türkçe</option>
+                    <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
+                    <option value="es">Español</option>
+                    <option value="it">Italiano</option>
+                    <option value="zh">简体中文</option>
+                    <option value="ja">日本語</option>
+                    <option value="ru">Русский</option>
+                    <option value="ar">العربية</option>
+                </select>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container" style="padding: 160px 20px 60px;">
+        <section class="section-header reveal">
+            <span class="badge" data-i18n="os-badge">FOSS Appreciation</span>
+            <h1 data-i18n="os-h1">Open Source <span>Notices</span></h1>
+            <p data-i18n="os-subtitle">Docentra includes software distributed under open source licenses. We are deeply grateful to the authors and maintainers of these amazing projects.</p>
+        </section>
+
+        <!-- License Summary -->
+        <div class="os-summary-card reveal">
+            <h2 data-i18n="os-summary-title">License Summary</h2>
+            <p data-i18n="os-summary-text">Most bundled application dependencies are distributed under permissive open-source licenses such as MIT, Apache-2.0, or the SIL Open Font License.</p>
+        </div>
+
+        <h2 data-i18n="os-libraries-title" style="margin-bottom: 2rem; font-size: 2rem;" class="reveal">Libraries & Components</h2>
+
+        <!-- Library List Grid -->
+        <div class="lib-grid reveal">
+            <!-- PDFsharp -->
+            <div class="feature-card lib-card">
+                <div>
+                    <div class="lib-header">
+                        <a href="https://www.pdfsharp.com/" target="_blank" class="lib-title-link">PDFsharp</a>
+                        <span class="lib-badge">MIT / PDFsharp</span>
+                    </div>
+                    <p class="lib-desc" data-i18n="os-lib-pdfsharp-desc">High-performance .NET library for creating and modifying PDF files locally. Licensed under the MIT License.</p>
+                </div>
+                <a href="https://www.pdfsharp.com/" target="_blank" class="lib-footer-link">Visit Project homepage &rarr;</a>
+            </div>
+
+            <!-- WPF-UI -->
+            <div class="feature-card lib-card">
+                <div>
+                    <div class="lib-header">
+                        <a href="https://wpfui.lepo.co/" target="_blank" class="lib-title-link">WPF-UI</a>
+                        <span class="lib-badge">MIT</span>
+                    </div>
+                    <p class="lib-desc" data-i18n="os-lib-wpfui-desc">Modern Windows Presentation Foundation UI control library. Licensed under the MIT License.</p>
+                </div>
+                <a href="https://wpfui.lepo.co/" target="_blank" class="lib-footer-link">Visit Project homepage &rarr;</a>
+            </div>
+
+            <!-- Avalonia UI -->
+            <div class="feature-card lib-card">
+                <div>
+                    <div class="lib-header">
+                        <a href="https://avaloniaui.net/" target="_blank" class="lib-title-link">Avalonia UI</a>
+                        <span class="lib-badge">MIT</span>
+                    </div>
+                    <p class="lib-desc" data-i18n="os-lib-avalonia-desc">Cross-platform XAML GUI framework used for our macOS port. Licensed under the MIT License.</p>
+                </div>
+                <a href="https://avaloniaui.net/" target="_blank" class="lib-footer-link">Visit Project homepage &rarr;</a>
+            </div>
+
+            <!-- PdfiumViewer -->
+            <div class="feature-card lib-card">
+                <div>
+                    <div class="lib-header">
+                        <a href="https://github.com/peters/PdfiumViewer" target="_blank" class="lib-title-link">PdfiumViewer</a>
+                        <span class="lib-badge">Apache-2.0</span>
+                    </div>
+                    <p class="lib-desc" data-i18n="os-lib-pdfium-desc">High-performance PDF viewing control based on the Chromium Pdfium engine. Licensed under the Apache-2.0 License.</p>
+                </div>
+                <a href="https://github.com/peters/PdfiumViewer" target="_blank" class="lib-footer-link">Visit Project homepage &rarr;</a>
+            </div>
+
+            <!-- Newtonsoft.Json -->
+            <div class="feature-card lib-card">
+                <div>
+                    <div class="lib-header">
+                        <a href="https://www.newtonsoft.com/json" target="_blank" class="lib-title-link">Newtonsoft.Json</a>
+                        <span class="lib-badge">MIT</span>
+                    </div>
+                    <p class="lib-desc" data-i18n="os-lib-newtonsoft-desc">High-performance JSON serialization and parsing library for .NET. Licensed under the MIT License.</p>
+                </div>
+                <a href="https://www.newtonsoft.com/json" target="_blank" class="lib-footer-link">Visit Project homepage &rarr;</a>
+            </div>
+
+            <!-- Obfuscar -->
+            <div class="feature-card lib-card">
+                <div>
+                    <div class="lib-header">
+                        <a href="https://github.com/obfuscar/obfuscar" target="_blank" class="lib-title-link">Obfuscar</a>
+                        <span class="lib-badge">MIT</span>
+                    </div>
+                    <p class="lib-desc" data-i18n="os-lib-obfuscar-desc">MSIL obfuscation tool used to protect application binaries locally. Licensed under the MIT License.</p>
+                </div>
+                <a href="https://github.com/obfuscar/obfuscar" target="_blank" class="lib-footer-link">Visit Project homepage &rarr;</a>
+            </div>
+
+            <!-- Microsoft WebView2 -->
+            <div class="feature-card lib-card">
+                <div>
+                    <div class="lib-header">
+                        <a href="https://developer.microsoft.com/en-us/microsoft-edge/webview2/" target="_blank" class="lib-title-link">WebView2</a>
+                        <span class="lib-badge">Proprietary</span>
+                    </div>
+                    <p class="lib-desc" data-i18n="os-lib-webview2-desc">Chromium-based embedded browser control for loading local resources. Licensed under the Microsoft Software License.</p>
+                </div>
+                <a href="https://developer.microsoft.com/en-us/microsoft-edge/webview2/" target="_blank" class="lib-footer-link">Visit Project homepage &rarr;</a>
+            </div>
+
+            <!-- Outfit Font -->
+            <div class="feature-card lib-card">
+                <div>
+                    <div class="lib-header">
+                        <a href="https://fonts.google.com/specimen/Outfit" target="_blank" class="lib-title-link">Outfit Font</a>
+                        <span class="lib-badge">OFL 1.1</span>
+                    </div>
+                    <p class="lib-desc" data-i18n="os-lib-outfit-desc">Sleek, modern geometric sans-serif typeface from Google Fonts. Licensed under the SIL Open Font License 1.1.</p>
+                </div>
+                <a href="https://fonts.google.com/specimen/Outfit" target="_blank" class="lib-footer-link">Visit Project homepage &rarr;</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <div class="logo">DOCENTRA</div>
+                    <p data-i18n="footer-desc">Empowering professionals with secure, offline document tools. Your data stays yours.</p>
+                </div>
+                <div class="footer-links">
+                    <h4 data-i18n="footer-product">Product</h4>
+                    <ul>
+                        <li><a href="index.html#features" data-i18n="nav-features">Features</a></li>
+                        <li><a href="index.html#pricing" data-i18n="nav-pricing">Pricing</a></li>
+                        <li><a href="index.html#faq" data-i18n="nav-faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 data-i18n="footer-support">Support</h4>
+                    <ul>
+                        <li><a href="mailto:support@docentrapdf.com">support@docentrapdf.com</a></li>
+                        <li><a href="index.html#faq" data-i18n="footer-help">Help Center</a></li>
+                        <li><a href="#" data-i18n="footer-license">License Agreement</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 data-i18n="footer-legal">Legal</h4>
+                    <ul>
+                        <li><a href="#" data-i18n="footer-privacy-policy">Privacy Policy</a></li>
+                        <li><a href="#" data-i18n="footer-terms">Terms of Service</a></li>
+                        <li><a href="open-source-notices.html" data-i18n="footer-os-notices">Open Source Notices</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer-rights">&copy; 2026 Docentra AI Team. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

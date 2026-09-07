@@ -20,7 +20,11 @@ namespace PromtAiPdfPro.Services
                 {
                     client.Timeout = TimeSpan.FromSeconds(5);
                     var response = await client.GetStringAsync(VersionUrl);
-                    var onlineVersion = response.Trim();
+                    if (string.IsNullOrWhiteSpace(response)) return (false, CurrentVersion, null);
+
+                    var lines = response.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+                    var onlineVersion = lines[0].Trim();
+                    var downloadUrl = lines.Length > 1 ? lines[1].Trim() : DownloadPageUrl;
 
                     // Basit versiyon karşılaştırması
                     if (Version.TryParse(onlineVersion, out var v1) && 
@@ -28,7 +32,7 @@ namespace PromtAiPdfPro.Services
                     {
                         if (v1 > v2)
                         {
-                            return (true, onlineVersion, DownloadPageUrl);
+                            return (true, onlineVersion, downloadUrl);
                         }
                     }
                 }

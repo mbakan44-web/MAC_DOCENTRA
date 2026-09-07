@@ -9,51 +9,230 @@
     <x:String x:Key="Prem_TrialBanner">DENEME MODU</x:String>
     <x:String x:Key="Prem_DaysRemaining">7 gün kaldı</x:String>
     
+    <!-- Dashboard -->
+    <x:String x:Key="Dash_Welcome">Hoş Geldiniz</x:String>
+    <x:String x:Key="Dash_DragDrop">Dosyaları buraya sürükleyin veya ekleyin</x:String>
+    <x:String x:Key="Dash_Desc">Docentra PDF Suite ile belgelerinizi kolayca yönetin.</x:String>
+    <x:String x:Key="Dash_MergeSub">Birden fazla PDF'i tek bir dosyada toplayın.</x:String>
+    <x:String x:Key="Dash_SplitSub">Belgenizi sayfalara bölün veya ayıklayın.</x:String>
+    <x:String x:Key="Dash_ImgSub">Resimlerinizi PDF formatına dönüştürün.</x:String>
+    <x:String x:Key="Dash_ImgTitle">Resimden PDF'e</x:String>
+    <x:String x:Key="Dash_OfficeSub">Office belgelerini PDF'e dönüştürün.</x:String>
+    <x:String x:Key="Dash_OfficeTitle">Office'ten PDF'e</x:String>
+    <x:String x:Key="Dash_WordSub">PDF dosyalarını Word'e dönüştürün.</x:String>
+    <x:String x:Key="Dash_WordTitle">PDF'ten Word'e</x:String>
+    <x:String x:Key="Dash_SignSub">Belgelerinize dijital imza veya logo ekleyin.</x:String>
+    <x:String x:Key="Dash_ProtectSub">Dosyalarınızı şifre ile koruma altına alın.</x:String>
+    <x:String x:Key="Dash_CropSub">Sayfa kenarlarını kesin ve düzenleyin.</x:String>
+
+    <!-- Merge -->
     <x:String x:Key="Merge_Title">PDF Dosyalarını Birleştir</x:String>
     <x:String x:Key="Merge_AddFiles">Dosya Ekle</x:String>
     <x:String x:Key="Merge_Clear">Listeyi Temizle</x:String>
-    <x:String x:Key="Merge_Start">Birleştirmeyi Başlat</x:String>
+    <x:String x:Key="Merge_Desc">Birden fazla PDF dosyasını istediğiniz sırada tek bir belgede birleştirin.</x:String>
+    <x:String x:Key="Merge_Start">BİRLEŞTİR VE KAYDET</x:String>
     <x:String x:Key="Merge_Success">Dosyalar başarıyla birleştirildi!</x:String>
+    <x:String x:Key="Merge_SelectError">Lütfen en az iki dosya seçin.</x:String>
     
+    <!-- Split -->
     <x:String x:Key="Split_Title">PDF Dosyasını Ayır</x:String>
-    <x:String x:Key="Split_SelectFile">Dosya Seç</x:String>
-    <x:String x:Key="Split_RangeLabel">Sayfa Aralığı (Örn: 1, 3-5, 8):</x:String>
-    <x:String x:Key="Split_Start">Ayırmayı Başlat</x:String>
+    <x:String x:Key="Split_Desc">Belgenizi sayfalara bölün veya belirli aralıkları ayıklayın.</x:String>
+    <x:String x:Key="Split_Options">Ayırma Seçenekleri</x:String>
+    <x:String x:Key="Split_OptSeparate">Tüm Sayfaları Ayır</x:String>
+    <x:String x:Key="Split_OptDesc">Her sayfayı ayrı bir PDF dosyası olarak kaydeder.</x:String>
+    <x:String x:Key="Split_OptRange">Belirli Sayfaları Çıkar</x:String>
+    <x:String x:Key="Split_RangeHint">Örn: 1, 3, 5-10</x:String>
+    <x:String x:Key="Split_SplitBtn">AYIR VE KAYDET</x:String>
     <x:String x:Key="Split_Success">Dosya başarıyla ayrıldı!</x:String>
+    <x:String x:Key="Split_SelectError">Lütfen bir PDF dosyası seçin.</x:String>
 
     <!-- Watermark -->
     <x:String x:Key="Watermark_Title">Filigran Ekle</x:String>
+    <x:String x:Key="Watermark_Desc">Belgelerinizi metin veya resim filigranları ile koruyun.</x:String>
     <x:String x:Key="Watermark_TextLabel">Filigran Metni:</x:String>
-    <x:String x:Key="Watermark_OpacityLabel">Opaklık (%):</x:String>
-    <x:String x:Key="Watermark_RotationLabel">Döndürme (Derece):</x:String>
-    <x:String x:Key="Watermark_Apply">Filigran Uygula</x:String>
+    <x:String x:Key="Watermark_Apply">Görsel Editörü Aç</x:String>
     <x:String x:Key="Watermark_Success">Filigran başarıyla eklendi!</x:String>
-
-    <!-- General -->
-    <x:String x:Key="Gen_Processing">İşleniyor...</x:String>
-    <x:String x:Key="Gen_Error">Bir hata oluştu!</x:String>
-    <x:String x:Key="Gen_SelectFile">Dosya Seç</x:String>
-    <x:String x:Key="Gen_SaveFile">Dosyayı Kaydet</x:String>
-
-    <!-- Delete Pages -->
-    <x:String x:Key="Delete_Title">Sayfa Sil</x:String>
-    <x:String x:Key="Delete_RangeLabel">Silinecek Sayfalar (Örn: 1, 3-5):</x:String>
-    <x:String x:Key="Delete_Start">Sayfaları Sil</x:String>
-    <x:String x:Key="Delete_Success">Sayfalar başarıyla silindi!</x:String>
+    <x:String x:Key="Sec_TextWatermark">Metin Filigranı</x:String>
+    <x:String x:Key="Sec_ImageWatermark">Resim/Logo Filigranı</x:String>
+    <x:String x:Key="Watermark_SelectFile">Lütfen bir PDF dosyası ve metin/resim seçin.</x:String>
+    <x:String x:Key="Watermark_ImgDesc">Logonuzu veya resminizi belgenin herhangi bir yerine yerleştirin.</x:String>
 
     <!-- Protect -->
+    <x:String x:Key="Sec_Title_Password">Şifrele &amp; Koru</x:String>
+    <x:String x:Key="Sec_Desc_Password">Dosyalarınızı yetkisiz erişime karşı şifreleyerek koruyun.</x:String>
+    <x:String x:Key="Sec_Password">Şifre Belirle</x:String>
+    <x:String x:Key="Sec_PasswordDesc">Dosyayı açmak için gereken şifreyi girin.</x:String>
+    <x:String x:Key="Sec_PassStep1">PDF Dosyası Seçin</x:String>
     <x:String x:Key="Protect_Title">Şifrele &amp; Koru</x:String>
-    <x:String x:Key="Protect_PassLabel">Kullanıcı Şifresi:</x:String>
-    <x:String x:Key="Protect_OwnerPassLabel">Sahip Şifresi (Yetki için):</x:String>
-    <x:String x:Key="Protect_Start">Şifrele</x:String>
+    <x:String x:Key="Protect_Start">ŞİFRELE VE KAYDET</x:String>
     <x:String x:Key="Protect_Success">PDF başarıyla şifrelendi!</x:String>
+    <x:String x:Key="Protect_Error">Hata: Şifreleme başarısız oldu!</x:String>
+    <x:String x:Key="Protect_SelectError">Lütfen bir dosya seçin ve şifre girin.</x:String>
+    <x:String x:Key="Protect_PassLabel">Şifre Belirleyin:</x:String>
+    <x:String x:Key="Protect_Placeholder">Dosyayı korumak için bir şifre girin...</x:String>
+    
+    <!-- Unlock -->
+    <x:String x:Key="Unlock_Title">Şifre Kaldır</x:String>
+    <x:String x:Key="Unlock_Start">ŞİFREYİ KALDIR VE KAYDET</x:String>
+    <x:String x:Key="Unlock_Success">Dosya kilidi başarıyla kaldırıldı!</x:String>
+    <x:String x:Key="Unlock_Error">Hata: Şifre yanlış veya işlem başarısız!</x:String>
+    <x:String x:Key="Unlock_SelectError">Lütfen bir dosya seçin ve mevcut şifreyi girin.</x:String>
+    <x:String x:Key="Unlock_Desc">Belgedeki mevcut şifre korumasını kaldırın.</x:String>
+    <x:String x:Key="Unlock_PassLabel">Mevcut Şifre:</x:String>
+    <x:String x:Key="Unlock_Placeholder">Dosyayı açmak için gereken şifreyi girin...</x:String>
+
+    <!-- Settings -->
+    <x:String x:Key="Sett_Title">Ayarlar &amp; Tercihler</x:String>
+    <x:String x:Key="Sett_Language">Uygulama Dili</x:String>
+    <x:String x:Key="Sett_LanguageDesc">Tercih ettiğiniz dili seçin.</x:String>
+    <x:String x:Key="Sett_Theme">Görünüm Teması</x:String>
+    <x:String x:Key="Sett_ThemeDesc">Uygulamanın renk temasını değiştirin.</x:String>
+    <x:String x:Key="Sett_Success">Ayarlar başarıyla kaydedildi!</x:String>
+    <x:String x:Key="Sett_ThemeActive">Tema aktif edildi.</x:String>
 
     <!-- Page Numbers -->
     <x:String x:Key="PageNum_Title">Sayfa Numarası Ekle</x:String>
-    <x:String x:Key="PageNum_PosLabel">Konum:</x:String>
-    <x:String x:Key="PageNum_BottomCenter">Alt Orta</x:String>
-    <x:String x:Key="PageNum_BottomRight">Alt Sağ</x:String>
-    <x:String x:Key="PageNum_TopCenter">Üst Orta</x:String>
-    <x:String x:Key="PageNum_Start">Numaraları Ekle</x:String>
+    <x:String x:Key="PageNum_Desc">Belgenize profesyonel sayfa numaraları ekleyin.</x:String>
+    <x:String x:Key="PageNum_Start">NUMARALARI EKLE VE KAYDET</x:String>
     <x:String x:Key="PageNum_Success">Sayfa numaraları başarıyla eklendi!</x:String>
+    <x:String x:Key="PageNum_SelectError">Lütfen bir dosya seçin.</x:String>
+    <x:String x:Key="PageNum_StepRange">Dosya &amp; Aralık Ayarları</x:String>
+    <x:String x:Key="PageNum_StartPage">Başlangıç Sayfası</x:String>
+    <x:String x:Key="PageNum_EndPage">Bitiş Sayfası</x:String>
+    <x:String x:Key="PageNum_PosBottomCenter">Alt Orta</x:String>
+    <x:String x:Key="PageNum_PosBottomRight">Alt Sağ</x:String>
+    <x:String x:Key="PageNum_PosBottomLeft">Alt Sol</x:String>
+    <x:String x:Key="PageNum_PosTopCenter">Üst Orta</x:String>
+    <x:String x:Key="PageNum_PosTopRight">Üst Sağ</x:String>
+    <x:String x:Key="PageNum_PosTopLeft">Üst Sol</x:String>
+
+    <!-- Delete Pages -->
+    <x:String x:Key="Delete_Title">Sayfa Sil</x:String>
+    <x:String x:Key="Delete_Desc">Gereksiz sayfaları belgenizden kaldırın.</x:String>
+    <x:String x:Key="Delete_Start">SAYFALARI SİL VE KAYDET</x:String>
+    <x:String x:Key="Delete_Success">Sayfalar başarıyla silindi!</x:String>
+    <x:String x:Key="Delete_SelectError">Lütfen bir dosya seçin ve silinecek sayfaları belirtin.</x:String>
+    <x:String x:Key="Delete_RangeLabel">Silinecek Sayfalar:</x:String>
+    <x:String x:Key="Delete_RangeHint">Örn: 1, 3, 5-8</x:String>
+    <!-- DeletePagesPage.axaml kullandığı DeletePages_ prefixi -->
+    <x:String x:Key="DeletePages_Title">Sayfa Sil</x:String>
+    <x:String x:Key="DeletePages_Desc">Gereksiz sayfaları belgenizden kaldırın.</x:String>
+    <x:String x:Key="DeletePages_Options">Sayfa Seçimi</x:String>
+    <x:String x:Key="DeletePages_InputLabel">Silinecek Sayfalar:</x:String>
+    <x:String x:Key="DeletePages_InputHint">Sayfa numaralarını virgülle ayırarak girin. Örnek: 1, 3, 5-8</x:String>
+    <x:String x:Key="DeletePages_Btn">SAYFALARI SİL VE KAYDET</x:String>
+
+    <!-- Crop -->
+    <x:String x:Key="Crop_Title">PDF Kırp</x:String>
+    <x:String x:Key="Crop_Desc">Sayfa boyutlarını interaktif editör ile düzenleyin.</x:String>
+    <x:String x:Key="Crop_Start">EDİTÖRÜ AÇ</x:String>
+    <x:String x:Key="Crop_Success">PDF başarıyla kırpıldı!</x:String>
+    <x:String x:Key="Crop_SelectError">Lütfen bir PDF dosyası seçin.</x:String>
+    <x:String x:Key="Crop_Settings">Kırpma Ayarları</x:String>
+    <x:String x:Key="Crop_AreaInfo">PDF sayfası üzerinde kırpma alanını interaktif olarak seçmek için görsel editörü açın.</x:String>
+    <x:String x:Key="Crop_Btn">KIRP VE KAYDET</x:String>
+
+    <!-- Sign -->
+    <x:String x:Key="Sign_Title">PDF İmzala</x:String>
+    <x:String x:Key="Sign_Method">İmza Yöntemi</x:String>
+    <x:String x:Key="Sign_SelectImage">Resim/İmza Seçin</x:String>
+    <x:String x:Key="Sign_Start">EDİTÖRÜ AÇ</x:String>
+    <x:String x:Key="Sign_Success">PDF başarıyla imzalandı!</x:String>
+    <x:String x:Key="Sign_SelectError">Lütfen bir PDF dosyası ve imza resmi seçin.</x:String>
+
+    <!-- Convert -->
+    <x:String x:Key="Conv_Title">Dönüştürücü</x:String>
+    <x:String x:Key="Conv_Desc">PDF ve diğer formatlar arasında hızlı dönüşüm yapın.</x:String>
+    <x:String x:Key="Conv_PdfToImg">PDF'den Resme</x:String>
+    <x:String x:Key="Conv_PdfToImgDesc">PDF sayfalarını yüksek kaliteli görsellere dönüştürür.</x:String>
+    <x:String x:Key="Conv_Success">Dönüştürme başarıyla tamamlandı!</x:String>
+    <x:String x:Key="Conv_SelectError">Lütfen dönüştürülecek dosyaları seçin.</x:String>
+
+    <!-- General -->
+    <x:String x:Key="Gen_Processing">İşleniyor...</x:String>
+    <x:String x:Key="Gen_SelectFile">Dosya Seç</x:String>
+    <x:String x:Key="Gen_SuccessTitle">İşlem Tamamlandı</x:String>
+    <x:String x:Key="Gen_OpenQuestion">İşlem tamamlandı. Dosyayı açmak ister misiniz?</x:String>
+    <x:String x:Key="Gen_Error">Bir hata oluştu!</x:String>
+    <x:String x:Key="Gen_SaveFile">Dosyayı Kaydet</x:String>
+    <x:String x:Key="Sec_SelectPdf">PDF Dosyası Seçin</x:String>
+    <!-- Ayarlar ekstra -->
+
+
+    <!-- PDF Viewer -->
+    <x:String x:Key="PdfViewer_Title">PDF Görüntüleyici</x:String>
+    <x:String x:Key="PdfViewer_Desc">PDF belgelerinizi sorunsuz bir okuyucuda analiz edin ve açın.</x:String>
+    <x:String x:Key="PdfViewer_Open">PDF Aç</x:String>
+    <x:String x:Key="PdfViewer_NoFile">Dosya seçilmedi</x:String>
+    <x:String x:Key="PdfViewer_EmptyTitle">Belge Yüklenmedi</x:String>
+    <x:String x:Key="PdfViewer_EmptyDesc">Belgenin meta verilerini, sayfalarını ve özelliklerini analiz etmek ve varsayılan sistem PDF okuyucunuzda hızlıca başlatmak için bir PDF dosyası seçin.</x:String>
+    <x:String x:Key="PdfViewer_OpenExternal">Sistemde Aç</x:String>
+    <x:String x:Key="PdfViewer_NativeNote">En iyi çapraz platform okuma, yazdırma ve form doldurma deneyimi için Docentra, macOS varsayılan PDF görüntüleyicinize sorunsuz bir şekilde köprü kurar.</x:String>
+
+    <!-- Navigasyon eklentileri -->
+    <x:String x:Key="Nav_Compress">PDF Sıkıştır</x:String>
+    <x:String x:Key="Nav_Metadata">Meta Veri Düzenle</x:String>
+    <x:String x:Key="Nav_Premium">Premium'a Geç</x:String>
+
+    <!-- Compress -->
+    <x:String x:Key="Compress_Title">PDF Sıkıştır</x:String>
+    <x:String x:Key="Compress_Desc">Optimum kaliteyi korurken PDF belgelerinizin dosya boyutunu küçültün.</x:String>
+    <x:String x:Key="Compress_SelectFile">Sıkıştırmak İçin PDF Dosyası Seçin</x:String>
+    <x:String x:Key="Compress_LevelTitle">Sıkıştırma Seviyesi</x:String>
+    <x:String x:Key="Compress_LevelLow">Düşük Sıkıştırma</x:String>
+    <x:String x:Key="Compress_LevelLowDesc">Hafif boyut küçültme, en yüksek görsel kalitesi.</x:String>
+    <x:String x:Key="Compress_LevelMed">Orta Sıkıştırma</x:String>
+    <x:String x:Key="Compress_LevelMedDesc">Önerilen. Büyük oranda boyut küçültme, iyi kalite.</x:String>
+    <x:String x:Key="Compress_LevelHigh">Yüksek Sıkıştırma</x:String>
+    <x:String x:Key="Compress_LevelHighDesc">Maksimum boyut küçültme, daha düşük görsel kalitesi.</x:String>
+    <x:String x:Key="Compress_ProcessBtn">SIKIŞTIR VE KAYDET</x:String>
+
+    <!-- Metadata -->
+    <x:String x:Key="Metadata_Title">PDF Meta Verilerini Düzenle</x:String>
+    <x:String x:Key="Metadata_Desc">PDF belgenize gömülü yazar, başlık, anahtar kelimeler ve diğer etiketleri güncelleyin.</x:String>
+    <x:String x:Key="Metadata_TitleField">Belge Başlığı</x:String>
+    <x:String x:Key="Metadata_Author">Yazar</x:String>
+    <x:String x:Key="Metadata_Subject">Konu</x:String>
+    <x:String x:Key="Metadata_Keywords">Anahtar Kelimeler</x:String>
+    <x:String x:Key="Metadata_Creator">Oluşturucu Uygulama</x:String>
+    <x:String x:Key="Metadata_Producer">PDF Üreticisi</x:String>
+    <x:String x:Key="Metadata_CreationDate">Oluşturulma Tarihi</x:String>
+    <x:String x:Key="Metadata_ModificationDate">Değiştirilme Tarihi</x:String>
+    <x:String x:Key="Metadata_SaveBtn">META VERİLERİ KAYDET</x:String>
+
+    <!-- Premium -->
+    <x:String x:Key="Prem_Title">Premium'a Geç</x:String>
+    <x:String x:Key="Prem_Subtitle">Tüm profesyonel özelliklerin kilidini açın ve tüm platform sınırlamalarını kaldırın.</x:String>
+    <x:String x:Key="Prem_Licensed">Lisans Aktif Edildi</x:String>
+    <x:String x:Key="Prem_ThankYou">Docentra'yı desteklediğiniz için teşekkür ederiz!</x:String>
+    <x:String x:Key="Prem_HowToActivate_Title">Nasıl aktif edilir?</x:String>
+    <x:String x:Key="Prem_HowToActivate_Sub">Aşağıdaki Cihaz Donanım Kimliğinizi (HWID) kopyalayın ve aktivasyon anahtarınızı almak için Etsy'deki destek kutumuza gönderin.</x:String>
+    <x:String x:Key="Prem_HwidLabel">Cihaz Donanım Kimliği (HWID)</x:String>
+    <x:String x:Key="Prem_HwidDesc">Bu benzersiz donanım imzası, lisansınızın bu iş istasyonuna güvenli bir şekilde bağlı kalmasını sağlar.</x:String>
+    <x:String x:Key="Prem_KeyLabel">Lisans Anahtarını Girin</x:String>
+    <x:String x:Key="Prem_BtnActivate">ŞİMDİ AKTİF ET</x:String>
+    <x:String x:Key="Prem_WhyGoPremium">Neden Premium'a yükseltmeli?</x:String>
+    <x:String x:Key="Prem_Feat1_Title">Eksiksiz PDF Araç Kutusu</x:String>
+    <x:String x:Key="Prem_Feat1_Desc">Bölme, birleştirme, kırpma, filigran, sayfa numaraları ve sıkıştırma özelliklerine sınırsızca erişin.</x:String>
+    <x:String x:Key="Prem_Feat2_Title">Hızlı Çoklu İş Parçacığı Motoru</x:String>
+    <x:String x:Key="Prem_Feat2_Desc">Tam işlemci ölçeklemesini kullanarak büyük belge işlemlerini 10 kata kadar daha hızlı gerçekleştirin.</x:String>
+    <x:String x:Key="Prem_Feat3_Title">Profesyonel Ömür Boyu Destek</x:String>
+    <x:String x:Key="Prem_Feat3_Desc">Tüm küçük ve büyük güncellemeleri ücretsiz olarak standart öncelikli bilet hizmetiyle alın.</x:String>
+    <x:String x:Key="Dash_CompressSub">Optimum sıkıştırma oranları ile PDF belge boyutunu küçültün.</x:String>
+    <x:String x:Key="Dash_MetadataSub">Gömülü yazar, başlık ve anahtar kelime etiketlerini güncelleyin.</x:String>
+
+    <!-- OCR -->
+    <x:String x:Key="Ocr_Title">Metin Tanıma (OCR)</x:String>
+    <x:String x:Key="Ocr_Desc">Yerel donanım motorlarını kullanarak görsel ve PDF dosyalarından metinleri otomatik olarak çıkarın.</x:String>
+    <x:String x:Key="Ocr_SelectFile">Görsel veya PDF Dosyası Seçin</x:String>
+    <x:String x:Key="Ocr_Language">Tanıma Dili</x:String>
+    <x:String x:Key="Ocr_RunBtn">METNİ ÇIKAR / TANI</x:String>
+    <x:String x:Key="Ocr_ResultPlaceholder">Tanınan metinler burada görüntülenecektir...</x:String>
+    <x:String x:Key="Ocr_Success">Metin tanıma işlemi başarıyla tamamlandı!</x:String>
+    <x:String x:Key="Ocr_SaveSuccess">OCR sonucu başarıyla kaydedildi!</x:String>
+    <x:String x:Key="Ocr_NoFile">Lütfen önce bir görsel veya PDF dosyası seçin.</x:String>
+    <x:String x:Key="Ocr_SelectFilter">PDF ve Görseller (*.pdf;*.png;*.jpg;*.jpeg)|*.pdf;*.png;*.jpg;*.jpeg</x:String>
+    <x:String x:Key="Ocr_BtnCopy">Metni Kopyala</x:String>
+    <x:String x:Key="Ocr_BtnSave">TXT Olarak Kaydet</x:String>
+    <x:String x:Key="Dash_OcrSub">Yerel donanım ivmesini kullanarak görsellerden ve belgelerden metinleri algılayın ve çıkarın.</x:String>
 </ResourceDictionary>
