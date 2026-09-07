@@ -110,6 +110,7 @@ en: {
 "trust-virustotal": "VirusTotal Clean Check",
 "trust-offline": "Zero Telemetry & 100% Offline",
 "trust-native": "Native Desktop Application",
+"trust-downloads": "1,000+ Downloads",
 "sim-title": "Experience Real Local Speed",
 "sim-desc": "Don't let slow internet upload/download limits throttle your PDF workspace.",
 "sim-dropzone": "Simulated local drop zone: drag & drop files here",
@@ -119,6 +120,11 @@ en: {
 "sim-status-success": "Completed locally in 0.8s! 0KB uploaded. Secure & Private."
 },
 tr: {
+"trust-downloads": "1.000+ İndirme",
+"trust-clean": "%100 Reklamsız & Temiz",
+"trust-virustotal": "VirusTotal Temiz Kontrolü",
+"trust-offline": "Sıfır Telemetri & %100 Çevrimdışı",
+"trust-native": "Yerel Masaüstü Uygulaması",
 "nav-features":"Özellikler","nav-compare":"Neden Çevrimdışı?","nav-blog":"Blog","nav-pricing":"Fiyatlandırma","nav-faq":"SSS","btn-download":"İndir",
 "hero-badge":"Gizlilik Odaklı Mimari","hero-title":'Profesyonel PDF Düzenleme & Görüntüleme, <span>Yeniden Doğdu.</span>',
 "hero-desc":"Yerel işlemenin gücünü keşfedin. Belgelerinizi %100 çevrimdışı, yüksek performans ve askeri düzeyde gizlilikle görüntüleyin, notlar alın, düzenleyin, dönüştürün ve OCR yapın.",
