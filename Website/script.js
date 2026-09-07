@@ -1358,6 +1358,7 @@ window.switchMockupTab = function(tabName) {
         'dashboard': document.getElementById('mockup-dashboard-view'),
         'reader': document.getElementById('mockup-reader-view'),
         'ocr': document.getElementById('mockup-ocr-view'),
+        'watermark': document.getElementById('mockup-watermark-view'),
         'metadata': document.getElementById('mockup-metadata-view')
     };
     const tabs = document.querySelectorAll('.mockup-tab');
@@ -1368,7 +1369,7 @@ window.switchMockupTab = function(tabName) {
         }
     });
 
-    const tabOrder = ['dashboard', 'reader', 'ocr', 'metadata'];
+    const tabOrder = ['dashboard', 'reader', 'ocr', 'watermark', 'metadata'];
     tabs.forEach((tab, index) => {
         if (tabOrder[index] === tabName) {
             tab.classList.add('active');
