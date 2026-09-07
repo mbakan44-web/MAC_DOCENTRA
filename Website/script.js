@@ -1,9 +1,9 @@
 const translations = {
 en: {
 "nav-features":"Features","nav-compare":"Why Offline?","nav-blog":"Blog","nav-pricing":"Pricing","nav-faq":"FAQ","btn-download":"Download",
-"hero-badge":"Privacy-Native Architecture","hero-title":'Professional PDF Editing & Viewing, <span>Reimagined.</span>',
-"hero-desc":"Experience the power of local processing. View, annotate, edit, convert, and OCR your documents 100% offline with total privacy and high performance. No subscriptions, no cloud, no compromise.",
-"btn-get-started":"Get Started for Free","btn-pricing":"View Pricing",
+"hero-badge":"Privacy-Native Architecture","hero-title":'Professional PDF Editor for Windows — <span>100% Offline & Private</span>',
+"hero-desc":"Edit, merge, split, OCR, sign, clean metadata and convert PDFs directly on your PC. No cloud uploads, no monthly subscriptions, zero data tracking.",
+"btn-get-started":"⬇️ Download Free Trial","btn-pricing":"💳 Buy Lifetime License ($49.90)",
 "stat-tools":"Professional Tools","stat-langs":"Languages Supported","stat-local":"Local Processing","stat-cloud":"Cloud Uploads",
 "features-badge":"All-in-One Suite","features-title":"Professional Suite","features-subtitle":"Every tool you need to master your document workflow — offline and private.",
 "feat-merge-title":"PDF Merge","feat-merge-desc":"Combine multiple PDF files into a single professional document. Drag, drop, reorder, and merge in seconds.",
@@ -126,9 +126,9 @@ tr: {
 "trust-offline": "Sıfır Telemetri & %100 Çevrimdışı",
 "trust-native": "Yerel Masaüstü Uygulaması",
 "nav-features":"Özellikler","nav-compare":"Neden Çevrimdışı?","nav-blog":"Blog","nav-pricing":"Fiyatlandırma","nav-faq":"SSS","btn-download":"İndir",
-"hero-badge":"Gizlilik Odaklı Mimari","hero-title":'Profesyonel PDF Düzenleme & Görüntüleme, <span>Yeniden Doğdu.</span>',
-"hero-desc":"Yerel işlemenin gücünü keşfedin. Belgelerinizi %100 çevrimdışı, yüksek performans ve askeri düzeyde gizlilikle görüntüleyin, notlar alın, düzenleyin, dönüştürün ve OCR yapın.",
-"btn-get-started":"Ücretsiz Başla","btn-pricing":"Fiyatları Gör",
+"hero-badge":"Gizlilik Odaklı Mimari","hero-title":'Windows İçin Profesyonel PDF Düzenleyici — <span>%100 Çevrimdışı ve Gizli</span>',
+"hero-desc":"PDF'leri doğrudan bilgisayarınızda düzenleyin, birleştirin, bölün, OCR yapın, imzalayın, üstverileri temizleyin ve dönüştürün. Buluta yükleme yok, aylık abonelik yok.",
+"btn-get-started":"⬇️ Ücretsiz Denemeyi İndir","btn-pricing":"💳 Ömür Boyu Lisans Al (₺2.250)",
 "stat-tools":"Profesyonel Araç","stat-langs":"Dil Desteği","stat-local":"Yerel İşleme","stat-cloud":"Bulut Yüklemesi",
 "features-badge":"Hepsi Bir Arada","features-title":"Profesyonel Paket","features-subtitle":"Belge iş akışınızda ustalaşmanız için gereken her araç — çevrimdışı ve gizli.",
 "feat-merge-title":"PDF Birleştirme","feat-merge-desc":"Birden fazla PDF dosyasını tek bir profesyonel belgede birleştirin.",
@@ -1354,20 +1354,34 @@ if (canvas) {
 
 // ===== DESKTOP MOCKUP TAB SWITCHER =====
 window.switchMockupTab = function(tabName) {
-    const dashView = document.getElementById('mockup-dashboard-view');
-    const readerView = document.getElementById('mockup-reader-view');
+    const views = {
+        'dashboard': document.getElementById('mockup-dashboard-view'),
+        'reader': document.getElementById('mockup-reader-view'),
+        'ocr': document.getElementById('mockup-ocr-view'),
+        'metadata': document.getElementById('mockup-metadata-view')
+    };
     const tabs = document.querySelectorAll('.mockup-tab');
-    if (!dashView || !readerView) return;
     
-    if (tabName === 'dashboard') {
-        dashView.style.display = 'flex';
-        readerView.style.display = 'none';
-        tabs[0].classList.add('active');
-        tabs[1].classList.remove('active');
-    } else {
-        dashView.style.display = 'none';
-        readerView.style.display = 'flex';
-        tabs[0].classList.remove('active');
-        tabs[1].classList.add('active');
-    }
+    Object.keys(views).forEach(key => {
+        if (views[key]) {
+            views[key].style.display = (key === tabName) ? 'flex' : 'none';
+        }
+    });
+
+    const tabOrder = ['dashboard', 'reader', 'ocr', 'metadata'];
+    tabs.forEach((tab, index) => {
+        if (tabOrder[index] === tabName) {
+            tab.classList.add('active');
+            tab.style.background = 'rgba(212,175,55,0.15)';
+            tab.style.borderColor = 'rgba(212,175,55,0.3)';
+            tab.style.color = 'var(--primary-color)';
+            tab.style.opacity = '1';
+        } else {
+            tab.classList.remove('active');
+            tab.style.background = 'rgba(255,255,255,0.03)';
+            tab.style.borderColor = 'rgba(255,255,255,0.08)';
+            tab.style.color = '#fff';
+            tab.style.opacity = '0.75';
+        }
+    });
 };

@@ -1,0 +1,113 @@
+🔴 Ama hâlâ çok önemli bir hata var
+
+Ana sayfada şu bölüm hala 0 gösteriyor:
+
+0+ Professional Tools
+0 Languages Supported
+0% Local Processing
+0 Cloud Uploads
+
+Üstelik hemen aşağıda “All 14+ tools”, 10 language support ve 100% offline deniyor.
+
+Bu kesinlikle düzeltilmeli.
+
+Bence:
+
+14+ Professional Tools
+10 Languages Supported
+100% Local Processing
+0 Cloud Uploads
+
+olmalı.
+
+🔴 Bir diğer sorun: ekran görüntüleri
+
+Sayfada hâlâ:
+
+“Your genuine offline dashboard screenshot will load here.”
+“Please place dashboard.png in assets/screenshots/”
+
+ve PDF Reader tarafında da benzer placeholder metni bulunuyor.
+
+Bunu kesinlikle ziyaretçiye göstermemelisin.
+
+Gerçek uygulama ekran görüntülerini koy.
+
+Hatta burada bence ciddi bir satış fırsatı var:
+
+Ana görselde sadece ekran görüntüsü değil:
+
+DOCENTRA
+Professional PDF & Document Editor
+
+100% Offline · No Subscription · Private
+
+şeklinde gerçek uygulamanın ekran görüntüsünü göster.
+Fakat bence bundan daha önemli bir değişiklik var
+
+Şu anda sitenin ana mesajı:
+
+Professional PDF Editing, Reimagined.
+
+Bence bunu biraz daha arama niyetine yaklaştırabiliriz.
+
+Örneğin:
+
+Professional PDF Editor for Windows — 100% Offline & Private
+
+Altında:
+
+Edit, merge, split, OCR, sign and convert PDFs directly on your PC. No cloud uploads. No subscription.
+
+Bu, hem kullanıcıya ne sattığını ilk 3 saniyede anlatır hem de “PDF Editor Windows / Offline PDF Editor / Private PDF Editor” gibi aramaları hedefleme açısından daha mantıklı bir temel oluşturur.
+
+Ben olsam Docentra'yı şu noktaya getirirdim
+
+Ana ekran:
+
+Professional PDF Editor for Windows
+
+Edit, convert, OCR, sign and manage PDFs — completely offline.
+
+[Download Free] [Buy Lifetime License]
+
+↓
+
+14+ Professional Tools | 10 Languages | 100% Offline | 1K+ Downloads
+
+↓
+
+Gerçek uygulama ekran görüntüsü
+
+↓
+
+Everything You Need for PDF & Documents
+
+14 araç
+
+↓
+
+Why Docentra?
+
+🔒 Your files never leave your PC
+🚫 No subscription
+☁️ No cloud uploads
+⚡ Fast local processing
+
+↓
+
+Docentra vs Adobe Acrobat vs Online PDF Tools
+
+↓
+
+One-Time Lifetime License
+
+₺2250
+
+↓
+
+FAQ
+
+↓
+
+Download Free
