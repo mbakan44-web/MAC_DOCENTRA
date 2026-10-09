@@ -1,0 +1,30 @@
+===========================================================
+    MICROSOFT OFFICE REQUIREMENT / GEREKSINIMI
+===========================================================
+
+[ARABIC]
+لكي تعمل الميزات الاحترافية لهذا التطبيق بشكل صحيح، 
+يجب تثبيت Microsoft Office على جهاز الكمبيوتر الخاص بك.
+
+تعتمد الأدوات التالية على Microsoft Office:
+- تحويل Word إلى PDF / PDF إلى Word
+- تحويل Excel إلى PDF / PDF إلى Excel
+- تحويل PowerPoint إلى PDF
+- أدوات تحويل Office
+
+إذا لم يكن لديك Microsoft Office مثبتًا، فلن تكون هذه الميزات 
+متاحة أو قد تواجه أخطاء.
+
+-----------------------------------------------------------
+
+[ENGLISH]
+For the professional features of this application to function correctly, 
+Microsoft Office must be installed on your computer.
+
+-----------------------------------------------------------
+
+[TURKISH]
+Bu uygulamanın profesyonel özelliklerinin doğru çalışabilmesi için 
+bilgisayarınızda Microsoft Office yüklü olmalıdır.
+
+===========================================================

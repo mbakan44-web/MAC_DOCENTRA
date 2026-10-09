@@ -1,0 +1,77 @@
+===========================================================
+    MICROSOFT OFFICE REQUIREMENT / GEREKSINIMI
+===========================================================
+
+[TURKISH]
+Bu uygulamanın profesyonel özelliklerinin doğru çalışabilmesi için 
+bilgisayarınızda Microsoft Office yüklü olmalıdır.
+
+Aşağıdaki araçlar Microsoft Office'e bağlıdır:
+- Word'den PDF'e / PDF'den Word'e Dönüştürme
+- Excel'den PDF'e / PDF'den Excel'e Dönüştürme
+- PowerPoint'ten PDF'e Dönüştürme
+- Ofis Dönüştürücü Araçları
+
+Eğer bilgisayarınızda Microsoft Office yüklü değilse, bu özellikler 
+çalışmayacak veya hata verecektir.
+
+-----------------------------------------------------------
+
+[ENGLISH]
+For the professional features of this application to function correctly, 
+Microsoft Office must be installed on your computer.
+
+The following tools depend on Microsoft Office:
+- Word to PDF / PDF to Word Conversion
+- Excel to PDF / PDF to Excel Conversion
+- PowerPoint to PDF Conversion
+- Office Converter Tools
+
+-----------------------------------------------------------
+
+[GERMAN]
+Damit die professionellen Funktionen dieser Anwendung korrekt funktionieren, 
+muss Microsoft Office auf Ihrem Computer installiert sein.
+
+-----------------------------------------------------------
+
+[FRENCH]
+Pour que les fonctionnalités professionnelles de cette application fonctionnent correctement, 
+Microsoft Office doit être installé sur votre ordinateur.
+
+-----------------------------------------------------------
+
+[SPANISH]
+Para que las funciones profesionales de esta aplicación funcionen correctamente, 
+Microsoft Office debe estar instalado en su computadora.
+
+-----------------------------------------------------------
+
+[ITALIAN]
+Affinché le funzioni professionali di questa applicazione funzionino correttamente, 
+Microsoft Office deve essere installato sul computer.
+
+-----------------------------------------------------------
+
+[RUSSIAN]
+Для корректной работы профессиональных функций этого приложения 
+на вашем компьютере должен быть установлен Microsoft Office.
+
+-----------------------------------------------------------
+
+[CHINESE]
+为了使此应用程序的专业功能正常运行，您的计算机上必须安装 Microsoft Office。
+
+-----------------------------------------------------------
+
+[JAPANESE]
+このアプリケーションのプロフェッショナル機能が正しく動作するには、
+コンピューターに Microsoft Office がインストールされている必要があります。
+
+-----------------------------------------------------------
+
+[ARABIC]
+لكي تعمل الميزات الاحترافية لهذا التطبيق بشكل صحيح، 
+يجب تثبيت Microsoft Office على جهاز الكمبيوتر الخاص بك.
+
+===========================================================

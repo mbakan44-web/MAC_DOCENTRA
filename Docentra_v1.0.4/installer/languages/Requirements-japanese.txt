@@ -1,0 +1,30 @@
+===========================================================
+    MICROSOFT OFFICE REQUIREMENT / GEREKSINIMI
+===========================================================
+
+[JAPANESE]
+このアプリケーションのプロフェッショナル機能が正しく動作するには、
+コンピューターに Microsoft Office がインストールされている必要があります。
+
+次のツールは Microsoft Office に依存しています。
+- Word から PDF / PDF から Word への変換
+- Excel から PDF / PDF から Excel への変換
+- PowerPoint から PDF への変換
+- Office 変換ツール
+
+Microsoft Office がインストールされていない場合、これらの特定の機能は
+利用できないか、エラーが発生する可能性があります。
+
+-----------------------------------------------------------
+
+[ENGLISH]
+For the professional features of this application to function correctly, 
+Microsoft Office must be installed on your computer.
+
+-----------------------------------------------------------
+
+[TURKISH]
+Bu uygulamanın profesyonel özelliklerinin doğru çalışabilmesi için 
+bilgisayarınızda Microsoft Office yüklü olmalıdır.
+
+===========================================================

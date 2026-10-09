@@ -1,0 +1,100 @@
+<ui:FluentWindow x:Class="PromtAiPdfPro.Views.PrintPreviewWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+        mc:Ignorable="d"
+        Title="Docentra - Yazdır" Height="750" Width="1100"
+        WindowStartupLocation="CenterScreen"
+        ExtendsContentIntoTitleBar="True"
+        WindowBackdropType="Mica"
+        Icon="pack://application:,,,/Assets/app_icon.ico">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- TitleBar -->
+        <ui:TitleBar Grid.Row="0" Title="Docentra - Yazdır" Icon="pack://application:,,,/Assets/app_icon.ico" />
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="350" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Sol Panel: Yazdırma Ayarları -->
+            <Border Grid.Column="0" BorderBrush="{DynamicResource ControlStrokeColorDefaultBrush}" BorderThickness="0,0,1,0" Padding="20">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <TextBlock Text="Yazdır" FontSize="28" FontWeight="SemiBold" Margin="0,0,0,20" />
+
+                        <!-- Yazıcı Seçimi -->
+                        <TextBlock Text="Hedef" FontWeight="SemiBold" Margin="0,0,0,5" />
+                        <ComboBox x:Name="CmbPrinters" Width="300" Margin="0,0,0,15" SelectionChanged="CmbPrinters_SelectionChanged" />
+
+                        <!-- Kopya Sayısı -->
+                        <TextBlock Text="Kopya Sayısı" FontWeight="SemiBold" Margin="0,0,0,5" />
+                        <ui:NumberBox x:Name="NumCopies" Value="1" Minimum="1" Maximum="999" Width="300" Margin="0,0,0,15" />
+
+                        <!-- Sayfalar -->
+                        <TextBlock Text="Sayfalar" FontWeight="SemiBold" Margin="0,0,0,5" />
+                        <ComboBox x:Name="CmbPages" Width="300" Margin="0,0,0,5" SelectionChanged="CmbPages_SelectionChanged">
+                            <ComboBoxItem Content="Tümü" IsSelected="True" />
+                            <ComboBoxItem Content="Özel" />
+                        </ComboBox>
+                        <ui:TextBox x:Name="TxtCustomPages" PlaceholderText="Örn: 1-5, 8, 11-13" Width="300" Margin="0,0,0,15" Visibility="Collapsed" />
+
+                        <!-- Renk Seçeneği -->
+                        <TextBlock Text="Renk" FontWeight="SemiBold" Margin="0,0,0,5" />
+                        <ComboBox x:Name="CmbColor" Width="300" Margin="0,0,0,15">
+                            <ComboBoxItem Content="Renkli" IsSelected="True" />
+                            <ComboBoxItem Content="Siyah Beyaz" />
+                        </ComboBox>
+                        
+                        <!-- Kağıt Boyutu -->
+                        <TextBlock Text="Kağıt Boyutu" FontWeight="SemiBold" Margin="0,0,0,5" />
+                        <ComboBox x:Name="CmbPaperSize" Width="300" Margin="0,0,0,25" />
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,10,0">
+                            <ui:Button Content="İptal" Appearance="Secondary" Width="100" Margin="0,0,10,0" Click="BtnCancel_Click" />
+                            <ui:Button Content="Yazdır" Appearance="Primary" Width="120" Click="BtnPrint_Click" />
+                        </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+
+            <!-- Sağ Panel: Ön İzleme -->
+            <Border Grid.Column="1" Background="{DynamicResource ControlFillColorTertiaryBrush}">
+                <Grid>
+                    <ScrollViewer x:Name="PreviewScrollViewer" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Padding="20">
+                        <!-- Sayfa Ön İzlemeleri Buraya Yüklenecek -->
+                        <ItemsControl x:Name="PreviewItemsControl">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Background="White" Margin="0,0,0,20" CornerRadius="4" 
+                                            HorizontalAlignment="Center">
+                                        <Border.Effect>
+                                            <DropShadowEffect Color="Black" Opacity="0.2" BlurRadius="10" ShadowDepth="2" />
+                                        </Border.Effect>
+                                        <!-- Resim (PageImageSource) -->
+                                        <Image Source="{Binding Image}" Stretch="Uniform" Width="600" />
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+
+                    <!-- Yükleniyor Göstergesi -->
+                    <StackPanel x:Name="LoadingPanel" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <ui:ProgressRing IsIndeterminate="True" Width="48" Height="48" Margin="0,0,0,10" />
+                        <TextBlock Text="Ön izleme hazırlanıyor..." FontWeight="SemiBold" Opacity="0.7" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</ui:FluentWindow>

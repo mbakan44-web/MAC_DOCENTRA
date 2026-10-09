@@ -1,0 +1,60 @@
+=======================================================================
+           DOCENTRA PDF SUITE v1.0.4 - ÇALIŞMA ALANI & REHBER
+=======================================================================
+
+Bu klasör, Docentra PDF & Document Suite v1.0.4 sürümünün tüm bileşenlerini
+(kaynak kodlar, taşınabilir derleyici, kurulum paketleri, dil dosyaları ve 
+lisanslama araçları) tek bir yerde, derli toplu ve bağımsız olarak sunar.
+
+-----------------------------------------------------------------------
+KLASÖR DÜZENİ VE İÇERİK:
+-----------------------------------------------------------------------
+
+📁 src\
+   Docentra v1.0.4 sürümünün temiz kaynak kodları (WPF, .NET 8, C#).
+   * Locales\       -> 10 dilde arayüz dil paketleri (TR, EN, DE, FR, ES, IT, JA, RU, ZH, AR)
+   * Assets\        -> İkonlar ve görsel varlıklar
+   * Services\      -> OCR, PDF, Lisans, Office dönüştürücü servisleri
+   * Views\         -> Tüm modern UI sayfaları ve araçlar
+
+📁 dotnet_sdk\
+   Taşınabilir (Portable) .NET 8 SDK. Bilgisayarınızda global .NET SDK kurulu 
+   olmasa bile projeyi hiçbir ek ayar yapmadan doğrudan derlemenizi sağlar.
+
+📁 dist\
+   Derleme çıktıları klasörü. "1_Hizli_Derle_ve_Paketle.bat" çalıştırıldığında:
+   * Docentra.exe   -> Çalıştırılabilir bağımsız tek dosya uygulama.
+   * publish\       -> Inno Setup ile paketlenecek tüm çalışma dosyaları.
+
+📁 installer\
+   Inno Setup ile kurulum paketi (Setup EXE) oluşturma alanı:
+   * Docentra_Installer_v1.0.4.iss  -> Güncellenmiş Inno Setup betiği.
+   * License-*.txt                  -> Tüm dillerde son kullanıcı lisans sözleşmeleri.
+   * Requirements-*.txt             -> Tüm dillerde sistem gereksinim metinleri.
+   (Inno Setup programı ile bu .iss dosyasını açıp 'Compile' butonuna bastığınızda
+    doğrudan dist\ klasörüne Docentra_Setup_v1.0.4.exe üretir).
+
+📁 tools\
+   Lisans anahtarı üretme aracı:
+   * PremiumKeyGenerator.exe        -> Müşterinin HWID kodu ile anında Premium anahtar üretir.
+   * PremiumKeyGenerator.cs         -> Lisans anahtarı algoritması kaynak kodu.
+
+📁 docs\
+   Kullanım ve aktivasyon rehberleri:
+   * Docentra Premium Activation Guide.pdf
+   * Docentra_Activation_Guide.html
+   * Uygulama Bilgileri.docx
+
+-----------------------------------------------------------------------
+NASIL KULLANILIR? (TEK TIKLA ÇALIŞTIRMA):
+-----------------------------------------------------------------------
+
+1. "1_Hizli_Derle_ve_Paketle.bat" :
+   Projeyi taşınabilir SDK ile Release modunda derler, kod korumasını (Obfuscar)
+   uygular ve hazır Docentra.exe'yi dist\ klasörüne koyar.
+
+2. "2_Uygulamayı_Baslat.bat" :
+   Derlenen Docentra v1.0.4 uygulamasını hemen test etmek için başlatır.
+
+3. "3_Lisans_Ureteci.bat" :
+   Müşteriye lisans teslim etmek için Key Generator konsolunu açar.

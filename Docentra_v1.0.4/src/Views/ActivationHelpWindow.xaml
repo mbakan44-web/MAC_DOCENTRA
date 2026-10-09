@@ -1,0 +1,154 @@
+<Window x:Class="PromtAiPdfPro.Views.ActivationHelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+        Title="Activation Guide" 
+        Height="650" Width="500"
+        WindowStartupLocation="CenterOwner"
+        Icon="pack://application:,,,/Assets/app_icon.ico"
+        Background="{DynamicResource ApplicationBackgroundBrush}"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        ResizeMode="NoResize">
+
+    <Border BorderThickness="1" BorderBrush="{DynamicResource SystemAccentColorBrush}" CornerRadius="12" Background="{DynamicResource ApplicationBackgroundBrush}">
+        <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <StackPanel Grid.Row="0" Margin="0,0,0,24">
+            <TextBlock Text="{DynamicResource Prem_HowToActivate_Title}" FontSize="24" FontWeight="Bold"/>
+            <TextBlock Text="{DynamicResource Prem_HowToActivate_Sub}" Opacity="0.7"/>
+        </StackPanel>
+
+        <!-- Content (Scrollable) -->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel x:Name="StepsContainer">
+                <!-- Turkish -->
+                <ui:Card Margin="0,0,0,12" x:Name="Lang_TR" Visibility="Collapsed">
+                    <StackPanel>
+                        <TextBlock Text="🇹🇷 TÜRKÇE" FontWeight="Bold" Margin="0,0,0,12" Foreground="{DynamicResource SystemAccentColorBrush}"/>
+                        <TextBlock TextWrapping="Wrap" Margin="0,0,0,8">1. Uygulamayı kurun.</TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0,0,0,8">2. Cihaz Kimliğinizi (HWID) kopyalayın.</TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0,0,0,8">3. Satın alma sırasında Kişiselleştirme kutusuna yazın veya Etsy'den mesaj atın.</TextBlock>
+                        <TextBlock TextWrapping="Wrap">4. 24 saat içinde anahtarınız size iletilecektir.</TextBlock>
+                    </StackPanel>
+                </ui:Card>
+
+                <!-- English -->
+                <ui:Card Margin="0,0,0,12" x:Name="Lang_EN" Visibility="Collapsed">
+                    <StackPanel>
+                        <TextBlock Text="🇺🇸 ENGLISH" FontWeight="Bold" Margin="0,0,0,12" Foreground="{DynamicResource SystemAccentColorBrush}"/>
+                        <TextBlock TextWrapping="Wrap" Margin="0,0,0,8">1. Install the app.</TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0,0,0,8">2. Copy your Hardware ID (HWID).</TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0,0,0,8">3. Provide it in the Personalization box during purchase or via Etsy Message.</TextBlock>
+                        <TextBlock TextWrapping="Wrap">4. You will receive your key via Etsy within 24 hours.</TextBlock>
+                    </StackPanel>
+                </ui:Card>
+
+                <!-- German -->
+                <ui:Card Margin="0,0,0,12" x:Name="Lang_DE" Visibility="Collapsed">
+                    <StackPanel>
+                        <TextBlock Text="🇩🇪 DEUTSCH" FontWeight="Bold" Margin="0,0,0,12" Foreground="{DynamicResource SystemAccentColorBrush}"/>
+                        <TextBlock TextWrapping="Wrap" Margin="0,0,0,8">1. App installieren.</TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0,0,0,8">2. Hardware-ID (HWID) kopieren.</TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0,0,0,8">3. Geben Sie diese beim Kauf an veya per Etsy-Nachricht senden.</TextBlock>
+                        <TextBlock TextWrapping="Wrap">4. Sie erhalten den Schlüssel innerhalb von 24h per Etsy.</TextBlock>
+                    </StackPanel>
+                </ui:Card>
+
+                <!-- French -->
+                <ui:Card Margin="0,0,0,12" x:Name="Lang_FR" Visibility="Collapsed">
+                    <StackPanel>
+                        <TextBlock Text="🇫🇷 FRANÇAIS" FontWeight="Bold" Margin="0,0,0,12" Foreground="{DynamicResource SystemAccentColorBrush}"/>
+                        <TextBlock TextWrapping="Wrap" Margin="0,0,0,8">1. Installer l'application.</TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0,0,0,8">2. Copier votre identifiant (HWID).</TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0,0,0,8">3. Indiquez-le lors de l'achat ou via message Etsy.</TextBlock>
+                        <TextBlock TextWrapping="Wrap">4. Vous recevrez votre clé via Etsy sous 24h.</TextBlock>
+                    </StackPanel>
+                </ui:Card>
+
+                <!-- Spanish -->
+                <ui:Card Margin="0,0,0,12" x:Name="Lang_ES" Visibility="Collapsed">
+                    <StackPanel>
+                        <TextBlock Text="🇪🇸 ESPAÑOL" FontWeight="Bold" Margin="0,0,0,12" Foreground="{DynamicResource SystemAccentColorBrush}"/>
+                        <TextBlock TextWrapping="Wrap" Margin="0,0,0,8">1. Instalar la aplicación.</TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0,0,0,8">2. Copiar su ID de hardware (HWID).</TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0,0,0,8">3. Proporciónelo al comprar o por mensaje de Etsy.</TextBlock>
+                        <TextBlock TextWrapping="Wrap">4. Recibirá su clave por Etsy en 24h.</TextBlock>
+                    </StackPanel>
+                </ui:Card>
+
+                <!-- Italian -->
+                <ui:Card Margin="0,0,0,12" x:Name="Lang_IT" Visibility="Collapsed">
+                    <StackPanel>
+                        <TextBlock Text="🇮🇹 ITALIANO" FontWeight="Bold" Margin="0,0,0,12" Foreground="{DynamicResource SystemAccentColorBrush}"/>
+                        <TextBlock TextWrapping="Wrap" Margin="0,0,0,8">1. Installa l'app.</TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0,0,0,8">2. Copia il tuo ID hardware (HWID).</TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0,0,0,8">3. Forniscilo al momento dell'acquisto o via messaggio Etsy.</TextBlock>
+                        <TextBlock TextWrapping="Wrap">4. Riceverai la chiave via Etsy entro 24 ore.</TextBlock>
+                    </StackPanel>
+                </ui:Card>
+
+                <!-- Russian -->
+                <ui:Card Margin="0,0,0,12" x:Name="Lang_RU" Visibility="Collapsed">
+                    <StackPanel>
+                        <TextBlock Text="🇷🇺 РУССКИЙ" FontWeight="Bold" Margin="0,0,0,12" Foreground="{DynamicResource SystemAccentColorBrush}"/>
+                        <TextBlock TextWrapping="Wrap" Margin="0,0,0,8">1. Установите приложение.</TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0,0,0,8">2. Скопируйте ваш Hardware ID (HWID).</TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0,0,0,8">3. Укажите его при покупке или через сообщения Etsy.</TextBlock>
+                        <TextBlock TextWrapping="Wrap">4. Вы получите ключ через Etsy в течение 24 часов.</TextBlock>
+                    </StackPanel>
+                </ui:Card>
+
+                <!-- Arabic -->
+                <ui:Card Margin="0,0,0,12" x:Name="Lang_AR" Visibility="Collapsed" FlowDirection="RightToLeft">
+                    <StackPanel>
+                        <TextBlock Text="🇸🇦 العربية" FontWeight="Bold" Margin="0,0,0,12" Foreground="{DynamicResource SystemAccentColorBrush}"/>
+                        <TextBlock TextWrapping="Wrap" Margin="0,0,0,8">1. قم بتثبيت التطبيق.</TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0,0,0,8">2. قم بنسخ معرف الجهاز (HWID).</TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0,0,0,8">3. قدمه أثناء الشراء أو عبر رسائل Etsy.</TextBlock>
+                        <TextBlock TextWrapping="Wrap">4. ستتلقى المفتاح عبر Etsy خلال 24 ساعة.</TextBlock>
+                    </StackPanel>
+                </ui:Card>
+
+                <!-- Japanese -->
+                <ui:Card Margin="0,0,0,12" x:Name="Lang_JA" Visibility="Collapsed">
+                    <StackPanel>
+                        <TextBlock Text="🇯🇵 日本語" FontWeight="Bold" Margin="0,0,0,12" Foreground="{DynamicResource SystemAccentColorBrush}"/>
+                        <TextBlock TextWrapping="Wrap" Margin="0,0,0,8">1. アプリをインストールします。</TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0,0,0,8">2. デバイスID (HWID) をコピーします。</TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0,0,0,8">3. 購入時にパーソナライズ欄に入力するか、Etsyメッセージで送信してください。</TextBlock>
+                        <TextBlock TextWrapping="Wrap">4. 24時間以内にEtsy経由でキーをお送りします。</TextBlock>
+                    </StackPanel>
+                </ui:Card>
+
+                <!-- Chinese -->
+                <ui:Card Margin="0,0,0,12" x:Name="Lang_ZH" Visibility="Collapsed">
+                    <StackPanel>
+                        <TextBlock Text="🇨🇳 中文" FontWeight="Bold" Margin="0,0,0,12" Foreground="{DynamicResource SystemAccentColorBrush}"/>
+                        <TextBlock TextWrapping="Wrap" Margin="0,0,0,8">1. 安装应用程序。</TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0,0,0,8">2. 复制您的硬件ID (HWID)。</TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0,0,0,8">3. 在购买时提供或通过Etsy消息发送。</TextBlock>
+                        <TextBlock TextWrapping="Wrap">4. 您将在24小时内通过Etsy收到激活码。</TextBlock>
+                    </StackPanel>
+                </ui:Card>
+
+                <TextBlock Text="Docentra AI Suite - Premium Onboarding" Opacity="0.5" FontSize="11" Margin="0,12,0,0" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- Footer -->
+        <ui:Button Grid.Row="2" 
+                   Content="Close / Kapat" 
+                   Appearance="Primary" 
+                   HorizontalAlignment="Stretch" 
+                   Margin="0,24,0,0" 
+                   Click="BtnClose_Click"/>
+    </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,30 @@
+===========================================================
+    MICROSOFT OFFICE REQUIREMENT / GEREKSINIMI
+===========================================================
+
+[RUSSIAN]
+Для корректной работы профессиональных функций этого приложения 
+на вашем компьютере должен быть установлен Microsoft Office.
+
+Следующие инструменты зависят от Microsoft Office:
+- Преобразование Word в PDF / PDF в Word
+- Преобразование Excel в PDF / PDF в Excel
+- Преобразование PowerPoint в PDF
+- Инструменты конвертера Office
+
+Если у вас не установлен Microsoft Office, эти функции 
+будут недоступны или могут работать с ошибками.
+
+-----------------------------------------------------------
+
+[ENGLISH]
+For the professional features of this application to function correctly, 
+Microsoft Office must be installed on your computer.
+
+-----------------------------------------------------------
+
+[TURKISH]
+Bu uygulamanın profesyonel özelliklerinin doğru çalışabilmesi için 
+bilgisayarınızda Microsoft Office yüklü olmalıdır.
+
+===========================================================

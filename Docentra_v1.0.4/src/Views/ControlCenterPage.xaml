@@ -1,0 +1,213 @@
+<Page x:Class="PromtAiPdfPro.Views.ControlCenterPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      Title="Dashboard">
+
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <StackPanel Grid.Row="0">
+            <ui:InfoBar Title="{DynamicResource Office_RequirementTitle}" 
+                        Message="{DynamicResource Office_RequirementDesc}" 
+                        Severity="Informational" 
+                        IsOpen="True" 
+                        Margin="0,0,0,15" />
+
+            <Grid x:Name="UpdateGrid" Margin="0,0,0,15">
+                <Grid.Style>
+                    <Style TargetType="Grid">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=UpdateInfoBar, Path=IsOpen}" Value="True">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Style>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+                <ui:InfoBar x:Name="UpdateInfoBar"
+                            Grid.Column="0"
+                            Title="{DynamicResource Update_AvailableTitle}" 
+                            Severity="Success" 
+                            IsOpen="False"
+                            IsClosable="True"
+                            Margin="0" />
+                
+                <ui:Button Grid.Column="1"
+                           Content="{DynamicResource Btn_DownloadNow}" 
+                           Appearance="Primary" 
+                           VerticalAlignment="Center"
+                           Margin="10,0,0,0"
+                           Click="BtnDownloadUpdate_Click" />
+            </Grid>
+            
+            <Grid Margin="0,0,0,20">
+                <StackPanel>
+                    <TextBlock Text="{DynamicResource Dash_Welcome}" Style="{StaticResource PremiumHeaderTitle}" FontSize="24"/>
+                    <TextBlock Text="{DynamicResource Dash_Desc}" Style="{StaticResource PremiumHeaderSub}" FontSize="12"/>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+
+        <!-- Tools Grid -->
+        <Grid Grid.Row="1">
+            <ScrollViewer VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Disabled">
+                <WrapPanel Margin="-5" HorizontalAlignment="Left" ItemWidth="220" ItemHeight="130">
+                    <!-- Cards ... -->
+                    <ui:CardAction Margin="5" Padding="15" Style="{StaticResource PremiumCardStyle}" Click="NavigateToPdfArea_Click" MinWidth="260" BorderBrush="{DynamicResource PremiumAccentBrush}" BorderThickness="1">
+                        <StackPanel>
+                            <ui:SymbolIcon Symbol="DocumentPdf24" FontSize="32" Foreground="{DynamicResource PremiumAccentBrush}" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+                            <TextBlock Text="{DynamicResource Viewer_PdfAreaTitle}" FontWeight="Bold" FontSize="16" Margin="0,0,0,4"/>
+                            <TextBlock Text="{DynamicResource Viewer_PdfAreaDesc}" FontSize="11" Opacity="0.7" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </ui:CardAction>
+
+                    <ui:CardAction Margin="5" Padding="15" Style="{StaticResource PremiumCardStyle}" Click="NavigateToMerge_Click" MinWidth="260" AllowDrop="True" Drop="Card_Drop" DragOver="Card_DragOver" Tag="Merge">
+                        <StackPanel>
+                            <ui:SymbolIcon Symbol="Copy24" FontSize="32" Foreground="{DynamicResource PremiumAccentBrush}" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+                            <TextBlock Text="{DynamicResource Dash_MergeTitle}" FontWeight="Bold" FontSize="16" Margin="0,0,0,4"/>
+                            <TextBlock Text="{DynamicResource Dash_MergeSub}" FontSize="11" Opacity="0.7" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </ui:CardAction>
+
+                    <ui:CardAction Margin="5" Padding="15" Style="{StaticResource PremiumCardStyle}" Click="NavigateToSplit_Click" MinWidth="260" AllowDrop="True" Drop="Card_Drop" DragOver="Card_DragOver" Tag="Split">
+                        <StackPanel>
+                            <ui:SymbolIcon Symbol="Cut24" FontSize="32" Foreground="#E81123" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+                            <TextBlock Text="{DynamicResource Dash_SplitTitle}" FontWeight="Bold" FontSize="16" Margin="0,0,0,4"/>
+                            <TextBlock Text="{DynamicResource Dash_SplitSub}" FontSize="11" Opacity="0.7" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </ui:CardAction>
+
+                    <ui:CardAction Margin="5" Padding="15" Style="{StaticResource PremiumCardStyle}" Click="NavigateToSign_Click" MinWidth="260" AllowDrop="True" Drop="Card_Drop" DragOver="Card_DragOver" Tag="Sign">
+                        <StackPanel>
+                            <ui:SymbolIcon Symbol="Signature24" FontSize="32" Foreground="{DynamicResource PremiumAccentBrush}" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+                            <TextBlock Text="{DynamicResource Dash_SignTitle}" FontWeight="Bold" FontSize="16" Margin="0,0,0,4"/>
+                            <TextBlock Text="{DynamicResource Dash_SignSub}" FontSize="11" Opacity="0.7" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </ui:CardAction>
+
+                    <ui:CardAction Margin="5" Padding="15" Style="{StaticResource PremiumCardStyle}" Click="NavigateToDeletePages_Click" MinWidth="260" AllowDrop="True" Drop="Card_Drop" DragOver="Card_DragOver" Tag="DeletePages">
+                        <StackPanel>
+                            <ui:SymbolIcon Symbol="Delete24" FontSize="32" Foreground="#FF4500" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+                            <TextBlock Text="{DynamicResource Dash_DeletePagesTitle}" FontWeight="Bold" FontSize="16" Margin="0,0,0,4"/>
+                            <TextBlock Text="{DynamicResource Dash_DeletePagesSub}" FontSize="11" Opacity="0.7" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </ui:CardAction>
+
+                    <ui:CardAction Margin="5" Padding="15" Style="{StaticResource PremiumCardStyle}" Click="NavigateToPageNumbers_Click" MinWidth="260" AllowDrop="True" Drop="Card_Drop" DragOver="Card_DragOver" Tag="PageNumbers">
+                        <StackPanel>
+                            <ui:SymbolIcon Symbol="NumberSymbol24" FontSize="32" Foreground="#32CD32" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+                            <TextBlock Text="{DynamicResource Dash_PageNumTitle}" FontWeight="Bold" FontSize="16" Margin="0,0,0,4"/>
+                            <TextBlock Text="{DynamicResource Dash_PageNumSub}" FontSize="11" Opacity="0.7" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </ui:CardAction>
+
+                    <ui:CardAction Margin="5" Padding="15" Style="{StaticResource PremiumCardStyle}" Click="NavigateToCrop_Click" MinWidth="260" AllowDrop="True" Drop="Card_Drop" DragOver="Card_DragOver" Tag="Crop">
+                        <StackPanel>
+                            <ui:SymbolIcon Symbol="Crop24" FontSize="32" Foreground="#00BFFF" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+                            <TextBlock Text="{DynamicResource Dash_CropTitle}" FontWeight="Bold" FontSize="16" Margin="0,0,0,4"/>
+                            <TextBlock Text="{DynamicResource Dash_CropSub}" FontSize="11" Opacity="0.7" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </ui:CardAction>
+
+                    <ui:CardAction Margin="5" Padding="15" Style="{StaticResource PremiumCardStyle}" Click="NavigateToCompress_Click" MinWidth="260" AllowDrop="True" Drop="Card_Drop" DragOver="Card_DragOver" Tag="Compress">
+                        <StackPanel>
+                            <ui:SymbolIcon Symbol="ArrowMinimize24" FontSize="32" Foreground="#0078D4" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+                            <TextBlock Text="{DynamicResource Dash_CompressTitle}" FontWeight="Bold" FontSize="16" Margin="0,0,0,4"/>
+                            <TextBlock Text="{DynamicResource Dash_CompressSub}" FontSize="11" Opacity="0.7" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </ui:CardAction>
+
+                    <ui:CardAction Margin="5" Padding="15" Style="{StaticResource PremiumCardStyle}" Click="NavigateToProtect_Click" MinWidth="260" AllowDrop="True" Drop="Card_Drop" DragOver="Card_DragOver" Tag="Protect">
+                        <StackPanel>
+                            <ui:SymbolIcon Symbol="ShieldLock24" FontSize="32" Foreground="#800080" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+                            <TextBlock Text="{DynamicResource Dash_ProtectTitle}" FontWeight="Bold" FontSize="16" Margin="0,0,0,4"/>
+                            <TextBlock Text="{DynamicResource Dash_ProtectSub}" FontSize="11" Opacity="0.7" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </ui:CardAction>
+
+                    <ui:CardAction Margin="5" Padding="15" Style="{StaticResource PremiumCardStyle}" Click="NavigateToUnlock_Click" MinWidth="260" AllowDrop="True" Drop="Card_Drop" DragOver="Card_DragOver" Tag="Unlock">
+                        <StackPanel>
+                            <ui:SymbolIcon Symbol="ShieldDismiss24" FontSize="32" Foreground="#9932CC" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+                            <TextBlock Text="{DynamicResource Dash_UnlockTitle}" FontWeight="Bold" FontSize="16" Margin="0,0,0,4"/>
+                            <TextBlock Text="{DynamicResource Dash_UnlockSub}" FontSize="11" Opacity="0.7" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </ui:CardAction>
+
+                    <ui:CardAction Margin="5" Padding="15" Style="{StaticResource PremiumCardStyle}" Click="NavigateToTextWatermark_Click" MinWidth="260" AllowDrop="True" Drop="Card_Drop" DragOver="Card_DragOver" Tag="TextWatermark">
+                        <StackPanel>
+                            <Image Source="pack://application:,,,/Docentra;component/Assets/text_watermark.png" Width="48" Height="48" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+                            <TextBlock Text="{DynamicResource Dash_TextWatermarkTitle}" FontWeight="Bold" FontSize="16" Margin="0,0,0,4"/>
+                            <TextBlock Text="{DynamicResource Dash_TextWatermarkSub}" FontSize="11" Opacity="0.7" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </ui:CardAction>
+
+                    <ui:CardAction Margin="5" Padding="15" Style="{StaticResource PremiumCardStyle}" Click="NavigateToLogoWatermark_Click" MinWidth="260" AllowDrop="True" Drop="Card_Drop" DragOver="Card_DragOver" Tag="LogoWatermark">
+                        <StackPanel>
+                            <Image Source="pack://application:,,,/Docentra;component/Assets/logo_watermark.png" Width="48" Height="48" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+                            <TextBlock Text="{DynamicResource Dash_LogoWatermarkTitle}" FontWeight="Bold" FontSize="16" Margin="0,0,0,4"/>
+                            <TextBlock Text="{DynamicResource Dash_LogoWatermarkSub}" FontSize="11" Opacity="0.7" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </ui:CardAction>
+
+                    <ui:CardAction Margin="5" Padding="15" Style="{StaticResource PremiumCardStyle}" Click="NavigateToImageToPdf_Click" MinWidth="260" AllowDrop="True" Drop="Card_Drop" DragOver="Card_DragOver" Tag="ImageToPdf">
+                        <StackPanel>
+                            <ui:SymbolIcon Symbol="Image24" FontSize="32" Foreground="#107C10" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+                            <TextBlock Text="{DynamicResource Dash_ImgTitle}" FontWeight="Bold" FontSize="16" Margin="0,0,0,4"/>
+                            <TextBlock Text="{DynamicResource Dash_ImgSub}" FontSize="11" Opacity="0.7" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </ui:CardAction>
+
+                    <ui:CardAction Margin="5" Padding="15" Style="{StaticResource PremiumCardStyle}" Click="NavigateToOfficeToPdf_Click" MinWidth="260" AllowDrop="True" Drop="Card_Drop" DragOver="Card_DragOver" Tag="OfficeToPdf">
+                        <StackPanel>
+                            <ui:SymbolIcon Symbol="ArrowSwap24" FontSize="32" Foreground="#FF8C00" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+                            <TextBlock Text="{DynamicResource Dash_OfficeTitle}" FontWeight="Bold" FontSize="16" Margin="0,0,0,4"/>
+                            <TextBlock Text="{DynamicResource Dash_OfficeSub}" FontSize="11" Opacity="0.7" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </ui:CardAction>
+
+                    <ui:CardAction Margin="5" Padding="15" Style="{StaticResource PremiumCardStyle}" Click="NavigateToWord_Click" MinWidth="260" AllowDrop="True" Drop="Card_Drop" DragOver="Card_DragOver" Tag="PdfToWord">
+                        <StackPanel>
+                            <ui:SymbolIcon Symbol="Document24" FontSize="32" Foreground="#2B579A" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+                            <TextBlock Text="{DynamicResource Dash_WordTitle}" FontWeight="Bold" FontSize="16" Margin="0,0,0,4"/>
+                            <TextBlock Text="{DynamicResource Dash_WordSub}" FontSize="11" Opacity="0.7" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </ui:CardAction>
+
+                    <ui:CardAction Margin="5" Padding="15" Style="{StaticResource PremiumCardStyle}" Click="NavigateToMetadata_Click" MinWidth="260" AllowDrop="True" Drop="Card_Drop" DragOver="Card_DragOver" Tag="Metadata">
+                        <StackPanel>
+                            <ui:SymbolIcon Symbol="Tag24" FontSize="32" Foreground="#005A9E" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+                            <TextBlock Text="{DynamicResource Dash_MetadataTitle}" FontWeight="Bold" FontSize="16" Margin="0,0,0,4"/>
+                            <TextBlock Text="{DynamicResource Dash_MetadataSub}" FontSize="11" Opacity="0.7" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </ui:CardAction>
+
+                    <ui:CardAction Margin="5" Padding="15" Style="{StaticResource PremiumCardStyle}" Click="NavigateToOfficeConvert_Click" MinWidth="260" AllowDrop="True" Drop="Card_Drop" DragOver="Card_DragOver" Tag="OfficeConvert">
+                        <StackPanel>
+                            <ui:SymbolIcon Symbol="ArrowBidirectionalUpDown24" FontSize="32" Foreground="#0078D7" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+                            <TextBlock Text="{DynamicResource Nav_OfficeConvert}" FontWeight="Bold" FontSize="16" Margin="0,0,0,4"/>
+                            <TextBlock Text="{DynamicResource Sec_Desc_OfficeConvert}" FontSize="11" Opacity="0.7" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </ui:CardAction>
+
+                    <ui:CardAction Margin="5" Padding="15" Style="{StaticResource PremiumCardStyle}" Click="NavigateToOcr_Click" MinWidth="260" AllowDrop="True" Drop="Card_Drop" DragOver="Card_DragOver" Tag="Ocr">
+                        <StackPanel>
+                            <ui:SymbolIcon Symbol="ScanText24" FontSize="32" Foreground="{DynamicResource PremiumAccentBrush}" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+                            <TextBlock Text="{DynamicResource Nav_Ocr}" FontWeight="Bold" FontSize="16" Margin="0,0,0,4"/>
+                            <TextBlock Text="{DynamicResource Dash_OcrSub}" FontSize="11" Opacity="0.7" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </ui:CardAction>
+                </WrapPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,225 @@
+# DOCENTRA PDF & DOCUMENT EDITOR
+
+# SON KULLANICI LİSANS SÖZLEŞMESİ (EULA)
+
+**Son Güncelleme Tarihi:** 01 Mayıs 2026
+
+Bu Son Kullanıcı Lisans Sözleşmesi (“Sözleşme”), **Docentra – PDF & Document Editor** yazılımının (“Yazılım”) kurulumu, kullanımı, lisanslanması ve kullanım koşullarını düzenlemektedir.
+
+Yazılımı indirerek, kurarak, etkinleştirerek veya kullanarak; aşağıda belirtilen tüm şartları okuduğunuzu, anladığınızı ve kabul ettiğinizi beyan etmiş olursunuz.
+
+Bu şartları kabul etmiyorsanız, Yazılımı kurmayınız veya kullanmayınız.
+
+---
+
+# 1. TANIMLAR
+
+Bu sözleşmede geçen terimler aşağıdaki anlamlara gelir:
+
+* **Docentra:** Yazılımın sahibi ve lisans sağlayıcısı.
+* **Yazılım:** Docentra – PDF & Document Editor uygulaması ve buna ait tüm bileşenler.
+* **Kullanıcı:** Yazılımı kuran, kullanan veya lisanslayan gerçek veya tüzel kişi.
+* **Lisans Anahtarı:** Yazılımın yetkilendirilmesi için verilen benzersiz erişim kodu.
+* **HWID (Hardware ID):** Cihaz donanımına bağlı benzersiz sistem kimliği.
+* **Yerel İşleme (Local Processing):** Verilerin yalnızca kullanıcının cihazında işlenmesi.
+
+---
+
+# 2. GİZLİLİK VE VERİ GÜVENLİĞİ
+
+Docentra, kullanıcı gizliliğini öncelik olarak kabul eder ve “Privacy-Native” yaklaşımıyla geliştirilmiştir.
+
+## 2.1 Yerel İşleme
+
+* Yazılım tarafından gerçekleştirilen belge işleme operasyonları tamamen yerel cihaz üzerinde yürütülür.
+* PDF düzenleme, OCR, dönüştürme, imzalama, kırpma, birleştirme ve diğer işlemler cihaz dışına veri aktarımı yapılmadan gerçekleştirilir.
+* Kullanıcı belgeleri, bulut sistemlerine veya uzak sunuculara otomatik olarak yüklenmez.
+
+## 2.2 Veri Aktarımı
+
+Docentra, kullanıcı belgelerini üçüncü taraf sistemlere iletmez.
+
+Yazılım aşağıdaki durumlar dışında veri paylaşımı yapmaz:
+
+* Kullanıcının açık isteğiyle paylaşım yapılması
+* Lisans doğrulama işlemleri
+* Güncelleme kontrolü
+* Yasal zorunluluklar
+
+## 2.3 Kullanıcı Sorumluluğu
+
+Kullanıcı:
+
+* İşlem yaptığı belgelerin yasal sahibi olduğunu,
+* İşlem yapılan içeriklerin hukuka uygun olduğunu,
+* Belgelerin saklanması ve güvenliğinden sorumlu olduğunu kabul eder.
+
+---
+
+# 3. LİSANS KOŞULLARI
+
+## 3.1 Lisans Türü
+
+Docentra, kullanıcıya sınırlı, devredilemez, münhasır olmayan bir kullanım lisansı sunar.
+
+Bu lisans:
+
+* Sadece satın alınan sürüm için geçerlidir
+* Belirli cihazla ilişkilendirilir
+* Yazılımın mülkiyetini devretmez
+
+## 3.2 Donanım Kilidi (HWID)
+
+* Lisans anahtarı, yalnızca ilk etkinleştirildiği cihazın HWID bilgisine bağlanır.
+* Aynı lisans anahtarı farklı cihazlarda kullanılamaz.
+* Donanım değişiklikleri lisans doğrulamasını etkileyebilir.
+
+## 3.3 Lisans Devri
+
+Kullanıcı:
+
+* Lisansını üçüncü kişilere devredemez
+* Yeniden satamaz
+* Paylaşamaz
+* Kiralayamaz
+* Alt lisans oluşturamaz
+
+## 3.4 Deneme Sürümü
+
+Deneme sürümü aşağıdaki sınırlamalara tabi olabilir:
+
+* Süre kısıtlaması
+* Özellik kısıtlaması
+* Dosya boyutu limiti
+* İşlem sayısı limiti
+
+---
+
+# 4. KULLANIM KISITLAMALARI
+
+Kullanıcı aşağıdaki faaliyetlerde bulunamaz:
+
+* Yazılımı tersine mühendislik yöntemiyle analiz etmek
+* Kaynak kodunu çıkarmaya çalışmak
+* Yazılımı parçalamak veya decompile etmek
+* Yazılımı yasa dışı faaliyetlerde kullanmak
+* Güvenlik mekanizmalarını aşmaya çalışmak
+* Lisans sistemini manipüle etmek
+* Crack, keygen veya lisans bypass yöntemleri geliştirmek
+* Yazılımı izinsiz çoğaltmak veya dağıtmak
+
+Bu maddelerin ihlali durumunda Docentra lisansı iptal etme hakkına sahiptir.
+
+---
+
+# 5. FİKRİ MÜLKİYET HAKLARI
+
+Yazılım ve tüm bileşenleri aşağıdaki haklarla korunmaktadır:
+
+* Telif hakları
+* Ticari marka hakları
+* Yazılım lisans hakları
+* Arayüz tasarımları
+* Logo ve marka kimliği
+* Kod altyapısı
+
+Yazılım üzerindeki tüm haklar Docentra’ya aittir.
+
+Kullanıcı yalnızca kullanım hakkı elde eder.
+
+---
+
+# 6. GÜNCELLEMELER VE DESTEK
+
+Docentra, kullanıcı deneyimini geliştirmek amacıyla güncelleme yayınlayabilir.
+
+## 6.1 Güncellemeler
+
+Güncellemeler şunları içerebilir:
+
+* Performans iyileştirmeleri
+* Güvenlik düzeltmeleri
+* Yeni araçlar
+* Hata düzeltmeleri
+* Arayüz geliştirmeleri
+
+## 6.2 Destek Hizmeti
+
+Teknik destek aşağıdaki koşullarda sağlanabilir:
+
+* Lisans doğrulaması yapılmış kullanıcılar
+* Destek süresi aktif olan kullanıcılar
+* Geçerli sürüm kullanan kullanıcılar
+
+---
+
+# 7. SORUMLULUK REDDİ
+
+Yazılım “olduğu gibi” sunulmaktadır.
+
+Docentra aşağıdaki durumlar için sorumluluk kabul etmez:
+
+* Veri kaybı
+* Belge bozulması
+* İş sürekliliği kaybı
+* Dolaylı zararlar
+* Kar kaybı
+* Üçüncü taraf yazılım uyumsuzlukları
+* Donanım kaynaklı problemler
+
+Kullanıcı, işlem yaptığı belgelerin yedeğini almakla sorumludur.
+
+---
+
+# 8. LİSANSIN SONA ERMESİ
+
+Docentra aşağıdaki durumlarda lisansı sonlandırabilir:
+
+* Lisans ihlali
+* Korsan kullanım
+* Yetkisiz paylaşım
+* Sahte lisans kullanımı
+* Yasal ihlal
+
+Lisans sonlandırıldığında kullanıcı:
+
+* Yazılımı kullanmayı durdurmalıdır
+* Yazılımı kaldırmalıdır
+* Lisans anahtarını kullanmayı bırakmalıdır
+
+---
+
+# 9. YETKİLİ HUKUK VE UYUŞMAZLIK
+
+Bu sözleşme, ilgili ülkenin yürürlükteki fikri mülkiyet ve yazılım lisans mevzuatına tabidir.
+
+Uyuşmazlık halinde ilgili mahkemeler ve icra daireleri yetkilidir.
+
+---
+
+# 10. KABUL BEYANI
+
+Kullanıcı, aşağıdaki hususları kabul eder:
+
+* Bu sözleşmeyi okuduğunu
+* Şartları anladığını
+* Tüm kullanım koşullarını kabul ettiğini
+* Yazılımı belirtilen lisans şartları kapsamında kullanacağını
+
+---
+
+# ONAY
+
+Lütfen devam etmek için aşağıdaki kutucuğu işaretleyiniz:
+
+**Sözleşmeyi Okudum ve Kabul Ediyorum**
+
+Bu seçeneğin işaretlenmesi ile kullanıcı, tüm sözleşme maddelerini kabul etmiş sayılır.
+
+---
+
+# İLETİŞİM
+
+Destek, lisans ve diğer talepleriniz için bize ulaşın:
+**E-posta:** support@docentrapdf.com
+**Web:** https://docentrapdf.com
