@@ -1358,78 +1358,36 @@ if (canvas) {
 
 // ===== DESKTOP MOCKUP TAB SWITCHER =====
 window.switchMockupTab = function(tabName) {
-    const dashView = document.getElementById('mockup-dashboard-view');
-    const readerView = document.getElementById('mockup-reader-view');
+    const views = {
+        'dashboard': document.getElementById('mockup-dashboard-view'),
+        'reader': document.getElementById('mockup-reader-view'),
+        'ocr': document.getElementById('mockup-ocr-view'),
+        'watermark': document.getElementById('mockup-watermark-view'),
+        'metadata': document.getElementById('mockup-metadata-view')
+    };
     const tabs = document.querySelectorAll('.mockup-tab');
-    if (!dashView || !readerView) return;
     
-    if (tabName === 'dashboard') {
-        dashView.style.display = 'flex';
-        readerView.style.display = 'none';
-        tabs[0].classList.add('active');
-        tabs[1].classList.remove('active');
-    } else {
-        dashView.style.display = 'none';
-        readerView.style.display = 'flex';
-        tabs[0].classList.remove('active');
-        tabs[1].classList.add('active');
-    }
+    Object.keys(views).forEach(key => {
+        if (views[key]) {
+            views[key].style.display = (key === tabName) ? 'flex' : 'none';
+        }
+    });
+
+    const tabOrder = ['dashboard', 'reader', 'ocr', 'watermark', 'metadata'];
+    tabs.forEach((tab, index) => {
+        if (tabOrder[index] === tabName) {
+            tab.classList.add('active');
+            tab.style.background = 'rgba(212,175,55,0.15)';
+            tab.style.borderColor = 'rgba(212,175,55,0.3)';
+            tab.style.color = 'var(--primary-color)';
+            tab.style.opacity = '1';
+        } else {
+            tab.classList.remove('active');
+            tab.style.background = 'rgba(255,255,255,0.03)';
+            tab.style.borderColor = 'rgba(255,255,255,0.08)';
+            tab.style.color = '#fff';
+            tab.style.opacity = '0.75';
+        }
+    });
 };
 
-// ===== LOCAL PROCESSING SIMULATOR =====
-let isSimulating = false;
-window.triggerSimulation = function() {
-    if (isSimulating) return;
-    isSimulating = true;
-    
-    const dropzone = document.getElementById('sim-dropzone');
-    const icon = document.getElementById('sim-icon');
-    const fill = document.getElementById('sim-progress-fill');
-    const statusText = document.getElementById('sim-status-text');
-    const percentage = document.getElementById('sim-percentage');
-    const btn = document.getElementById('sim-action-btn');
-    if (!dropzone || !icon || !fill || !statusText || !percentage || !btn) return;
-    
-    // Set active UI states
-    dropzone.style.borderColor = '#d4af37';
-    dropzone.style.background = 'rgba(212, 175, 55, 0.05)';
-    icon.innerHTML = '⚡';
-    icon.style.transform = 'scale(1.2) rotate(15deg)';
-    percentage.style.display = 'inline';
-    btn.disabled = true;
-    
-    // Get localized processing status
-    const currentLang = localStorage.getItem('docentra-lang') || 'en';
-    const procText = (translations[currentLang] && translations[currentLang]['sim-status-processing']) || translations['en']['sim-status-processing'];
-    statusText.setAttribute('data-i18n', 'sim-status-processing');
-    statusText.innerHTML = procText;
-    
-    let progress = 0;
-    fill.style.width = '0%';
-    
-    const interval = setInterval(() => {
-        progress += 5;
-        if (progress > 100) progress = 100;
-        fill.style.width = progress + '%';
-        percentage.innerHTML = progress + '%';
-        
-        if (progress === 100) {
-            clearInterval(interval);
-            
-            // Set success UI states
-            icon.innerHTML = '✅';
-            icon.style.transform = 'scale(1)';
-            dropzone.style.borderColor = 'rgba(212, 175, 55, 0.2)';
-            dropzone.style.background = 'rgba(212, 175, 55, 0.01)';
-            
-            const successText = (translations[currentLang] && translations[currentLang]['sim-status-success']) || translations['en']['sim-status-success'];
-            statusText.setAttribute('data-i18n', 'sim-status-success');
-            statusText.innerHTML = successText;
-            
-            setTimeout(() => {
-                btn.disabled = false;
-                isSimulating = false;
-            }, 1000);
-        }
-    }, 40);
-};
