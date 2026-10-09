@@ -44,7 +44,31 @@
                         IsClosable="False"
                         Margin="0,0,0,24" />
             
-            <!-- Etsy Activation Help Bar -->
+            <!-- In-App Purchase Button -->
+            <ui:Button x:Name="BtnBuyInApp" 
+                       Appearance="Primary" 
+                       HorizontalAlignment="Stretch" 
+                       Margin="0,0,0,16" 
+                       Padding="16,14"
+                       Click="BtnBuyInApp_Click">
+                <Grid HorizontalAlignment="Stretch" Width="550">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <ui:SymbolIcon Symbol="Cart24" Grid.Column="0" Margin="0,0,14,0"/>
+                    <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                        <TextBlock Text="{DynamicResource Prem_BtnBuyNow_Title}" FontWeight="Bold" FontSize="15"/>
+                        <TextBlock Text="{DynamicResource Prem_BtnBuyNow_Sub}" FontSize="12" Opacity="0.8"/>
+                    </StackPanel>
+                    <Border Grid.Column="2" Background="rgba(255,255,255,0.2)" CornerRadius="6" Padding="10,4" VerticalAlignment="Center">
+                        <TextBlock Text="$19.90" FontWeight="Bold" FontSize="14"/>
+                    </Border>
+                </Grid>
+            </ui:Button>
+
+            <!-- Activation Help Bar -->
             <ui:Button x:Name="BtnHowToActivate" 
                        Appearance="Secondary" 
                        HorizontalAlignment="Stretch" 

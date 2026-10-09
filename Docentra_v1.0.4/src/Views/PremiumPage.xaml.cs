@@ -64,38 +64,21 @@ namespace PromtAiPdfPro.Views
                         args.Action = Microsoft.Web.WebView2.Core.CoreWebView2ServerCertificateErrorAction.AlwaysAllow;
                 };
 
-                // 2. Butona tıklandığında Etsy yerine zorla Web Sitesine yönlendir
+                // 2. Butona tıklandığında in-app checkout penceresini aç
                 WvPricing.CoreWebView2.NavigationStarting += (s, args) =>
                 {
                     if (args.Uri != null && !args.Uri.EndsWith("#pricing") && args.Uri != "https://docentrapdf.com/")
                     {
                         args.Cancel = true;
-
-                        // HWID'yi otomatik kopyala
-                        try
-                        {
-                            string hwid = TxtHwid.Text;
-                            Clipboard.SetText(hwid);
-
-                            if (Application.Current.MainWindow is MainView mv && mv.SnackbarService != null)
-                            {
-                                mv.SnackbarService.Show("HWID Kopyalandı!", "Cihaz kimliğiniz kopyalandı. Lütfen Etsy mesaj kutusuna yapıştırarak bize gönderin.", Wpf.Ui.Controls.ControlAppearance.Success, new Wpf.Ui.Controls.SymbolIcon(Wpf.Ui.Controls.SymbolRegular.ClipboardTask24), TimeSpan.FromSeconds(8));
-                            }
-                        }
-                        catch { }
-
-                        // Etsy'ye veya ana siteye yönlendir
-                        string targetUrl = "https://www.docentrapdf.com"; // Burası daha sonra Etsy linki ile güncellenebilir
-                        try { System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(targetUrl) { UseShellExecute = true }); }
-                        catch { }
+                        Dispatcher.Invoke(() => OpenCheckout());
                     }
                 };
 
-                // 3. Yeni pencere isteklerini ana siteye yönlendir
+                // 3. Yeni pencere isteklerinde de in-app checkout aç
                 WvPricing.CoreWebView2.NewWindowRequested += (s, args) =>
                 {
                     args.Handled = true;
-                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("https://www.docentrapdf.com") { UseShellExecute = true });
+                    Dispatcher.Invoke(() => OpenCheckout());
                 };
 
                 // URL'yi yükle
@@ -104,6 +87,41 @@ namespace PromtAiPdfPro.Views
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine("WebView2 Error: " + ex.Message);
+            }
+        }
+
+        private void BtnBuyInApp_Click(object sender, RoutedEventArgs e)
+        {
+            OpenCheckout();
+        }
+
+        private void OpenCheckout()
+        {
+            try
+            {
+                string hwid = TxtHwid.Text;
+                var checkoutWin = new CheckoutWindow(hwid)
+                {
+                    Owner = Window.GetWindow(this)
+                };
+                checkoutWin.ShowDialog();
+
+                if (checkoutWin.IsPurchaseCompleted)
+                {
+                    if (Application.Current.MainWindow is MainView mv && mv.SnackbarService != null)
+                    {
+                        mv.SnackbarService.Show(
+                            "Siparişiniz Alındı!",
+                            "Ödemeniz başarıyla tamamlandı. Cihaz kimliğiniz (HWID) siparişinize eklendi. Lisans anahtarınız e-posta adresinize gönderilecektir.",
+                            Wpf.Ui.Controls.ControlAppearance.Success,
+                            new Wpf.Ui.Controls.SymbolIcon(Wpf.Ui.Controls.SymbolRegular.CheckmarkCircle24),
+                            TimeSpan.FromSeconds(10));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Checkout error: {ex.Message}");
             }
         }
 
@@ -199,11 +217,13 @@ namespace PromtAiPdfPro.Views
                 
                 PremiumStatusInfoBar.IsOpen = true;
                 BtnHowToActivate.Visibility = Visibility.Collapsed;
+                BtnBuyInApp.Visibility = Visibility.Collapsed;
             }
             else
             {
                 PremiumStatusInfoBar.IsOpen = false;
                 BtnHowToActivate.Visibility = Visibility.Visible;
+                BtnBuyInApp.Visibility = Visibility.Visible;
             }
         }
 
