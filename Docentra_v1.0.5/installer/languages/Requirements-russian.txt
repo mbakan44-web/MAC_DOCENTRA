@@ -1,0 +1,151 @@
+===========================================================
+    MICROSOFT OFFICE REQUIREMENT / ТРЕБОВАНИЕ
+===========================================================
+
+[RUSSIAN]
+Для корректной работы профессиональных функций этого приложения 
+на вашем компьютере должен быть установлен Microsoft Office.
+
+Следующие инструменты зависят от Microsoft Office:
+- Преобразование Word в PDF / PDF в Word
+- Преобразование Excel в PDF / PDF в Excel
+- Преобразование PowerPoint в PDF
+- Инструменты конвертера Office
+
+Если на вашем компьютере не установлен Microsoft Office, эти функции 
+не будут работать или будут выдавать ошибки.
+
+-----------------------------------------------------------
+
+[ENGLISH]
+For the professional features of this application to function correctly, 
+Microsoft Office must be installed on your computer.
+
+The following tools depend on Microsoft Office:
+- Word to PDF / PDF to Word Conversion
+- Excel to PDF / PDF to Excel Conversion
+- PowerPoint to PDF Conversion
+- Office Converter Tools
+
+If you do not have Microsoft Office installed on your computer, these 
+features will not work or will produce errors.
+
+-----------------------------------------------------------
+
+[TURKISH]
+Bu uygulamanın profesyonel özelliklerinin doğru çalışabilmesi için 
+bilgisayarınızda Microsoft Office yüklü olmalıdır.
+
+Aşağıdaki araçlar Microsoft Office'e bağlıdır:
+- Word'den PDF'e / PDF'den Word'e Dönüştürme
+- Excel'den PDF'e / PDF'den Excel'e Dönüştürme
+- PowerPoint'ten PDF'e Dönüştürme
+- Ofis Dönüştürücü Araçları
+
+Eğer bilgisayarınızda Microsoft Office yüklü değilse, bu özellikler 
+çalışmayacak veya hata verecektir.
+
+-----------------------------------------------------------
+
+[GERMAN]
+Damit die professionellen Funktionen dieser Anwendung ordnungsgemäß funktionieren, 
+muss Microsoft Office auf Ihrem Computer installiert sein.
+
+Die folgenden Tools sind von Microsoft Office abhängig:
+- Word zu PDF / PDF zu Word Konvertierung
+- Excel zu PDF / PDF zu Excel Konvertierung
+- PowerPoint zu PDF Konvertierung
+- Office-Konverter-Tools
+
+Wenn Microsoft Office nicht auf Ihrem Computer installiert ist, werden diese 
+Funktionen nicht ausgeführt oder es treten Fehler auf.
+
+-----------------------------------------------------------
+
+[FRENCH]
+Pour que les fonctionnalités professionnelles de cette application fonctionnent correctement, 
+Microsoft Office doit être installé sur votre ordinateur.
+
+Les outils suivants dépendent de Microsoft Office :
+- Conversion Word en PDF / PDF en Word
+- Conversion Excel en PDF / PDF en Excel
+- Conversion PowerPoint en PDF
+- Outils de conversion Office
+
+Si Microsoft Office n'est pas installé sur votre ordinateur, ces fonctionnalités 
+ne fonctionneront pas ou généreront des erreurs.
+
+-----------------------------------------------------------
+
+[SPANISH]
+Para que las funciones profesionales de esta aplicación funcionen correctamente, 
+Microsoft Office debe estar instalado en su computadora.
+
+Las siguientes herramientas dependen de Microsoft Office:
+- Conversión de Word a PDF / PDF a Word
+- Conversión de Excel a PDF / PDF a Excel
+- Conversión de PowerPoint a PDF
+- Herramientas de conversión de Office
+
+Si no tiene Microsoft Office instalado en su computadora, estas funciones 
+no funcionarán o generarán errores.
+
+-----------------------------------------------------------
+
+[ITALIAN]
+Affinché le funzioni professionali di questa applicazione funzionino correttamente, 
+Microsoft Office deve essere installato sul computer.
+
+I seguenti strumenti dipendono da Microsoft Office:
+- Conversione da Word a PDF / da PDF a Word
+- Conversione da Excel a PDF / da PDF a Excel
+- Conversione da PowerPoint a PDF
+- Strumenti di conversione Office
+
+Se Microsoft Office non è installato sul computer, queste funzionalità 
+non funzioneranno o genereranno errori.
+
+-----------------------------------------------------------
+
+[CHINESE]
+为了使此应用程序的专业功能正常运行，您的计算机上必须安装 Microsoft Office。
+
+以下工具依赖于 Microsoft Office：
+- Word 转 PDF / PDF 转 Word 转换
+- Excel 转 PDF / PDF 转 Excel 转换
+- PowerPoint 转 PDF 转换
+- Office 转换工具
+
+如果您的计算机上未安装 Microsoft Office，这些功能将无法运行或会出现错误。
+
+-----------------------------------------------------------
+
+[JAPANESE]
+このアプリケーションのプロフェッショナル機能が正しく動作するには、
+コンピューターに Microsoft Office がインストールされている必要があります。
+
+次のツールは Microsoft Office に依存しています：
+- Word から PDF / PDF から Word への変換
+- Excel から PDF / PDF から Excel への変換
+- PowerPoint から PDF への変換
+- Office 変換ツール
+
+コンピューターに Microsoft Office がインストールされていない場合、これらの機能は
+動作しないか、エラーが発生します。
+
+-----------------------------------------------------------
+
+[ARABIC]
+لكي تعمل الميزات الاحترافية لهذا التطبيق بشكل صحيح، 
+يجب تثبيت Microsoft Office على جهاز الكمبيوتر الخاص بك.
+
+تعتمد الأدوات التالية على Microsoft Office:
+- تحويل Word إلى PDF / تحويل PDF إلى Word
+- تحويل Excel إلى PDF / تحويل PDF إلى Excel
+- تحويل PowerPoint إلى PDF
+- أدوات تحويل Office
+
+إذا لم يكن Microsoft Office مثبتًا على جهاز الكمبيوتر الخاص بك، فلن تعمل 
+هذه الميزات أو ستؤدي إلى حدوث أخطاء.
+
+===========================================================

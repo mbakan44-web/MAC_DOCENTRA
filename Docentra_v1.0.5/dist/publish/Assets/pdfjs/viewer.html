@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docentra PDF Viewer</title>
+    <link rel="stylesheet" href="pdf_viewer.css">
+    <style>
+        :root {
+            --bg-color: #202020;
+            --page-bg: #ffffff;
+            --page-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+            --placeholder-bg: rgba(255, 255, 255, 0.04);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --text-color: #f0f0f0;
+            --toolbar-bg: rgba(32, 32, 32, 0.88);
+            --toolbar-btn-hover: rgba(255, 255, 255, 0.12);
+            --accent-color: #0078d4;
+        }
+
+        body.theme-light {
+            --bg-color: #f0f2f5;
+            --page-bg: #ffffff;
+            --page-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+            --placeholder-bg: rgba(0, 0, 0, 0.03);
+            --border-color: rgba(0, 0, 0, 0.08);
+            --text-color: #1a1a1a;
+            --toolbar-bg: rgba(255, 255, 255, 0.92);
+            --toolbar-btn-hover: rgba(0, 0, 0, 0.07);
+            --accent-color: #0078d4;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* Üst Araç Çubuğu (Toolbar) */
+        #toolbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 44px;
+            background: var(--toolbar-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+            z-index: 50;
+            transition: background 0.2s ease, border-color 0.2s ease;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .toolbar-group {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .toolbar-btn {
+            background: transparent;
+            border: 1px solid transparent;
+            color: var(--text-color);
+            border-radius: 6px;
+            padding: 6px 10px;
+            font-size: 13px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+        }
+
+        .toolbar-btn:hover {
+            background: var(--toolbar-btn-hover);
+            border-color: var(--border-color);
+        }
+
+        .toolbar-btn:active {
+            transform: scale(0.96);
+        }
+
+        .toolbar-btn svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        .page-indicator-box {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 4px 8px;
+            border-radius: 6px;
+            background: var(--toolbar-btn-hover);
+        }
+
+        #page-input {
+            width: 38px;
+            height: 24px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        body.theme-light #page-input {
+            background: rgba(0, 0, 0, 0.05);
+        }
+        #page-input:focus {
+            outline: 2px solid var(--accent-color);
+        }
+
+        .zoom-label {
+            font-size: 12px;
+            font-weight: 600;
+            min-width: 44px;
+            text-align: center;
+        }
+
+        .divider {
+            width: 1px;
+            height: 20px;
+            background: var(--border-color);
+            margin: 0 4px;
+        }
+
+        /* Görüntüleyici Konteyneri */
+        #viewer-container {
+            width: 100%;
+            height: 100%;
+            padding-top: 44px; /* Toolbar yüksekliği */
+            overflow-y: auto;
+            overflow-x: auto;
+            position: relative;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        #viewer-container::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        #viewer-container::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.15);
+        }
+        #viewer-container::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.22);
+            border-radius: 5px;
+        }
+        #viewer-container::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.35);
+        }
+
+        #viewer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 24px 16px 80px 16px;
+            gap: 18px;
+            min-height: calc(100% - 44px);
+        }
+
+        .page-slot {
+            position: relative;
+            background-color: var(--page-bg);
+            box-shadow: var(--page-shadow);
+            border-radius: 4px;
+            transition: box-shadow 0.2s ease;
+            overflow: hidden;
+            user-select: text;
+            -webkit-user-select: text;
+        }
+
+        .page-slot.rendering {
+            background-color: var(--placeholder-bg);
+        }
+
+        .page-canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .textLayer {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            opacity: 1 !important;
+            line-height: 1;
+            mix-blend-mode: multiply;
+            user-select: text;
+            -webkit-user-select: text;
+            z-index: 2;
+        }
+
+        .textLayer span {
+            color: transparent !important;
+            position: absolute;
+            white-space: pre;
+            cursor: text;
+            transform-origin: 0% 0%;
+        }
+
+        .textLayer ::selection,
+        .textLayer *::selection {
+            background: rgba(0, 106, 255, 0.70) !important;
+            color: transparent !important;
+        }
+
+        .textLayer br::selection {
+            background: transparent !important;
+        }
+
+        #loading-overlay {
+            position: absolute;
+            top: 44px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--bg-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            transition: opacity 0.25s ease;
+        }
+
+        #loading-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(255, 255, 255, 0.15);
+            border-top-color: var(--accent-color);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            margin-top: 14px;
+            font-size: 13px;
+            opacity: 0.85;
+            letter-spacing: 0.3px;
+        }
+
+        #error-banner {
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #d13438;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 13px;
+            display: none;
+            z-index: 101;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        /* Akıllı Arama Çubuğu */
+        #search-bar {
+            position: absolute;
+            top: 52px;
+            right: 20px;
+            background: var(--toolbar-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            border-radius: 8px;
+            padding: 6px 8px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            z-index: 60;
+            transition: opacity 0.18s ease, transform 0.18s ease;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        #search-bar.hidden {
+            opacity: 0;
+            transform: translateY(-8px);
+            pointer-events: none;
+        }
+
+        .search-input-box {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        #search-input {
+            width: 250px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            border-radius: 6px;
+            padding: 0 54px 0 30px;
+            font-size: 13px;
+            outline: none;
+            transition: border-color 0.15s ease, background 0.15s ease;
+        }
+
+        body.theme-light #search-input {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        #search-input:focus {
+            border-color: var(--accent-color);
+            background: rgba(255, 255, 255, 0.14);
+        }
+
+        body.theme-light #search-input:focus {
+            background: #ffffff;
+            border-color: var(--accent-color);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 9px;
+            width: 14px;
+            height: 14px;
+            fill: var(--text-color);
+            opacity: 0.55;
+            pointer-events: none;
+        }
+
+        #search-count {
+            position: absolute;
+            right: 8px;
+            font-size: 11px;
+            font-weight: 600;
+            opacity: 0.65;
+            pointer-events: none;
+        }
+
+        .search-btn {
+            background: transparent;
+            border: 1px solid transparent;
+            color: var(--text-color);
+            border-radius: 5px;
+            width: 28px;
+            height: 28px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.15s ease, border-color 0.15s ease;
+        }
+
+        .search-btn:hover {
+            background: var(--toolbar-btn-hover);
+            border-color: var(--border-color);
+        }
+
+        .search-btn svg {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
+        }
+
+        .toolbar-btn.active {
+            background: var(--toolbar-btn-hover);
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        /* Eşleşme Vurguları */
+        .textLayer .search-highlight {
+            background-color: rgba(255, 215, 0, 0.45) !important;
+            border-radius: 2px;
+            box-shadow: 0 0 0 1px rgba(255, 170, 0, 0.6);
+        }
+
+        .textLayer .search-highlight.selected {
+            background-color: rgba(255, 120, 0, 0.8) !important;
+            box-shadow: 0 0 0 2px #ff6600, 0 0 10px rgba(255, 120, 0, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <!-- Üst Araç Çubuğu -->
+    <div id="toolbar">
+        <div class="toolbar-group">
+            <button class="toolbar-btn" id="btn-prev-page" title="Önceki Sayfa">
+                <svg viewBox="0 0 16 16"><path d="M11 2L5 8l6 6V2z"/></svg>
+            </button>
+            <div class="page-indicator-box">
+                <input type="text" id="page-input" value="1">
+                <span>/</span>
+                <span id="total-pages-label">0</span>
+            </div>
+            <button class="toolbar-btn" id="btn-next-page" title="Sonraki Sayfa">
+                <svg viewBox="0 0 16 16"><path d="M5 2l6 6-6 6V2z"/></svg>
+            </button>
+        </div>
+
+        <div class="toolbar-group">
+            <button class="toolbar-btn" id="btn-search-toggle" title="Belgede Ara (Ctrl + F)">
+                <svg viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
+            </button>
+            <div class="divider"></div>
+            <button class="toolbar-btn" id="btn-zoom-out" title="Uzaklaştır (Ctrl -)">
+                <svg viewBox="0 0 16 16"><path d="M3 8a.75.75 0 0 1 .75-.75h8.5a.75.75 0 0 1 0 1.5h-8.5A.75.75 0 0 1 3 8z"/></svg>
+            </button>
+            <span class="zoom-label" id="zoom-level-label">100%</span>
+            <button class="toolbar-btn" id="btn-zoom-in" title="Yakınlaştır (Ctrl +)">
+                <svg viewBox="0 0 16 16"><path d="M8 3a.75.75 0 0 1 .75.75v3.5h3.5a.75.75 0 0 1 0 1.5h-3.5v3.5a.75.75 0 0 1-1.5 0v-3.5h-3.5a.75.75 0 0 1 0-1.5h3.5v-3.5A.75.75 0 0 1 8 3z"/></svg>
+            </button>
+            <div class="divider"></div>
+            <button class="toolbar-btn" id="btn-fit-width" title="Genişliğe Sığdır">
+                <svg viewBox="0 0 16 16"><path d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zm0 9a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM3.854 6.146a.5.5 0 0 1 0 .708L2.707 8l1.147 1.146a.5.5 0 0 1-.708.708l-1.5-1.5a.5.5 0 0 1 0-.708l1.5-1.5a.5.5 0 0 1 .708 0zm8.292 0a.5.5 0 0 1 .708 0l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708-.708L13.293 8l-1.147-1.146a.5.5 0 0 1 0-.708z"/></svg>
+            </button>
+            <button class="toolbar-btn" id="btn-print" title="Yazdır (Ctrl P)">
+                <svg viewBox="0 0 16 16"><path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/><path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zm1 1h4a1 1 0 0 1 1 1v2H5V3a1 1 0 0 1 1-1zm6 10H4v-2h8v2zM1 7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7z"/></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Akıllı Arama Çubuğu Popup -->
+    <div id="search-bar" class="hidden">
+        <div class="search-input-box">
+            <svg class="search-icon" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
+            <input type="text" id="search-input" placeholder="Akıllı PDF İçi Ara (Satır atlamalarını bulur)..." autocomplete="off" spellcheck="false">
+            <span id="search-count">0/0</span>
+        </div>
+        <button class="search-btn" id="btn-search-prev" title="Önceki Eşleşme (Shift + Enter)">
+            <svg viewBox="0 0 16 16"><path d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/></svg>
+        </button>
+        <button class="search-btn" id="btn-search-next" title="Sonraki Eşleşme (Enter)">
+            <svg viewBox="0 0 16 16"><path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>
+        </button>
+        <button class="search-btn" id="btn-search-close" title="Kapat (Esc)">
+            <svg viewBox="0 0 16 16"><path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/></svg>
+        </button>
+    </div>
+
+    <div id="error-banner" onclick="this.style.display='none'" title="Kapatmak için tıklayın" style="cursor: pointer;"></div>
+    <div id="loading-overlay">
+        <div class="spinner"></div>
+        <div class="loading-text">PDF Yükleniyor...</div>
+    </div>
+
+    <div id="viewer-container">
+        <div id="viewer"></div>
+    </div>
+
+    <script src="pdf.min.js"></script>
+    <script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'pdf.worker.min.js';
+
+        const state = {
+            pdfDoc: null,
+            numPages: 0,
+            currentPage: 1,
+            zoom: 1.0,
+            pageViewports: new Map(),
+            renderTasks: new Map(),
+            renderedPages: new Set(),
+            isInternalNav: false,
+            intersectionObserver: null
+        };
+
+        const searchState = {
+            isOpen: false,
+            query: '',
+            matches: [],
+            currentIndex: -1,
+            renderedTextDivs: new Map(),
+            pageTextCache: new Map(),
+            searchDebounceTimer: null,
+            activeSearchToken: 0
+        };
+
+        const container = document.getElementById('viewer-container');
+        const viewer = document.getElementById('viewer');
+        const loadingOverlay = document.getElementById('loading-overlay');
+        const errorBanner = document.getElementById('error-banner');
+        const pageInput = document.getElementById('page-input');
+        const totalPagesLabel = document.getElementById('total-pages-label');
+        const zoomLevelLabel = document.getElementById('zoom-level-label');
+
+        function showError(msg) {
+            console.error(msg);
+            errorBanner.textContent = msg;
+            errorBanner.style.display = 'block';
+            loadingOverlay.classList.add('hidden');
+        }
+
+        function sendToHost(data) {
+            try {
+                if (window.chrome && window.chrome.webview) {
+                    window.chrome.webview.postMessage(JSON.stringify(data));
+                }
+            } catch (err) {
+                console.warn('postMessage failed:', err);
+            }
+        }
+
+        function escapeHTML(str) {
+            return str
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        async function getPageSearchData(pageNum) {
+            if (searchState.pageTextCache.has(pageNum)) {
+                return searchState.pageTextCache.get(pageNum);
+            }
+            const page = await state.pdfDoc.getPage(pageNum);
+            const textContent = await page.getTextContent();
+            let fullText = '';
+            const charMap = [];
+
+            for (let i = 0; i < textContent.items.length; i++) {
+                const item = textContent.items[i];
+                const str = item.str || '';
+                for (let c = 0; c < str.length; c++) {
+                    charMap.push({ itemIndex: i, charIndexInItem: c, isSynthetic: false });
+                }
+                fullText += str;
+
+                const nextItem = textContent.items[i + 1];
+                const hasEol = item.hasEOL;
+                const endsWithSpace = /\s$/.test(str);
+                const nextStartsWithSpace = nextItem && /^\s/.test(nextItem.str || '');
+
+                if (hasEol || (!endsWithSpace && nextItem && !nextStartsWithSpace && str.length > 0)) {
+                    fullText += ' ';
+                    charMap.push({ itemIndex: i, charIndexInItem: str.length, isSynthetic: true });
+                }
+            }
+
+            const data = { fullText, charMap, itemsCount: textContent.items.length };
+            searchState.pageTextCache.set(pageNum, data);
+            return data;
+        }
+
+        function applyHighlightsToPage(pageNum) {
+            const textDivs = searchState.renderedTextDivs.get(pageNum);
+            if (!textDivs || textDivs.length === 0) return;
+
+            // Önceden yapılmış vurguları temizle
+            textDivs.forEach(div => {
+                if (div && div._originalHTML !== undefined) {
+                    div.innerHTML = div._originalHTML;
+                    delete div._originalHTML;
+                }
+            });
+
+            if (!searchState.query || searchState.matches.length === 0) return;
+
+            const pageMatches = searchState.matches.filter(m => m.pageNum === pageNum);
+            if (pageMatches.length === 0) return;
+
+            const itemHighlights = new Map();
+            pageMatches.forEach(match => {
+                const isSelected = (match.id === searchState.currentIndex);
+                match.itemRanges.forEach(range => {
+                    if (!itemHighlights.has(range.itemIndex)) {
+                        itemHighlights.set(range.itemIndex, []);
+                    }
+                    itemHighlights.get(range.itemIndex).push({
+                        start: range.start,
+                        end: range.end,
+                        isSelected
+                    });
+                });
+            });
+
+            itemHighlights.forEach((ranges, itemIndex) => {
+                const div = textDivs[itemIndex];
+                if (!div) return;
+
+                if (div._originalHTML === undefined) {
+                    div._originalHTML = div.innerHTML;
+                }
+                const originalText = div.textContent;
+                if (!originalText) return;
+
+                const charFlags = new Array(originalText.length).fill(0);
+                ranges.forEach(r => {
+                    const s = Math.max(0, Math.min(originalText.length, r.start));
+                    const e = Math.max(s, Math.min(originalText.length, r.end));
+                    for (let c = s; c < e; c++) {
+                        if (r.isSelected) {
+                            charFlags[c] = 2; // Seçili eşleşme daha yüksek önceliğe sahiptir
+                        } else if (charFlags[c] === 0) {
+                            charFlags[c] = 1;
+                        }
+                    }
+                });
+
+                let newHTML = '';
+                let runStart = 0;
+                let currentFlag = charFlags[0] || 0;
+
+                for (let c = 1; c <= originalText.length; c++) {
+                    const flag = c < originalText.length ? charFlags[c] : -1;
+                    if (flag !== currentFlag) {
+                        const chunk = escapeHTML(originalText.substring(runStart, c));
+                        if (currentFlag === 2) {
+                            newHTML += `<span class="search-highlight selected">${chunk}</span>`;
+                        } else if (currentFlag === 1) {
+                            newHTML += `<span class="search-highlight">${chunk}</span>`;
+                        } else {
+                            newHTML += chunk;
+                        }
+                        runStart = c;
+                        currentFlag = flag;
+                    }
+                }
+                div.innerHTML = newHTML;
+            });
+        }
+
+        async function performSearch(query) {
+            searchState.query = query ? query.trim() : '';
+            searchState.matches = [];
+            searchState.currentIndex = -1;
+
+            if (!searchState.query || !state.pdfDoc) {
+                updateSearchCount();
+                state.renderedPages.forEach(p => applyHighlightsToPage(p));
+                return;
+            }
+
+            const searchToken = ++searchState.activeSearchToken;
+            const searchCountEl = document.getElementById('search-count');
+            if (searchCountEl) searchCountEl.textContent = '...';
+
+            const escaped = searchState.query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\s+/g, '\\s+');
+            const regex = new RegExp(escaped, 'gi');
+
+            const allMatches = [];
+            const currentP = state.currentPage;
+            const pagesToSearch = [currentP];
+            for (let p = 1; p <= state.numPages; p++) {
+                if (p !== currentP) pagesToSearch.push(p);
+            }
+
+            let firstMatchFound = false;
+
+            for (let idx = 0; idx < pagesToSearch.length; idx++) {
+                if (searchState.activeSearchToken !== searchToken) return;
+
+                const p = pagesToSearch[idx];
+                const { fullText, charMap } = await getPageSearchData(p);
+                regex.lastIndex = 0;
+                let m;
+
+                while ((m = regex.exec(fullText)) !== null) {
+                    const startIndex = m.index;
+                    const matchLen = m[0].length;
+                    const endIndex = startIndex + matchLen;
+                    if (matchLen === 0) {
+                        regex.lastIndex++;
+                        continue;
+                    }
+
+                    const itemRangesMap = new Map();
+                    for (let k = startIndex; k < endIndex; k++) {
+                        const mapInfo = charMap[k];
+                        if (!mapInfo || mapInfo.isSynthetic) continue;
+                        const itm = mapInfo.itemIndex;
+                        const ch = mapInfo.charIndexInItem;
+                        if (!itemRangesMap.has(itm)) {
+                            itemRangesMap.set(itm, { start: ch, end: ch + 1 });
+                        } else {
+                            const r = itemRangesMap.get(itm);
+                            r.start = Math.min(r.start, ch);
+                            r.end = Math.max(r.end, ch + 1);
+                        }
+                    }
+
+                    allMatches.push({
+                        pageNum: p,
+                        startIndex,
+                        endIndex,
+                        itemRanges: Array.from(itemRangesMap.entries()).map(([itemIndex, r]) => ({
+                            itemIndex,
+                            start: r.start,
+                            end: r.end
+                        }))
+                    });
+                }
+
+                if (idx === 0 && allMatches.length > 0) {
+                    firstMatchFound = true;
+                    allMatches.sort((a, b) => a.pageNum - b.pageNum || a.startIndex - b.startIndex);
+                    allMatches.forEach((match, i) => match.id = i);
+                    searchState.matches = [...allMatches];
+                    searchState.currentIndex = 0;
+                    updateSearchCount();
+                    highlightCurrentMatch(false);
+                }
+            }
+
+            if (searchState.activeSearchToken !== searchToken) return;
+
+            allMatches.sort((a, b) => a.pageNum - b.pageNum || a.startIndex - b.startIndex);
+            allMatches.forEach((match, i) => match.id = i);
+            searchState.matches = allMatches;
+
+            if (searchState.matches.length > 0) {
+                let bestIdx = searchState.matches.findIndex(m => m.pageNum >= currentP);
+                if (bestIdx === -1) bestIdx = 0;
+                searchState.currentIndex = bestIdx;
+                highlightCurrentMatch(!firstMatchFound);
+            } else {
+                searchState.currentIndex = -1;
+                updateSearchCount();
+                state.renderedPages.forEach(p => applyHighlightsToPage(p));
+            }
+        }
+
+        function highlightCurrentMatch(scrollToMatch = true) {
+            updateSearchCount();
+            if (searchState.currentIndex < 0 || searchState.currentIndex >= searchState.matches.length) {
+                return;
+            }
+
+            const activeMatch = searchState.matches[searchState.currentIndex];
+            state.renderedPages.forEach(p => applyHighlightsToPage(p));
+
+            if (scrollToMatch) {
+                const targetPage = activeMatch.pageNum;
+                if (state.currentPage !== targetPage) {
+                    goToPage(targetPage);
+                }
+
+                renderPage(targetPage).then(() => {
+                    applyHighlightsToPage(targetPage);
+                    setTimeout(() => {
+                        const slot = document.getElementById('page-slot-' + targetPage);
+                        if (slot) {
+                            const selectedSpan = slot.querySelector('.search-highlight.selected');
+                            if (selectedSpan) {
+                                selectedSpan.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            }
+                        }
+                    }, 80);
+                });
+            }
+        }
+
+        function nextMatch() {
+            if (searchState.matches.length === 0) return;
+            searchState.currentIndex = (searchState.currentIndex + 1) % searchState.matches.length;
+            highlightCurrentMatch(true);
+        }
+
+        function prevMatch() {
+            if (searchState.matches.length === 0) return;
+            searchState.currentIndex = (searchState.currentIndex - 1 + searchState.matches.length) % searchState.matches.length;
+            highlightCurrentMatch(true);
+        }
+
+        function updateSearchCount() {
+            const countEl = document.getElementById('search-count');
+            if (!countEl) return;
+            if (searchState.matches.length === 0) {
+                countEl.textContent = searchState.query ? '0/0' : '';
+            } else {
+                countEl.textContent = `${searchState.currentIndex + 1}/${searchState.matches.length}`;
+            }
+        }
+
+        function openSearchBar() {
+            const bar = document.getElementById('search-bar');
+            const input = document.getElementById('search-input');
+            const toggleBtn = document.getElementById('btn-search-toggle');
+            bar.classList.remove('hidden');
+            toggleBtn.classList.add('active');
+            searchState.isOpen = true;
+            input.focus();
+            input.select();
+        }
+
+        function closeSearchBar() {
+            const bar = document.getElementById('search-bar');
+            const toggleBtn = document.getElementById('btn-search-toggle');
+            bar.classList.add('hidden');
+            toggleBtn.classList.remove('active');
+            searchState.isOpen = false;
+            clearSearch();
+        }
+
+        function clearSearch() {
+            searchState.query = '';
+            searchState.matches = [];
+            searchState.currentIndex = -1;
+            const input = document.getElementById('search-input');
+            if (input) input.value = '';
+            updateSearchCount();
+            state.renderedPages.forEach(p => {
+                const divs = searchState.renderedTextDivs.get(p);
+                if (divs) {
+                    divs.forEach(div => {
+                        if (div && div._originalHTML !== undefined) {
+                            div.innerHTML = div._originalHTML;
+                            delete div._originalHTML;
+                        }
+                    });
+                }
+            });
+        }
+
+        let currentLoadedPdfUrl = null;
+        let isScrollTrackingAttached = false;
+
+        async function loadDocument(pdfUrl) {
+            if (!pdfUrl) return;
+            if (currentLoadedPdfUrl === pdfUrl && state.pdfDoc) {
+                return;
+            }
+
+            try {
+                currentLoadedPdfUrl = pdfUrl;
+                loadingOverlay.classList.remove('hidden');
+                errorBanner.style.display = 'none';
+                viewer.innerHTML = '';
+                state.renderedPages.clear();
+                state.pageViewports.clear();
+                searchState.pageTextCache.clear();
+                searchState.renderedTextDivs.clear();
+                clearSearch();
+
+                const loadingTask = pdfjsLib.getDocument({
+                    url: pdfUrl,
+                    enableXfa: false
+                });
+
+                state.pdfDoc = await loadingTask.promise;
+                state.numPages = state.pdfDoc.numPages;
+                totalPagesLabel.textContent = state.numPages;
+                pageInput.value = state.currentPage;
+
+                const firstPage = await state.pdfDoc.getPage(1);
+                const baseVp = firstPage.getViewport({ scale: 1.0 });
+
+                const availableWidth = container.clientWidth - 48;
+                if (availableWidth > 200) {
+                    state.zoom = Math.min(2.0, Math.max(0.6, availableWidth / baseVp.width));
+                }
+                updateZoomLabel();
+
+                await initPageSlots();
+                setupIntersectionObserver();
+                if (!isScrollTrackingAttached) {
+                    setupScrollTracking();
+                    isScrollTrackingAttached = true;
+                }
+
+                loadingOverlay.classList.add('hidden');
+                errorBanner.style.display = 'none';
+
+                sendToHost({
+                    type: 'documentLoaded',
+                    totalPages: state.numPages
+                });
+
+                if (state.currentPage > 1) {
+                    goToPage(state.currentPage);
+                }
+            } catch (err) {
+                if (err?.name === 'RenderingCancelledException') return;
+                showError('PDF yüklenirken hata oluştu: ' + (err.message || err));
+            }
+        }
+
+        async function initPageSlots() {
+            viewer.innerHTML = '';
+            for (let i = 1; i <= state.numPages; i++) {
+                const page = await state.pdfDoc.getPage(i);
+                const vp = page.getViewport({ scale: state.zoom });
+                state.pageViewports.set(i, { width: vp.width, height: vp.height, originalVp: page.getViewport({ scale: 1.0 }) });
+
+                const slot = document.createElement('div');
+                slot.className = 'page-slot rendering';
+                slot.id = 'page-slot-' + i;
+                slot.dataset.pageNumber = i;
+                slot.style.width = Math.floor(vp.width) + 'px';
+                slot.style.height = Math.floor(vp.height) + 'px';
+
+                viewer.appendChild(slot);
+            }
+        }
+
+        function setupIntersectionObserver() {
+            if (state.intersectionObserver) {
+                state.intersectionObserver.disconnect();
+            }
+
+            state.intersectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const pageNum = parseInt(entry.target.dataset.pageNumber);
+                    if (entry.isIntersecting) {
+                        renderPage(pageNum);
+                    }
+                });
+            }, {
+                root: container,
+                rootMargin: '600px 0px 600px 0px',
+                threshold: 0.01
+            });
+
+            document.querySelectorAll('.page-slot').forEach(slot => {
+                state.intersectionObserver.observe(slot);
+            });
+        }
+
+        async function renderPage(pageNum) {
+            if (state.renderedPages.has(pageNum)) return;
+            state.renderedPages.add(pageNum);
+
+            const slot = document.getElementById('page-slot-' + pageNum);
+            if (!slot) return;
+
+            try {
+                const page = await state.pdfDoc.getPage(pageNum);
+                const viewport = page.getViewport({ scale: state.zoom });
+
+                slot.style.width = Math.floor(viewport.width) + 'px';
+                slot.style.height = Math.floor(viewport.height) + 'px';
+                slot.style.setProperty('--scale-factor', viewport.scale);
+                slot.innerHTML = '';
+
+                const canvas = document.createElement('canvas');
+                canvas.className = 'page-canvas';
+                const ctx = canvas.getContext('2d', { alpha: false });
+
+                const outputScale = window.devicePixelRatio || 1;
+                canvas.width = Math.floor(viewport.width * outputScale);
+                canvas.height = Math.floor(viewport.height * outputScale);
+                canvas.style.width = Math.floor(viewport.width) + 'px';
+                canvas.style.height = Math.floor(viewport.height) + 'px';
+
+                const transform = outputScale !== 1 ? [outputScale, 0, 0, outputScale, 0, 0] : null;
+
+                const renderContext = {
+                    canvasContext: ctx,
+                    transform: transform,
+                    viewport: viewport
+                };
+
+                const renderTask = page.render(renderContext);
+                state.renderTasks.set(pageNum, renderTask);
+
+                await renderTask.promise;
+                slot.appendChild(canvas);
+                slot.classList.remove('rendering');
+
+                try {
+                    const textContent = await page.getTextContent();
+                    const textLayerDiv = document.createElement('div');
+                    textLayerDiv.className = 'textLayer';
+                    textLayerDiv.style.width = Math.floor(viewport.width) + 'px';
+                    textLayerDiv.style.height = Math.floor(viewport.height) + 'px';
+                    textLayerDiv.style.setProperty('--scale-factor', viewport.scale);
+                    slot.appendChild(textLayerDiv);
+
+                    const textDivs = [];
+                    const textLayerTask = pdfjsLib.renderTextLayer({
+                        textContentSource: textContent,
+                        container: textLayerDiv,
+                        viewport: viewport,
+                        textDivs: textDivs
+                    });
+                    await textLayerTask.promise;
+                    searchState.renderedTextDivs.set(pageNum, textDivs);
+                    applyHighlightsToPage(pageNum);
+                } catch (tErr) {}
+            } catch (err) {
+                if (err.name !== 'RenderingCancelledException') {
+                    console.error('Render error page ' + pageNum, err);
+                }
+            }
+        }
+
+        let scrollTimeout = null;
+        function setupScrollTracking() {
+            container.addEventListener('scroll', () => {
+                if (state.isInternalNav) return;
+
+                if (scrollTimeout) cancelAnimationFrame(scrollTimeout);
+                scrollTimeout = requestAnimationFrame(checkCurrentPage);
+            }, { passive: true });
+        }
+
+        function checkCurrentPage() {
+            const containerRect = container.getBoundingClientRect();
+            const visibleTop = containerRect.top + 44; // Toolbar yüksekliği altı
+            const visibleBottom = containerRect.bottom;
+
+            let bestPage = state.currentPage;
+            let maxVisibleHeight = -1;
+
+            const slots = document.querySelectorAll('.page-slot');
+            for (let i = 0; i < slots.length; i++) {
+                const slot = slots[i];
+                const rect = slot.getBoundingClientRect();
+
+                // Konteyner içerisindeki görünür alan
+                const intersectTop = Math.max(visibleTop, rect.top);
+                const intersectBottom = Math.min(visibleBottom, rect.bottom);
+                const visibleHeight = Math.max(0, intersectBottom - intersectTop);
+
+                if (visibleHeight > maxVisibleHeight) {
+                    maxVisibleHeight = visibleHeight;
+                    bestPage = parseInt(slot.dataset.pageNumber);
+                }
+            }
+
+            if (bestPage !== state.currentPage && bestPage >= 1 && bestPage <= state.numPages) {
+                state.currentPage = bestPage;
+                pageInput.value = state.currentPage;
+
+                sendToHost({
+                    type: 'pageChanged',
+                    page: state.currentPage
+                });
+            }
+        }
+
+        function goToPage(pageNum) {
+            pageNum = Math.max(1, Math.min(pageNum, state.numPages));
+            state.currentPage = pageNum;
+            pageInput.value = pageNum;
+
+            const slot = document.getElementById('page-slot-' + pageNum);
+            if (slot) {
+                state.isInternalNav = true;
+                slot.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                setTimeout(() => {
+                    state.isInternalNav = false;
+                }, 400);
+            }
+        }
+
+        function updateZoomLabel() {
+            zoomLevelLabel.textContent = Math.round(state.zoom * 100) + '%';
+        }
+
+        async function setZoom(newZoom) {
+            newZoom = Math.max(0.4, Math.min(newZoom, 3.5));
+            if (Math.abs(state.zoom - newZoom) < 0.01) return;
+
+            const targetPage = state.currentPage;
+            state.zoom = newZoom;
+            updateZoomLabel();
+            state.renderedPages.clear();
+            searchState.renderedTextDivs.clear();
+
+            state.renderTasks.forEach(task => {
+                try { task.cancel(); } catch { }
+            });
+            state.renderTasks.clear();
+
+            for (let i = 1; i <= state.numPages; i++) {
+                const slot = document.getElementById('page-slot-' + i);
+                const vpInfo = state.pageViewports.get(i);
+                if (slot && vpInfo && vpInfo.originalVp) {
+                    const scaledVp = vpInfo.originalVp.clone({ scale: state.zoom });
+                    slot.style.width = Math.floor(scaledVp.width) + 'px';
+                    slot.style.height = Math.floor(scaledVp.height) + 'px';
+                    slot.classList.add('rendering');
+                    slot.innerHTML = '';
+                }
+            }
+
+            goToPage(targetPage);
+            setupIntersectionObserver();
+        }
+
+        function zoomIn() { setZoom(state.zoom + 0.2); }
+        function zoomOut() { setZoom(state.zoom - 0.2); }
+
+        function fitToWidth() {
+            if (!state.pdfDoc) return;
+            const availableWidth = container.clientWidth - 48;
+            const firstInfo = state.pageViewports.get(1);
+            if (firstInfo && firstInfo.originalVp) {
+                setZoom(availableWidth / firstInfo.originalVp.width);
+            }
+        }
+
+        function setTheme(theme) {
+            if (theme === 'light') {
+                document.body.classList.add('theme-light');
+            } else {
+                document.body.classList.remove('theme-light');
+            }
+        }
+
+        function printDocument() {
+            window.print();
+        }
+
+        // Toolbar Olayları
+        document.getElementById('btn-prev-page').addEventListener('click', () => goToPage(state.currentPage - 1));
+        document.getElementById('btn-next-page').addEventListener('click', () => goToPage(state.currentPage + 1));
+        document.getElementById('btn-zoom-in').addEventListener('click', zoomIn);
+        document.getElementById('btn-zoom-out').addEventListener('click', zoomOut);
+        document.getElementById('btn-fit-width').addEventListener('click', fitToWidth);
+        document.getElementById('btn-print').addEventListener('click', printDocument);
+
+        // Arama Çubuğu Olayları
+        const searchInput = document.getElementById('search-input');
+        const btnSearchToggle = document.getElementById('btn-search-toggle');
+        const btnSearchPrev = document.getElementById('btn-search-prev');
+        const btnSearchNext = document.getElementById('btn-search-next');
+        const btnSearchClose = document.getElementById('btn-search-close');
+
+        if (btnSearchToggle) {
+            btnSearchToggle.addEventListener('click', () => {
+                if (searchState.isOpen) {
+                    closeSearchBar();
+                } else {
+                    openSearchBar();
+                }
+            });
+        }
+
+        if (btnSearchPrev) btnSearchPrev.addEventListener('click', prevMatch);
+        if (btnSearchNext) btnSearchNext.addEventListener('click', nextMatch);
+        if (btnSearchClose) btnSearchClose.addEventListener('click', closeSearchBar);
+
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                if (searchState.searchDebounceTimer) {
+                    clearTimeout(searchState.searchDebounceTimer);
+                }
+                searchState.searchDebounceTimer = setTimeout(() => {
+                    performSearch(e.target.value);
+                }, 180);
+            });
+
+            searchInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    if (e.shiftKey) {
+                        prevMatch();
+                    } else {
+                        nextMatch();
+                    }
+                } else if (e.key === 'Escape') {
+                    e.preventDefault();
+                    closeSearchBar();
+                }
+            });
+        }
+
+        // Klavye Kısayolları (Ctrl + F, Esc)
+        window.addEventListener('keydown', (e) => {
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'f' || e.key === 'F')) {
+                e.preventDefault();
+                openSearchBar();
+            } else if (e.key === 'Escape' && searchState.isOpen) {
+                e.preventDefault();
+                closeSearchBar();
+            }
+        });
+
+        pageInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                const val = parseInt(pageInput.value);
+                if (!isNaN(val)) goToPage(val);
+                pageInput.blur();
+            }
+        });
+
+        // Dışarıya açılan API
+        window.viewerAPI = {
+            loadDocument,
+            goToPage,
+            setZoom,
+            zoomIn,
+            zoomOut,
+            fitToWidth,
+            setTheme,
+            printDocument,
+            openSearch: openSearchBar,
+            closeSearch: closeSearchBar,
+            nextSearchMatch: nextMatch,
+            prevSearchMatch: prevMatch,
+            getCurrentPage: () => state.currentPage,
+            getTotalPages: () => state.numPages
+        };
+
+        if (window.chrome && window.chrome.webview) {
+            window.chrome.webview.addEventListener('message', (event) => {
+                const msg = event.data;
+                if (!msg) return;
+
+                switch (msg.action) {
+                    case 'load':
+                        if (msg.url) loadDocument(msg.url);
+                        break;
+                    case 'goToPage':
+                        if (msg.page) goToPage(msg.page);
+                        break;
+                    case 'zoomIn':
+                        zoomIn();
+                        break;
+                    case 'zoomOut':
+                        zoomOut();
+                        break;
+                    case 'setZoom':
+                        if (msg.zoom) setZoom(msg.zoom);
+                        break;
+                    case 'fitWidth':
+                        fitToWidth();
+                        break;
+                    case 'setTheme':
+                        setTheme(msg.theme);
+                        break;
+                    case 'print':
+                        printDocument();
+                        break;
+                    case 'openSearch':
+                        openSearchBar();
+                        break;
+                    case 'closeSearch':
+                        closeSearchBar();
+                        break;
+                }
+            });
+        }
+
+        container.addEventListener('wheel', (e) => {
+            if (e.ctrlKey) {
+                e.preventDefault();
+                if (e.deltaY < 0) zoomIn();
+                else zoomOut();
+            }
+        }, { passive: false });
+
+        window.addEventListener('DOMContentLoaded', () => {
+            sendToHost({ type: 'viewerReady' });
+        });
+    </script>
+</body>
+</html>

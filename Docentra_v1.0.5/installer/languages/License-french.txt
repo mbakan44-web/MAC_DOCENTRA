@@ -1,0 +1,95 @@
+# DOCENTRA PDF & ÉDITEUR DE DOCUMENTS
+
+# CONTRAT DE LICENCE UTILISATEUR FINAL (CLUF / EULA)
+
+**Dernière mise à jour :** 1er mai 2026
+
+Le présent Contrat de Licence Utilisateur Final (« Contrat ») régit l'installation, l'utilisation, l'octroi de licence et les conditions d'utilisation du logiciel **Docentra – PDF & Document Editor** (« Logiciel »).
+
+En téléchargeant, installant, activant ou utilisant le Logiciel, vous déclarez avoir lu, compris et accepté l'ensemble des conditions énoncées ci-dessous.
+
+Si vous n'acceptez pas ces conditions, n'installez pas et n'utilisez pas le Logiciel.
+
+---
+
+# 1. DÉFINITIONS
+
+* **Docentra :** Le propriétaire et concédant de licence du Logiciel.
+* **Logiciel :** L'application Docentra – PDF & Document Editor ainsi que tous ses composants.
+* **Utilisateur :** La personne physique ou morale qui installe, utilise ou détient une licence pour le Logiciel.
+* **Clé de licence :** Le code d'accès unique fourni pour l'autorisation et l'activation du Logiciel.
+* **HWID (Hardware ID) :** L'identifiant matériel unique lié à l'appareil de l'utilisateur.
+* **Traitement local :** Tout traitement de données exécuté exclusivement en local sur l'appareil de l'utilisateur.
+
+---
+
+# 2. CONFIDENTIALITÉ ET SÉCURITÉ DES DONNÉES
+
+Docentra accorde une priorité absolue à la vie privée des utilisateurs et repose sur une conception native de la confidentialité (« Privacy-Native »).
+
+## 2.1 Traitement local
+* Toutes les opérations de traitement de documents sont exécutées intégralement sur votre appareil local.
+* L'édition de PDF, l'OCR, la conversion, la signature, le recadrage, la fusion et les autres fonctions s'effectuent sans aucun transfert de données vers l'extérieur.
+* Les documents des utilisateurs ne sont jamais téléchargés automatiquement sur des serveurs distants ou des services cloud.
+
+## 2.2 Transfert de données
+Docentra ne transfère en aucun cas vos documents à des tiers.
+
+---
+
+# 3. CONDITIONS DE LICENCE
+
+## 3.1 Type de licence
+Docentra concède à l'utilisateur une licence d'utilisation limitée, non transférable et non exclusive.
+
+## 3.2 Verrouillage matériel (HWID)
+* La clé de licence est associée exclusivement aux identifiants matériels (HWID) de l'appareil sur lequel elle a été activée pour la première fois.
+* Une même clé de licence ne peut pas être utilisée simultanément sur plusieurs appareils différents.
+
+---
+
+# 4. RESTRICTIONS D'UTILISATION
+
+L'utilisateur n'est pas autorisé à :
+* Analyser le Logiciel par rétro-ingénierie (reverse engineering)
+* Tenter d'extraire ou de dériver le code source
+* Désassembler ou décompiler le Logiciel
+* Utiliser le Logiciel à des fins illégales ou interdites par la loi
+
+---
+
+# 5. DROITS DE PROPRIÉTÉ INTELLECTUELLE
+
+Tous les droits de propriété intellectuelle relatifs au Logiciel appartiennent exclusivement à Docentra. L'utilisateur n'acquiert qu'un simple droit d'usage.
+
+---
+
+# 6. EXCLUSION DE RESPONSABILITÉ
+
+Le Logiciel est fourni « en l'état » (as is). Docentra décline toute responsabilité concernant :
+* La perte éventuelle de données
+* L'altération ou la corruption de documents
+* Les dommages indirects ou consécutifs
+* Les pertes de bénéfices ou d'exploitation
+
+L'utilisateur demeure seul responsable de la sauvegarde de ses documents avant tout traitement.
+
+---
+
+# 7. RÉSILIATION DE LA LICENCE
+
+Docentra se réserve le droit de résilier la présente licence sans préavis en cas de violation des conditions, d'utilisation frauduleuse ou de partage non autorisé.
+
+---
+
+# 8. DÉCLARATION D'ACCEPTATION
+
+L'utilisateur reconnaît avoir lu et compris l'intégralité du présent accord et s'engage à utiliser le Logiciel dans le strict respect des conditions de licence spécifiées.
+
+---
+
+# CONTACT
+
+Pour toute assistance technique, question relative aux licences ou demande d'information :
+**E-mail :** support@docentrapdf.com
+**Site Web :** https://docentrapdf.com

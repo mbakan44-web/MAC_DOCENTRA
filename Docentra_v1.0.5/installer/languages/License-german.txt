@@ -1,0 +1,95 @@
+# DOCENTRA PDF & DOKUMENTEN-EDITOR
+
+# ENDBENUTZER-LIZENZVEREINBARUNG (EULA)
+
+**Zuletzt aktualisiert:** 1. Mai 2026
+
+Diese Endbenutzer-Lizenzvereinbarung („Vereinbarung“) regelt die Installation, Nutzung, Lizenzierung und Nutzungsbedingungen der Software **Docentra – PDF & Document Editor** („Software“).
+
+Durch das Herunterladen, Installieren, Aktivieren oder Verwenden der Software erklären Sie, dass Sie alle nachstehend aufgeführten Bedingungen gelesen, verstanden und akzeptiert haben.
+
+Wenn Sie diese Bedingungen nicht akzeptieren, installieren oder verwenden Sie die Software nicht.
+
+---
+
+# 1. DEFINITIONEN
+
+* **Docentra:** Der Eigentümer und Lizenzgeber der Software.
+* **Software:** Die Anwendung Docentra – PDF & Document Editor und alle ihre Komponenten.
+* **Benutzer:** Die natürliche oder juristische Person, die die Software installiert, nutzt oder lizenziert.
+* **Lizenzschlüssel:** Der eindeutige Zugriffscode zur Autorisierung der Software.
+* **HWID (Hardware-ID):** Die eindeutige Systemidentität, die an die Gerätehardware gebunden ist.
+* **Lokale Verarbeitung:** Die Datenverarbeitung, die ausschließlich auf dem Gerät des Benutzers stattfindet.
+
+---
+
+# 2. DATENSCHUTZ UND DATENSICHERHEIT
+
+Docentra legt höchsten Wert auf die Privatsphäre der Benutzer und wurde nach dem Prinzip „Privacy-Native“ entwickelt.
+
+## 2.1 Lokale Verarbeitung
+* Alle Dokumentenverarbeitungsvorgänge werden vollständig auf dem lokalen Gerät ausgeführt.
+* PDF-Bearbeitung, OCR, Konvertierung, Signierung, Zuschneiden, Zusammenführen und andere Vorgänge erfolgen ohne Datenübertragung außerhalb des Geräts.
+* Benutzerdokumente werden niemals automatisch auf Cloud-Systeme oder Remote-Server hochgeladen.
+
+## 2.2 Datenübertragung
+Docentra überträgt keine Benutzerdokumente an Systeme Dritter.
+
+---
+
+# 3. LIZENZBEDINGUNGEN
+
+## 3.1 Lizenztyp
+Docentra gewährt dem Benutzer eine beschränkte, nicht übertragbare und nicht ausschließliche Nutzungslizenz.
+
+## 3.2 Hardware-Bindung (HWID)
+* Der Lizenzschlüssel ist ausschließlich an die HWID des Geräts gebunden, auf dem er erstmals aktiviert wurde.
+* Derselbe Lizenzschlüssel kann nicht gleichzeitig auf verschiedenen Geräten verwendet werden.
+
+---
+
+# 4. NUTZUNGSBESCHRÄNKUNGEN
+
+Dem Benutzer ist Folgendes untersagt:
+* Analyse der Software durch Reverse Engineering
+* Versuche, den Quellcode zu extrahieren
+* Disassemblieren oder Dekompilieren der Software
+* Verwendung der Software für rechtswidrige Zwecke
+
+---
+
+# 5. RECHTE AN GEISTIGEM EIGENTUM
+
+Alle Rechte an der Software verbleiben bei Docentra. Der Benutzer erhält lediglich ein einfaches Nutzungsrecht.
+
+---
+
+# 6. HAFTUNGSAUSSCHLUSS
+
+Die Software wird „wie besehen“ (as is) zur Verfügung gestellt. Docentra übernimmt keine Verantwortung für:
+* Datenverlust
+* Beschädigung von Dokumenten
+* Mittelbare oder Folgeschäden
+* Entgangenen Gewinn
+
+Der Benutzer ist selbst dafür verantwortlich, regelmäßige Sicherungskopien der zu verarbeitenden Dokumente zu erstellen.
+
+---
+
+# 7. KÜNDIGUNG DER LIZENZ
+
+Docentra behält sich das Recht vor, die Lizenz im Falle eines Verstoßes gegen diese Vereinbarung, bei Raubkopien oder unbefugter Weitergabe fristlos zu kündigen.
+
+---
+
+# 8. ANNAHMEERKLÄRUNG
+
+Der Benutzer bestätigt, dass er diese Vereinbarung gelesen und verstanden hat und die Software nur im Rahmen der festgelegten Lizenzbedingungen nutzen wird.
+
+---
+
+# KONTAKT
+
+Für Support, Lizenzfragen und weitere Anfragen:
+**E-Mail:** support@docentrapdf.com
+**Web:** https://docentrapdf.com
