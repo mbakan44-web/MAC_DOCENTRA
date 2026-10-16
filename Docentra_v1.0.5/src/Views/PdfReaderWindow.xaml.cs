@@ -21,6 +21,24 @@ namespace PromtAiPdfPro.Views
         {
             InitializeComponent();
             _instance = this;
+            this.Closing += (s, e) =>
+            {
+                bool anyUnsaved = _tabs.Any(t => t.Content != null && t.Content.HasUnsavedChanges);
+                if (anyUnsaved)
+                {
+                    string title = Application.Current?.TryFindResource("Unsaved_Warning_Title") as string ?? "Kaydedilmemiş Değişiklikler";
+                    string msg = Application.Current?.TryFindResource("Unsaved_Warning_Msg") as string 
+                        ?? "Belgenizde kaydedilmemiş düzeltmeler ve notlar bulunmaktadır. Kaydetmeden kapatmak istediğinizden emin misiniz?";
+
+                    var res = Helpers.AppMessageBox.Show(msg, title, System.Windows.MessageBoxButton.YesNo, System.Windows.MessageBoxImage.Warning);
+                    if (res != System.Windows.MessageBoxResult.Yes)
+                    {
+                        e.Cancel = true;
+                        return;
+                    }
+                }
+            };
+
             this.Closed += (s, e) =>
             {
                 _instance = null;
@@ -178,6 +196,19 @@ namespace PromtAiPdfPro.Views
             var tab = _tabs.FirstOrDefault(t => t.FilePath == path);
             if (tab != null)
             {
+                if (tab.Content != null && tab.Content.HasUnsavedChanges)
+                {
+                    string title = Application.Current?.TryFindResource("Unsaved_Warning_Title") as string ?? "Kaydedilmemiş Değişiklikler";
+                    string msg = Application.Current?.TryFindResource("Unsaved_Warning_Msg") as string 
+                        ?? "Belgenizde kaydedilmemiş düzeltmeler ve notlar bulunmaktadır. Kaydetmeden kapatmak istediğinizden emin misiniz?";
+
+                    var res = Helpers.AppMessageBox.Show(msg, title, System.Windows.MessageBoxButton.YesNo, System.Windows.MessageBoxImage.Warning);
+                    if (res != System.Windows.MessageBoxResult.Yes)
+                    {
+                        return; // Kapatmayı iptal et
+                    }
+                }
+
                 _tabs.Remove(tab);
                 PdfTabView.Items.Remove(tab.ViewItem);
                 

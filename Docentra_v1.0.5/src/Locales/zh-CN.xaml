@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:system="clr-namespace:System;assembly=mscorlib">
     <!-- General -->
     <system:String x:Key="AppTitle">DOCENTRA PDF &amp; 文档编辑器</system:String>
@@ -485,4 +485,8 @@
     <system:String x:Key="Tool_Browse">浏览</system:String>
     <system:String x:Key="Tool_SelectFile">选择文件</system:String>
     <system:String x:Key="Tool_SelectFileDesc">单击或拖放 PDF 文件至此处。</system:String>
+
+    <!-- Unsaved Changes Warning -->
+    <system:String x:Key="Unsaved_Warning_Title">未保存的更改</system:String>
+    <system:String x:Key="Unsaved_Warning_Msg">您的文档中有未保存的注释和更改。确定要在不保存的情况下关闭吗？</system:String>
 </ResourceDictionary>

@@ -511,4 +511,8 @@
     <system:String x:Key="Tool_Browse">Browse</system:String>
     <system:String x:Key="Tool_SelectFile">Select File</system:String>
     <system:String x:Key="Tool_SelectFileDesc">Click or drag &amp; drop a PDF file here.</system:String>
+
+    <!-- Unsaved Changes Warning -->
+    <system:String x:Key="Unsaved_Warning_Title">Unsaved Changes</system:String>
+    <system:String x:Key="Unsaved_Warning_Msg">You have unsaved annotations and changes in your document. Are you sure you want to close without saving?</system:String>
 </ResourceDictionary>

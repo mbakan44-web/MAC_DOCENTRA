@@ -71,14 +71,27 @@ namespace PromtAiPdfPro.Views
 
         public string FilePath => _filePath;
 
+        private bool _hasUnsavedChanges;
+        public bool HasUnsavedChanges
+        {
+            get => _hasUnsavedChanges 
+                || _pageAnnotations.Count > 0 
+                || (DrawInkCanvas != null && DrawInkCanvas.Strokes.Count > 0)
+                || (OverlayCanvas != null && OverlayCanvas.Children.Count > 0);
+            set => _hasUnsavedChanges = value;
+        }
+
         public PdfTabContent(string filePath)
         {
             InitializeComponent();
             _filePath = filePath;
             ListThumbnails.ItemsSource = _thumbnails;
 
+            Helpers.LanguageManager.LanguageChanged += OnGlobalLanguageChanged;
+
             Unloaded += (_, _) =>
             {
+                Helpers.LanguageManager.LanguageChanged -= OnGlobalLanguageChanged;
                 DisposeDocument();
                 _thumbnails.Clear();
                 _pageAnnotations.Clear();
@@ -213,6 +226,7 @@ namespace PromtAiPdfPro.Views
                     if (_mode == ViewerMode.View)
                         LoadingRing.Visibility = Visibility.Collapsed;
                     SendThemeToViewer();
+                    SendLocaleToViewer();
                 };
 
                 core.NewWindowRequested += (s, e) => { e.Handled = true; OpenNativeSettings(); };
@@ -302,6 +316,29 @@ namespace PromtAiPdfPro.Views
             catch { }
         }
 
+        private void SendLocaleToViewer()
+        {
+            try
+            {
+                string locale = Helpers.LanguageManager.CurrentLocale ?? "tr-TR";
+                PdfWebView.CoreWebView2?.PostWebMessageAsJson(
+                    System.Text.Json.JsonSerializer.Serialize(new
+                    {
+                        action = "setLocale",
+                        locale = locale
+                    }));
+            }
+            catch { }
+        }
+
+        private void OnGlobalLanguageChanged(string locale)
+        {
+            Dispatcher.Invoke(() =>
+            {
+                SendLocaleToViewer();
+            });
+        }
+
         private void ReloadWebViewDocument()
         {
             PrepareAndLoadPdfInViewer();
@@ -311,40 +348,56 @@ namespace PromtAiPdfPro.Views
         {
             try
             {
+                string rawStr = "";
+                try { rawStr = e.TryGetWebMessageAsString(); } catch { }
+                
                 string jsonStr = "";
-                try
-                {
-                    jsonStr = e.WebMessageAsJson;
-                }
-                catch
-                {
-                    try { jsonStr = e.TryGetWebMessageAsString(); } catch { }
-                }
+                try { jsonStr = e.WebMessageAsJson; } catch { }
 
-                if (string.IsNullOrEmpty(jsonStr)) return;
-
-                if (jsonStr == "\"OPEN_SETTINGS\"" || jsonStr == "OPEN_SETTINGS")
+                if (!string.IsNullOrEmpty(rawStr))
                 {
-                    OpenNativeSettings();
-                    return;
-                }
-
-                using var doc = System.Text.Json.JsonDocument.Parse(jsonStr);
-                var root = doc.RootElement;
-
-                // Eğer JSON string formatında sarmalanmışsa içini al
-                if (root.ValueKind == System.Text.Json.JsonValueKind.String)
-                {
-                    string innerJson = root.GetString() ?? "";
-                    if (!string.IsNullOrEmpty(innerJson) && innerJson.StartsWith("{"))
+                    if (rawStr == "OPEN_SETTINGS")
                     {
-                        using var innerDoc = System.Text.Json.JsonDocument.Parse(innerJson);
-                        HandleJsonMessage(innerDoc.RootElement);
+                        OpenNativeSettings();
                         return;
+                    }
+
+                    if (rawStr.TrimStart().StartsWith("{"))
+                    {
+                        try
+                        {
+                            using var rawDoc = System.Text.Json.JsonDocument.Parse(rawStr);
+                            HandleJsonMessage(rawDoc.RootElement);
+                            return;
+                        }
+                        catch { }
                     }
                 }
 
-                HandleJsonMessage(root);
+                if (!string.IsNullOrEmpty(jsonStr))
+                {
+                    if (jsonStr == "\"OPEN_SETTINGS\"" || jsonStr == "OPEN_SETTINGS")
+                    {
+                        OpenNativeSettings();
+                        return;
+                    }
+
+                    using var doc = System.Text.Json.JsonDocument.Parse(jsonStr);
+                    var root = doc.RootElement;
+
+                    if (root.ValueKind == System.Text.Json.JsonValueKind.String)
+                    {
+                        string innerJson = root.GetString() ?? "";
+                        if (!string.IsNullOrEmpty(innerJson) && innerJson.TrimStart().StartsWith("{"))
+                        {
+                            using var innerDoc = System.Text.Json.JsonDocument.Parse(innerJson);
+                            HandleJsonMessage(innerDoc.RootElement);
+                            return;
+                        }
+                    }
+
+                    HandleJsonMessage(root);
+                }
             }
             catch (Exception ex)
             {
@@ -362,6 +415,7 @@ namespace PromtAiPdfPro.Views
                 {
                     _webViewReady = true;
                     SendThemeToViewer();
+                    SendLocaleToViewer();
                     ReloadWebViewDocument();
                 }
                 else if (msgType == "pageChanged")
@@ -389,6 +443,28 @@ namespace PromtAiPdfPro.Views
 
                         UpdatePageIndicators();
                     });
+                }
+                else if (msgType == "copyText")
+                {
+                    if (root.TryGetProperty("text", out var textProp))
+                    {
+                        string text = textProp.GetString() ?? "";
+                        Dispatcher.Invoke(() =>
+                        {
+                            try { Clipboard.SetText(text); } catch { }
+                        });
+                    }
+                }
+                else if (msgType == "unsavedChanges")
+                {
+                    if (root.TryGetProperty("hasChanges", out var changesProp))
+                    {
+                        _hasUnsavedChanges = changesProp.GetBoolean();
+                    }
+                    else
+                    {
+                        _hasUnsavedChanges = true;
+                    }
                 }
             }
         }
@@ -825,7 +901,10 @@ namespace PromtAiPdfPro.Views
 
         private void CmbStampType_SelectionChanged(object sender, SelectionChangedEventArgs e) { }
 
-        private void DrawInkCanvas_StrokeCollected(object sender, InkCanvasStrokeCollectedEventArgs e) { }
+        private void DrawInkCanvas_StrokeCollected(object sender, InkCanvasStrokeCollectedEventArgs e)
+        {
+            _hasUnsavedChanges = true;
+        }
 
         private void DrawPageHost_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -891,6 +970,7 @@ namespace PromtAiPdfPro.Views
 
         private void AddTextNote(double x, double y, string text)
         {
+            _hasUnsavedChanges = true;
             var tb = new System.Windows.Controls.TextBlock
             {
                 Text = text,
@@ -915,6 +995,7 @@ namespace PromtAiPdfPro.Views
         private void AddStampNote(double x, double y, double w, double h, string stampId)
         {
             if (!StampDefs.TryGetValue(stampId, out var def)) return;
+            _hasUnsavedChanges = true;
 
             var border = new Border
             {
@@ -1249,6 +1330,7 @@ namespace PromtAiPdfPro.Views
                 File.Copy(workingPath, dlg.FileName, true);
                 _filePath = dlg.FileName;
                 _pageAnnotations.Clear();
+                _hasUnsavedChanges = false;
 
                 LoadDocument();
                 if (_mode == ViewerMode.Annotate)

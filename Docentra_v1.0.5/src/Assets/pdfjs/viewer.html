@@ -650,6 +650,208 @@
             box-shadow: 0 0 0 1px rgba(0, 120, 212, 0.3);
             border-radius: 2px;
         }
+
+        /* Docentra Özel Modal Dialog (viewer.local yerine "Docentra") */
+        .docentra-modal-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            animation: docentraFadeIn 0.15s ease-out;
+        }
+        .docentra-modal-backdrop.hidden {
+            display: none !important;
+        }
+        .docentra-modal-card {
+            background: #ffffff;
+            color: #1a1a1a;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 440px;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            animation: docentraScaleUp 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        body:not(.theme-light) .docentra-modal-card {
+            background: #252830;
+            color: #f0f2f5;
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.1);
+        }
+        .docentra-modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 18px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+        body:not(.theme-light) .docentra-modal-header {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .docentra-modal-title-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .docentra-modal-icon {
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .docentra-modal-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: #0078d4;
+        }
+        .docentra-modal-title {
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+        }
+        .docentra-modal-close {
+            background: transparent;
+            border: none;
+            color: inherit;
+            opacity: 0.6;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 6px;
+            line-height: 1;
+        }
+        .docentra-modal-close:hover {
+            opacity: 1;
+            background: rgba(0, 0, 0, 0.06);
+        }
+        body:not(.theme-light) .docentra-modal-close:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .docentra-modal-body {
+            padding: 16px 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .docentra-modal-label {
+            font-size: 13px;
+            font-weight: 500;
+            opacity: 0.85;
+        }
+        .docentra-modal-textarea {
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            padding: 10px 12px;
+            font-size: 13.5px;
+            font-family: inherit;
+            resize: vertical;
+            min-height: 85px;
+            outline: none;
+            background: #ffffff;
+            color: #1a1a1a;
+            transition: border-color 0.15s, box-shadow 0.15s;
+        }
+        .docentra-modal-textarea:focus {
+            border-color: #0078d4;
+            box-shadow: 0 0 0 2px rgba(0, 120, 212, 0.25);
+        }
+        body:not(.theme-light) .docentra-modal-textarea {
+            background: #1b1d22;
+            color: #f0f2f5;
+            border-color: #3f4450;
+        }
+        body:not(.theme-light) .docentra-modal-textarea:focus {
+            border-color: #0078d4;
+            box-shadow: 0 0 0 2px rgba(0, 120, 212, 0.35);
+        }
+        .docentra-modal-viewtext {
+            font-size: 14px;
+            line-height: 1.5;
+            padding: 12px;
+            background: rgba(0, 120, 212, 0.06);
+            border-left: 3px solid #0078d4;
+            border-radius: 4px;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        body:not(.theme-light) .docentra-modal-viewtext {
+            background: rgba(0, 120, 212, 0.12);
+        }
+        .docentra-modal-footer {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 8px;
+            padding: 12px 18px 16px;
+        }
+        .docentra-btn-primary {
+            background: #0078d4;
+            color: #ffffff;
+            border: none;
+            padding: 7px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+        .docentra-btn-primary:hover {
+            background: #006abc;
+        }
+        .docentra-btn-secondary {
+            background: #f1f3f5;
+            color: #333333;
+            border: 1px solid #d1d5db;
+            padding: 7px 14px;
+            border-radius: 6px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+        .docentra-btn-secondary:hover {
+            background: #e5e7eb;
+        }
+        body:not(.theme-light) .docentra-btn-secondary {
+            background: #323640;
+            color: #e0e2e6;
+            border-color: #444955;
+        }
+        body:not(.theme-light) .docentra-btn-secondary:hover {
+            background: #3d424e;
+        }
+        .docentra-btn-danger {
+            background: #dc3545;
+            color: #ffffff;
+            border: none;
+            padding: 7px 14px;
+            border-radius: 6px;
+            font-size: 13px;
+            cursor: pointer;
+            margin-right: auto;
+            transition: background 0.15s;
+        }
+        .docentra-btn-danger:hover {
+            background: #bb2d3b;
+        }
+        @keyframes docentraFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes docentraScaleUp {
+            from { transform: scale(0.94); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
     </style>
 </head>
 <body>
@@ -757,7 +959,7 @@
             </button>
             <button class="adobe-action-item" id="adobe-action-edit">
                 <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
-                <span>Edit text</span>
+                <span id="adobe-edit-label">Edit text</span>
             </button>
         </div>
 
@@ -767,6 +969,31 @@
             <div class="adobe-editor-actions">
                 <button type="button" id="adobe-btn-cancel-edit" class="adobe-btn-cancel">İptal</button>
                 <button type="button" id="adobe-btn-save-edit" class="adobe-btn-apply">Değiştir</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Docentra Özel Modal Dialog (viewer.local yerine "Docentra") -->
+    <div id="docentra-modal-backdrop" class="docentra-modal-backdrop hidden">
+        <div class="docentra-modal-card">
+            <div class="docentra-modal-header">
+                <div class="docentra-modal-title-box">
+                    <div class="docentra-modal-icon">
+                        <svg viewBox="0 0 24 24"><path fill="#0078d4" d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                    </div>
+                    <span class="docentra-modal-title" id="docentra-modal-title">Docentra</span>
+                </div>
+                <button type="button" class="docentra-modal-close" id="docentra-modal-btn-close">✕</button>
+            </div>
+            <div class="docentra-modal-body">
+                <label id="docentra-modal-label" class="docentra-modal-label">Not / Yorum:</label>
+                <textarea id="docentra-modal-textarea" class="docentra-modal-textarea" rows="4" placeholder="Notunuzu buraya girin..."></textarea>
+                <div id="docentra-modal-viewtext" class="docentra-modal-viewtext hidden"></div>
+            </div>
+            <div class="docentra-modal-footer">
+                <button type="button" id="docentra-modal-btn-cancel" class="docentra-btn-secondary">İptal</button>
+                <button type="button" id="docentra-modal-btn-delete" class="docentra-btn-danger hidden">Sil</button>
+                <button type="button" id="docentra-modal-btn-save" class="docentra-btn-primary">Kaydet</button>
             </div>
         </div>
     </div>
@@ -816,7 +1043,11 @@
         function sendToHost(data) {
             try {
                 if (window.chrome && window.chrome.webview) {
-                    window.chrome.webview.postMessage(JSON.stringify(data));
+                    try {
+                        window.chrome.webview.postMessage(data);
+                    } catch (e1) {
+                        window.chrome.webview.postMessage(JSON.stringify(data));
+                    }
                 }
             } catch (err) {
                 console.warn('postMessage failed:', err);
@@ -1545,6 +1776,9 @@
                     case 'setTheme':
                         setTheme(msg.theme);
                         break;
+                    case 'setLocale':
+                        setViewerLocale(msg.locale);
+                        break;
                     case 'print':
                         printDocument();
                         break;
@@ -1687,6 +1921,496 @@
             };
         }
 
+        // ==========================================
+        // 10 DİLDE YERELLEŞTİRME VE DOCENTRA MODAL DİYALOG
+        // ==========================================
+        const VIEWER_I18N = {
+            'tr': {
+                commentPrompt: 'Bu alana eklenecek notunuzu / yorumunuzu yazın:',
+                commentViewLabel: 'Eklenen Not / Yorum:',
+                save: 'Kaydet',
+                cancel: 'İptal',
+                delete: 'Notu Sil',
+                ok: 'Tamam',
+                placeholder: 'Notunuzu buraya girin...',
+                copyText: 'Metni Kopyala',
+                editText: 'Metni Düzenle',
+                toolComment: 'Yorum Ekle',
+                toolHighlight: 'Metni Vurgula',
+                toolUnderline: 'Altı Çizili',
+                toolStrikethrough: 'Üstü Çizili',
+                toolRedact: 'Karart / Sansür',
+                toolAddText: 'Metin Ekle',
+                toolItalic: 'İtalik Format',
+                editPlaceholder: 'Yeni metni yazın...',
+                editCancel: 'İptal',
+                editApply: 'Değiştir',
+                searchPlaceholder: 'Akıllı PDF İçi Ara...',
+                pagePrev: 'Önceki Sayfa',
+                pageNext: 'Sonraki Sayfa',
+                zoomIn: 'Yakınlaştır',
+                zoomOut: 'Uzaklaştır',
+                fitWidth: 'Genişliğe Sığdır',
+                print: 'Yazdır'
+            },
+            'en': {
+                commentPrompt: 'Enter your note / comment for this area:',
+                commentViewLabel: 'Attached Note / Comment:',
+                save: 'Save',
+                cancel: 'Cancel',
+                delete: 'Delete Note',
+                ok: 'OK',
+                placeholder: 'Enter your note here...',
+                copyText: 'Copy text',
+                editText: 'Edit text',
+                toolComment: 'Add Comment',
+                toolHighlight: 'Highlight Text',
+                toolUnderline: 'Underline',
+                toolStrikethrough: 'Strikethrough',
+                toolRedact: 'Redact',
+                toolAddText: 'Add Text',
+                toolItalic: 'Italic Format',
+                editPlaceholder: 'Type new text...',
+                editCancel: 'Cancel',
+                editApply: 'Replace',
+                searchPlaceholder: 'Search in PDF...',
+                pagePrev: 'Previous Page',
+                pageNext: 'Next Page',
+                zoomIn: 'Zoom In',
+                zoomOut: 'Zoom Out',
+                fitWidth: 'Fit to Width',
+                print: 'Print'
+            },
+            'de': {
+                commentPrompt: 'Geben Sie Ihre Notiz / Ihren Kommentar ein:',
+                commentViewLabel: 'Angehängte Notiz / Kommentar:',
+                save: 'Speichern',
+                cancel: 'Abbrechen',
+                delete: 'Notiz löschen',
+                ok: 'OK',
+                placeholder: 'Geben Sie hier Ihre Notiz ein...',
+                copyText: 'Text kopieren',
+                editText: 'Text bearbeiten',
+                toolComment: 'Kommentar hinzufügen',
+                toolHighlight: 'Text hervorheben',
+                toolUnderline: 'Unterstreichen',
+                toolStrikethrough: 'Durchstreichen',
+                toolRedact: 'Schwärzen',
+                toolAddText: 'Text hinzufügen',
+                toolItalic: 'Kursiv',
+                editPlaceholder: 'Neuen Text eingeben...',
+                editCancel: 'Abbrechen',
+                editApply: 'Ersetzen',
+                searchPlaceholder: 'Im PDF suchen...',
+                pagePrev: 'Vorherige Seite',
+                pageNext: 'Nächste Seite',
+                zoomIn: 'Vergrößern',
+                zoomOut: 'Verkleinern',
+                fitWidth: 'An Breite anpassen',
+                print: 'Drucken'
+            },
+            'fr': {
+                commentPrompt: 'Entrez votre note / commentaire ici :',
+                commentViewLabel: 'Note / Commentaire joint :',
+                save: 'Enregistrer',
+                cancel: 'Annuler',
+                delete: 'Supprimer la note',
+                ok: 'OK',
+                placeholder: 'Entrez votre note ici...',
+                copyText: 'Copier le texte',
+                editText: 'Modifier le texte',
+                toolComment: 'Ajouter un commentaire',
+                toolHighlight: 'Surligner le texte',
+                toolUnderline: 'Souligner',
+                toolStrikethrough: 'Barrer',
+                toolRedact: 'Masquer / Censurer',
+                toolAddText: 'Ajouter du texte',
+                toolItalic: 'Format italique',
+                editPlaceholder: 'Tapez le nouveau texte...',
+                editCancel: 'Annuler',
+                editApply: 'Remplacer',
+                searchPlaceholder: 'Rechercher dans le PDF...',
+                pagePrev: 'Page précédente',
+                pageNext: 'Page suivante',
+                zoomIn: 'Zoom avant',
+                zoomOut: 'Zoom arrière',
+                fitWidth: 'Ajuster à la largeur',
+                print: 'Imprimer'
+            },
+            'es': {
+                commentPrompt: 'Escriba su nota / comentario para esta área:',
+                commentViewLabel: 'Nota / Comentario adjunto:',
+                save: 'Guardar',
+                cancel: 'Cancelar',
+                delete: 'Eliminar nota',
+                ok: 'Aceptar',
+                placeholder: 'Escriba su nota aquí...',
+                copyText: 'Copiar texto',
+                editText: 'Editar texto',
+                toolComment: 'Agregar comentario',
+                toolHighlight: 'Resaltar texto',
+                toolUnderline: 'Subrayar',
+                toolStrikethrough: 'Tachar',
+                toolRedact: 'Censurar / Ocultar',
+                toolAddText: 'Agregar texto',
+                toolItalic: 'Formato cursiva',
+                editPlaceholder: 'Escriba el nuevo texto...',
+                editCancel: 'Cancelar',
+                editApply: 'Reemplazar',
+                searchPlaceholder: 'Buscar en PDF...',
+                pagePrev: 'Página anterior',
+                pageNext: 'Página siguiente',
+                zoomIn: 'Acercar',
+                zoomOut: 'Alejar',
+                fitWidth: 'Ajustar al ancho',
+                print: 'Imprimir'
+            },
+            'it': {
+                commentPrompt: 'Inserisci la tua nota / commento qui:',
+                commentViewLabel: 'Nota / Commento allegato:',
+                save: 'Salva',
+                cancel: 'Annulla',
+                delete: 'Elimina nota',
+                ok: 'OK',
+                placeholder: 'Inserisci la tua nota qui...',
+                copyText: 'Copia testo',
+                editText: 'Modifica testo',
+                toolComment: 'Aggiungi commento',
+                toolHighlight: 'Evidenzia testo',
+                toolUnderline: 'Sottolinea',
+                toolStrikethrough: 'Barra',
+                toolRedact: 'Oscura / Censura',
+                toolAddText: 'Aggiungi testo',
+                toolItalic: 'Formato corsivo',
+                editPlaceholder: 'Digita il nuovo testo...',
+                editCancel: 'Annulla',
+                editApply: 'Sostituisci',
+                searchPlaceholder: 'Cerca nel PDF...',
+                pagePrev: 'Pagina precedente',
+                pageNext: 'Pagina successiva',
+                zoomIn: 'Ingrandisci',
+                zoomOut: 'Rimpicciolisci',
+                fitWidth: 'Adatta alla larghezza',
+                print: 'Stampa'
+            },
+            'ru': {
+                commentPrompt: 'Введите заметку / комментарий для этой области:',
+                commentViewLabel: 'Прикрепленная заметка / комментарий:',
+                save: 'Сохранить',
+                cancel: 'Отмена',
+                delete: 'Удалить заметку',
+                ok: 'OK',
+                placeholder: 'Введите вашу заметку здесь...',
+                copyText: 'Копировать текст',
+                editText: 'Редактировать текст',
+                toolComment: 'Добавить комментарий',
+                toolHighlight: 'Выделить текст',
+                toolUnderline: 'Подчеркнутый',
+                toolStrikethrough: 'Зачеркнутый',
+                toolRedact: 'Скрыть / Цензура',
+                toolAddText: 'Добавить текст',
+                toolItalic: 'Курсивный формат',
+                editPlaceholder: 'Введите новый текст...',
+                editCancel: 'Отмена',
+                editApply: 'Заменить',
+                searchPlaceholder: 'Поиск в PDF...',
+                pagePrev: 'Предыдущая страница',
+                pageNext: 'Следующая страница',
+                zoomIn: 'Увеличить',
+                zoomOut: 'Уменьшить',
+                fitWidth: 'По ширине',
+                print: 'Печать'
+            },
+            'ja': {
+                commentPrompt: 'この領域に追加するメモ/コメントを入力してください:',
+                commentViewLabel: '添付されたメモ / コメント:',
+                save: '保存',
+                cancel: 'キャンセル',
+                delete: 'メモを削除',
+                ok: 'OK',
+                placeholder: 'ここにメモを入力してください...',
+                copyText: 'テキストをコピー',
+                editText: 'テキストを編集',
+                toolComment: 'コメントを追加',
+                toolHighlight: 'テキストをハイライト',
+                toolUnderline: '下線',
+                toolStrikethrough: '取り消し線',
+                toolRedact: '墨消し / マスク',
+                toolAddText: 'テキストを追加',
+                toolItalic: '斜体フォーマット',
+                editPlaceholder: '新しいテキストを入力...',
+                editCancel: 'キャンセル',
+                editApply: '置換',
+                searchPlaceholder: 'PDF内を検索...',
+                pagePrev: '前のページ',
+                pageNext: '次のページ',
+                zoomIn: '拡大',
+                zoomOut: '縮小',
+                fitWidth: '幅に合わせる',
+                print: '印刷'
+            },
+            'zh': {
+                commentPrompt: '输入此区域的注释/备注：',
+                commentViewLabel: '附加的注释 / 备注：',
+                save: '保存',
+                cancel: '取消',
+                delete: '删除注释',
+                ok: '确定',
+                placeholder: '在此处输入您的注释...',
+                copyText: '复制文本',
+                editText: '编辑文本',
+                toolComment: '添加注释',
+                toolHighlight: '高亮文本',
+                toolUnderline: '下划线',
+                toolStrikethrough: '删除线',
+                toolRedact: '涂黑 / 遮盖',
+                toolAddText: '添加文本',
+                toolItalic: '斜体格式',
+                editPlaceholder: '输入新文本...',
+                editCancel: '取消',
+                editApply: '替换',
+                searchPlaceholder: '在PDF中搜索...',
+                pagePrev: '上一页',
+                pageNext: '下一页',
+                zoomIn: '放大',
+                zoomOut: '缩小',
+                fitWidth: '适应宽度',
+                print: '打印'
+            },
+            'ar': {
+                commentPrompt: 'أدخل ملاحظتك / تعليقك هنا:',
+                commentViewLabel: 'الملاحظة / التعليق المرفق:',
+                save: 'حفظ',
+                cancel: 'إلغاء',
+                delete: 'حذف الملاحظة',
+                ok: 'موافق',
+                placeholder: 'أدخل ملاحظتك هنا...',
+                copyText: 'نسخ النص',
+                editText: 'تعديل النص',
+                toolComment: 'إضافة تعليق',
+                toolHighlight: 'تمييز النص',
+                toolUnderline: 'تسطير',
+                toolStrikethrough: 'شطب',
+                toolRedact: 'حجب / تعتيم',
+                toolAddText: 'إضافة نص',
+                toolItalic: 'تنسيق مائل',
+                editPlaceholder: 'اكتب النص الجديد...',
+                editCancel: 'إلغاء',
+                editApply: 'استبدال',
+                searchPlaceholder: 'البحث في ملف PDF...',
+                pagePrev: 'الصفحة السابقة',
+                pageNext: 'الصفحة التالية',
+                zoomIn: 'تكبير',
+                zoomOut: 'تصغير',
+                fitWidth: 'ملائمة العرض',
+                print: 'طباعة'
+            }
+        };
+
+        let currentViewerLocale = 'tr';
+        function setViewerLocale(loc) {
+            if (!loc) return;
+            const prefix = loc.substring(0, 2).toLowerCase();
+            if (VIEWER_I18N[prefix]) {
+                currentViewerLocale = prefix;
+            } else {
+                currentViewerLocale = 'en';
+            }
+            applyViewerLocaleUI();
+        }
+
+        function getViewerString(key) {
+            const strings = VIEWER_I18N[currentViewerLocale] || VIEWER_I18N['en'];
+            return strings[key] || '';
+        }
+
+        function applyViewerLocaleUI() {
+            try {
+                const elCopy = document.getElementById('adobe-copy-label');
+                if (elCopy) elCopy.textContent = getViewerString('copyText');
+
+                const elEdit = document.getElementById('adobe-edit-label');
+                if (elEdit) elEdit.textContent = getViewerString('editText');
+
+                const btnComment = document.getElementById('adobe-btn-comment');
+                if (btnComment) btnComment.title = getViewerString('toolComment');
+
+                const btnHighlight = document.getElementById('adobe-btn-highlight');
+                if (btnHighlight) btnHighlight.title = getViewerString('toolHighlight');
+
+                const btnUnderline = document.getElementById('adobe-btn-underline');
+                if (btnUnderline) btnUnderline.title = getViewerString('toolUnderline');
+
+                const btnStrike = document.getElementById('adobe-btn-strikethrough');
+                if (btnStrike) btnStrike.title = getViewerString('toolStrikethrough');
+
+                const btnRedact = document.getElementById('adobe-btn-redact');
+                if (btnRedact) btnRedact.title = getViewerString('toolRedact');
+
+                const btnAddText = document.getElementById('adobe-btn-addtext');
+                if (btnAddText) btnAddText.title = getViewerString('toolAddText');
+
+                const btnItalic = document.getElementById('adobe-btn-italic');
+                if (btnItalic) btnItalic.title = getViewerString('toolItalic');
+
+                const editInp = document.getElementById('adobe-edit-input');
+                if (editInp) editInp.placeholder = getViewerString('editPlaceholder');
+
+                const btnCancelEdit = document.getElementById('adobe-btn-cancel-edit');
+                if (btnCancelEdit) btnCancelEdit.textContent = getViewerString('editCancel');
+
+                const btnSaveEdit = document.getElementById('adobe-btn-save-edit');
+                if (btnSaveEdit) btnSaveEdit.textContent = getViewerString('editApply');
+
+                const searchInp = document.getElementById('search-input');
+                if (searchInp) searchInp.placeholder = getViewerString('searchPlaceholder');
+
+                const btnPrev = document.getElementById('btn-prev-page');
+                if (btnPrev) btnPrev.title = getViewerString('pagePrev');
+
+                const btnNext = document.getElementById('btn-next-page');
+                if (btnNext) btnNext.title = getViewerString('pageNext');
+
+                const btnZoomIn = document.getElementById('btn-zoom-in');
+                if (btnZoomIn) btnZoomIn.title = getViewerString('zoomIn');
+
+                const btnZoomOut = document.getElementById('btn-zoom-out');
+                if (btnZoomOut) btnZoomOut.title = getViewerString('zoomOut');
+
+                const btnFit = document.getElementById('btn-fit-width');
+                if (btnFit) btnFit.title = getViewerString('fitWidth');
+
+                const btnPrint = document.getElementById('btn-print');
+                if (btnPrint) btnPrint.title = getViewerString('print');
+
+                const modalLabel = document.getElementById('docentra-modal-label');
+                if (modalLabel) modalLabel.textContent = getViewerString('commentPrompt');
+
+                const modalTextarea = document.getElementById('docentra-modal-textarea');
+                if (modalTextarea) modalTextarea.placeholder = getViewerString('placeholder');
+
+                const modalCancel = document.getElementById('docentra-modal-btn-cancel');
+                if (modalCancel) modalCancel.textContent = getViewerString('cancel');
+
+                const modalDelete = document.getElementById('docentra-modal-btn-delete');
+                if (modalDelete) modalDelete.textContent = getViewerString('delete');
+
+                const modalSave = document.getElementById('docentra-modal-btn-save');
+                if (modalSave) modalSave.textContent = getViewerString('save');
+            } catch (err) {
+                console.warn('applyViewerLocaleUI error:', err);
+            }
+        }
+
+        let hasUnsavedChanges = false;
+        function notifyUnsavedChanges() {
+            hasUnsavedChanges = true;
+            sendToHost({ type: 'unsavedChanges', hasChanges: true });
+        }
+
+        let currentModalResolve = null;
+
+        function showDocentraPrompt({ title = 'Docentra', message, defaultValue = '' }) {
+            return new Promise((resolve) => {
+                currentModalResolve = resolve;
+                const modal = document.getElementById('docentra-modal-backdrop');
+                const titleEl = document.getElementById('docentra-modal-title');
+                const labelEl = document.getElementById('docentra-modal-label');
+                const textarea = document.getElementById('docentra-modal-textarea');
+                const viewtext = document.getElementById('docentra-modal-viewtext');
+                const btnCancel = document.getElementById('docentra-modal-btn-cancel');
+                const btnDelete = document.getElementById('docentra-modal-btn-delete');
+                const btnSave = document.getElementById('docentra-modal-btn-save');
+
+                titleEl.textContent = title;
+                labelEl.style.display = 'block';
+                labelEl.textContent = message || getViewerString('commentPrompt');
+                textarea.style.display = 'block';
+                textarea.value = defaultValue;
+                textarea.placeholder = getViewerString('placeholder');
+                viewtext.style.display = 'none';
+
+                btnCancel.style.display = 'inline-block';
+                btnCancel.textContent = getViewerString('cancel');
+                btnDelete.style.display = 'none';
+                btnSave.textContent = getViewerString('save');
+
+                modal.classList.remove('hidden');
+                setTimeout(() => textarea.focus(), 60);
+
+                btnSave.onclick = () => {
+                    modal.classList.add('hidden');
+                    currentModalResolve = null;
+                    resolve(textarea.value);
+                };
+                btnCancel.onclick = () => {
+                    modal.classList.add('hidden');
+                    currentModalResolve = null;
+                    resolve(null);
+                };
+            });
+        }
+
+        function showDocentraAlert({ title = 'Docentra', message, onDelete }) {
+            return new Promise((resolve) => {
+                const modal = document.getElementById('docentra-modal-backdrop');
+                const titleEl = document.getElementById('docentra-modal-title');
+                const labelEl = document.getElementById('docentra-modal-label');
+                const textarea = document.getElementById('docentra-modal-textarea');
+                const viewtext = document.getElementById('docentra-modal-viewtext');
+                const btnCancel = document.getElementById('docentra-modal-btn-cancel');
+                const btnDelete = document.getElementById('docentra-modal-btn-delete');
+                const btnSave = document.getElementById('docentra-modal-btn-save');
+
+                titleEl.textContent = title;
+                labelEl.style.display = 'block';
+                labelEl.textContent = getViewerString('commentViewLabel');
+                textarea.style.display = 'none';
+                viewtext.style.display = 'block';
+                viewtext.textContent = message;
+
+                btnCancel.style.display = 'none';
+                if (typeof onDelete === 'function') {
+                    btnDelete.style.display = 'inline-block';
+                    btnDelete.textContent = getViewerString('delete');
+                    btnDelete.onclick = () => {
+                        modal.classList.add('hidden');
+                        currentModalResolve = null;
+                        onDelete();
+                        resolve('deleted');
+                    };
+                } else {
+                    btnDelete.style.display = 'none';
+                }
+
+                btnSave.textContent = getViewerString('ok');
+                btnSave.onclick = () => {
+                    modal.classList.add('hidden');
+                    currentModalResolve = null;
+                    resolve('ok');
+                };
+
+                modal.classList.remove('hidden');
+            });
+        }
+
+        const modalCloseBtn = document.getElementById('docentra-modal-btn-close');
+        if (modalCloseBtn) {
+            modalCloseBtn.addEventListener('click', () => {
+                document.getElementById('docentra-modal-backdrop').classList.add('hidden');
+                if (currentModalResolve) { currentModalResolve(null); currentModalResolve = null; }
+            });
+        }
+
+        document.getElementById('docentra-modal-textarea').addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && (e.ctrlKey || !e.shiftKey)) {
+                e.preventDefault();
+                document.getElementById('docentra-modal-btn-save').click();
+            } else if (e.key === 'Escape') {
+                document.getElementById('docentra-modal-btn-close').click();
+            }
+        });
+
         // 2. Vurgula (Highlight)
         document.getElementById('adobe-btn-highlight').addEventListener('click', () => {
             const data = getSelectionBoxes();
@@ -1702,6 +2426,7 @@
             });
             window.getSelection().removeAllRanges();
             hideSelectionMenu();
+            notifyUnsavedChanges();
         });
 
         // 3. Altı Çizili (Underline)
@@ -1719,6 +2444,7 @@
             });
             window.getSelection().removeAllRanges();
             hideSelectionMenu();
+            notifyUnsavedChanges();
         });
 
         // 4. Üstü Çizili (Strikethrough)
@@ -1735,6 +2461,7 @@
             });
             window.getSelection().removeAllRanges();
             hideSelectionMenu();
+            notifyUnsavedChanges();
         });
 
         // 5. Karart / Sansür (Redact)
@@ -1752,14 +2479,18 @@
             });
             window.getSelection().removeAllRanges();
             hideSelectionMenu();
+            notifyUnsavedChanges();
         });
 
         // 6. Yorum Ekle (Comment)
-        document.getElementById('adobe-btn-comment').addEventListener('click', () => {
-            const note = prompt('Bu alana eklenecek notunuzu / yorumunuzu yazın:');
+        document.getElementById('adobe-btn-comment').addEventListener('click', async () => {
+            const data = getSelectionBoxes();
+            if (!data) return;
+            const note = await showDocentraPrompt({
+                title: 'Docentra',
+                message: getViewerString('commentPrompt')
+            });
             if (note && note.trim()) {
-                const data = getSelectionBoxes();
-                if (!data) return;
                 const firstBox = data.boxes[0];
                 const icon = document.createElement('div');
                 icon.className = 'docentra-annotation-overlay comment-pin';
@@ -1767,10 +2498,21 @@
                 icon.style.top = (firstBox.top - 2) + 'px';
                 icon.style.cursor = 'pointer';
                 icon.innerHTML = '💬';
-                icon.title = 'Yorum: ' + note;
-                icon.onclick = () => alert('Yorum: ' + note);
+                icon.title = (getViewerString('commentViewLabel') || 'Not:') + ' ' + note.trim();
+                icon.onclick = () => {
+                    showDocentraAlert({
+                        title: 'Docentra',
+                        message: note.trim(),
+                        onDelete: () => {
+                            icon.remove();
+                            notifyUnsavedChanges();
+                        }
+                    });
+                };
                 data.slot.appendChild(icon);
+                notifyUnsavedChanges();
             }
+            window.getSelection().removeAllRanges();
             hideSelectionMenu();
         });
 
@@ -1791,7 +2533,9 @@
                 el.style.border = '1px dashed #0078d4';
                 data.slot.appendChild(el);
             });
+            window.getSelection().removeAllRanges();
             hideSelectionMenu();
+            notifyUnsavedChanges();
         });
 
         // 8. Edit Text (Metni Düzenle)
@@ -1834,6 +2578,7 @@
                 mask.title = 'Düzenlendi (Orijinal: ' + selectedTextString + ')';
 
                 data.slot.appendChild(mask);
+                notifyUnsavedChanges();
             }
             window.getSelection().removeAllRanges();
             hideSelectionMenu();
@@ -1857,6 +2602,7 @@
         }, { passive: false });
 
         window.addEventListener('DOMContentLoaded', () => {
+            applyViewerLocaleUI();
             sendToHost({ type: 'viewerReady' });
         });
     </script>

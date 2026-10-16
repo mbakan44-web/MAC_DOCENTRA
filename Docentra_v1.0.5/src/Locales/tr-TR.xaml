@@ -507,4 +507,8 @@
     <system:String x:Key="Tool_Browse">Gözat</system:String>
     <system:String x:Key="Tool_SelectFile">Dosya Seç</system:String>
     <system:String x:Key="Tool_SelectFileDesc">PDF dosyasını buraya sürükleyin veya tıklayarak seçin.</system:String>
+
+    <!-- Unsaved Changes Warning -->
+    <system:String x:Key="Unsaved_Warning_Title">Kaydedilmemiş Değişiklikler</system:String>
+    <system:String x:Key="Unsaved_Warning_Msg">Belgenizde kaydedilmemiş düzeltmeler ve notlar bulunmaktadır. Kaydetmeden kapatmak istediğinizden emin misiniz?</system:String>
 </ResourceDictionary>

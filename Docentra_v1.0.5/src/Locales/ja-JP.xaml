@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:system="clr-namespace:System;assembly=mscorlib">
     <!-- General -->
     <system:String x:Key="AppTitle">DOCENTRA PDF &amp; ドキュメントエディター</system:String>
@@ -485,4 +485,8 @@
     <system:String x:Key="Tool_Browse">ブラウズ</system:String>
     <system:String x:Key="Tool_SelectFile">ファイルの選択</system:String>
     <system:String x:Key="Tool_SelectFileDesc">ここにPDFファイルをクリックまたはドラッグ＆ドロップします。</system:String>
+
+    <!-- Unsaved Changes Warning -->
+    <system:String x:Key="Unsaved_Warning_Title">未保存の変更</system:String>
+    <system:String x:Key="Unsaved_Warning_Msg">ドキュメントに未保存のメモや変更があります。保存せずに閉じてもよろしいですか？</system:String>
 </ResourceDictionary>
