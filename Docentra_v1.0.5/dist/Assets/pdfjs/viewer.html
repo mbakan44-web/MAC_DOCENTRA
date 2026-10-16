@@ -410,6 +410,246 @@
             background-color: rgba(255, 120, 0, 0.8) !important;
             box-shadow: 0 0 0 2px #ff6600, 0 0 10px rgba(255, 120, 0, 0.6);
         }
+
+        /* Adobe Acrobat Tarzı Kayan Seçim Menüsü */
+        #adobe-selection-menu {
+            position: absolute;
+            background: #ffffff;
+            color: #202020;
+            border: 1px solid #d0d7de;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16), 0 2px 6px rgba(0, 0, 0, 0.08);
+            padding: 6px;
+            z-index: 1000;
+            width: 250px;
+            user-select: none;
+            -webkit-user-select: none;
+            transition: opacity 0.14s cubic-bezier(0, 0, 0.2, 1), transform 0.14s cubic-bezier(0, 0, 0.2, 1);
+            transform-origin: center bottom;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body:not(.theme-light) #adobe-selection-menu {
+            background: #252526;
+            color: #f3f3f3;
+            border-color: rgba(255, 255, 255, 0.14);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        #adobe-selection-menu.hidden {
+            opacity: 0;
+            transform: scale(0.95) translateY(4px);
+            pointer-events: none;
+        }
+
+        .adobe-toolbar-icons {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2px 2px 4px 2px;
+        }
+
+        .adobe-tool-btn {
+            background: transparent;
+            border: 1px solid transparent;
+            color: inherit;
+            border-radius: 4px;
+            width: 28px;
+            height: 28px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.15s ease, transform 0.1s ease;
+        }
+
+        .adobe-tool-btn:hover {
+            background: rgba(0, 0, 0, 0.07);
+        }
+
+        body:not(.theme-light) .adobe-tool-btn:hover {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .adobe-tool-btn:active {
+            transform: scale(0.92);
+        }
+
+        .adobe-tool-btn svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        .adobe-divider-v {
+            width: 1px;
+            height: 18px;
+            background: rgba(0, 0, 0, 0.1);
+            margin: 0 2px;
+        }
+
+        body:not(.theme-light) .adobe-divider-v {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .adobe-divider-h {
+            height: 1px;
+            background: rgba(0, 0, 0, 0.08);
+            margin: 4px 0 6px 0;
+        }
+
+        body:not(.theme-light) .adobe-divider-h {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .adobe-action-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .adobe-action-item {
+            background: transparent;
+            border: none;
+            color: inherit;
+            border-radius: 5px;
+            padding: 7px 10px;
+            font-size: 13px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            transition: background 0.15s ease, color 0.15s ease;
+        }
+
+        .adobe-action-item:hover {
+            background: rgba(0, 120, 212, 0.08);
+            color: var(--accent-color);
+        }
+
+        body:not(.theme-light) .adobe-action-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+        }
+
+        .adobe-action-item svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+            opacity: 0.85;
+        }
+
+        /* Inline Text Editor Sub-panel */
+        .adobe-inline-editor {
+            margin-top: 6px;
+            padding-top: 6px;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        body:not(.theme-light) .adobe-inline-editor {
+            border-top-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .adobe-inline-editor.hidden {
+            display: none;
+        }
+
+        .adobe-editor-input {
+            width: 100%;
+            padding: 6px 8px;
+            font-size: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.18);
+            border-radius: 4px;
+            background: rgba(0, 0, 0, 0.03);
+            color: inherit;
+            outline: none;
+        }
+
+        body:not(.theme-light) .adobe-editor-input {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.18);
+        }
+
+        .adobe-editor-input:focus {
+            border-color: var(--accent-color);
+        }
+
+        .adobe-editor-actions {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 6px;
+        }
+
+        .adobe-btn-apply {
+            background: var(--accent-color);
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            padding: 4px 10px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .adobe-btn-cancel {
+            background: transparent;
+            color: inherit;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            border-radius: 4px;
+            padding: 4px 8px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        body:not(.theme-light) .adobe-btn-cancel {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Eklenen Özel Açıklamalar / Vurgular */
+        .docentra-annotation-overlay {
+            position: absolute;
+            pointer-events: auto;
+            border-radius: 2px;
+            z-index: 5;
+        }
+
+        .docentra-annotation-overlay.highlight {
+            background: rgba(255, 235, 59, 0.45);
+            mix-blend-mode: multiply;
+        }
+
+        .docentra-annotation-overlay.underline {
+            border-bottom: 2px solid #0078d4;
+        }
+
+        .docentra-annotation-overlay.strikethrough {
+            position: absolute;
+            height: 2px;
+            background: #e53935;
+        }
+
+        .docentra-annotation-overlay.redact {
+            background: #000000;
+        }
+
+        .docentra-annotation-overlay.edited-text {
+            background: #ffffff;
+            color: #1a1a1a;
+            font-family: inherit;
+            display: flex;
+            align-items: center;
+            padding: 0 2px;
+            white-space: pre-wrap;
+            box-shadow: 0 0 0 1px rgba(0, 120, 212, 0.3);
+            border-radius: 2px;
+        }
     </style>
 </head>
 <body>
@@ -477,6 +717,58 @@
 
     <div id="viewer-container">
         <div id="viewer"></div>
+    </div>
+
+    <!-- Adobe Acrobat Tarzı Kayan Seçim Menüsü -->
+    <div id="adobe-selection-menu" class="hidden">
+        <!-- Üst İkon Çubuğu -->
+        <div class="adobe-toolbar-icons">
+            <button class="adobe-tool-btn" id="adobe-btn-comment" title="Yorum Ekle">
+                <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+            </button>
+            <button class="adobe-tool-btn" id="adobe-btn-highlight" title="Metni Vurgula (Highlighter)">
+                <svg viewBox="0 0 24 24"><path fill="#f59e0b" d="m18.5 2.5 3 3-12 12-4.5 1 1-4.5 12.5-11.5zm-11 14.5 9-9-1.5-1.5-9 9 1.5 1.5zM3 21h18v2H3z"/></svg>
+            </button>
+            <button class="adobe-tool-btn" id="adobe-btn-underline" title="Altı Çizili">
+                <svg viewBox="0 0 24 24"><path d="M12 17c3.31 0 6-2.69 6-6V3h-2.5v8c0 1.93-1.57 3.5-3.5 3.5S8.5 12.93 8.5 11V3H6v8c0 3.31 2.69 6 6 6zm-7 2v2h14v-2H5z"/></svg>
+            </button>
+            <button class="adobe-tool-btn" id="adobe-btn-strikethrough" title="Üstü Çizili">
+                <svg viewBox="0 0 24 24"><path d="M10 19h4v-3h-4v3zM5 4v3h5v3h4V7h5V4H5zM3 14h18v-2H3v2z"/></svg>
+            </button>
+            <button class="adobe-tool-btn" id="adobe-btn-redact" title="Karart / Sansür">
+                <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2z"/></svg>
+            </button>
+            <div class="adobe-divider-v"></div>
+            <button class="adobe-tool-btn" id="adobe-btn-addtext" title="Metin Ekle">
+                <svg viewBox="0 0 24 24"><path d="M5 4v3h5.5v12h3V7H19V4H5z"/></svg>
+            </button>
+            <button class="adobe-tool-btn" id="adobe-btn-italic" title="İtalik Format">
+                <svg viewBox="0 0 24 24"><path d="M10 4v3h2.21l-3.42 8H6v3h8v-3h-2.21l3.42-8H18V4z"/></svg>
+            </button>
+        </div>
+
+        <div class="adobe-divider-h"></div>
+
+        <!-- Aksiyon Listesi (WhatsApp çıkarıldı) -->
+        <div class="adobe-action-list">
+            <button class="adobe-action-item" id="adobe-action-copy">
+                <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                <span id="adobe-copy-label">Copy text</span>
+            </button>
+            <button class="adobe-action-item" id="adobe-action-edit">
+                <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+                <span>Edit text</span>
+            </button>
+        </div>
+
+        <!-- Inline Metin Düzenleyici Alanı (Edit text tıklandığında açılır) -->
+        <div id="adobe-inline-editor" class="adobe-inline-editor hidden">
+            <input type="text" id="adobe-edit-input" class="adobe-editor-input" placeholder="Yeni metni yazın...">
+            <div class="adobe-editor-actions">
+                <button type="button" id="adobe-btn-cancel-edit" class="adobe-btn-cancel">İptal</button>
+                <button type="button" id="adobe-btn-save-edit" class="adobe-btn-apply">Değiştir</button>
+            </div>
+        </div>
     </div>
 
     <script src="pdf.min.js"></script>
@@ -1265,6 +1557,296 @@
                 }
             });
         }
+
+        // ==========================================
+        // ADOBE AKROBAT TARZI KAYAN SEÇİM ARAÇ ÇUBUĞU
+        // ==========================================
+        const selectionMenu = document.getElementById('adobe-selection-menu');
+        const inlineEditor = document.getElementById('adobe-inline-editor');
+        const editInput = document.getElementById('adobe-edit-input');
+        const copyLabel = document.getElementById('adobe-copy-label');
+        let currentSelectionRange = null;
+        let selectedTextString = '';
+
+        function getActiveSelection() {
+            const sel = window.getSelection();
+            if (!sel || sel.isCollapsed || sel.rangeCount === 0) return null;
+            const text = sel.toString().trim();
+            if (!text) return null;
+            return sel;
+        }
+
+        function updateSelectionMenuPosition() {
+            const sel = getActiveSelection();
+            if (!sel) {
+                hideSelectionMenu();
+                return;
+            }
+
+            const range = sel.getRangeAt(0);
+            const rect = range.getBoundingClientRect();
+            if (rect.width === 0 || rect.height === 0) {
+                hideSelectionMenu();
+                return;
+            }
+
+            currentSelectionRange = range.cloneRange();
+            selectedTextString = sel.toString();
+
+            selectionMenu.classList.remove('hidden');
+            const menuWidth = selectionMenu.offsetWidth || 250;
+            const menuHeight = selectionMenu.offsetHeight || 105;
+
+            // Seçimin yatay merkezine hizala
+            let left = rect.left + (rect.width / 2) - (menuWidth / 2);
+            // Üstte yeterli boşluk varsa seçimin üstünde, yoksa hemen altında göster
+            let top = rect.top - menuHeight - 10;
+            if (top < 50) {
+                top = rect.bottom + 10;
+            }
+
+            // Ekran sınırlarını aşmasını engelle
+            left = Math.max(12, Math.min(window.innerWidth - menuWidth - 12, left));
+
+            selectionMenu.style.left = Math.round(left) + 'px';
+            selectionMenu.style.top = Math.round(top) + 'px';
+        }
+
+        function hideSelectionMenu() {
+            if (selectionMenu) {
+                selectionMenu.classList.add('hidden');
+                if (inlineEditor) inlineEditor.classList.add('hidden');
+            }
+        }
+
+        document.addEventListener('mouseup', (e) => {
+            // Eğer tıklanan yer menünün içiyse veya içindeki bir inputsa gizleme
+            if (selectionMenu && selectionMenu.contains(e.target)) return;
+
+            setTimeout(() => {
+                const sel = getActiveSelection();
+                if (sel) {
+                    updateSelectionMenuPosition();
+                } else {
+                    hideSelectionMenu();
+                }
+            }, 60);
+        });
+
+        document.addEventListener('selectionchange', () => {
+            const sel = window.getSelection();
+            if (!sel || sel.isCollapsed) {
+                if (!selectionMenu.contains(document.activeElement)) {
+                    hideSelectionMenu();
+                }
+            }
+        });
+
+        // 1. Copy Text
+        document.getElementById('adobe-action-copy').addEventListener('click', async () => {
+            if (!selectedTextString) return;
+            try {
+                await navigator.clipboard.writeText(selectedTextString);
+                copyLabel.textContent = '✓ Copied!';
+                sendToHost({ type: 'copyText', text: selectedTextString });
+                setTimeout(() => {
+                    copyLabel.textContent = 'Copy text';
+                    hideSelectionMenu();
+                }, 700);
+            } catch (err) {
+                console.warn('Clipboard copy failed:', err);
+                hideSelectionMenu();
+            }
+        });
+
+        // Seçilen alanın koordinatlarını sayfa slotuna göre hesaplama
+        function getSelectionBoxes() {
+            if (!currentSelectionRange) return null;
+            const rects = Array.from(currentSelectionRange.getClientRects());
+            if (rects.length === 0) return null;
+
+            // Hangi sayfa slotunun içinde olduğunu bul
+            let node = currentSelectionRange.commonAncestorContainer;
+            let slot = node.nodeType === 1 ? node.closest('.page-slot') : node.parentElement?.closest('.page-slot');
+            if (!slot) {
+                const firstRect = rects[0];
+                const el = document.elementFromPoint(firstRect.left, firstRect.top);
+                slot = el?.closest('.page-slot');
+            }
+            if (!slot) return null;
+
+            const slotRect = slot.getBoundingClientRect();
+            return {
+                slot: slot,
+                boxes: rects.map(r => ({
+                    left: r.left - slotRect.left,
+                    top: r.top - slotRect.top,
+                    width: r.width,
+                    height: r.height
+                }))
+            };
+        }
+
+        // 2. Vurgula (Highlight)
+        document.getElementById('adobe-btn-highlight').addEventListener('click', () => {
+            const data = getSelectionBoxes();
+            if (!data) return;
+            data.boxes.forEach(box => {
+                const el = document.createElement('div');
+                el.className = 'docentra-annotation-overlay highlight';
+                el.style.left = box.left + 'px';
+                el.style.top = box.top + 'px';
+                el.style.width = box.width + 'px';
+                el.style.height = box.height + 'px';
+                data.slot.appendChild(el);
+            });
+            window.getSelection().removeAllRanges();
+            hideSelectionMenu();
+        });
+
+        // 3. Altı Çizili (Underline)
+        document.getElementById('adobe-btn-underline').addEventListener('click', () => {
+            const data = getSelectionBoxes();
+            if (!data) return;
+            data.boxes.forEach(box => {
+                const el = document.createElement('div');
+                el.className = 'docentra-annotation-overlay underline';
+                el.style.left = box.left + 'px';
+                el.style.top = box.top + 'px';
+                el.style.width = box.width + 'px';
+                el.style.height = box.height + 'px';
+                data.slot.appendChild(el);
+            });
+            window.getSelection().removeAllRanges();
+            hideSelectionMenu();
+        });
+
+        // 4. Üstü Çizili (Strikethrough)
+        document.getElementById('adobe-btn-strikethrough').addEventListener('click', () => {
+            const data = getSelectionBoxes();
+            if (!data) return;
+            data.boxes.forEach(box => {
+                const el = document.createElement('div');
+                el.className = 'docentra-annotation-overlay strikethrough';
+                el.style.left = box.left + 'px';
+                el.style.top = (box.top + (box.height / 2) - 1) + 'px';
+                el.style.width = box.width + 'px';
+                data.slot.appendChild(el);
+            });
+            window.getSelection().removeAllRanges();
+            hideSelectionMenu();
+        });
+
+        // 5. Karart / Sansür (Redact)
+        document.getElementById('adobe-btn-redact').addEventListener('click', () => {
+            const data = getSelectionBoxes();
+            if (!data) return;
+            data.boxes.forEach(box => {
+                const el = document.createElement('div');
+                el.className = 'docentra-annotation-overlay redact';
+                el.style.left = box.left + 'px';
+                el.style.top = box.top + 'px';
+                el.style.width = box.width + 'px';
+                el.style.height = box.height + 'px';
+                data.slot.appendChild(el);
+            });
+            window.getSelection().removeAllRanges();
+            hideSelectionMenu();
+        });
+
+        // 6. Yorum Ekle (Comment)
+        document.getElementById('adobe-btn-comment').addEventListener('click', () => {
+            const note = prompt('Bu alana eklenecek notunuzu / yorumunuzu yazın:');
+            if (note && note.trim()) {
+                const data = getSelectionBoxes();
+                if (!data) return;
+                const firstBox = data.boxes[0];
+                const icon = document.createElement('div');
+                icon.className = 'docentra-annotation-overlay comment-pin';
+                icon.style.left = (firstBox.left + firstBox.width + 4) + 'px';
+                icon.style.top = (firstBox.top - 2) + 'px';
+                icon.style.cursor = 'pointer';
+                icon.innerHTML = '💬';
+                icon.title = 'Yorum: ' + note;
+                icon.onclick = () => alert('Yorum: ' + note);
+                data.slot.appendChild(icon);
+            }
+            hideSelectionMenu();
+        });
+
+        // 7. Metin Ekle / İtalik
+        document.getElementById('adobe-btn-addtext').addEventListener('click', () => {
+            openInlineEditor();
+        });
+        document.getElementById('adobe-btn-italic').addEventListener('click', () => {
+            const data = getSelectionBoxes();
+            if (!data) return;
+            data.boxes.forEach(box => {
+                const el = document.createElement('div');
+                el.className = 'docentra-annotation-overlay';
+                el.style.left = box.left + 'px';
+                el.style.top = box.top + 'px';
+                el.style.width = box.width + 'px';
+                el.style.height = box.height + 'px';
+                el.style.border = '1px dashed #0078d4';
+                data.slot.appendChild(el);
+            });
+            hideSelectionMenu();
+        });
+
+        // 8. Edit Text (Metni Düzenle)
+        function openInlineEditor() {
+            inlineEditor.classList.remove('hidden');
+            editInput.value = selectedTextString;
+            editInput.focus();
+            editInput.select();
+        }
+
+        document.getElementById('adobe-action-edit').addEventListener('click', () => {
+            openInlineEditor();
+        });
+
+        document.getElementById('adobe-btn-cancel-edit').addEventListener('click', () => {
+            inlineEditor.classList.add('hidden');
+        });
+
+        document.getElementById('adobe-btn-save-edit').addEventListener('click', () => {
+            const newText = editInput.value;
+            const data = getSelectionBoxes();
+            if (data && data.boxes.length > 0) {
+                // Eski metin alanlarını tek bir kapsayıcı blok ile kapatıp yeni metni yerleştir
+                const firstBox = data.boxes[0];
+                const minLeft = Math.min(...data.boxes.map(b => b.left));
+                const minTop = Math.min(...data.boxes.map(b => b.top));
+                const maxRight = Math.max(...data.boxes.map(b => b.left + b.width));
+                const maxBottom = Math.max(...data.boxes.map(b => b.top + b.height));
+
+                // Maske (Whiteout) ve Yeni Metin Bloğu
+                const mask = document.createElement('div');
+                mask.className = 'docentra-annotation-overlay edited-text';
+                mask.style.left = (minLeft - 2) + 'px';
+                mask.style.top = (minTop - 1) + 'px';
+                mask.style.width = (maxRight - minLeft + 4) + 'px';
+                mask.style.minHeight = (maxBottom - minTop + 2) + 'px';
+                mask.style.fontSize = Math.max(11, Math.round(firstBox.height * 0.82)) + 'px';
+                mask.style.lineHeight = (maxBottom - minTop) + 'px';
+                mask.textContent = newText;
+                mask.title = 'Düzenlendi (Orijinal: ' + selectedTextString + ')';
+
+                data.slot.appendChild(mask);
+            }
+            window.getSelection().removeAllRanges();
+            hideSelectionMenu();
+        });
+
+        editInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                document.getElementById('adobe-btn-save-edit').click();
+            } else if (e.key === 'Escape') {
+                inlineEditor.classList.add('hidden');
+            }
+        });
 
         container.addEventListener('wheel', (e) => {
             if (e.ctrlKey) {
