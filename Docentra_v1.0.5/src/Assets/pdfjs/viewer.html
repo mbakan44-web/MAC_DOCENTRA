@@ -2601,10 +2601,15 @@
             }
         }, { passive: false });
 
-        window.addEventListener('DOMContentLoaded', () => {
+        function notifyViewerReady() {
             applyViewerLocaleUI();
             sendToHost({ type: 'viewerReady' });
-        });
+        }
+        if (document.readyState === 'loading') {
+            window.addEventListener('DOMContentLoaded', notifyViewerReady);
+        } else {
+            notifyViewerReady();
+        }
     </script>
 </body>
 </html>

@@ -99,7 +99,7 @@ namespace PromtAiPdfPro.Views
                 {
                     try
                     {
-                        string p = Path.Combine(GetPdfJsDirectory(), _activeViewerPdfName);
+                        string p = Path.Combine(GetViewerWorkingDir(), _activeViewerPdfName);
                         if (File.Exists(p)) File.Delete(p);
                     }
                     catch { }
@@ -209,13 +209,12 @@ namespace PromtAiPdfPro.Views
                 var core = PdfWebView.CoreWebView2;
                 if (core == null) return;
 
-                string pdfJsDir = GetPdfJsDirectory();
-                if (!Directory.Exists(pdfJsDir))
-                    Directory.CreateDirectory(pdfJsDir);
+                EnsureViewerAssetsSynchronized();
+                string viewerDir = GetViewerWorkingDir();
 
                 core.SetVirtualHostNameToFolderMapping(
                     "viewer.local",
-                    pdfJsDir,
+                    viewerDir,
                     Microsoft.Web.WebView2.Core.CoreWebView2HostResourceAccessKind.Allow);
 
                 core.WebMessageReceived += OnWebViewMessageReceived;
@@ -227,6 +226,7 @@ namespace PromtAiPdfPro.Views
                         LoadingRing.Visibility = Visibility.Collapsed;
                     SendThemeToViewer();
                     SendLocaleToViewer();
+                    ReloadWebViewDocument();
                 };
 
                 core.NewWindowRequested += (s, e) => { e.Handled = true; OpenNativeSettings(); };
@@ -243,7 +243,17 @@ namespace PromtAiPdfPro.Views
             }
         }
 
-        private string GetPdfJsDirectory()
+        private static string GetViewerWorkingDir()
+        {
+            string dir = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                "Docentra", "ViewerAssets");
+            if (!Directory.Exists(dir))
+                Directory.CreateDirectory(dir);
+            return dir;
+        }
+
+        private string GetPdfJsSourceDirectory()
         {
             string pdfJsDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "pdfjs");
             if (Directory.Exists(pdfJsDir)) return pdfJsDir;
@@ -261,6 +271,35 @@ namespace PromtAiPdfPro.Views
             return pdfJsDir;
         }
 
+        private void EnsureViewerAssetsSynchronized()
+        {
+            try
+            {
+                string srcDir = GetPdfJsSourceDirectory();
+                string targetDir = GetViewerWorkingDir();
+                if (Directory.Exists(srcDir))
+                {
+                    foreach (string srcFile in Directory.GetFiles(srcDir))
+                    {
+                        string fileName = Path.GetFileName(srcFile);
+                        if (fileName.StartsWith("active_", StringComparison.OrdinalIgnoreCase)) continue;
+
+                        string destFile = Path.Combine(targetDir, fileName);
+                        FileInfo sInfo = new FileInfo(srcFile);
+                        FileInfo dInfo = new FileInfo(destFile);
+                        if (!dInfo.Exists || dInfo.Length != sInfo.Length || dInfo.LastWriteTimeUtc < sInfo.LastWriteTimeUtc)
+                        {
+                            File.Copy(srcFile, destFile, true);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("EnsureViewerAssetsSynchronized error: " + ex.Message);
+            }
+        }
+
         private string? _activeViewerPdfName;
 
         private void PrepareAndLoadPdfInViewer()
@@ -269,16 +308,14 @@ namespace PromtAiPdfPro.Views
             {
                 if (!_webViewReady || PdfWebView.CoreWebView2 == null || !File.Exists(_filePath)) return;
 
-                string pdfJsDir = GetPdfJsDirectory();
-                if (!Directory.Exists(pdfJsDir))
-                    Directory.CreateDirectory(pdfJsDir);
+                string viewerDir = GetViewerWorkingDir();
 
                 if (string.IsNullOrEmpty(_activeViewerPdfName))
                 {
                     _activeViewerPdfName = "active_" + Guid.NewGuid().ToString("N") + ".pdf";
                 }
 
-                string destPath = Path.Combine(pdfJsDir, _activeViewerPdfName);
+                string destPath = Path.Combine(viewerDir, _activeViewerPdfName);
 
                 FileInfo srcInfo = new FileInfo(_filePath);
                 FileInfo destInfo = new FileInfo(destPath);
