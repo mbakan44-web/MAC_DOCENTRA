@@ -133,8 +133,14 @@
    </url>
    <url>
       <loc>https://docentrapdf.com/blog/adobe-acrobat-offline-alternative.html</loc>
-      <lastmod>2026-10-17</lastmod>
+      <lastmod>2026-10-22</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.85</priority>
+   </url>
+   <url>
+      <loc>https://docentrapdf.com/blog/best-offline-pdf-editors-windows.html</loc>
+      <lastmod>2026-10-22</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.88</priority>
    </url>
 </urlset>
