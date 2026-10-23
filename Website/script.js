@@ -1391,3 +1391,122 @@ window.switchMockupTab = function(tabName) {
     });
 };
 
+// ===== ADOBE-STYLE FLOATING BOTTOM BAR & SMART DOWNLOAD CONTROLLER =====
+(function() {
+    const floatingBar = document.getElementById('floating-bar');
+    const floatingClose = document.getElementById('floating-bar-close');
+    const mobileModal = document.getElementById('mobile-download-modal');
+    const mobileModalClose = document.getElementById('mobile-modal-close');
+    const downloadToast = document.getElementById('download-toast');
+    const toastClose = document.getElementById('toast-close');
+    const btnCopyLink = document.getElementById('btn-copy-link');
+    const copyBtnText = document.getElementById('copy-btn-text');
+
+    // Floating bar visibility on scroll
+    let isFloatingClosed = sessionStorage.getItem('docentra_floating_closed') === 'true';
+
+    function handleScroll() {
+        if (!floatingBar || isFloatingClosed) return;
+        const scrollThreshold = 350;
+        if (window.scrollY > scrollThreshold) {
+            floatingBar.classList.add('visible');
+        } else {
+            floatingBar.classList.remove('visible');
+        }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    if (floatingClose) {
+        floatingClose.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (floatingBar) floatingBar.classList.remove('visible');
+            isFloatingClosed = true;
+            sessionStorage.setItem('docentra_floating_closed', 'true');
+        });
+    }
+
+    // Mobile device detector
+    function isMobileDevice() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
+               (window.innerWidth <= 768 && ('ontouchstart' in window || navigator.maxTouchPoints > 0));
+    }
+
+    // Intercept download buttons
+    document.querySelectorAll('.btn-download-action, [data-download-btn]').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            if (isMobileDevice()) {
+                e.preventDefault();
+                if (mobileModal) {
+                    mobileModal.style.display = 'flex';
+                }
+            } else {
+                // On desktop: download triggers naturally, show toast guidance
+                if (downloadToast) {
+                    downloadToast.style.display = 'block';
+                    setTimeout(() => {
+                        if (downloadToast) downloadToast.style.display = 'none';
+                    }, 14000);
+                }
+            }
+        });
+    });
+
+    // Close Mobile Modal
+    if (mobileModalClose && mobileModal) {
+        mobileModalClose.addEventListener('click', () => {
+            mobileModal.style.display = 'none';
+        });
+        mobileModal.addEventListener('click', (e) => {
+            if (e.target === mobileModal) {
+                mobileModal.style.display = 'none';
+            }
+        });
+    }
+
+    // Close Toast
+    if (toastClose && downloadToast) {
+        toastClose.addEventListener('click', () => {
+            downloadToast.style.display = 'none';
+        });
+    }
+
+    // Copy Download Link in Mobile Modal
+    if (btnCopyLink && copyBtnText) {
+        btnCopyLink.addEventListener('click', () => {
+            const downloadUrl = 'https://docentrapdf.com/download/';
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(downloadUrl).then(() => {
+                    const origText = copyBtnText.innerText;
+                    copyBtnText.innerText = '✅ Bağlantı Kopyalandı!';
+                    setTimeout(() => {
+                        copyBtnText.innerText = origText;
+                    }, 2500);
+                }).catch(() => {
+                    fallbackCopy(downloadUrl);
+                });
+            } else {
+                fallbackCopy(downloadUrl);
+            }
+        });
+
+        function fallbackCopy(text) {
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+            const origText = copyBtnText.innerText;
+            copyBtnText.innerText = '✅ Bağlantı Kopyalandı!';
+            setTimeout(() => {
+                copyBtnText.innerText = origText;
+            }, 2500);
+        }
+    }
+})();
+
+

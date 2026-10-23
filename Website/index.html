@@ -136,7 +136,7 @@
                 <li><a href="#pricing" data-i18n="nav-pricing">Pricing</a></li>
                 <li><a href="#roadmap" data-i18n="nav-roadmap">Roadmap</a></li>
                 <li><a href="#faq" data-i18n="nav-faq">FAQ</a></li>
-                <li><a href="#download-cta" class="btn btn-secondary" data-i18n="btn-download">Download</a></li>
+                <li><a href="https://github.com/mbakan44-web/DocentraWebsite/releases/download/v1.0.0/Docentra_Setup_v1.0.5.exe" class="btn btn-secondary btn-download-action" data-download-btn data-i18n="btn-download">Download</a></li>
             </ul>
             <div class="nav-right">
                 <select id="lang-selector" class="lang-select" title="Select Language" aria-label="Select Language">
@@ -173,8 +173,13 @@
                     <h1 data-i18n="hero-title">Professional PDF Editor for Windows — <span>100% Offline & Private</span></h1>
                     <p data-i18n="hero-desc">Edit, merge, split, OCR, sign, clean metadata and convert PDFs directly on your PC. No cloud uploads, no monthly subscriptions, zero data tracking.</p>
                     <div class="hero-btns">
-                        <a href="#download-cta" class="btn btn-primary" data-i18n="btn-get-started">⬇️ Download Free Trial</a>
-                        <a href="#pricing" class="btn btn-outline" data-i18n="btn-pricing">💳 Buy Lifetime License ($49.90)</a>
+                        <a href="https://github.com/mbakan44-web/DocentraWebsite/releases/download/v1.0.0/Docentra_Setup_v1.0.5.exe" class="btn btn-primary btn-download-action" data-download-btn data-i18n="btn-get-started">⬇️ Download Free Trial</a>
+                        <a href="https://docentra.gumroad.com/l/docentra" class="btn btn-outline" data-i18n="btn-pricing" target="_blank" rel="noopener noreferrer">💳 Buy Lifetime ($19.90)</a>
+                    </div>
+                    <div class="hero-micro-trust">
+                        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Kredi kartı gerekmez</span>
+                        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> 100% Çevrimdışı & Güvenli</span>
+                        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Filigran (Watermark) Yok</span>
                     </div>
                     <div class="hero-badges" style="margin-top: 1.5rem; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
                         <a href="https://postyourstartup.co/startup/docentra?ref=badge" target="_blank" rel="noopener noreferrer" title="Featured on PostYourStartup">
@@ -637,10 +642,10 @@
                     <h2 data-i18n="cta-title">Ready to Take Control of Your Documents?</h2>
                     <p data-i18n="cta-desc">Download Docentra for free and experience the difference of true local processing. No sign-up required.</p>
                     <div class="cta-btns">
-                        <a href="/download" class="btn btn-primary btn-lg" data-i18n="cta-btn-download">
+                        <a href="https://github.com/mbakan44-web/DocentraWebsite/releases/download/v1.0.0/Docentra_Setup_v1.0.5.exe" class="btn btn-primary btn-lg btn-download-action" data-download-btn data-i18n="cta-btn-download">
                             ⬇️ Download for Windows
                         </a>
-                        <span class="cta-meta" data-i18n="cta-meta">Windows 10/11 · v1.0.5 · 60 MB · Free Trial Included</span>
+                        <span class="cta-meta" data-i18n="cta-meta">Windows 10/11 · v1.0.5 · 100% Offline · Free Trial Included</span>
                     </div>
                 </div>
             </div>
@@ -649,7 +654,7 @@
 
     <footer>
         <div class="container">
-            <div class="footer-grid" style="grid-template-columns: 2fr 1.2fr 1.2fr 1.2fr 1.2fr; gap: 30px;">
+            <div class="footer-grid">
                 <div class="footer-info">
                     <div class="logo">DOCENTRA</div>
                     <p data-i18n="footer-desc">Empowering professionals with secure, offline document tools. 100% local processing on Windows 10/11.</p>
@@ -723,6 +728,71 @@
         </div>
     </footer>
 
-    <script src="script.js?v=3"></script>
+    <!-- ===================== ADOBE-STYLE FLOATING BOTTOM BAR ===================== -->
+    <div id="floating-bar" class="floating-bar" aria-label="Quick Actions">
+        <div class="floating-bar-content">
+            <div class="floating-bar-brand">
+                <span class="floating-bar-logo">DOCENTRA</span>
+                <span class="floating-bar-tag">100% Offline</span>
+            </div>
+            <div class="floating-bar-actions">
+                <a href="https://docentra.gumroad.com/l/docentra" class="floating-btn-buy" target="_blank" rel="noopener noreferrer" data-i18n="float-btn-buy">
+                    Şimdi satın alın ($19.90)
+                </a>
+                <a href="https://github.com/mbakan44-web/DocentraWebsite/releases/download/v1.0.0/Docentra_Setup_v1.0.5.exe" class="floating-btn-download btn-download-action" data-download-btn data-i18n="float-btn-trial">
+                    Ücretsiz deneme sürümü
+                </a>
+                <button id="floating-bar-close" class="floating-bar-close" aria-label="Close" title="Kapat">✕</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== MOBILE DOWNLOAD ASSIST MODAL ===================== -->
+    <div id="mobile-download-modal" class="mobile-modal-backdrop" style="display: none;">
+        <div class="mobile-modal-card">
+            <button class="modal-close-btn" id="mobile-modal-close" aria-label="Close">✕</button>
+            <div class="modal-icon">💻</div>
+            <h3 data-i18n="modal-mobile-title">Docentra Windows Masaüstü Uygulamasıdır</h3>
+            <p data-i18n="modal-mobile-desc">Docentra bilgisayarınızda %100 çevrimdışı ve gizli çalışan bir masaüstü programıdır. Kurulumu bilgisayarınızda açabilmeniz için indirme linkini kendinize ulaştırın:</p>
+            
+            <div class="modal-actions-list">
+                <a id="btn-share-mail" href="mailto:?subject=Docentra%20PDF%20Edit%C3%B6r%C3%BC%20%C4%B0ndirme%20Ba%C4%9Flant%C4%B1s%C4%B1&body=Merhaba%2C%0A%0ADocentra%20100%25%20%C3%87evrimd%C4%B1%C5%9F%C4%B1%20PDF%20Edit%C3%B6r%C3%BCn%C3%BC%20bilgisayar%C4%B1n%C4%B1za%20indirmek%20i%C3%A7in%20ba%C4%9Flant%C4%B1%3A%0Ahttps%3A%2F%2Fdocentrapdf.com%2Fdownload%2F%0A%0AWindows%2010%20%2F%2011%20uyumludur." class="modal-action-btn mail-btn">
+                    <span>✉️</span> <strong data-i18n="modal-share-mail">Kendime E-Posta ile Gönder</strong>
+                </a>
+                <a id="btn-share-whatsapp" href="https://api.whatsapp.com/send?text=Docentra%20100%25%20%C3%87evrimd%C4%B1%C5%9F%C4%B1%20PDF%20Edit%C3%B6r%C3%BC%20Windows%20%C4%B0ndirme%20Ba%C4%9Flant%C4%B1s%C4%B1%3A%20https%3A%2F%2Fdocentrapdf.com%2Fdownload%2F" target="_blank" rel="noopener noreferrer" class="modal-action-btn whatsapp-btn">
+                    <span>💬</span> <strong data-i18n="modal-share-wa">WhatsApp ile Kendime Gönder</strong>
+                </a>
+                <button id="btn-copy-link" class="modal-action-btn copy-btn">
+                    <span>📋</span> <strong id="copy-btn-text" data-i18n="modal-share-copy">İndirme Bağlantısını Kopyala</strong>
+                </button>
+            </div>
+
+            <div class="modal-fallback">
+                <a href="https://github.com/mbakan44-web/DocentraWebsite/releases/download/v1.0.0/Docentra_Setup_v1.0.5.exe" download class="modal-fallback-link" data-i18n="modal-share-direct">
+                    Yine de .exe dosyasını telefonuma indir (145 MB) &darr;
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== DESKTOP DOWNLOAD STARTED TOAST ===================== -->
+    <div id="download-toast" class="download-toast" style="display: none;">
+        <div class="toast-content">
+            <div class="toast-header">
+                <span class="toast-badge">📥 <strong data-i18n="toast-title">İndirme Başladı!</strong></span>
+                <button id="toast-close" class="toast-close" aria-label="Close">✕</button>
+            </div>
+            <p class="toast-msg" data-i18n="toast-desc"><strong>Docentra_Setup_v1.0.5.exe</strong> iniyor (145 MB). İndirme bittiğinde dosyayı açarak anında kurulumu tamamlayabilirsiniz.</p>
+            <div class="toast-tip">
+                <span>🛡️</span>
+                <div>
+                    <strong data-i18n="toast-tip-title">Windows SmartScreen uyarısı çıkarsa:</strong>
+                    <p data-i18n="toast-tip-desc"><em>"Ek Bilgi"</em> &rarr; <em>"Yine de Çalıştır"</em> butonuna tıklayın.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js?v=4"></script>
 </body>
 </html>
