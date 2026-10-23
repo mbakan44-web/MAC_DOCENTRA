@@ -188,22 +188,22 @@
                     </div>
                 </div>
                 <div class="hero-image reveal reveal-right">
-                    <div class="desktop-mockup-frame" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; overflow: hidden; backdrop-filter: blur(10px); box-shadow: 0 30px 60px rgba(0,0,0,0.6);">
-                        <div class="mockup-header" style="background: rgba(0,0,0,0.4); padding: 12px 18px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.05); flex-wrap: wrap; gap: 8px;">
+                    <div class="desktop-mockup-frame">
+                        <div class="mockup-header">
                             <div class="mockup-dots" style="display: flex; gap: 8px;">
                                 <span class="dot" style="width: 12px; height: 12px; border-radius: 50%; display: inline-block; background: #ff5f56;"></span>
                                 <span class="dot" style="width: 12px; height: 12px; border-radius: 50%; display: inline-block; background: #ffbd2e;"></span>
                                 <span class="dot" style="width: 12px; height: 12px; border-radius: 50%; display: inline-block; background: #27c93f;"></span>
                             </div>
-                            <div class="mockup-tabs" style="display: flex; gap: 6px; flex-wrap: wrap;">
-                                <button class="mockup-tab active" onclick="switchMockupTab('dashboard')" style="background: rgba(212,175,55,0.15); border: 1px solid rgba(212,175,55,0.3); color: var(--primary-color); padding: 5px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">🎛️ Dashboard</button>
-                                <button class="mockup-tab" onclick="switchMockupTab('reader')" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); color: #fff; padding: 5px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease; opacity: 0.75;">📖 Reader</button>
-                                <button class="mockup-tab" onclick="switchMockupTab('ocr')" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); color: #fff; padding: 5px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease; opacity: 0.75;">🔍 OCR</button>
-                                <button class="mockup-tab" onclick="switchMockupTab('watermark')" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); color: #fff; padding: 5px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease; opacity: 0.75;">💧 Watermark</button>
-                                <button class="mockup-tab" onclick="switchMockupTab('metadata')" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); color: #fff; padding: 5px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease; opacity: 0.75;">🏷️ Metadata</button>
+                            <div class="mockup-tabs">
+                                <button class="mockup-tab active" onclick="switchMockupTab('dashboard')">🎛️ Dashboard</button>
+                                <button class="mockup-tab" onclick="switchMockupTab('reader')">📖 Reader</button>
+                                <button class="mockup-tab" onclick="switchMockupTab('ocr')">🔍 OCR</button>
+                                <button class="mockup-tab" onclick="switchMockupTab('watermark')">💧 Watermark</button>
+                                <button class="mockup-tab" onclick="switchMockupTab('metadata')">🏷️ Metadata</button>
                             </div>
                         </div>
-                        <div class="mockup-body" style="position: relative; aspect-ratio: 16/10; overflow: hidden; background: #111;">
+                        <div class="mockup-body" style="position: relative; aspect-ratio: 16/10; overflow: hidden;">
                             <div id="mockup-dashboard-view" class="mockup-view active" style="width: 100%; height: 100%; display: flex;">
                                 <img src="assets/screenshots/dashboard.png" alt="Docentra Offline PDF Suite Windows Dashboard" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                             </div>
@@ -226,7 +226,7 @@
         </section>
 
         <!-- ===================== TRUST BAR ===================== -->
-        <section class="trust-bar" style="padding: 20px 0; background: rgba(0, 0, 0, 0.2); border-top: 1px solid rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.03); backdrop-filter: blur(10px);">
+        <section class="trust-bar">
             <div class="container trust-flex" style="display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 20px; text-align: center;">
                 <div class="trust-item" style="display: flex; align-items: center; gap: 10px;">
                     <span style="font-size: 1.5rem; filter: drop-shadow(0 0 5px rgba(39,201,63,0.4));">📥</span>

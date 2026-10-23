@@ -1377,16 +1377,16 @@ window.switchMockupTab = function(tabName) {
     tabs.forEach((tab, index) => {
         if (tabOrder[index] === tabName) {
             tab.classList.add('active');
-            tab.style.background = 'rgba(212,175,55,0.15)';
-            tab.style.borderColor = 'rgba(212,175,55,0.3)';
-            tab.style.color = 'var(--primary-color)';
+            tab.style.background = '#eff6ff';
+            tab.style.borderColor = '#93c5fd';
+            tab.style.color = '#2563eb';
             tab.style.opacity = '1';
         } else {
             tab.classList.remove('active');
-            tab.style.background = 'rgba(255,255,255,0.03)';
-            tab.style.borderColor = 'rgba(255,255,255,0.08)';
-            tab.style.color = '#fff';
-            tab.style.opacity = '0.75';
+            tab.style.background = '#ffffff';
+            tab.style.borderColor = '#cbd5e1';
+            tab.style.color = '#64748b';
+            tab.style.opacity = '1';
         }
     });
 };
