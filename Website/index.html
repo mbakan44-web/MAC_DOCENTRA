@@ -128,7 +128,7 @@
 
     <header id="header">
         <nav class="container">
-            <div class="logo">DOCENTRA</div>
+            <a href="index.html" class="logo">DOCENTRA</a>
             <ul class="nav-links">
                 <li><a href="#features" data-i18n="nav-features">Features</a></li>
                 <li><a href="online-vs-offline.html" data-i18n="nav-compare">Why Offline?</a></li>
@@ -136,7 +136,7 @@
                 <li><a href="#pricing" data-i18n="nav-pricing">Pricing</a></li>
                 <li><a href="#roadmap" data-i18n="nav-roadmap">Roadmap</a></li>
                 <li><a href="#faq" data-i18n="nav-faq">FAQ</a></li>
-                <li><a href="https://github.com/mbakan44-web/DocentraWebsite/releases/download/v1.0.0/Docentra_Setup_v1.0.5.exe" class="btn btn-secondary btn-download-action" data-download-btn data-i18n="btn-download">Download</a></li>
+                <li><a href="https://github.com/mbakan44-web/DocentraWebsite/releases/download/v1.0.0/Docentra_Setup_v1.0.5.exe" class="btn btn-nav-download btn-download-action" data-download-btn><span>⬇️</span> <span data-i18n="btn-download">Download</span></a></li>
             </ul>
             <div class="nav-right">
                 <select id="lang-selector" class="lang-select" title="Select Language" aria-label="Select Language">
@@ -524,10 +524,18 @@
                     <p data-i18n="pricing-subtitle">No hidden fees. No recurring charges. Pay once, own it forever.</p>
                 </div>
                 <div class="pricing-card reveal">
-                    <div class="pricing-ribbon" data-i18n="pricing-ribbon">LAUNCH SPECIAL</div>
+                    <div class="pricing-badge-wrapper">
+                        <div class="pricing-badge-top" data-i18n="pricing-ribbon">🔥 BAŞLANGICA ÖZEL: %60 İNDİRİM</div>
+                    </div>
                     <div class="pricing-header">
                         <h3 data-i18n="pricing-card-title">Lifetime Professional</h3>
-                        <div class="price dynamic-price" data-i18n="price">$19.90</div>
+                        <div class="price-container">
+                            <div class="price-was-row">
+                                <span class="price-original">$49.90</span>
+                                <span class="discount-pill" data-i18n="discount-badge">-60%</span>
+                            </div>
+                            <div class="price dynamic-price" data-i18n="price">$19.90</div>
+                        </div>
                         <p data-i18n="pricing-card-subtitle">Perpetual License per PC</p>
                     </div>
                     <ul class="pricing-features">

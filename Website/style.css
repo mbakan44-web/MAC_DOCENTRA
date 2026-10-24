@@ -65,7 +65,19 @@ header.scrolled {
     border-bottom: 1px solid #e2e8f0;
 }
 nav { display: flex; justify-content: space-between; align-items: center; }
-.logo { font-size: 1.6rem; font-weight: 800; letter-spacing: 1.5px; color: #0f172a; text-decoration: none; }
+.logo { 
+    font-size: 1.6rem; 
+    font-weight: 800; 
+    letter-spacing: 1.5px; 
+    color: #0f172a; 
+    text-decoration: none; 
+    cursor: pointer;
+    transition: color 0.2s ease, opacity 0.2s ease;
+}
+.logo:hover {
+    color: var(--primary-color);
+    opacity: 0.9;
+}
 .nav-links { display: flex; list-style: none; gap: 2.2rem; align-items: center; }
 .nav-links a { text-decoration: none; color: #334155; font-weight: 500; font-size: 0.95rem; transition: color 0.2s ease; }
 .nav-links a:hover { color: var(--primary-color); }
@@ -124,6 +136,27 @@ nav { display: flex; justify-content: space-between; align-items: center; }
     background: #e2e8f0;
     color: #0f172a;
     transform: translateY(-1px);
+}
+.btn-nav-download {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    padding: 0.55rem 1.35rem !important;
+    border-radius: 50px !important;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    border: none !important;
+    font-size: 0.92rem !important;
+    text-decoration: none !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.btn-nav-download:hover {
+    background: linear-gradient(135deg, #1d4ed8, #1e40af) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5) !important;
 }
 .btn-outline {
     border: 1.5px solid #cbd5e1;
@@ -345,27 +378,89 @@ nav { display: flex; justify-content: space-between; align-items: center; }
     margin: 0 auto;
     background: #ffffff;
     border-radius: 28px;
-    padding: 3.8rem;
+    padding: 3.5rem 3rem;
     border: 2px solid #2563eb;
-    box-shadow: 0 20px 50px rgba(37, 99, 235, 0.1);
+    box-shadow: 0 20px 50px rgba(37, 99, 235, 0.12);
     position: relative;
-    overflow: hidden;
+    text-align: center;
 }
+.pricing-badge-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.4rem;
+}
+.pricing-badge-top {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: #ffffff !important;
+    font-size: 0.85rem;
+    font-weight: 800;
+    padding: 8px 22px;
+    border-radius: 9999px;
+    letter-spacing: 0.8px;
+    box-shadow: 0 4px 16px rgba(239, 68, 68, 0.35);
+    text-transform: uppercase;
+    animation: badgePulse 2.8s infinite;
+}
+@keyframes badgePulse {
+    0%, 100% { box-shadow: 0 4px 16px rgba(239, 68, 68, 0.35); transform: scale(1); }
+    50% { box-shadow: 0 6px 24px rgba(239, 68, 68, 0.55); transform: scale(1.02); }
+}
+/* In case pricing-ribbon selector is referenced directly */
 .pricing-ribbon {
-    position: absolute;
-    top: 22px; right: -35px;
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
-    color: #ffffff;
-    padding: 0.4rem 3rem;
-    font-size: 0.75rem;
-    font-weight: 700;
-    transform: rotate(45deg);
-    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: #ffffff !important;
+    font-size: 0.85rem;
+    font-weight: 800;
+    padding: 8px 22px;
+    border-radius: 9999px;
+    letter-spacing: 0.8px;
+    box-shadow: 0 4px 16px rgba(239, 68, 68, 0.35);
+    margin: 0 auto 1.4rem;
+    text-transform: uppercase;
+    position: static;
+    transform: none;
+    animation: badgePulse 2.8s infinite;
 }
-.pricing-header { text-align: center; margin-bottom: 2.2rem; }
+.pricing-header { text-align: center; margin-bottom: 2rem; }
 .pricing-header h3 { color: #0f172a; font-size: 1.4rem; }
-.price { font-size: 3.8rem; font-weight: 800; margin: 0.8rem 0; color: #0f172a; letter-spacing: -0.03em; }
-.pricing-features { list-style: none; margin-bottom: 2.2rem; }
+.price-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    margin: 0.8rem 0;
+}
+.price-was-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+.price-original {
+    font-size: 1.6rem;
+    text-decoration: line-through;
+    color: #94a3b8;
+    font-weight: 600;
+}
+.discount-pill {
+    background: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+    font-size: 0.82rem;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+}
+.price { font-size: 3.8rem; font-weight: 800; margin: 0.2rem 0; color: #0f172a; letter-spacing: -0.03em; line-height: 1; }
+.pricing-features { list-style: none; margin-bottom: 2.2rem; text-align: left; }
 .pricing-features li { padding: 0.85rem 0; border-bottom: 1px solid #f1f5f9; color: #334155; font-size: 0.98rem; }
 .tax-notice { font-size: 0.8rem; color: var(--text-dim); margin-top: 1rem; text-align: center; font-style: italic; }
 
@@ -861,6 +956,49 @@ footer { padding: 5rem 0 3rem; background: #0f172a; border-top: 1px solid #1e293
 /* RTL */
 body[dir="rtl"] .nav-links { right: auto; left: -100%; border-left: none; border-right: 1px solid #e2e8f0; }
 body[dir="rtl"] .nav-links.active { left: 0; }
-body[dir="rtl"] { text-align: right; }
 body[dir="rtl"] .faq-question { text-align: right; }
 body[dir="rtl"] .comparison-table td:first-child { text-align: right; }
+
+/* ========== BLOG & TOOLS READABILITY (LIGHT THEME) ========== */
+main h1, main h2, main h3, main h4, main h5, main h6,
+article h1, article h2, article h3, article h4,
+.feature-card h1, .feature-card h2, .feature-card h3, .feature-card h4,
+.blog-content h1, .blog-content h2, .blog-content h3, .blog-content h4 {
+    color: #0f172a !important;
+}
+
+main p, article p, .blog-content p, .feature-card p,
+main li, article li, .blog-content li {
+    color: #334155 !important;
+}
+
+main strong, article strong, .blog-content strong, .feature-card strong {
+    color: #0f172a !important;
+}
+
+.table-wrapper th, .comparison-table th, table th {
+    color: #0f172a !important;
+    background: #f8fafc !important;
+}
+
+.table-wrapper td, .comparison-table td, table td {
+    color: #334155 !important;
+}
+
+footer a {
+    color: #64748b;
+    transition: color 0.2s ease;
+}
+footer a:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Ensure buttons and badges maintain contrast */
+.btn-primary, .btn-primary *,
+.btn-nav-download, .btn-nav-download *,
+.floating-btn-download, .floating-btn-download *,
+.floating-btn-buy, .floating-btn-buy *,
+.pricing-badge-top, .pricing-badge-top *,
+.pricing-ribbon, .pricing-ribbon * {
+    color: #ffffff !important;
+}
